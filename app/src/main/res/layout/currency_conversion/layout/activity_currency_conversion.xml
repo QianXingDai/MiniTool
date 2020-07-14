@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_currency"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                android:textColor="#ffffff"
+                android:text="@string/title_currency_conversion"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:background="@color/white">
+                <com.kakacat.minitool.util.ui.CircleImageView
+                    android:id="@+id/ib_icon_country1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_us"/>
+                <TextView
+                    android:id="@+id/tv_country_name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/name_us"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/et_input_money1"
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/edit_text_background_with_black_border"
+                    android:gravity="center|right"
+                    android:hint="0"
+   
+                    android:inputType="numberDecimal"/>
+                <TextView
+                    android:id="@+id/tv_money_unit1"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/et_input_money1"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/unit_us"
+                    android:gravity="center" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:background="@color/white">
+                <com.kakacat.minitool.util.ui.CircleImageView
+                    android:id="@+id/ib_icon_country2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_cn"/>
+                <TextView
+                    android:id="@+id/tv_country_name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/name_cn"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/et_input_money2"
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/edit_text_background_with_black_border"
+                    android:gravity="center|right"
+                    android:hint="0"
+                    android:inputType="numberDecimal"/>
+                <TextView
+                    android:id="@+id/tv_money_unit2"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/et_input_money1"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/unit_cn"
+                    android:gravity="center" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_key"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
+
+
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
