@@ -71,7 +71,7 @@ public class FakeBatteryView extends MyPopupWindow {
     @Override
     public void showAtLocation(View parent, int gravity, int x, int y) {
 
-        int batteryLevel = com.kakacat.common.util.SystemUtil.getElectricity(activity);
+        int batteryLevel = com.kakacat.minitool.util.SystemUtil.getElectricity(activity);
         etBattery.setText(batteryLevel + "");
         seekBarBattery.setProgress(batteryLevel);
         super.showAtLocation(parent, gravity, x, y);

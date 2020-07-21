@@ -1,6 +1,6 @@
 package com.kakacat.minitool.main.navigation;
 
-import android.app.Activity;
+import android.content.Context;
 import android.view.View;
 import android.widget.RadioGroup;
 
@@ -12,15 +12,15 @@ public class ChangeThemeView extends MyPopupWindow {
     private static ChangeThemeView themeView;
     private View contentView;
 
-    private ChangeThemeView(Activity activity,View contentView, int width, int height) {
-        super(activity, contentView,width, height);
+    private ChangeThemeView(Context context,View contentView, int width, int height) {
+        super(context, contentView,width, height);
         this.contentView = contentView;
     }
 
 
-    public static ChangeThemeView getInstance(Activity activity,View contentView,int width, int height){
+    public static ChangeThemeView getInstance(Context context, View contentView, int width, int height){
         if(themeView == null){
-            themeView = new ChangeThemeView(activity, contentView,width, height);
+            themeView = new ChangeThemeView(context, contentView,width, height);
             themeView.initView();
         }
 
@@ -33,13 +33,15 @@ public class ChangeThemeView extends MyPopupWindow {
         radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
             switch (checkedId){
                 case R.id.theme_blue:{
+                    //TODO
                     break;
                 }
                 case R.id.theme_purple:{
+                    //TODO
                     break;
                 }
                 case R.id.theme_pink:{
-
+                    //TODO
                     break;
                 }
                 default:

@@ -1,12 +1,10 @@
-package com.kakacat.minitool.currencyConversion;
+package com.kakacat.minitool.currencyconversion.model;
 
 public class Country {
     private int iconId;
     private int nameId;
     private int unitId;
     private double rate;
-
-    public Country(){}
 
     public Country(int iconId, int nameId, int unitId, double rate) {
         this.iconId = iconId;

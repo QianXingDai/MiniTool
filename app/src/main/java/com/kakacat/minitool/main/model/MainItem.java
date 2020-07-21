@@ -1,4 +1,4 @@
-package com.kakacat.minitool.main;
+package com.kakacat.minitool.main.model;
 
 public class MainItem {
     private int titleId;
@@ -15,23 +15,12 @@ public class MainItem {
         return titleId;
     }
 
-    public void setTitleId(int titleId) {
-        this.titleId = titleId;
-    }
-
     public int getIconId() {
         return iconId;
-    }
-
-    public void setIconId(int iconId) {
-        this.iconId = iconId;
     }
 
     public int getNoteId() {
         return noteId;
     }
 
-    public void setNoteId(int noteId) {
-        this.noteId = noteId;
-    }
 }

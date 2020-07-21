@@ -1,4 +1,4 @@
-package com.kakacat.minitool.util;
+package com.kakacat.minitool.common;
 
 import okhttp3.Response;
 

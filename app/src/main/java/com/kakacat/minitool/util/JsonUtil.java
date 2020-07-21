@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.google.gson.Gson;
-import com.kakacat.minitool.currencyConversion.Rate;
+import com.kakacat.minitool.currencyconversion.model.Rate;
 import com.kakacat.minitool.garbageClassification.Garbage;
 import com.kakacat.minitool.globalOutbreak.EpidemicData;
 import com.kakacat.minitool.inquireIp.Data;
@@ -19,40 +19,6 @@ import org.json.JSONObject;
 import java.util.List;
 
 public class JsonUtil {
-    public static boolean handleRateResponse(Context context, String response){
-        try{
-    //        Log.d("hhh","获得数据");
-            if(!TextUtils.isEmpty(response)){
-
-     //           Log.d("hhh","数据不空");
-
-                JSONObject jsonObject = new JSONObject(response);
-   //             String errorCode = jsonObject.getString("resultcode");
-    //            String reason = jsonObject.getString("reason");
-                String resultCode = jsonObject.getString("resultcode");
-
-                if(!resultCode.equals("200")) return false;
-
-                JSONObject result = jsonObject.getJSONArray("result").getJSONObject(0);
-     //           List<Data> dataList = new ArrayList();  现在只用到一个字段
-   //             Gson gson = new Gson();
-                for(int i = 1; i <= 22;i ++){
-                    JSONObject data = result.getJSONObject("data" + i);
-    //                dataList.add(gson.fromJson(data.toString(),Data.class));  //现在只用到一个字段
-                    double rate = Double.parseDouble(data.getString("bankConversionPri")) / 100;
-                    Rate.setRate(rate,i);
-    //                Log.d("hhh",rate + "");
-                }
-                writeRateToLocal(context);
-                return true;
-            }else{
-                Log.d("hhh","数据空");
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return false;
-    }
 
     public static Data handleIpDataResponse(String response){
         if(!TextUtils.isEmpty(response)){
@@ -126,7 +92,7 @@ public class JsonUtil {
         editor.putFloat("br",(float) Rate.br);
         editor.putFloat("kr",(float) Rate.kr);
         editor.putFloat("za",(float) Rate.za);
-        editor.commit();
+        editor.apply();
     }
 
     public static void readRateFromLocal(Context context){

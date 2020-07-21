@@ -1,4 +1,4 @@
-package com.kakacat.minitool.main;
+package com.kakacat.minitool.main.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,30 +10,33 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.util.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.main.model.MainItem;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     private List<MainItem> list;
-    private LayoutInflater layoutInflater;
+    private LayoutInflater inflater;
     private RecycleViewItemOnClickListener listener;
+
+    public MainAdapter(List<MainItem> list) {
+        this.list = list;
+    }
 
     public void setOnClickListener(RecycleViewItemOnClickListener listener){
         this.listener = listener;
     }
 
-    public MyAdapter(List<MainItem> list) {
-        this.list = list;
-    }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.main_item_layout,parent,false);
-        return new MyAdapter.ViewHolder(view);
+        if(inflater == null){
+            inflater = LayoutInflater.from(parent.getContext());
+        }
+        View view = inflater.inflate(R.layout.main_item_layout,parent,false);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -44,11 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.note.setText(item.getNoteId());
 
         if(listener != null){
-            holder.itemView.setOnClickListener(v -> {
-                if(listener != null){
-                    listener.onClick(holder.itemView,position);
-                }
-            });
+            holder.itemView.setOnClickListener(v -> listener.onClick(holder.itemView,position));
         }
     }
 
@@ -59,7 +58,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder{
 
         ImageView imageView;
         TextView title;
@@ -71,10 +70,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             title = itemView.findViewById(R.id.title);
             note = itemView.findViewById(R.id.note);
         }
-    }
-
-    public interface OnItemClickListener{
-        void onClick(View v, int position);
     }
 
 }

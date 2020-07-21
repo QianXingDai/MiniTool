@@ -2,7 +2,6 @@ package com.kakacat.minitool.bingPic;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -13,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.util.RecycleViewItemOnClickListener;
-import com.kakacat.minitool.util.RecycleViewItemOnLongClickListener;
-import com.kakacat.minitool.util.RecycleViewOnTouchListener;
+import com.kakacat.minitool.common.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.RecycleViewItemOnLongClickListener;
+import com.kakacat.minitool.common.RecycleViewOnTouchListener;
 
 import java.util.List;
 

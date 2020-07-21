@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.util.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.main.adapter.AboutItemAdapter;
+import com.kakacat.minitool.main.model.AboutItem;
 import com.kakacat.minitool.util.SystemUtil;
 import com.kakacat.minitool.util.ui.MyPopupWindow;
 
@@ -18,14 +20,14 @@ import java.util.List;
 public class AboutViewItemOn extends MyPopupWindow implements RecycleViewItemOnClickListener {
 
     private static AboutViewItemOn aboutView;
-    private Context context;
     private View contentView;
+    private Context context;
 
 
-    public AboutViewItemOn(Activity activity, View contentView, int width, int height) {
-        super(activity, contentView, width, height);
-        this.context = activity;
+    public AboutViewItemOn(Context context, View contentView, int width, int height) {
+        super(context, contentView, width, height);
         this.contentView = contentView;
+        this.context = context;
     }
 
     public static AboutViewItemOn getInstance(Activity activity, View contentView, int width, int height){

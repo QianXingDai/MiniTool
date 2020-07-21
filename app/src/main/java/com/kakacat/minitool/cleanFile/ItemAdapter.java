@@ -1,6 +1,5 @@
 package com.kakacat.minitool.cleanFile;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.util.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.RecycleViewItemOnClickListener;
 import com.kakacat.minitool.util.StringUtil;
 import com.kakacat.minitool.util.ui.CircleProgressView;
 

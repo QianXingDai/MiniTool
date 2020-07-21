@@ -1,4 +1,4 @@
-package com.kakacat.minitool.main;
+package com.kakacat.minitool.main.fragment;
 
 import android.Manifest;
 import android.app.Activity;
@@ -18,22 +18,21 @@ import com.kakacat.minitool.FakeBatteryView;
 import com.kakacat.minitool.GetAudioService;
 import com.kakacat.minitool.ModifyDpiView;
 import com.kakacat.minitool.R;
+import com.kakacat.minitool.common.RecycleViewItemOnClickListener;
 import com.kakacat.minitool.inquireIp.InquireIpActivity;
+import com.kakacat.minitool.main.MainContract;
 import com.kakacat.minitool.textEncryption.TextEncryptionActivity;
-import com.kakacat.minitool.util.RecycleViewItemOnClickListener;
-
-import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
 
-public class MyGeekFragment extends MyFragment implements RecycleViewItemOnClickListener {
+public class GeekFragment extends MyFragment implements RecycleViewItemOnClickListener {
 
     private Activity activity;
     private View parentView;
 
-    MyGeekFragment(List<MainItem> itemList) {
-        super(itemList);
-        super.myAdapter.setOnClickListener(this);
+    public GeekFragment(MainContract.Presenter presenter) {
+        super(presenter.getGeekList());
+        super.setOnClickListener(this);
     }
 
     @Nullable

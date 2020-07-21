@@ -7,17 +7,27 @@
     android:orientation="vertical">
 
     <include layout="@layout/toolbar_phone_attribution"/>
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="请输入待查询手机号码"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:helperTextEnabled="true"
+            app:helperText="不要输入奇怪的东西">
+            <EditText
+                android:id="@+id/et_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    <!--
+
         <com.kakacat.minitool.util.ui.SearchBar
             android:id="@+id/search_bar"
             app:hint="请输入待查询手机号码"
-            style="@style/SearchBarStyle"/>
-    </androidx.cardview.widget.CardView>
+            style="@style/SearchBarStyle"/>-->
+
 
     <TextView
         android:layout_width="wrap_content"

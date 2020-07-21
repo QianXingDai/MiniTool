@@ -1,4 +1,4 @@
-package com.kakacat.minitool.currencyConversion;
+package com.kakacat.minitool.currencyconversion;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.util.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.currencyconversion.model.Country;
 
 import java.util.List;
 

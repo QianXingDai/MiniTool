@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -16,6 +15,7 @@
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".common.BaseActivity"></activity>
         <activity android:name=".bingPic.BingPicActivity" />
 
         <service
@@ -34,10 +34,12 @@
             android:name=".todayInHistory.TodayInHistoryActivity"
             android:label="@string/title_today_in_history"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".phoneArtribution.PhoneAttributionActivity" />
+        <activity
+            android:name=".phoneArtribution.PhoneAttributionActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity android:name=".inquireIp.InquireIpActivity" />
         <activity
-            android:name=".currencyConversion.CurrencyConversionActivity"
+            android:name=".currencyconversion.MainActivity"
             android:label="@string/title_currency_conversion" />
         <activity
             android:name=".main.MainActivity"

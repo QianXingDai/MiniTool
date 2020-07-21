@@ -3,11 +3,7 @@ package com.kakacat.minitool.phoneArtribution;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +11,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.util.HttpCallbackListener;
+import com.kakacat.minitool.common.HttpCallbackListener;
 import com.kakacat.minitool.util.HttpUtil;
 import com.kakacat.minitool.util.JsonUtil;
 import com.kakacat.minitool.util.ui.SearchBar;
@@ -48,7 +44,7 @@ public class PhoneAttributionActivity extends AppCompatActivity {
         context = this;
         initToolbar();
 
-        searchBar = findViewById(R.id.search_bar);
+//        searchBar = findViewById(R.id.search_bar);
         tvProvince = findViewById(R.id.tv_province);
         tvCity = findViewById(R.id.tv_city);
         tvAreaCode = findViewById(R.id.tv_area_code);
@@ -56,9 +52,9 @@ public class PhoneAttributionActivity extends AppCompatActivity {
         tvCompany = findViewById(R.id.tv_company);
         tvNumber = findViewById(R.id.tv_number);
 
-        searchBar.imageView.setOnClickListener(v -> {
-            requestAttrData();
-        });
+//        searchBar.imageView.setOnClickListener(v -> {
+//            requestAttrData();
+//        });
     }
 
 

@@ -1,4 +1,7 @@
-package com.kakacat.minitool.currencyConversion;
+package com.kakacat.minitool.currencyconversion.model;
+
+import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.kakacat.minitool.R;
 
@@ -166,5 +169,59 @@ public class Rate {
             case 22 : return R.string.unit_za;
             default : return R.string.unit_cn;
         }
+    }
+
+    public static void readRateFromLocal(Context context){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("rate",Context.MODE_PRIVATE);
+        Rate.us = sharedPreferences.getFloat("us", (float) Rate.us);
+        Rate.eu = sharedPreferences.getFloat("eu", (float) Rate.eu);
+        Rate.hk = sharedPreferences.getFloat("hk", (float) Rate.hk);
+        Rate.jp = sharedPreferences.getFloat("jp", (float) Rate.jp);
+        Rate.uk = sharedPreferences.getFloat("uk", (float) Rate.uk);
+        Rate.au = sharedPreferences.getFloat("au", (float) Rate.au);
+        Rate.ca = sharedPreferences.getFloat("ca", (float) Rate.ca);
+        Rate.th = sharedPreferences.getFloat("th", (float) Rate.th);
+        Rate.sg = sharedPreferences.getFloat("sg", (float) Rate.sg);
+        Rate.ch = sharedPreferences.getFloat("ch", (float) Rate.ch);
+        Rate.dk = sharedPreferences.getFloat("dk", (float) Rate.dk);
+        Rate.ma = sharedPreferences.getFloat("ma", (float) Rate.ma);
+        Rate.my = sharedPreferences.getFloat("my", (float) Rate.my);
+        Rate.no = sharedPreferences.getFloat("no", (float) Rate.no);
+        Rate.nz = sharedPreferences.getFloat("nz", (float) Rate.nz);
+        Rate.ph = sharedPreferences.getFloat("ph", (float) Rate.ph);
+        Rate.ru = sharedPreferences.getFloat("ru", (float) Rate.ru);
+        Rate.se = sharedPreferences.getFloat("se", (float) Rate.se);
+        Rate.tw = sharedPreferences.getFloat("tw", (float) Rate.tw);
+        Rate.br = sharedPreferences.getFloat("br", (float) Rate.br);
+        Rate.kr = sharedPreferences.getFloat("kr", (float) Rate.kr);
+        Rate.za = sharedPreferences.getFloat("za", (float) Rate.za);
+    }
+
+    public static void writeRateToLocal(Context context){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("rate",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putFloat("us",(float) Rate.us);
+        editor.putFloat("eu",(float) Rate.eu);
+        editor.putFloat("hk",(float) Rate.hk);
+        editor.putFloat("jp",(float) Rate.jp);
+        editor.putFloat("uk",(float) Rate.uk);
+        editor.putFloat("au",(float) Rate.au);
+        editor.putFloat("ca",(float) Rate.ca);
+        editor.putFloat("th",(float) Rate.th);
+        editor.putFloat("sg",(float) Rate.sg);
+        editor.putFloat("ch",(float) Rate.ch);
+        editor.putFloat("dk",(float) Rate.dk);
+        editor.putFloat("ma",(float) Rate.ma);
+        editor.putFloat("my",(float) Rate.my);
+        editor.putFloat("no",(float) Rate.no);
+        editor.putFloat("nz",(float) Rate.nz);
+        editor.putFloat("ph",(float) Rate.ph);
+        editor.putFloat("ru",(float) Rate.ru);
+        editor.putFloat("se",(float) Rate.se);
+        editor.putFloat("tw",(float) Rate.tw);
+        editor.putFloat("br",(float) Rate.br);
+        editor.putFloat("kr",(float) Rate.kr);
+        editor.putFloat("za",(float) Rate.za);
+        editor.apply();
     }
 }
