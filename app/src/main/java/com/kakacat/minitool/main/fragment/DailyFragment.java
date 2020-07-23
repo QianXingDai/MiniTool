@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.appInfo.AppInfoActivity;
+import com.kakacat.minitool.appInfo.activity.AppInfoActivity;
 import com.kakacat.minitool.bingPic.BingPicActivity;
 import com.kakacat.minitool.cleanFile.CleanFileActivity;
 import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;

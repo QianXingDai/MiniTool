@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/round_background_grey"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/item_selector"
     android:layout_marginBottom="5dp">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/cv_android_logo"
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_android_logo"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="10dp"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        app:roundAsCircle="true"/>
     <TextView
         android:id="@+id/tv_android_version_name"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:layout_toRightOf="@+id/cv_android_logo"
-        android:layout_alignTop="@+id/cv_android_logo"
+        android:layout_toEndOf="@+id/iv_android_logo"
+        android:layout_alignTop="@+id/iv_android_logo"
         android:text="TextView" />
     <TextView
         android:id="@+id/tv_api_level"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/cv_android_logo"
-        android:layout_alignBottom="@+id/cv_android_logo"
+        android:layout_toEndOf="@+id/iv_android_logo"
+        android:layout_alignBottom="@+id/iv_android_logo"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/tv_app_num"
         android:layout_width="30dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/cv_android_logo"
-        android:layout_alignBottom="@id/cv_android_logo"
-        android:layout_marginLeft="30dp"
+        android:layout_alignTop="@id/iv_android_logo"
+        android:layout_alignBottom="@id/iv_android_logo"
+        android:layout_marginStart="30dp"
         android:layout_centerHorizontal="true"
-        android:layout_toRightOf="@id/tv_android_version_name"
+        android:layout_toEndOf="@id/tv_android_version_name"
         android:gravity="center"
         android:text="TextView"
         android:textStyle="bold" />
@@ -46,10 +47,10 @@
         android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:layout_toRightOf="@+id/tv_app_num"
-        android:layout_marginLeft="65dp"
-        android:layout_alignTop="@id/cv_android_logo"
-        android:layout_alignBottom="@id/cv_android_logo"
+        android:layout_toEndOf="@+id/tv_app_num"
+        android:layout_marginStart="65dp"
+        android:layout_alignTop="@id/iv_android_logo"
+        android:layout_alignBottom="@id/iv_android_logo"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text="TextView" />

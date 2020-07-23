@@ -1,4 +1,4 @@
-package com.kakacat.minitool.appInfo;
+package com.kakacat.minitool.appInfo.activity;
 
 import android.Manifest;
 import android.content.Context;
@@ -62,7 +62,6 @@ public class AppDetailActivity extends AppCompatActivity implements View.OnClick
 
     private PackageInfo packageInfo;
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
