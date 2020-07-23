@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.RecycleViewItemOnClickListener;
-import com.kakacat.minitool.common.RecycleViewItemOnLongClickListener;
-import com.kakacat.minitool.common.RecycleViewOnTouchListener;
+import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.myinterface.RecycleViewItemOnLongClickListener;
+import com.kakacat.minitool.common.myinterface.RecycleViewOnTouchListener;
 
 import java.util.List;
 

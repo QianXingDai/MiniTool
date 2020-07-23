@@ -14,9 +14,9 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.HttpCallbackListener;
-import com.kakacat.minitool.util.HttpUtil;
-import com.kakacat.minitool.util.JsonUtil;
+import com.kakacat.minitool.common.myinterface.HttpCallbackListener;
+import com.kakacat.minitool.common.util.HttpUtil;
+import com.kakacat.minitool.common.util.JsonUtil;
 
 import java.io.IOException;
 import java.net.Inet4Address;

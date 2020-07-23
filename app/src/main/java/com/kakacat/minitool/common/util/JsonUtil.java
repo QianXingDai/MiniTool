@@ -1,4 +1,4 @@
-package com.kakacat.minitool.util;
+package com.kakacat.minitool.common.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -40,28 +40,6 @@ public class JsonUtil {
             }
         }else{
             Log.d("hhh","数据为空");
-        }
-        return null;
-    }
-
-    public static com.kakacat.minitool.phoneArtribution.Data handleAttrDataResponse(String response){
-        if(!TextUtils.isEmpty(response)){
-            try{
-                JSONObject jsonObject = new JSONObject(response);
-                String resultCode = jsonObject.getString("resultcode");
-                if(resultCode.equals("200")){
-                    JSONObject result = jsonObject.getJSONObject("result");
-                    com.kakacat.minitool.phoneArtribution.Data data = new com.kakacat.minitool.phoneArtribution.Data();
-                    data.setProvince(result.getString("province"));
-                    data.setCity(result.getString("city"));
-                    data.setAreaCode(result.getString("areacode"));
-                    data.setZip(result.getString("zip"));
-                    data.setCompany(result.getString("company"));
-                    return data;
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
         }
         return null;
     }

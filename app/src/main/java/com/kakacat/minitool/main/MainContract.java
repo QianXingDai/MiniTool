@@ -1,7 +1,7 @@
 package com.kakacat.minitool.main;
 
-import com.kakacat.minitool.common.IPresenter;
-import com.kakacat.minitool.common.IView;
+import com.kakacat.minitool.common.base.IPresenter;
+import com.kakacat.minitool.common.base.IView;
 import com.kakacat.minitool.main.fragment.MyFragment;
 import com.kakacat.minitool.main.model.MainItem;
 

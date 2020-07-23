@@ -1,9 +1,6 @@
-package com.kakacat.minitool.util;
+package com.kakacat.minitool.common.util;
 
 import android.icu.text.SimpleDateFormat;
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
 
 public class StringUtil {
 

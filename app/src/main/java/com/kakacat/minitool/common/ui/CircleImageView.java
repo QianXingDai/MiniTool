@@ -1,4 +1,4 @@
-package com.kakacat.minitool.util.ui;
+package com.kakacat.minitool.common.ui;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -10,7 +10,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 

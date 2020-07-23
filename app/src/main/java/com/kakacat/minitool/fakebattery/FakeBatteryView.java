@@ -1,4 +1,4 @@
-package com.kakacat.minitool;
+package com.kakacat.minitool.fakebattery;
 
 import android.app.Activity;
 import android.view.View;
@@ -7,8 +7,9 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.kakacat.minitool.util.SystemUtil;
-import com.kakacat.minitool.util.ui.MyPopupWindow;
+import com.kakacat.minitool.R;
+import com.kakacat.minitool.common.ui.MyPopupWindow;
+import com.kakacat.minitool.common.util.SystemUtil;
 
 public class FakeBatteryView extends MyPopupWindow {
 
@@ -71,7 +72,7 @@ public class FakeBatteryView extends MyPopupWindow {
     @Override
     public void showAtLocation(View parent, int gravity, int x, int y) {
 
-        int batteryLevel = com.kakacat.minitool.util.SystemUtil.getElectricity(activity);
+        int batteryLevel = SystemUtil.getElectricity(activity);
         etBattery.setText(batteryLevel + "");
         seekBarBattery.setProgress(batteryLevel);
         super.showAtLocation(parent, gravity, x, y);

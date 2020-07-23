@@ -1,11 +1,5 @@
 package com.kakacat.minitool.bingPic;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.NestedScrollView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -24,10 +18,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.NestedScrollView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.util.SystemUtil;
-import com.kakacat.minitool.util.ui.UiUtil;
+import com.kakacat.minitool.common.ui.MyPopupWindow;
+import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.util.SystemUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -170,7 +171,7 @@ public class BingPicActivity extends AppCompatActivity {
         }
     }
 
-    static class OptionPopupWindow extends com.kakacat.minitool.util.ui.MyPopupWindow{
+    static class OptionPopupWindow extends MyPopupWindow {
 
         private static OptionPopupWindow optionPopupWindow;
         private Context context;

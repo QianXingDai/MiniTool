@@ -1,4 +1,4 @@
-package com.kakacat.minitool.util;
+package com.kakacat.minitool.common.util;
 
 import android.app.Service;
 import android.content.ClipData;

@@ -27,7 +27,7 @@
         android:layout_margin="20dp"
         android:clickable="true"
         android:src="@drawable/ic_burn"
-        app:layout_behavior=".util.ui.FabScrollBehavior"
+        app:layout_behavior=".common.ui.FabScrollBehavior"
         app:layout_anchor="@id/view_pager"
         app:layout_anchorGravity="bottom|end|right" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

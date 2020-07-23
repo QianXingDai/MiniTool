@@ -9,11 +9,11 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.BaseActivity;
-import com.kakacat.minitool.util.ui.UiUtil;
+import com.kakacat.minitool.common.base.FrescoInitActivity;
+import com.kakacat.minitool.common.ui.UiUtil;
 
 
-public class MainActivity extends BaseActivity implements MainContract.View{
+public class MainActivity extends FrescoInitActivity implements MainContract.View{
 
     private MainContract.Presenter presenter;
     private SwipeRefreshLayout swipeRefreshLayout;

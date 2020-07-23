@@ -1,10 +1,9 @@
-package com.kakacat.minitool.util.ui;
+package com.kakacat.minitool.common.ui;
 
 import android.content.Context;
 import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.Rect;
-
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.util.SparseIntArray;

@@ -11,9 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.RecycleViewItemOnClickListener;
-import com.kakacat.minitool.util.StringUtil;
-import com.kakacat.minitool.util.ui.CircleProgressView;
+import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.ui.CircleProgressView;
+import com.kakacat.minitool.common.util.StringUtil;
 
 import java.util.List;
 

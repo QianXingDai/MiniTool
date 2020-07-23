@@ -1,4 +1,4 @@
-package com.kakacat.minitool.util;
+package com.kakacat.minitool.common.util;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.Signature;

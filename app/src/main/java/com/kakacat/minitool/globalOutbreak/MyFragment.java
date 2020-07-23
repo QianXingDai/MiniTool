@@ -14,9 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.util.ui.FlowLayoutManager;
-
-import org.intellij.lang.annotations.Flow;
+import com.kakacat.minitool.common.ui.FlowLayoutManager;
 
 import java.util.List;
 

@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.ui.MyPopupWindow;
+import com.kakacat.minitool.common.util.SystemUtil;
 import com.kakacat.minitool.main.adapter.AboutItemAdapter;
 import com.kakacat.minitool.main.model.AboutItem;
-import com.kakacat.minitool.util.SystemUtil;
-import com.kakacat.minitool.util.ui.MyPopupWindow;
 
 import java.util.ArrayList;
 import java.util.List;

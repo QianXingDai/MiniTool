@@ -1,4 +1,4 @@
-package com.kakacat.minitool;
+package com.kakacat.minitool.modifydpi;
 
 import android.app.Activity;
 import android.text.TextUtils;
@@ -7,8 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.kakacat.minitool.util.SystemUtil;
-import com.kakacat.minitool.util.ui.MyPopupWindow;
+import com.kakacat.minitool.R;
+import com.kakacat.minitool.common.ui.MyPopupWindow;
+import com.kakacat.minitool.common.util.SystemUtil;
 
 public class ModifyDpiView extends MyPopupWindow {
 

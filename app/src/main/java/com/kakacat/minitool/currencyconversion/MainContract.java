@@ -1,12 +1,13 @@
 package com.kakacat.minitool.currencyconversion;
 
-import com.kakacat.minitool.common.IPresenter;
-import com.kakacat.minitool.common.IView;
+import com.kakacat.minitool.common.base.IPresenter;
+import com.kakacat.minitool.common.base.IView;
 import com.kakacat.minitool.currencyconversion.model.Country;
 
 import java.util.List;
 
 public interface MainContract {
+
     interface Presenter extends IPresenter{
         void initData();
         void refreshExchangeRate();

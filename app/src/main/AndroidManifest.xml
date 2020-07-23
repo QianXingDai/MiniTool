@@ -15,11 +15,11 @@
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".common.BaseActivity"></activity>
+        <activity android:name=".common.base.FrescoInitActivity"></activity>
         <activity android:name=".bingPic.BingPicActivity" />
 
         <service
-            android:name=".GetAudioService"
+            android:name=".audiocapture.GetAudioService"
             android:exported="false" />
 
         <activity android:name=".translation.TranslationActivity" />
@@ -35,7 +35,7 @@
             android:label="@string/title_today_in_history"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".phoneArtribution.PhoneAttributionActivity"
+            android:name=".phoneartribution.PhoneAttributionActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity android:name=".inquireIp.InquireIpActivity" />
         <activity

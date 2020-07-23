@@ -1,4 +1,4 @@
-package com.kakacat.minitool.util.ui;
+package com.kakacat.minitool.common.ui;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.PopupWindow;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -51,6 +52,10 @@ public class UiUtil {
 
     public static void showHint(View view,CharSequence hint){
         Snackbar.make(view,hint,Snackbar.LENGTH_SHORT).show();
+    }
+
+    public static void showToast(Context context,CharSequence s){
+        Toast.makeText(context,s,Toast.LENGTH_SHORT).show();
     }
 
 

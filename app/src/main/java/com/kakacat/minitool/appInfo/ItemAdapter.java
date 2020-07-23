@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
 
 import java.util.List;
 

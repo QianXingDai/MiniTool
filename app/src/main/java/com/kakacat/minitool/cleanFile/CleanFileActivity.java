@@ -1,7 +1,6 @@
 package com.kakacat.minitool.cleanFile;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.ProgressBar;
@@ -29,9 +27,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.util.StringUtil;
-import com.kakacat.minitool.util.ui.MyPopupWindow;
-import com.kakacat.minitool.util.ui.UiUtil;
+import com.kakacat.minitool.common.ui.MyPopupWindow;
+import com.kakacat.minitool.common.util.StringUtil;
 
 import java.io.File;
 import java.util.ArrayList;

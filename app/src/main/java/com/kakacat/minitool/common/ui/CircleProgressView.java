@@ -1,4 +1,4 @@
-package com.kakacat.minitool.util.ui;
+package com.kakacat.minitool.common.ui;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -10,7 +10,6 @@ import android.graphics.RectF;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 
 import com.kakacat.minitool.R;

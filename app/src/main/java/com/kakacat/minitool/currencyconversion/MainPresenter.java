@@ -5,10 +5,10 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.HttpCallbackListener;
+import com.kakacat.minitool.common.myinterface.HttpCallbackListener;
+import com.kakacat.minitool.common.util.HttpUtil;
 import com.kakacat.minitool.currencyconversion.model.Country;
 import com.kakacat.minitool.currencyconversion.model.Rate;
-import com.kakacat.minitool.util.HttpUtil;
 
 import org.json.JSONObject;
 
@@ -106,7 +106,10 @@ public class MainPresenter implements MainContract.Presenter {
 
     @Override
     public String getResult(CharSequence val,double rate1,double rate2){
-        double s = Double.parseDouble((String) val);
+        if(TextUtils.isEmpty(val)){
+            return "";
+        }
+        double s = Double.parseDouble(val.toString());
         s = s * rate1 / rate2;
         return String.valueOf(s);
     }

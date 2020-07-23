@@ -6,9 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.PixelFormat;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -27,10 +24,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.util.EncryptionUtil;
-import com.kakacat.minitool.util.StringUtil;
-import com.kakacat.minitool.util.SystemUtil;
-import com.kakacat.minitool.util.ui.UiUtil;
+import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.util.EncryptionUtil;
+import com.kakacat.minitool.common.util.StringUtil;
+import com.kakacat.minitool.common.util.SystemUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;

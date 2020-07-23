@@ -14,14 +14,14 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.BaseActivity;
+import com.kakacat.minitool.common.base.FrescoInitActivity;
 import com.kakacat.minitool.main.fragment.DailyFragment;
 import com.kakacat.minitool.main.fragment.GeekFragment;
 import com.kakacat.minitool.main.fragment.MyFragment;
 import com.kakacat.minitool.main.navigation.AboutViewItemOn;
 import com.kakacat.minitool.main.navigation.ChangeThemeView;
 
-public class MainActivity extends BaseActivity implements MainContract.View {
+public class MainActivity extends FrescoInitActivity implements MainContract.View {
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;

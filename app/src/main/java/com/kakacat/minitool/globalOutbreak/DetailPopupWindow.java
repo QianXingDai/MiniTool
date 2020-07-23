@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.util.ui.MyPopupWindow;
+import com.kakacat.minitool.common.ui.MyPopupWindow;
 
 public class DetailPopupWindow extends MyPopupWindow {
 

@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.RecycleViewItemOnClickListener;
-import com.kakacat.minitool.main.model.MainItem;
+import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.ui.ItemDecoration;
 import com.kakacat.minitool.main.adapter.MainAdapter;
-import com.kakacat.minitool.util.ui.ItemDecoration;
+import com.kakacat.minitool.main.model.MainItem;
 
 import java.util.List;
 

@@ -1,14 +1,13 @@
-package com.kakacat.minitool;
+package com.kakacat.minitool.audiocapture;
 
 import android.app.IntentService;
-import android.content.Intent;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.util.Log;
 
-import com.kakacat.minitool.util.SystemUtil;
+import com.kakacat.minitool.common.util.SystemUtil;
 
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in

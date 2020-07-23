@@ -1,4 +1,4 @@
-package com.kakacat.minitool.util.ui;
+package com.kakacat.minitool.common.ui;
 
 import android.graphics.Rect;
 import android.view.View;

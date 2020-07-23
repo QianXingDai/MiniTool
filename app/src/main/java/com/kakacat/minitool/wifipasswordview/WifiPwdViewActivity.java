@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.util.SystemUtil;
-import com.kakacat.minitool.util.ui.UiUtil;
+import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.util.SystemUtil;
 
 import org.xml.sax.SAXException;
 

@@ -1,6 +1,6 @@
-package com.kakacat.minitool.util;
+package com.kakacat.minitool.common.util;
 
-import com.kakacat.minitool.common.HttpCallbackListener;
+import com.kakacat.minitool.common.myinterface.HttpCallbackListener;
 
 import java.io.IOException;
 

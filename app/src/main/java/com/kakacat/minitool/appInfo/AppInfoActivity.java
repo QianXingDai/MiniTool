@@ -25,12 +25,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.util.ui.MyPopupWindow;
+import com.kakacat.minitool.common.ui.CircleImageView;
+import com.kakacat.minitool.common.ui.MyPopupWindow;
 
 import java.util.Collections;
 import java.util.List;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class AppInfoActivity extends AppCompatActivity implements View.OnClickListener{

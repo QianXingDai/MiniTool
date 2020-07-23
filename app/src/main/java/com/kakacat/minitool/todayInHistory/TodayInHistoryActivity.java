@@ -18,9 +18,9 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.HttpCallbackListener;
-import com.kakacat.minitool.util.HttpUtil;
-import com.kakacat.minitool.util.JsonUtil;
+import com.kakacat.minitool.common.myinterface.HttpCallbackListener;
+import com.kakacat.minitool.common.util.HttpUtil;
+import com.kakacat.minitool.common.util.JsonUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
