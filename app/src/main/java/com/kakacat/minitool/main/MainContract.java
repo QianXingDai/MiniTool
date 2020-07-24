@@ -2,7 +2,6 @@ package com.kakacat.minitool.main;
 
 import com.kakacat.minitool.common.base.IPresenter;
 import com.kakacat.minitool.common.base.IView;
-import com.kakacat.minitool.main.fragment.MyFragment;
 import com.kakacat.minitool.main.model.MainItem;
 
 import java.util.List;
@@ -16,6 +15,5 @@ public interface MainContract {
 
     interface View extends IView<Presenter>{
         void initData();
-        void switchFragment(MyFragment fragment);
     }
 }

@@ -48,8 +48,8 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         countryFragment1 = new CountryFragment(this,presenter.getCountryList(),1);
         countryFragment2 = new CountryFragment(this,presenter.getCountryList(),2);
-        transaction.add(R.id.fragment_container,countryFragment1);
-        transaction.add(R.id.fragment_container,countryFragment2);
+        transaction.add(R.id.view_pager,countryFragment1);
+        transaction.add(R.id.view_pager,countryFragment2);
         transaction.commit();
     }
 

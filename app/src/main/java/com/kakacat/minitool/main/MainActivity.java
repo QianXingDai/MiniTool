@@ -9,15 +9,13 @@ import android.view.ViewGroup;
 import androidx.appcompat.app.ActionBar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.base.FrescoInitActivity;
-import com.kakacat.minitool.main.fragment.DailyFragment;
-import com.kakacat.minitool.main.fragment.GeekFragment;
-import com.kakacat.minitool.main.fragment.MyFragment;
+import com.kakacat.minitool.main.adapter.FragmentAdapter;
 import com.kakacat.minitool.main.navigation.AboutViewItemOn;
 import com.kakacat.minitool.main.navigation.ChangeThemeView;
 
@@ -25,9 +23,6 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-    private DailyFragment dailyFragment;
-    private GeekFragment geekFragment;
-    private MyFragment currentFragment;
 
     private MainContract.Presenter presenter;
 
@@ -52,20 +47,23 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
-        //初始化fragment
-        dailyFragment = new DailyFragment(presenter);
-        geekFragment = new GeekFragment(presenter);
+        ViewPager2 viewPager2 = findViewById(R.id.view_pager);
+        FragmentAdapter adapter = new FragmentAdapter(this,presenter);
+        viewPager2.setAdapter(adapter);
 
-        //初始化bottomnavigation
+        /*
+        TODO:滑动切换fragment时，下面指示器不会跟随变化，下次再填
+         */
+
         BottomNavigationView btmNav = findViewById(R.id.btm_nav);
         btmNav.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.daily:{
-                    switchFragment(dailyFragment);
+                    viewPager2.setCurrentItem(0,true);
                     break;
                 }
                 case R.id.geek:{
-                    switchFragment(geekFragment);
+                    viewPager2.setCurrentItem(1,true);
                     break;
                 }
             }
@@ -111,23 +109,6 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
             actionBar.setHomeAsUpIndicator(R.drawable.ic_action_slide);
             actionBar.setDisplayShowTitleEnabled(false);
         }
-    }
-
-    @Override
-    public void switchFragment(MyFragment fragment){
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
-        if(!fragment.isAdded()){
-            transaction.add(R.id.fragment_container,fragment);
-        }
-        if(currentFragment != null){
-            transaction.hide(currentFragment);
-        }
-
-        transaction.show(fragment);
-        transaction.commit();
-
-        currentFragment = fragment;
     }
 
     @Override

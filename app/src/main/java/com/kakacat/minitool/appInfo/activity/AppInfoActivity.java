@@ -2,7 +2,6 @@ package com.kakacat.minitool.appInfo.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -125,11 +124,13 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
         appInfoAdapter = new AppInfoAdapter(presenter.getAppInfoList());
         rvAppInfo.setAdapter(appInfoAdapter);
         rvAppInfo.setLayoutManager(new LinearLayoutManager(this));
+
+/*      TODO:这里序列化传输有问题，暂时屏蔽掉，以后再改
         appInfoAdapter.setOnClickListener((v, position) -> {
             Intent intent = new Intent(AppInfoActivity.this,AppDetailActivity.class);
             intent.putExtra("appInfo",presenter.getAppInfoList().get(position));
             startActivity(intent);
-        });
+        });*/
     }
 
     @Override
