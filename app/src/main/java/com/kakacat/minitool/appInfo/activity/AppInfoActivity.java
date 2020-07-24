@@ -32,23 +32,30 @@ import com.kakacat.minitool.common.ui.MyPopupWindow;
 public class AppInfoActivity extends FrescoInitActivity implements AppInfoContract.View,View.OnClickListener {
 
     private AppInfoContract.Presenter presenter;
+
     private NestedScrollView nestedScrollView;
     private ProgressBar progressBar;
     private LinearLayout linearLayout;
+    private MyPopupWindow sortDialog;
+
     private ApiPercentAdapter apiPercentAdapter;
     private AppInfoAdapter appInfoAdapter;
-    private MyPopupWindow sortDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_info);
 
-
         initView();
         initData();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter = null;
+    }
 
     @Override
     public void initData() {
@@ -108,7 +115,7 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
 
     private void initApiPercentView(){
         RecyclerView rvApiPercent = findViewById(R.id.rv_api_percent);
-        apiPercentAdapter = new ApiPercentAdapter(presenter.getApiPercentModelList());
+        apiPercentAdapter = new ApiPercentAdapter(presenter.getApiPercentList());
         rvApiPercent.setAdapter(apiPercentAdapter);
         rvApiPercent.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -120,12 +127,7 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
         rvAppInfo.setLayoutManager(new LinearLayoutManager(this));
         appInfoAdapter.setOnClickListener((v, position) -> {
             Intent intent = new Intent(AppInfoActivity.this,AppDetailActivity.class);
-            /*
-            TODO
-            这里还要修改，旧的无效
-             */
-        /*    intent.putExtra("packageInfo",packageInfoList.get(position));
-            intent.putExtra("pm",packageInfoList.get(position));*/
+            intent.putExtra("appInfo",presenter.getAppInfoList().get(position));
             startActivity(intent);
         });
     }

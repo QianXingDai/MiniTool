@@ -1,258 +1,186 @@
 package com.kakacat.minitool.appInfo.activity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
 import com.kakacat.minitool.R;
+import com.kakacat.minitool.appInfo.contract.AppDetailContract;
+import com.kakacat.minitool.appInfo.model.AppInfo;
+import com.kakacat.minitool.appInfo.presenter.AppDetailPresenter;
 import com.kakacat.minitool.common.ui.UiUtil;
-import com.kakacat.minitool.common.util.EncryptionUtil;
-import com.kakacat.minitool.common.util.StringUtil;
-import com.kakacat.minitool.common.util.SystemUtil;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+public class AppDetailActivity extends AppCompatActivity implements AppDetailContract.View,View.OnClickListener{
 
-public class AppDetailActivity extends AppCompatActivity implements View.OnClickListener{
+    private static final int SAVE_ICON = 1;
+    private static final int SAVE_APK = 2;
 
-    private Context context;
-
-    private ActionBar actionBar;
-
-    private TextView tvAppName;
-    private TextView tvPackageName;
-    private TextView tvVersionName;
-    private TextView tvFirstInstallTime;
-    private TextView tvLastUpdateTime;
-    private TextView tvTargetApi;
-    private TextView tvMinApi;
-    private TextView tvMd5Signature;
-    private TextView tvHeader3;
-    private TextView tvPermission;
-
-    private ImageView ivAppIcon;
-
-    private Button btSaveIcon;
-    private Button btOpenMarket;
-    private Button btGetApk;
-    private Button btOpenDetail;
-    private Button btCopyMd5;
-
-    private PackageManager pm;
-
-    private PackageInfo packageInfo;
+    private AppDetailContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_detail);
 
-        initWidget();
-        setData();
-        setListener();
+        initData();
+        initView();
     }
 
-    private void initWidget() {
+    @Override
+    public void initData() {
+        setPresenter(new AppDetailPresenter(this));
+        presenter.initData();
+    }
+
+    @Override
+    public void setPresenter(AppDetailContract.Presenter presenter) {
+        this.presenter = presenter;
+    }
+
+    @SuppressLint("SetTextI18n")
+    @Override
+    public void initView() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        actionBar = getSupportActionBar();
-
-        context = AppDetailActivity.this;
-
-        tvAppName = findViewById(R.id.tv_app_name);
-        tvPackageName = findViewById(R.id.tv_package_name);
-        tvVersionName = findViewById(R.id.tv_version_name);
-        tvFirstInstallTime = findViewById(R.id.tv_first_install_time);
-        tvLastUpdateTime = findViewById(R.id.tv_last_update_time);
-        tvTargetApi = findViewById(R.id.tv_target_api);
-        tvMinApi = findViewById(R.id.tv_min_api);
-        tvMd5Signature = findViewById(R.id.tv_md5_sign);
-        tvPermission = findViewById(R.id.tv_permission);
-        tvHeader3 = findViewById(R.id.tv_header3);
-
-        ivAppIcon = findViewById(R.id.iv_app_icon);
-
-        btSaveIcon = findViewById(R.id.bt_save_icon);
-        btOpenMarket = findViewById(R.id.bt_open_market);
-        btGetApk = findViewById(R.id.bt_get_apk);
-        btOpenDetail = findViewById(R.id.bt_open_detail);
-        btCopyMd5 = findViewById(R.id.bt_copy_md5);
-    }
-
-
-    private void setData() {
-        pm = getPackageManager();
-        packageInfo = getIntent().getParcelableExtra("packageInfo");
-
-        String firstInstallTime = StringUtil.getDate(packageInfo.firstInstallTime);
-        String lastUpdateTime = StringUtil.getDate(packageInfo.lastUpdateTime);
-        String[] permissions = packageInfo.requestedPermissions;
-
+        ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
             actionBar.setDisplayShowTitleEnabled(false);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        tvAppName.setText(packageInfo.applicationInfo.loadLabel(pm));
-        tvPackageName.setText(packageInfo.packageName);
-        tvVersionName.setText(packageInfo.versionName);
-        tvFirstInstallTime.setText(firstInstallTime);
-        tvLastUpdateTime.setText(lastUpdateTime);
-        tvTargetApi.setText(packageInfo.applicationInfo.targetSdkVersion + "");
-        tvMinApi.setText(packageInfo.applicationInfo.minSdkVersion + "");
-        tvMd5Signature.setText(EncryptionUtil.getSignMd5Str(packageInfo).toUpperCase());
-        if(permissions != null){
-            tvHeader3.setText("权限声明" + "(" + permissions.length + "个)");
-            StringBuilder sb = new StringBuilder();
-            for(int i = 0; i < permissions.length; i++)
-                sb.append(i + 1 + ". " + permissions[i] + "\n");
-            tvPermission.setText(sb.toString());
-        }
+        TextView tvAppName = findViewById(R.id.tv_app_name);
+        TextView tvPackageName = findViewById(R.id.tv_package_name);
+        TextView tvVersionName = findViewById(R.id.tv_version_name);
+        TextView tvFirstInstallTime = findViewById(R.id.tv_first_install_time);
+        TextView tvLastUpdateTime = findViewById(R.id.tv_last_update_time);
+        TextView tvTargetApi = findViewById(R.id.tv_target_api);
+        TextView tvMinApi = findViewById(R.id.tv_min_api);
+        TextView tvMd5Signature = findViewById(R.id.tv_md5_sign);
+        TextView tvPermission = findViewById(R.id.tv_permission);
+        TextView tvHeader3 = findViewById(R.id.tv_header3);
 
-        ivAppIcon.setBackground(packageInfo.applicationInfo.loadIcon(pm));
+        ImageView ivAppIcon = findViewById(R.id.iv_app_icon);
+
+        AppInfo appInfo = presenter.getAppInfo();
+
+        tvAppName.setText(appInfo.getAppName());
+        tvPackageName.setText(appInfo.getPackageName());
+        tvVersionName.setText(appInfo.getVersionName());
+        tvFirstInstallTime.setText(appInfo.getFirstInstallTime2());
+        tvLastUpdateTime.setText(appInfo.getLastUpdateTime2());
+        tvTargetApi.setText(String.valueOf(appInfo.getTargetSdkVersion()));
+        tvMinApi.setText(String.valueOf(appInfo.getMinSdkVersion()));
+        tvMd5Signature.setText(appInfo.getSignMd5());
+        tvHeader3.setText("权限声明" + "(" + appInfo.getPermissionCount() + "个)");
+        tvPermission.setText(appInfo.getPermission());
+
+        ivAppIcon.setImageDrawable(appInfo.getIcon());
     }
 
-    private void setListener() {
-        btSaveIcon.setOnClickListener(this);
-        btOpenMarket.setOnClickListener(this);
-        btGetApk.setOnClickListener(this);
-        btOpenDetail.setOnClickListener(this);
-        btCopyMd5.setOnClickListener(this);
+    @Override
+    public Context getContext() {
+        return this;
     }
 
-
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bt_save_icon : {
-                saveIconToLocal();
+                saveIcon();
                 break;
             }
             case R.id.bt_open_market : {
-                SystemUtil.openMarket(context);
+                presenter.openMarket();
                 break;
             }
             case R.id.bt_get_apk : {
-                getApk();
+                saveApk();
                 break;
             }
             case R.id.bt_open_detail : {
-                openDetail();
+                presenter.openDetailInSetting();
                 break;
             }
             case R.id.bt_copy_md5 : {
-                copyMd5();
+                presenter.copyMd5();
                 break;
             }
         }
     }
 
 
-
-    private void saveIconToLocal(){
-        try{
-            String path = getExternalCacheDir().getAbsolutePath();
-            File file = new File(path,packageInfo.packageName + ".png");
-            if(!file.exists()){
-                file.createNewFile();
-                FileOutputStream fos = new FileOutputStream(file);
-                Bitmap bitmap = UiUtil.drawableToBitmap(packageInfo.applicationInfo.loadIcon(pm));
-
-                bitmap.compress(Bitmap.CompressFormat.PNG,100,fos);
-                fos.flush();
-                fos.close();
-
-
-                String s = "成功保存在目录 : " + path + packageInfo.packageName + ".png";
-                Toast.makeText(this,s,Toast.LENGTH_SHORT).show();
-            }
-            else{
-                Toast.makeText(this,"已经保存过该图片!",Toast.LENGTH_SHORT).show();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void getApk() {
-        String permission = Manifest.permission.WRITE_EXTERNAL_STORAGE;
-        if(ActivityCompat.checkSelfPermission(this,permission) != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(new String[]{permission},1);
+    @Override
+    public void saveIcon(){
+        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        if(ActivityCompat.checkSelfPermission(this,permissions[0]) != PackageManager.PERMISSION_GRANTED){
+            requestPermissions(permissions,SAVE_ICON);
         }else{
-            copyFile();
+            presenter.saveIcon();
         }
     }
 
-    private void openDetail() {
-        Intent intent = new Intent();
-        intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
-        intent.setData(Uri.parse("package:" + packageInfo.packageName));
-        startActivity(intent);
+    @Override
+    public void onSaveIconResult(String result){
+        UiUtil.showToast(this,result);
     }
 
+    @Override
+    public void saveApk() {
+        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        if(ActivityCompat.checkSelfPermission(this,permissions[0]) != PackageManager.PERMISSION_GRANTED){
+            requestPermissions(permissions,SAVE_APK);
+        }else{
+            presenter.saveApk();
+        }
+    }
 
-    private void copyMd5() {
-        CharSequence content = tvMd5Signature.getText().toString();
-        SystemUtil.copyToClipboard(context,"md5",content);
-        Toast.makeText(this, "复制成功", Toast.LENGTH_SHORT).show();
+    @Override
+    public void onCopyMd5Result(String result){
+        UiUtil.showToast(this,result);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem){
-        switch (menuItem.getItemId()){
-            case android.R.id.home:{
-                finish();
-                break;
-            }
-            default:
-                break;
+        if (menuItem.getItemId() == android.R.id.home) {
+            finish();
         }
         return true;
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(requestCode == 1){
-            if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                copyFile();
-            }else{
-                Toast.makeText(this,"获取权限失败...",Toast.LENGTH_SHORT).show();
-                finish();
+        if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            if(requestCode == SAVE_ICON){
+                presenter.saveIcon();
+            }else if(requestCode == SAVE_APK){
+                presenter.saveApk();
             }
+        }else{
+            UiUtil.showToast(this,"获取存储权限失败");
         }
     }
 
-    private void copyFile(){
-        String srcPath = packageInfo.applicationInfo.sourceDir;
-        String desPath = "/storage/emulated/0/MiniTool/";
-        String[] commands = new String[]{
-                "cp " + srcPath + " " + desPath + "\n",
-        };
-        SystemUtil.executeLinuxCommand(commands,false,false);
-        Toast.makeText(this,"提取成功 保存在" + desPath,Toast.LENGTH_SHORT).show();
+    @Override
+    public void onSaveApkResult(String result){
+        UiUtil.showToast(this,result);
+    }
+
+    @Override
+    public AppDetailActivity getActivity() {
+        return this;
     }
 }

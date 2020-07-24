@@ -50,12 +50,14 @@ public class AppInfoAdapter extends RecyclerView.Adapter<AppInfoAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         if(position != 0){
             AppInfo appInfo = appInfoList.get(position - 1);
+
             holder.ivAppIcon.setImageDrawable(appInfo.getIcon());
             holder.tvAppName.setText(appInfo.getAppName());
             holder.tvPackageName.setText(appInfo.getPackageName());
             holder.tvAppVersionCode.setText(appInfo.getVersionName());
             holder.tvAppAndroidVersion.setText(appInfo.getAndroidVersionName());
-            holder.tvAppApiLevel.setText(String.valueOf(appInfo.getApiLevel()));
+            holder.tvAppApiLevel.setText(String.valueOf(appInfo.getTargetSdkVersion()));
+
             if(clickListener != null){
                 holder.itemView.setOnClickListener(v-> clickListener.onClick(holder.itemView,position));
             }

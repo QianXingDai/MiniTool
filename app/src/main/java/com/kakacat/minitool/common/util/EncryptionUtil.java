@@ -1,6 +1,5 @@
 package com.kakacat.minitool.common.util;
 
-import android.content.pm.PackageInfo;
 import android.content.pm.Signature;
 import android.util.Base64;
 
@@ -36,11 +35,8 @@ public class EncryptionUtil {
     /**
      * 获取app签名md5值,与“keytool -list -keystore D:\Desktop\app_key”‘keytool -printcert     *file D:\Desktop\CERT.RSA’获取的md5值一样
      */
-    public static String getSignMd5Str(PackageInfo packageInfo) {
-        Signature[] signs = packageInfo.signatures;
-        Signature sign = signs[0];
-        String signStr = encryptionMD5(sign.toByteArray(),true);
-        return signStr;
+    public static String getSignMd5Str(Signature signatures) {
+        return encryptionMD5(signatures.toByteArray(),true);
     }
 
 
@@ -48,8 +44,6 @@ public class EncryptionUtil {
         String result = Base64.encodeToString(key,Base64.DEFAULT);
         return result;
     }
-
-
 
 
     public static String encryptHmacSHA1(byte[] encryptText) {
@@ -74,7 +68,7 @@ public class EncryptionUtil {
 
 
     public static String byteToString(byte[] bytes,boolean addColon){
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < bytes.length; i++) {
             if (Integer.toHexString(0xFF & bytes[i]).length() == 1)

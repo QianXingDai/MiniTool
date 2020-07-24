@@ -1,5 +1,6 @@
 package com.kakacat.minitool.common.util;
 
+import android.app.Activity;
 import android.app.Service;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -149,8 +150,6 @@ public class SystemUtil {
         return "提取失败...";
     }
 
-
-
     public static void vibrate(Context context, long milliseconds){
         Vibrator vibrator = (Vibrator) context.getSystemService(Service.VIBRATOR_SERVICE);
         vibrator.vibrate(milliseconds);
@@ -161,6 +160,13 @@ public class SystemUtil {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("market://details?id=" + context.getPackageName()));
         context.startActivity(intent);
+    }
+
+    public static void openAppDetailInSetting(Activity activity,String packageName){
+        Intent intent = new Intent();
+        intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
+        intent.setData(Uri.parse("package:" + packageName));
+        activity.startActivity(intent);
     }
 
 }
