@@ -5,37 +5,33 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.myinterface.HttpCallbackListener;
+import com.kakacat.minitool.common.constant.AppKey;
+import com.kakacat.minitool.common.constant.Host;
+import com.kakacat.minitool.common.constant.Result;
+import com.kakacat.minitool.common.myinterface.HttpCallback;
 import com.kakacat.minitool.common.util.HttpUtil;
 import com.kakacat.minitool.currencyconversion.model.Country;
 import com.kakacat.minitool.currencyconversion.model.Rate;
 
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import okhttp3.Response;
 
-public class MainPresenter implements MainContract.Presenter {
+public class Presenter implements Contract.Presenter {
 
-    private static final String key = "6103d9a9aeca9c09fc8f6bd4734be680";
-    private static final String host = "http://web.juhe.cn:8080/finance/exchange/rmbquot?key=";
-    private static final String requestAddress = host + key;
+    private static final String requestAddress = Host.EXCHANGE_RATE_HOST + AppKey.EXCHANGE_RATE_KEY;
 
-    public static final int HANDLE_SUCCESS = 0;
-    public static final int HANDLE_FAIL = 1;
-    public static final int REQUEST_SUCCESS = 2;
-    public static final int REQUEST_FAIL = 3;
 
-    private MainContract.View view;
+
+    private Contract.View view;
     private Context context;
 
     private List<Country> countryList;
 
-    public MainPresenter(MainContract.View view) {
+    public Presenter(Contract.View view) {
         this.view = view;
         this.context = view.getContext();
     }
@@ -48,30 +44,20 @@ public class MainPresenter implements MainContract.Presenter {
 
     @Override
     public void refreshExchangeRate() {
-        final int[] flag = {REQUEST_FAIL};
-        HttpUtil.sendOkHttpRequest(requestAddress,new HttpCallbackListener() {
+        HttpUtil.sendOkHttpRequest(requestAddress,new HttpCallback() {
+            int resultFlag = Result.REQUEST_ERROR;
             @Override
             public void onSuccess(Response response) {
-                flag[0] = REQUEST_SUCCESS;
-                String s = null;
-                try {
-                    s = Objects.requireNonNull(response.body()).string();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                if(handleRateResponse(s)){
-                    for(int i = 0; i < 22; i++){
-                        countryList.get(i).setRate(Rate.getRate(i + 1));
-                    }
-                    flag[0] = HANDLE_SUCCESS;
+                if(!Rate.handleResponse(response)){
+                    resultFlag = Result.HANDLE_FAIL;
                 }else{
-                    flag[0] = HANDLE_FAIL;
+                    resultFlag = Result.HANDLE_SUCCESS;
                 }
-                view.onRefreshExchangeRate(flag[0]);
+                view.onRefreshExchangeRate(resultFlag);
             }
             @Override
             public void onError() {
-                view.onRefreshExchangeRate(REQUEST_FAIL);
+                view.onRefreshExchangeRate(Result.REQUEST_ERROR);
             }
         });
     }

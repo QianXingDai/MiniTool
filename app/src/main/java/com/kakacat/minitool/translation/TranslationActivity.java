@@ -25,7 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.myinterface.HttpCallbackListener;
+import com.kakacat.minitool.common.myinterface.HttpCallback;
 import com.kakacat.minitool.common.ui.UiUtil;
 import com.kakacat.minitool.common.util.EncryptionUtil;
 import com.kakacat.minitool.common.util.HttpUtil;
@@ -230,7 +230,7 @@ public class TranslationActivity extends AppCompatActivity implements View.OnCli
            return;
         }
 
-        HttpUtil.sendOkHttpRequest(address, new HttpCallbackListener() {
+        HttpUtil.sendOkHttpRequest(address, new HttpCallback() {
             @Override
             public void onSuccess(Response response) {
                 String s = null;

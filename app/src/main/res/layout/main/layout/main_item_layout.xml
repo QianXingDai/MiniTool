@@ -28,7 +28,8 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="10dp"
             android:layout_below="@+id/title"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            app:roundAsCircle="true"/>
         <TextView
             android:id="@+id/note"
             android:gravity="center_vertical"

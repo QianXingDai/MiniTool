@@ -24,15 +24,19 @@
         <item name="android:textColor">#FFFFFF</item>
     </style>
 
-    <style name="SearchBarStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+    <style name="MyMaterialNoActionBarStyle" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
     </style>
-
 
     <style name="WhiteTextStyle">
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="MyTextInputLayoutStyle" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="startIconDrawable">@drawable/ic_search</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="hintTextColor">@color/colorPrimary</item>
+        <item name="helperTextEnabled">true</item>
+    </style>
 
 </resources>

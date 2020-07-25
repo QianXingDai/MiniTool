@@ -6,7 +6,7 @@ import com.kakacat.minitool.currencyconversion.model.Country;
 
 import java.util.List;
 
-public interface MainContract {
+public interface Contract {
 
     interface Presenter extends IPresenter{
         void initData();

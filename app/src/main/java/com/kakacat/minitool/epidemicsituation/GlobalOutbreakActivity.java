@@ -18,7 +18,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.myinterface.HttpCallbackListener;
+import com.kakacat.minitool.common.myinterface.HttpCallback;
 import com.kakacat.minitool.common.ui.UiUtil;
 import com.kakacat.minitool.common.util.HttpUtil;
 import com.kakacat.minitool.common.util.JsonUtil;
@@ -138,7 +138,7 @@ public class GlobalOutbreakActivity extends AppCompatActivity {
         String key = "c3886d3637d56c2730a4a7066fb9fa47";
         String address = "http://api.tianapi.com/txapi/ncovabroad/index?key=" + key;
 
-        HttpUtil.sendOkHttpRequest(address, new HttpCallbackListener() {
+        HttpUtil.sendOkHttpRequest(address, new HttpCallback() {
             @Override
             public void onSuccess(Response response) {
                 String s = null;

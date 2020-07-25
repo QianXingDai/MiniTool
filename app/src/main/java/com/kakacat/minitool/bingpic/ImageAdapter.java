@@ -29,18 +29,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
         this.addressList = addressList;
     }
 
-    public void setOnClickListener(RecycleViewItemOnClickListener onClickListener){
-        this.onClickListener = onClickListener;
-    }
-
-    public void setOnLongClickListener(RecycleViewItemOnLongClickListener onLongClickListener){
-        this.onLongClickListener = onLongClickListener;
-    }
-
-    public void setOnTouchListener(RecycleViewOnTouchListener onTouchListener){
-        this.onTouchListener = onTouchListener;
-    }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -75,6 +63,19 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     @Override
     public int getItemCount() {
         return addressList.size();
+    }
+
+
+    public void setOnClickListener(RecycleViewItemOnClickListener onClickListener){
+        this.onClickListener = onClickListener;
+    }
+
+    public void setOnLongClickListener(RecycleViewItemOnLongClickListener onLongClickListener){
+        this.onLongClickListener = onLongClickListener;
+    }
+
+    public void setOnTouchListener(RecycleViewOnTouchListener onTouchListener){
+        this.onTouchListener = onTouchListener;
     }
 
 

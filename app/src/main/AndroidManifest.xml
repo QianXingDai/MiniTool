@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.kakacat.minitool">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,9 +15,12 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".common.base.FrescoInitActivity"></activity>
-        <activity android:name=".bingpic.BingPicActivity" />
+        android:theme="@style/AppTheme"
+        tools:targetApi="q">
+        <activity android:name=".common.base.FrescoInitActivity" />
+        <activity
+            android:name=".bingpic.BingPicActivity"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
 
         <service
             android:name=".audiocapture.GetAudioService"
@@ -36,8 +40,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".phoneartribution.PhoneAttributionActivity"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
-        <activity android:name=".inquireip.InquireIpActivity" />
+            android:theme="@style/MyMaterialNoActionBarStyle" />
+        <activity
+            android:name=".inquireip.InquireIpActivity"
+            android:theme="@style/MyMaterialNoActionBarStyle"/>
         <activity
             android:name=".currencyconversion.MainActivity"
             android:label="@string/title_currency_conversion" />

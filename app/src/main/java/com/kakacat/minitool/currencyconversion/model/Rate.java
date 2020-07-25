@@ -2,8 +2,17 @@ package com.kakacat.minitool.currencyconversion.model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.text.TextUtils;
 
 import com.kakacat.minitool.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.Objects;
+
+import okhttp3.Response;
 
 public class Rate {
     public static double us = 7.0847;
@@ -223,5 +232,27 @@ public class Rate {
         editor.putFloat("kr",(float) Rate.kr);
         editor.putFloat("za",(float) Rate.za);
         editor.apply();
+    }
+
+    public static boolean handleResponse(Response response){
+        try {
+            String s = Objects.requireNonNull(response.body()).string();
+            if(!TextUtils.isEmpty(s)){
+                return false;
+            }else{
+                JSONObject jsonObject = new JSONObject(s);
+                JSONObject result = jsonObject.getJSONArray("result").getJSONObject(0);
+                for(int i = 1; i <= 22;i ++){
+                    JSONObject data = result.getJSONObject("data" + i);
+                    double rate = Double.parseDouble(data.getString("bankConversionPri")) / 100;
+                    Rate.setRate(rate,i);
+                }
+                return true;
+            }
+
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

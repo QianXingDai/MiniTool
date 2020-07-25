@@ -19,6 +19,10 @@ import com.kakacat.minitool.wifipasswordview.WifiPwdViewActivity;
 
 public class DailyFragment extends MyFragment implements RecycleViewItemOnClickListener {
 
+    public DailyFragment(){
+        super();
+    }
+
     public DailyFragment(MainContract.Presenter presenter) {
         super(presenter.getDailyList());
         super.setOnClickListener(this);

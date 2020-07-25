@@ -10,7 +10,7 @@ public class FrescoInitActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(null);
+        super.onCreate(savedInstanceState);
         Fresco.initialize(this);
     }
 

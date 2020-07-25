@@ -10,16 +10,18 @@ import android.media.MediaExtractor;
 import android.media.MediaFormat;
 import android.net.Uri;
 import android.os.BatteryManager;
-import android.os.Build;
 import android.os.Environment;
 import android.os.Vibrator;
-
-import androidx.annotation.RequiresApi;
 
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.nio.ByteBuffer;
+import java.util.Enumeration;
 
 public class SystemUtil {
 
@@ -41,10 +43,10 @@ public class SystemUtil {
                 if(waitFor) process.waitFor();
             } else{
                 Runtime runtime = Runtime.getRuntime();
-                for(String cmd : commands)
+                for(String cmd : commands){
                     runtime.exec(new String[]{"/bin/sh","-c",cmd});
+                }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -57,9 +59,8 @@ public class SystemUtil {
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     public static int getElectricity(Context context) {
-        BatteryManager batterymanager = (BatteryManager) context.getSystemService(context.BATTERY_SERVICE);
+        BatteryManager batterymanager = (BatteryManager) context.getSystemService(Context.BATTERY_SERVICE);
         batterymanager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
         return batterymanager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
     }
@@ -167,6 +168,23 @@ public class SystemUtil {
         intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
         intent.setData(Uri.parse("package:" + packageName));
         activity.startActivity(intent);
+    }
+
+    public static String getLocalIPAddress(){
+        try{
+            for(Enumeration<NetworkInterface> mEnumeration = NetworkInterface.getNetworkInterfaces(); mEnumeration.hasMoreElements();) {
+                NetworkInterface intf = mEnumeration.nextElement();
+                for(Enumeration<InetAddress> enumIPAddr = intf.getInetAddresses(); enumIPAddr.hasMoreElements();) {
+                    InetAddress inetAddress = enumIPAddr.nextElement();
+                    if (inetAddress instanceof Inet4Address && !inetAddress.isLoopbackAddress()) {
+                        return inetAddress.getHostAddress();
+                    }
+                }
+            }
+        } catch (SocketException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

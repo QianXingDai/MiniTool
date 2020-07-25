@@ -25,6 +25,10 @@ public class MyFragment extends Fragment{
     Context context;
     private MainAdapter adapter;
 
+    public MyFragment(){
+
+    }
+
     public MyFragment(List<MainItem> itemList) {
         adapter = new MainAdapter(itemList);
     }

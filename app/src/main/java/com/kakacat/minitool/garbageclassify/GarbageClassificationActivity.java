@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.myinterface.HttpCallbackListener;
+import com.kakacat.minitool.common.myinterface.HttpCallback;
 import com.kakacat.minitool.common.ui.UiUtil;
 import com.kakacat.minitool.common.util.HttpUtil;
 import com.kakacat.minitool.common.util.JsonUtil;
@@ -83,7 +83,7 @@ public class GarbageClassificationActivity extends AppCompatActivity {
                     key +
                     "&word=" +
                     s;
-            HttpUtil.sendOkHttpRequest(address, new HttpCallbackListener() {
+            HttpUtil.sendOkHttpRequest(address, new HttpCallback() {
                 @Override
                 public void onSuccess(Response response) {
                     String s = null;

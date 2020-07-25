@@ -14,6 +14,8 @@ import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.constant.Result;
 import com.kakacat.minitool.common.ui.UiUtil;
 
+import bolts.Task;
+
 public class PhoneAttributionActivity extends AppCompatActivity implements Contract.View{
 
     private Contract.Presenter presenter;
@@ -56,27 +58,25 @@ public class PhoneAttributionActivity extends AppCompatActivity implements Contr
     }
 
     @Override
-    public void onRequestResult(PhoneNumber phoneNumber,int resultFlag) {
-        runOnUiThread(() -> {
-            if(resultFlag == Result.REQUEST_SUCCESS && phoneNumber != null){
+    public void onRequestDataCallBack(PhoneNumber phoneNumber, int resultFlag) {
+        Task.call(() -> {
+            if(resultFlag == Result.HANDLE_SUCCESS && phoneNumber != null){
                 tvProvince.setText(phoneNumber.getProvince());
                 tvCity.setText(phoneNumber.getCity());
                 tvAreaCode.setText(phoneNumber.getAreaCode());
                 tvZip.setText(phoneNumber.getZip());
                 tvCompany.setText(phoneNumber.getCompany());
                 tvNumber.setText(phoneNumber.getNumber());
-                UiUtil.showToast(getContext(),"查询成功");
+                UiUtil.showToast(this,"查询成功");
             }else if(resultFlag == Result.REQUEST_ERROR){
-                UiUtil.showToast(getContext(),"http请求错误");
+                UiUtil.showToast(this,"http请求错误");
             }else if(resultFlag == Result.INPUT_ERROR){
-                UiUtil.showToast(getContext(),"输入错误");
+                UiUtil.showToast(this,"输入错误");
             }
-        });
-
+            return null;
+        }, Task.UI_THREAD_EXECUTOR);
     }
 
-
-    //TODO：状态栏颜色有问题，估计是用了md toolbar的原因，下次再填
     private void initToolbar(){
         setSupportActionBar(findViewById(R.id.toolbar_phone_attribution));
         ActionBar actionBar = getSupportActionBar();

@@ -3,12 +3,12 @@ package com.kakacat.minitool.main.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
 import com.kakacat.minitool.main.model.MainItem;
@@ -17,12 +17,12 @@ import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
-    private List<MainItem> list;
+    private List<MainItem> itemList;
     private LayoutInflater inflater;
     private RecycleViewItemOnClickListener listener;
 
-    public MainAdapter(List<MainItem> list) {
-        this.list = list;
+    public MainAdapter(List<MainItem> itemList) {
+        this.itemList = itemList;
     }
 
     public void setOnClickListener(RecycleViewItemOnClickListener listener){
@@ -41,8 +41,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
-        MainItem item = list.get(position);
-        holder.imageView.setImageResource(item.getIconId());
+        MainItem item = itemList.get(position);
+        holder.imageView.setActualImageResource(item.getIconId());
         holder.title.setText(item.getTitleId());
         holder.note.setText(item.getNoteId());
 
@@ -54,15 +54,15 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return itemList.size();
     }
 
 
     static class ViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView imageView;
-        TextView title;
-        TextView note;
+        private SimpleDraweeView imageView;
+        private TextView title;
+        private TextView note;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

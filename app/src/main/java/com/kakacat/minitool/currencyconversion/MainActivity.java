@@ -10,12 +10,13 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.base.FrescoInitActivity;
+import com.kakacat.minitool.common.constant.Result;
 import com.kakacat.minitool.common.ui.UiUtil;
 
 
-public class MainActivity extends FrescoInitActivity implements MainContract.View{
+public class MainActivity extends FrescoInitActivity implements Contract.View{
 
-    private MainContract.Presenter presenter;
+    private Contract.Presenter presenter;
     private SwipeRefreshLayout swipeRefreshLayout;
     private CountryFragment countryFragment1;
     private CountryFragment countryFragment2;
@@ -31,7 +32,7 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
 
     @Override
     public void initData(){
-        setPresenter(new MainPresenter(this));
+        setPresenter(new Presenter(this));
         presenter.initData();
     }
 
@@ -76,19 +77,15 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
     public void onRefreshExchangeRate(int flag){
         String s = null;
         switch (flag){
-            case MainPresenter.HANDLE_SUCCESS:{
+            case Result.HANDLE_SUCCESS:{
                 s = "刷新成功";
                 break;
             }
-            case MainPresenter.HANDLE_FAIL:{
+            case Result.HANDLE_FAIL:{
                 s = "处理响应字符串失败";
                 break;
             }
-            case MainPresenter.REQUEST_SUCCESS:{
-                s = "请求成功,但是转换成字符串失败";
-                break;
-            }
-            case MainPresenter.REQUEST_FAIL:{
+            case Result.REQUEST_ERROR:{
                 s = "请求失败";
                 break;
             }
@@ -98,7 +95,7 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
     }
 
     @Override
-    public void setPresenter(MainContract.Presenter presenter) {
+    public void setPresenter(Contract.Presenter presenter) {
         this.presenter = presenter;
     }
 

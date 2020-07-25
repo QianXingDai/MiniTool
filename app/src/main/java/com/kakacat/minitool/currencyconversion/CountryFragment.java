@@ -26,7 +26,7 @@ import java.util.List;
 
 public class CountryFragment extends Fragment{
 
-    private static MainContract.View mainView;
+    private static Contract.View mainView;
     private static List<Country> countryList;
 
     private TextView tvCountryName;
@@ -40,7 +40,7 @@ public class CountryFragment extends Fragment{
     protected Country country;
     private int flag;
 
-    public CountryFragment(MainContract.View mainView,List<Country> countryList,int flag) {
+    public CountryFragment(Contract.View mainView, List<Country> countryList, int flag) {
         if(CountryFragment.mainView == null){
             CountryFragment.mainView = mainView;
         }

@@ -1,5 +1,6 @@
 package com.kakacat.minitool.fakebattery;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import com.kakacat.minitool.common.util.SystemUtil;
 
 public class FakeBatteryView extends MyPopupWindow {
 
+    @SuppressLint("StaticFieldLeak")
     private static FakeBatteryView fakeBatteryView;
     private Activity activity;
     private View parentView;

@@ -1,12 +1,10 @@
 package com.kakacat.minitool.common.util;
 
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.google.gson.Gson;
 import com.kakacat.minitool.epidemicsituation.EpidemicData;
 import com.kakacat.minitool.garbageclassify.Garbage;
-import com.kakacat.minitool.inquireip.Data;
 import com.kakacat.minitool.todayinhistory.Article;
 
 import org.json.JSONArray;
@@ -16,31 +14,6 @@ import org.json.JSONObject;
 import java.util.List;
 
 public class JsonUtil {
-
-    public static Data handleIpDataResponse(String response){
-        if(!TextUtils.isEmpty(response)){
-            try{
-                Data data = new Data();
-                JSONObject jsonObject = new JSONObject(response);
-                String resultCode = jsonObject.getString("resultcode");
-                if(!resultCode.equals("200")) Log.d("hhh","查询ip数据失败");
-                   else{
-                    JSONObject result = jsonObject.getJSONObject("result");
-                    data.setCountry(result.getString("Country"));
-                    data.setProvince(result.getString("Province"));
-                    data.setCity(result.getString("City"));
-                    data.setIsp(result.getString("Isp"));
-                    return data;
-                }
-            }catch (JSONException e){
-                e.printStackTrace();
-            }
-        }else{
-            Log.d("hhh","数据为空");
-        }
-        return null;
-    }
-
 
     public static void handleHistoryResponse(String s, List<Article> articleList){
         if(!TextUtils.isEmpty(s)){

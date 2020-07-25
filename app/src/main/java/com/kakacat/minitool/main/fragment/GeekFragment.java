@@ -30,6 +30,10 @@ public class GeekFragment extends MyFragment implements RecycleViewItemOnClickLi
     private Activity activity;
     private View parentView;
 
+    public GeekFragment(){
+        super();
+    }
+
     public GeekFragment(MainContract.Presenter presenter) {
         super(presenter.getGeekList());
         super.setOnClickListener(this);
