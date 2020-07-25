@@ -25,7 +25,8 @@ import com.kakacat.minitool.appInfo.adapter.AppInfoAdapter;
 import com.kakacat.minitool.appInfo.contract.AppInfoContract;
 import com.kakacat.minitool.appInfo.presenter.AppInfoPresenter;
 import com.kakacat.minitool.common.base.FrescoInitActivity;
-import com.kakacat.minitool.common.ui.MyPopupWindow;
+import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 
 
 public class AppInfoActivity extends FrescoInitActivity implements AppInfoContract.View,View.OnClickListener {
@@ -188,7 +189,7 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
 
     @Override
     public void slideUpToTop(){
-        nestedScrollView.fullScroll(View.FOCUS_UP);
+        UiUtil.slideUpToTop(nestedScrollView);
     }
 
     @Override

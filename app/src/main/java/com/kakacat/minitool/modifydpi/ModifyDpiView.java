@@ -8,7 +8,7 @@ import android.widget.EditText;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.ui.MyPopupWindow;
+import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 import com.kakacat.minitool.common.util.SystemUtil;
 
 public class ModifyDpiView extends MyPopupWindow {

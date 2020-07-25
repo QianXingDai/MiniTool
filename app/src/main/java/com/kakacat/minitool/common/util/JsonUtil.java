@@ -4,10 +4,10 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.google.gson.Gson;
-import com.kakacat.minitool.garbageClassification.Garbage;
-import com.kakacat.minitool.globalOutbreak.EpidemicData;
-import com.kakacat.minitool.inquireIp.Data;
-import com.kakacat.minitool.todayInHistory.Article;
+import com.kakacat.minitool.epidemicsituation.EpidemicData;
+import com.kakacat.minitool.garbageclassify.Garbage;
+import com.kakacat.minitool.inquireip.Data;
+import com.kakacat.minitool.todayinhistory.Article;
 
 import org.json.JSONArray;
 import org.json.JSONException;

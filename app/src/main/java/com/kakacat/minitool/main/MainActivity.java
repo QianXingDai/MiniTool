@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.appcompat.app.ActionBar;
@@ -17,7 +18,7 @@ import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.base.FrescoInitActivity;
 import com.kakacat.minitool.main.adapter.FragmentAdapter;
 import com.kakacat.minitool.main.navigation.AboutViewItemOn;
-import com.kakacat.minitool.main.navigation.ChangeThemeView;
+import com.kakacat.minitool.main.navigation.ChangeThemeDialog;
 
 public class MainActivity extends FrescoInitActivity implements MainContract.View {
 
@@ -48,11 +49,10 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
         drawerLayout = findViewById(R.id.drawer_layout);
 
         ViewPager2 viewPager2 = findViewById(R.id.view_pager);
-        FragmentAdapter adapter = new FragmentAdapter(this,presenter);
-        viewPager2.setAdapter(adapter);
+        viewPager2.setAdapter(new FragmentAdapter(this,presenter));
 
         /*
-        TODO:滑动切换fragment时，下面指示器不会跟随变化，下次再填
+        TODO:滑动切换fragment时，下面指示器不会跟随变化，下次再填，用tablayout可以解决，但不想用。。。
          */
 
         BottomNavigationView btmNav = findViewById(R.id.btm_nav);
@@ -76,8 +76,7 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
         navigationView.setNavigationItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.nav_theme:{
-                    ChangeThemeView changeThemeView = ChangeThemeView.getInstance(this, android.view.View.inflate(this,R.layout.select_theme,null), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                    changeThemeView.showAtLocation(navigationView, Gravity.CENTER,0,0);
+                    showChangeThemeDialog();
                     break;
                 }
                 case R.id.nav_setting:{
@@ -99,6 +98,11 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
             item.setChecked(false);
             return true;
         });
+    }
+
+    public void showChangeThemeDialog(){
+        ChangeThemeDialog changeThemeDialog = ChangeThemeDialog.getInstance(this, View.inflate(this,R.layout.select_theme,null), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        changeThemeDialog.showAtLocation(navigationView, Gravity.CENTER,0,0);
     }
 
     private void initToolbar(){

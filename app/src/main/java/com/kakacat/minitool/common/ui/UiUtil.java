@@ -12,6 +12,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
+import androidx.core.widget.NestedScrollView;
+
 import com.google.android.material.snackbar.Snackbar;
 
 public class UiUtil {
@@ -76,8 +78,8 @@ public class UiUtil {
     }
 
 
-
-
-
+    public static void slideUpToTop(NestedScrollView nestedScrollView){
+        nestedScrollView.fullScroll(View.FOCUS_UP);
+    }
 
 }

@@ -1,5 +1,6 @@
 package com.kakacat.minitool.main.navigation;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.view.View;
@@ -9,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
-import com.kakacat.minitool.common.ui.MyPopupWindow;
+import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 import com.kakacat.minitool.common.util.SystemUtil;
 import com.kakacat.minitool.main.adapter.AboutItemAdapter;
 import com.kakacat.minitool.main.model.AboutItem;
@@ -19,6 +20,7 @@ import java.util.List;
 
 public class AboutViewItemOn extends MyPopupWindow implements RecycleViewItemOnClickListener {
 
+    @SuppressLint("StaticFieldLeak")
     private static AboutViewItemOn aboutView;
     private View contentView;
     private Context context;
@@ -54,13 +56,8 @@ public class AboutViewItemOn extends MyPopupWindow implements RecycleViewItemOnC
 
     @Override
     public void onClick(View v, int position) {
-        switch (position){
-            case 0:{
-                SystemUtil.openMarket(context);
-                break;
-            }
-            default:
-                break;
+        if (position == 0) {
+            SystemUtil.openMarket(context);
         }
     }
 

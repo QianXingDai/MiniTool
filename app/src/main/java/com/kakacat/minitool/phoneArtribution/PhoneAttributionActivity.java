@@ -75,6 +75,8 @@ public class PhoneAttributionActivity extends AppCompatActivity implements Contr
 
     }
 
+
+    //TODO：状态栏颜色有问题，估计是用了md toolbar的原因，下次再填
     private void initToolbar(){
         setSupportActionBar(findViewById(R.id.toolbar_phone_attribution));
         ActionBar actionBar = getSupportActionBar();

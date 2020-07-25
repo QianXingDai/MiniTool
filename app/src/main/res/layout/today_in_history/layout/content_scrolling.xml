@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".todayInHistory.TodayInHistoryActivity"
+    tools:context=".todayinhistory.TodayInHistoryActivity"
     tools:showIn="@layout/activity_scrolling">
-    <com.kakacat.minitool.todayInHistory.MyListView
+    <com.kakacat.minitool.todayinhistory.MyListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical">
-    </com.kakacat.minitool.todayInHistory.MyListView>
+    </com.kakacat.minitool.todayinhistory.MyListView>
 </androidx.core.widget.NestedScrollView>
 
 

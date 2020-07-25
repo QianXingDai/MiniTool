@@ -5,15 +5,15 @@ import android.view.View;
 
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.appInfo.activity.AppInfoActivity;
-import com.kakacat.minitool.bingPic.BingPicActivity;
-import com.kakacat.minitool.cleanFile.CleanFileActivity;
+import com.kakacat.minitool.bingpic.BingPicActivity;
+import com.kakacat.minitool.cleanfile.CleanFileActivity;
 import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
 import com.kakacat.minitool.currencyconversion.MainActivity;
-import com.kakacat.minitool.garbageClassification.GarbageClassificationActivity;
-import com.kakacat.minitool.globalOutbreak.GlobalOutbreakActivity;
+import com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity;
+import com.kakacat.minitool.garbageclassify.GarbageClassificationActivity;
 import com.kakacat.minitool.main.MainContract;
 import com.kakacat.minitool.phoneartribution.PhoneAttributionActivity;
-import com.kakacat.minitool.todayInHistory.TodayInHistoryActivity;
+import com.kakacat.minitool.todayinhistory.TodayInHistoryActivity;
 import com.kakacat.minitool.translation.TranslationActivity;
 import com.kakacat.minitool.wifipasswordview.WifiPwdViewActivity;
 

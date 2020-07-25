@@ -18,10 +18,10 @@ import com.kakacat.minitool.R;
 import com.kakacat.minitool.audiocapture.GetAudioService;
 import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
 import com.kakacat.minitool.fakebattery.FakeBatteryView;
-import com.kakacat.minitool.inquireIp.InquireIpActivity;
+import com.kakacat.minitool.inquireip.InquireIpActivity;
 import com.kakacat.minitool.main.MainContract;
 import com.kakacat.minitool.modifydpi.ModifyDpiView;
-import com.kakacat.minitool.textEncryption.TextEncryptionActivity;
+import com.kakacat.minitool.textencryption.TextEncryptionActivity;
 
 import static android.app.Activity.RESULT_OK;
 

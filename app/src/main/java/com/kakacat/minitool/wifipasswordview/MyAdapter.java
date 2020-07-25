@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.myinterface.RecycleViewItemOnLongClickListener;
-import com.kakacat.minitool.common.ui.CircleProgressView;
+import com.kakacat.minitool.common.ui.view.CircleProgressView;
 
 import java.util.List;
 

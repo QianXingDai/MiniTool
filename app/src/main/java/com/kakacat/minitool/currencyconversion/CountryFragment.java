@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.ui.MyPopupWindow;
+import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 import com.kakacat.minitool.currencyconversion.model.Country;
 
 import java.util.List;
