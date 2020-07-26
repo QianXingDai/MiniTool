@@ -24,19 +24,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <ImageView
+            <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/image_view"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:src="@drawable/background_preload"
-                android:scaleType="centerCrop"/>
+                app:placeholderImage="@drawable/bg_place_holder"
+                app:actualImageScaleType="centerCrop"/>
             <TextView
                 android:id="@+id/title_article"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginLeft="20dp"/>
+                android:layout_marginStart="20dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

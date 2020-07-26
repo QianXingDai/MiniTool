@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="FlowLayoutActivity">
-        <attr name="line_spacing" format="integer"/>
-    </declare-styleable>
-
     <declare-styleable name="CircleProgressView">
         <attr name="progress" format="integer"/>
         <attr name="circle_width" format="integer"/>
@@ -12,5 +8,4 @@
         <attr name="text_size" format="integer"/>
         <attr name="text" format="string"/>
     </declare-styleable>
-
 </resources>

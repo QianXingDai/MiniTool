@@ -13,8 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -94,15 +92,9 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
     }
 
     @SuppressLint("SetTextI18n")
-    private void initToolbar(){
-        Toolbar toolbar = findViewById(R.id.toolbar_app_info);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
-            actionBar.setDisplayShowTitleEnabled(false);
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+    @Override
+    public void initToolbar(){
+        super.initToolbar();
 
         TextView tvAndroidVersion = findViewById(R.id.tv_android_version);
         TextView tvSecurityPatchLevel = findViewById(R.id.tv_security_patch_level);

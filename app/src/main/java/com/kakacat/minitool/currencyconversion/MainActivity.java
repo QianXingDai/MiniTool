@@ -2,9 +2,7 @@ package com.kakacat.minitool.currencyconversion;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.view.MenuItem;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -66,14 +64,6 @@ public class MainActivity extends FrescoInitActivity implements Contract.View{
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem){
-        if (menuItem.getItemId() == android.R.id.home) {
-            finish();
-        }
-        return true;
-    }
-
-    @Override
     public void onRefreshExchangeRate(int flag){
         String s = null;
         switch (flag){
@@ -102,16 +92,6 @@ public class MainActivity extends FrescoInitActivity implements Contract.View{
     @Override
     public Context getContext() {
         return this;
-    }
-
-    private void initToolbar(){
-        setSupportActionBar(findViewById(R.id.toolbar_currency));
-        ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
-            actionBar.setDisplayShowTitleEnabled(false);
-        }
     }
 
 }

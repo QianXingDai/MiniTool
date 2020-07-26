@@ -21,4 +21,22 @@ public class StringUtil {
         return sdf.format(time);
     }
 
+
+
+    public static String byteToString(byte[] bytes,boolean addColon){
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < bytes.length; i++) {
+            if (Integer.toHexString(0xFF & bytes[i]).length() == 1)
+                sb.append("0").append(Integer.toHexString(0xFF & bytes[i]));
+            else
+                sb.append(Integer.toHexString(0xFF & bytes[i]));
+            if(addColon)
+                if(i != bytes.length - 1)
+                    sb.append(':');
+        }
+        return sb.toString();
+    }
+
+
 }

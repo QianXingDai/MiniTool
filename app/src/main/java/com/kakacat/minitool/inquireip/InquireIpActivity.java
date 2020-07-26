@@ -14,6 +14,8 @@ import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.constant.Result;
 import com.kakacat.minitool.common.ui.UiUtil;
 
+import bolts.Task;
+
 public class InquireIpActivity extends AppCompatActivity implements Contract.View{
 
     private Contract.Presenter presenter;
@@ -56,26 +58,30 @@ public class InquireIpActivity extends AppCompatActivity implements Contract.Vie
 
     @Override
     public void onUpdateDataCallBack(IpModel ipModel, int resultFlag){
-        switch (resultFlag){
-            case Result.INPUT_ERROR:{
-                UiUtil.showToast(this,"输入错误");
-                break;
+        Task.call(() -> {
+            switch (resultFlag){
+                case Result.INPUT_ERROR:{
+                    UiUtil.showToast(getContext(),"输入错误");
+                    break;
+                }
+                case Result.HANDLE_FAIL:{
+                    UiUtil.showToast(getContext(),"请求成功,但是处理响应数据错误");
+                    break;
+                }
+                case Result.HANDLE_SUCCESS:{
+
+                    tvCountry.setText(ipModel.getCountry());
+                    tvProvince.setText(ipModel.getProvince());
+                    tvCity.setText(ipModel.getCity());
+                    tvIsp.setText(ipModel.getIsp());
+                    tvIp.setText(ipModel.getIpAddress());
+                    UiUtil.showToast(getContext(),"查询成功");
+                }
+                default:
+                    break;
             }
-            case Result.HANDLE_FAIL:{
-                UiUtil.showToast(this,"请求成功,但是处理响应数据错误");
-                break;
-            }
-            case Result.HANDLE_SUCCESS:{
-                tvCountry.setText(ipModel.getCountry());
-                tvProvince.setText(ipModel.getProvince());
-                tvCity.setText(ipModel.getCity());
-                tvIsp.setText(ipModel.getIsp());
-                tvIp.setText(ipModel.getIpAddress());
-                UiUtil.showToast(this,"查询成功");
-            }
-            default:
-                break;
-        }
+            return null;
+        },Task.UI_THREAD_EXECUTOR);
     }
 
     private void initToolbar(){

@@ -35,13 +35,10 @@ public class BingPicActivity extends FrescoInitActivity implements Contract.View
 
     private NestedScrollView nestedScrollView;
     private ImageAdapter adapter;
-
     private MyPopupWindow bigImageDialog;
-    private ImageView bigImageView;
-
-    private SimpleDraweeView currentImageView;
-
     private MyPopupWindow optionDialog;
+    private ImageView bigImageView;
+    private SimpleDraweeView currentImageView;
 
     private int currentX;
     private int currentY;

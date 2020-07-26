@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import com.google.gson.Gson;
 import com.kakacat.minitool.epidemicsituation.EpidemicData;
 import com.kakacat.minitool.garbageclassify.Garbage;
-import com.kakacat.minitool.todayinhistory.Article;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,23 +14,7 @@ import java.util.List;
 
 public class JsonUtil {
 
-    public static void handleHistoryResponse(String s, List<Article> articleList){
-        if(!TextUtils.isEmpty(s)){
-            try{
-                JSONObject jsonObject = new JSONObject(s);
-                JSONArray result = jsonObject.getJSONArray("result");
-                Gson gson = new Gson();
 
-                for(int i = 0; i < result.length(); i++){
-                    String str = result.getJSONObject(i).toString();
-                    Article article = gson.fromJson(str,Article.class);
-                    articleList.add(article);
-                }
-            }catch (JSONException e){
-                e.printStackTrace();
-            }
-        }
-    }
 
     public static void handleGarbageResponse(String s, List<Garbage> garbageList){
         if(!TextUtils.isEmpty(s)){

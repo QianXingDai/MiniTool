@@ -1,7 +1,6 @@
 package com.kakacat.minitool.todayinhistory;
 
 import android.content.Context;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.ListView;
 
@@ -16,11 +15,8 @@ public class MyListView extends ListView implements NestedScrollingChild{
     public MyListView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mScrollingChildHelper = new NestedScrollingChildHelper(this);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            setNestedScrollingEnabled(true);
-        }
+        setNestedScrollingEnabled(true);
     }
-
 
     @Override
     public void setNestedScrollingEnabled(boolean enabled) {

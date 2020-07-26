@@ -33,10 +33,18 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-
-    <include layout="@layout/content_scrolling" />
-
-
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <com.kakacat.minitool.todayinhistory.MyListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
+        </com.kakacat.minitool.todayinhistory.MyListView>
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

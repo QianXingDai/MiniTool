@@ -5,23 +5,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.bumptech.glide.Glide;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.kakacat.minitool.R;
 
 import java.util.List;
 
-public class ItemAdapter extends ArrayAdapter<Article> {
+public class Adapter extends ArrayAdapter<Article> {
 
     private int resourceId;
     private Context context;
 
-    public ItemAdapter(@NonNull Context context, int resource, @NonNull List objects) {
+    public Adapter(@NonNull Context context, int resource, @NonNull List objects) {
         super(context, resource, objects);
         this.resourceId = resource;
         this.context = context;
@@ -44,18 +43,19 @@ public class ItemAdapter extends ArrayAdapter<Article> {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
+        assert article != null;
         viewHolder.title.setText(article.getTitle());
         String time = article.getYear() + "年" + article.getMonth() + "月" + article.getDay() + "日";
         viewHolder.time.setText(time);
-        Glide.with(context).load(article.getPic()).into(viewHolder.imageView);
+        viewHolder.imageView.setImageURI(article.getPic());
 
         return view;
     }
 
 
-    class ViewHolder{
+    static class ViewHolder{
         TextView title;
         TextView time;
-        ImageView imageView;
+        SimpleDraweeView imageView;
     }
 }

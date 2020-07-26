@@ -23,8 +23,6 @@ import com.kakacat.minitool.main.navigation.ChangeThemeDialog;
 public class MainActivity extends FrescoInitActivity implements MainContract.View {
 
     private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
-
     private MainContract.Presenter presenter;
 
     @Override
@@ -72,7 +70,7 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
         btmNav.setSelectedItemId(R.id.daily);
 
         //初始化navigation
-        navigationView = findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.nav_theme:{
@@ -102,16 +100,15 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
 
     public void showChangeThemeDialog(){
         ChangeThemeDialog changeThemeDialog = ChangeThemeDialog.getInstance(this, View.inflate(this,R.layout.select_theme,null), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        changeThemeDialog.showAtLocation(navigationView, Gravity.CENTER,0,0);
+        changeThemeDialog.showAtLocation(drawerLayout, Gravity.CENTER,0,0);
     }
 
-    private void initToolbar(){
-        setSupportActionBar(findViewById(R.id.toolbar_main));
+    @Override
+    public void initToolbar(){
+        super.initToolbar();
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
-            actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.ic_action_slide);
-            actionBar.setDisplayShowTitleEnabled(false);
         }
     }
 

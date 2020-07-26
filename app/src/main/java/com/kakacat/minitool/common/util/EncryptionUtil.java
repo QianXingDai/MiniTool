@@ -25,7 +25,7 @@ public class EncryptionUtil {
             messageDigest.reset();
             messageDigest.update(byteStr);
             byte[] byteArray = messageDigest.digest();
-            result = byteToString(byteArray,addColon);
+            result = StringUtil.byteToString(byteArray,addColon);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
@@ -58,28 +58,12 @@ public class EncryptionUtil {
             mac.init(secretKey);
             //完成 Mac 操作
             byte[] bytes = mac.doFinal(encryptText);
-            return byteToString(bytes,false);
+            return StringUtil.byteToString(bytes,false);
 
         }catch (Exception e){
             e.printStackTrace();
         }
         return null;
-    }
-
-
-    public static String byteToString(byte[] bytes,boolean addColon){
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = 0; i < bytes.length; i++) {
-            if (Integer.toHexString(0xFF & bytes[i]).length() == 1)
-                sb.append("0").append(Integer.toHexString(0xFF & bytes[i]));
-            else
-                sb.append(Integer.toHexString(0xFF & bytes[i]));
-            if(addColon)
-                if(i != bytes.length - 1)
-                    sb.append(':');
-        }
-        return sb.toString();
     }
 
 

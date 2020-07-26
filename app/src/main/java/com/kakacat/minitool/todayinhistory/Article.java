@@ -1,5 +1,17 @@
 package com.kakacat.minitool.todayinhistory;
 
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Objects;
+
+import okhttp3.Response;
+
 public class Article {
 
     private String _id;
@@ -10,7 +22,6 @@ public class Article {
     private String day;
     private String des;
     private String lunar;
-
 
     public Article(){}
 
@@ -24,8 +35,6 @@ public class Article {
         this.des = des;
         this.lunar = lunar;
     }
-
-
 
     public String get_id() {
         return _id;
@@ -89,5 +98,25 @@ public class Article {
 
     public void setLunar(String lunar) {
         this.lunar = lunar;
+    }
+
+    public static boolean handleHistoryResponse(Response response, List<Article> articleList){
+        try{
+            String s = Objects.requireNonNull(response.body()).string();
+            JSONObject jsonObject = new JSONObject(s);
+            JSONArray result = jsonObject.getJSONArray("result");
+            Gson gson = new Gson();
+
+            articleList.clear();
+            for(int i = 0; i < result.length(); i++){
+                String str = result.getJSONObject(i).toString();
+                Article article = gson.fromJson(str,Article.class);
+                articleList.add(article);
+            }
+            return true;
+        }catch (IOException | JSONException e){
+            e.printStackTrace();
+        }
+        return false;
     }
 }
