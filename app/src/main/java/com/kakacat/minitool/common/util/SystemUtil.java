@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.Environment;
 import android.os.Vibrator;
+import android.util.Log;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -25,6 +26,9 @@ import java.util.Enumeration;
 
 public class SystemUtil {
 
+    public static void log(String log){
+        Log.d("hhh",log);
+    }
 
     public static void modifyDpi(String val){
         String[] commands = new String[]{

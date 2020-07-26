@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="20dp"
@@ -11,21 +12,13 @@
     android:elevation="5dp"
     android:foreground="?attr/selectableItemBackground"
     app:cardCornerRadius="5dp"
-    app:cardBackgroundColor="@color/white">
+    app:cardBackgroundColor="@color/white"
+    android:focusable="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp">
-<!--        <com.github.pavlospt.CircleView
-            android:id="@+id/circle_view"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:cv_titleSize="20dp"
-            app:cv_titleColor="@color/white"
-            app:cv_strokeColorValue="@color/lightBlue"
-            app:cv_fillColor="@color/lightBlue"
-            app:cv_fillRadius="0.9"
-            app:cv_strokeWidthSize="10"/>-->
+
         <com.kakacat.minitool.common.ui.view.CircleProgressView
             android:id="@+id/circle_progress_view"
             android:layout_width="50dp"
@@ -42,8 +35,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|right"
-            android:layout_marginLeft="20dp"
-            android:orientation="vertical">
+            android:layout_marginStart="20dp"
+            android:orientation="vertical"
+            tools:ignore="RtlHardcoded">
             <TextView
                 android:id="@+id/tv_wifi_name"
                 android:layout_width="wrap_content"

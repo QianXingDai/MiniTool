@@ -1,4 +1,4 @@
-package com.kakacat.minitool.cleanfile;
+package com.kakacat.minitool.cleanfile.model;
 
 import java.io.File;
 

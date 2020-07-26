@@ -33,7 +33,7 @@
         <activity android:name=".textencryption.TextEncryptionActivity" />
         <activity android:name=".appInfo.activity.AppDetailActivity" />
         <activity android:name=".appInfo.activity.AppInfoActivity" />
-        <activity android:name=".wifipasswordview.WifiPwdViewActivity" />
+        <activity android:name=".wifipasswordview.WifiPwdActivity" />
         <activity
             android:name=".todayinhistory.TodayInHistoryActivity"
             android:label="@string/title_today_in_history"

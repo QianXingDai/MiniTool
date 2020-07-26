@@ -1,14 +1,21 @@
 package com.kakacat.minitool.todayinhistory;
 
+import com.google.gson.Gson;
 import com.kakacat.minitool.common.constant.AppKey;
 import com.kakacat.minitool.common.constant.Host;
 import com.kakacat.minitool.common.constant.Result;
 import com.kakacat.minitool.common.myinterface.HttpCallback;
 import com.kakacat.minitool.common.util.HttpUtil;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Objects;
 
 import okhttp3.Response;
 
@@ -40,7 +47,7 @@ public class Presenter implements Contract.Presenter {
             int resultFlag = Result.REQUEST_ERROR;
             @Override
             public void onSuccess(Response response) {
-                if(!Article.handleHistoryResponse(response,getArticleList())){
+                if(!handleHistoryResponse(response,getArticleList())){
                     resultFlag = Result.HANDLE_FAIL;
                 }else{
                     resultFlag = Result.HANDLE_SUCCESS;
@@ -53,6 +60,27 @@ public class Presenter implements Contract.Presenter {
                 view.onUpdateDataCallBack(resultFlag);
             }
         });
+    }
+
+    @Override
+    public boolean handleHistoryResponse(Response response, List<Article> articleList){
+        try{
+            String s = Objects.requireNonNull(response.body()).string();
+            JSONObject jsonObject = new JSONObject(s);
+            JSONArray result = jsonObject.getJSONArray("result");
+            Gson gson = new Gson();
+
+            articleList.clear();
+            for(int i = 0; i < result.length(); i++){
+                String str = result.getJSONObject(i).toString();
+                Article article = gson.fromJson(str,Article.class);
+                articleList.add(article);
+            }
+            return true;
+        }catch (IOException | JSONException e){
+            e.printStackTrace();
+        }
+        return false;
     }
 
     @Override

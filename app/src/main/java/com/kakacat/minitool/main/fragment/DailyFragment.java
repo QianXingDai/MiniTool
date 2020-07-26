@@ -15,7 +15,7 @@ import com.kakacat.minitool.main.MainContract;
 import com.kakacat.minitool.phoneartribution.PhoneAttributionActivity;
 import com.kakacat.minitool.todayinhistory.TodayInHistoryActivity;
 import com.kakacat.minitool.translation.TranslationActivity;
-import com.kakacat.minitool.wifipasswordview.WifiPwdViewActivity;
+import com.kakacat.minitool.wifipasswordview.WifiPwdActivity;
 
 public class DailyFragment extends MyFragment implements RecycleViewItemOnClickListener {
 
@@ -45,7 +45,7 @@ public class DailyFragment extends MyFragment implements RecycleViewItemOnClickL
                 break;
             }
             case 3:{
-                intent = new Intent(super.context, WifiPwdViewActivity.class);
+                intent = new Intent(super.context, WifiPwdActivity.class);
                 break;
             }
             case 4:{

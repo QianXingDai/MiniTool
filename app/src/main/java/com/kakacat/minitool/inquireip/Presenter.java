@@ -47,5 +47,8 @@ public class Presenter implements Contract.Presenter {
     }
 
 
+    @Override
+    public void initData() {
 
+    }
 }

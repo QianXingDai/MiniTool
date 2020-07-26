@@ -5,6 +5,8 @@ import com.kakacat.minitool.common.base.IView;
 
 import java.util.List;
 
+import okhttp3.Response;
+
 public interface Contract{
 
     interface Presenter extends IPresenter{
@@ -15,6 +17,7 @@ public interface Contract{
         void setMonth(int month);
         int getDay();
         void setDay(int day);
+        boolean handleHistoryResponse(Response response, List<Article> articleList);
         List<Article> getArticleList();
     }
 

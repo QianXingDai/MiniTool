@@ -46,14 +46,20 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
+        BottomNavigationView btmNav = findViewById(R.id.btm_nav);
         ViewPager2 viewPager2 = findViewById(R.id.view_pager);
         viewPager2.setAdapter(new FragmentAdapter(this,presenter));
-
-        /*
-        TODO:滑动切换fragment时，下面指示器不会跟随变化，下次再填，用tablayout可以解决，但不想用。。。
-         */
-
-        BottomNavigationView btmNav = findViewById(R.id.btm_nav);
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                if(position == 0){
+                    btmNav.setSelectedItemId(R.id.daily);
+                }else if(position == 1){
+                    btmNav.setSelectedItemId(R.id.geek);
+                }
+            }
+        });
         btmNav.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.daily:{

@@ -18,21 +18,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private LayoutInflater inflater;
     private List<Wifi> wifiList;
-    private RecycleViewItemOnLongClickListener onLongClickListener;
+    private RecycleViewItemOnLongClickListener longClickListener;
 
     public MyAdapter(List<Wifi> wifiList) {
         this.wifiList = wifiList;
     }
 
-
-    public void setOnLongClickListener(RecycleViewItemOnLongClickListener onLongClickListener){
-        this.onLongClickListener = onLongClickListener;
-    }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if(inflater == null) inflater = LayoutInflater.from(parent.getContext());
+        if(inflater == null) {
+            inflater = LayoutInflater.from(parent.getContext());
+        }
         View view = inflater.inflate(R.layout.wifi_item_layout,parent,false);
         return new ViewHolder(view);
     }
@@ -43,9 +40,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.circleProgressView.setText(wifi.getWifiImage());
         holder.tvWifiName.setText(wifi.getWifiName());
         holder.tvWifiPwd.setText(wifi.getWifiPwd());
-        if(onLongClickListener != null){
+        if(longClickListener != null){
             holder.itemView.setOnLongClickListener(v -> {
-                onLongClickListener.onLongClick(v,position);
+                longClickListener.onLongClick(v,position);
                 return false;
             });
         }
@@ -56,7 +53,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         return wifiList.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    public void setLongClickListener(RecycleViewItemOnLongClickListener longClickListener){
+        this.longClickListener = longClickListener;
+    }
+
+
+    static class ViewHolder extends RecyclerView.ViewHolder{
+
         private CircleProgressView circleProgressView;
         private TextView tvWifiName;
         private TextView tvWifiPwd;

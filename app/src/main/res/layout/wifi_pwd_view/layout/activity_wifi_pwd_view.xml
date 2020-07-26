@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".wifipasswordview.WifiPwdViewActivity">
+    tools:context=".wifipasswordview.WifiPwdActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_wifi_pwd_view"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary">

@@ -79,7 +79,7 @@ public class TodayInHistoryActivity extends FrescoInitActivity implements Contra
     @Override
     public void showCalendarDialog(){
         if(datePickerDialog == null){
-                datePickerDialog = new DatePickerDialog(this, (datePicker, iyear, monthOfYear, dayOfMonth) -> {
+                datePickerDialog = new DatePickerDialog(this, (datePicker, year, monthOfYear, dayOfMonth) -> {
                 presenter.setMonth(monthOfYear + 1);
                 presenter.setDay(dayOfMonth);
                 presenter.refreshData();
@@ -87,6 +87,4 @@ public class TodayInHistoryActivity extends FrescoInitActivity implements Contra
         }
         datePickerDialog.show();
     }
-
-
 }

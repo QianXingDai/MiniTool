@@ -15,9 +15,6 @@ import static com.kakacat.minitool.common.constant.Result.REQUEST_ERROR;
 
 public class Presenter implements Contract.Presenter {
 
-
-
-
     private Contract.View view;
 
     public Presenter(Contract.View view) {
@@ -51,5 +48,10 @@ public class Presenter implements Contract.Presenter {
                 }
             });
         }
+    }
+
+    @Override
+    public void initData() {
+        
     }
 }

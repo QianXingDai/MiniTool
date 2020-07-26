@@ -1,8 +1,8 @@
 package com.kakacat.minitool.cleanfile;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -27,6 +26,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.kakacat.minitool.R;
+import com.kakacat.minitool.cleanfile.model.FileItem;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 import com.kakacat.minitool.common.util.StringUtil;
 
@@ -35,14 +35,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class CleanFileActivity extends AppCompatActivity implements View.OnClickListener,TabLayout.OnTabSelectedListener{
+public class CleanFileActivity extends AppCompatActivity implements Contract.View,View.OnClickListener,TabLayout.OnTabSelectedListener{
 
     private TabLayout tabLayout;
     private ProgressBar progressBar;
     private ViewPager viewPager;
     private Button btSelectAll;
     private FloatingActionButton fab;
-    private PopupWindow popupWindowWarn1;
 
     private ItemAdapter bigFileAdapter;
     private ItemAdapter emptyFileAdapter;
@@ -60,7 +59,8 @@ public class CleanFileActivity extends AppCompatActivity implements View.OnClick
     private boolean isSelectAllEmptyFile;
     private boolean isSelectAllEmptyDir;
     private boolean isSelectAllApk;
-    private boolean initPopupWindowWarn1;
+
+    private Contract.Presenter presenter;
 
     Handler handle = new Handler(){
         @Override
@@ -135,7 +135,7 @@ public class CleanFileActivity extends AppCompatActivity implements View.OnClick
             if(i != threadNum - 1) endIndex = startIndex - files.length / threadNum;
             else endIndex = 0;
             ScannerThread scannerThread = new ScannerThread(this,files,threadNum,startIndex,endIndex,bigFileList,emptyFileList,emptyDirList,apkList);
-            scannerThread.start();
+//            scannerThread.start();
             startIndex = endIndex;
         }
     }
@@ -147,10 +147,8 @@ public class CleanFileActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void askPermissions(){
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-            if(ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE},1);
-            }
+        if(ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE},1);
         }
     }
 
@@ -307,17 +305,32 @@ public class CleanFileActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem){
-        switch (menuItem.getItemId()){
-            case android.R.id.home:{
-                finish();
-                break;
-            }
-            default:
-                break;
+        if (menuItem.getItemId() == android.R.id.home) {
+            finish();
         }
         return true;
     }
 
+    @Override
+    public void initData() {
+        setPresenter(new Presenter(this));
+        presenter.initData();
+    }
+
+    @Override
+    public void setPresenter(Contract.Presenter presenter) {
+        this.presenter = presenter;
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public Context getContext() {
+        return this;
+    }
 
     class DialogWindow extends MyPopupWindow implements View.OnClickListener{
         private View contentView;

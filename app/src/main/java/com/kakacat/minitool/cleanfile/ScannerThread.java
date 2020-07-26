@@ -2,11 +2,13 @@ package com.kakacat.minitool.cleanfile;
 
 import android.os.Message;
 
+import com.kakacat.minitool.cleanfile.model.FileItem;
+
 import java.io.File;
 import java.util.List;
+import java.util.concurrent.Callable;
 
-public class ScannerThread extends Thread {
-
+public class ScannerThread implements Callable<Void> {
 
     private int threadNum;
     private static int doneCount;
@@ -31,21 +33,6 @@ public class ScannerThread extends Thread {
         this.apkList = apkList;
     }
 
-
-    @Override
-    public void run() {
-        for(int i = startIndex; i >= endIndex; i--){
-            getFileList(files[i]);
-        }
-        done();
-        if(doneCount == threadNum){
-            Message msg = Message.obtain();
-            activity.handle.sendMessage(msg);
-            doneCount = 0;
-        }
-    }
-
-
     private synchronized void done(){
         doneCount++;
     }
@@ -67,5 +54,19 @@ public class ScannerThread extends Thread {
                 for(File file1 : files)
                     getFileList(file1);
         }
+    }
+
+    @Override
+    public Void call() {
+        for(int i = startIndex; i >= endIndex; i--){
+            getFileList(files[i]);
+        }
+        done();
+        if(doneCount == threadNum){
+            Message msg = Message.obtain();
+            activity.handle.sendMessage(msg);
+            doneCount = 0;
+        }
+        return null;
     }
 }
