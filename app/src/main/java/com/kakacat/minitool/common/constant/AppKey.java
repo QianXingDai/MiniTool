@@ -16,4 +16,8 @@ public class AppKey {
 
     //历史上的今天查询接口key
     public static final String TODAY_IN_HISTORY_KEY = "9aac7a73878303c4559180d1272e4a8e";
+
+
+    //垃圾分类查询接口key
+    public static final String GARBAGE_QUERY = "c3886d3637d56c2730a4a7066fb9fa47";
 }

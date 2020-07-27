@@ -24,11 +24,8 @@ public class Presenter implements Contract.Presenter {
 
     private static final String requestAddress = Host.EXCHANGE_RATE_HOST + AppKey.EXCHANGE_RATE_KEY;
 
-
-
     private Contract.View view;
     private Context context;
-
     private List<Country> countryList;
 
     public Presenter(Contract.View view) {

@@ -32,6 +32,7 @@
         <item name="boxStrokeColor">@color/colorPrimary</item>
         <item name="hintTextColor">@color/colorPrimary</item>
         <item name="helperTextEnabled">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 
 </resources>

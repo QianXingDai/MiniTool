@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.garbageclassify.model.Garbage;
+import com.kakacat.minitool.garbageclassify.model.TypeMap;
 
 import java.util.List;
 
@@ -18,10 +20,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private List<Garbage> garbageList;
     private RecycleViewItemOnClickListener listener;
-
-    public void setOnClickListener(RecycleViewItemOnClickListener listener){
-        this.listener = listener;
-    }
 
     public MyAdapter(List<Garbage> garbageList) {
         this.garbageList = garbageList;
@@ -51,8 +49,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         return garbageList.size();
     }
 
+    public void setOnClickListener(RecycleViewItemOnClickListener listener){
+        this.listener = listener;
+    }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+
+
+    static class ViewHolder extends RecyclerView.ViewHolder{
+
         private ImageView ivIcon;
         private TextView tvName;
         private TextView tvType;

@@ -1,11 +1,8 @@
-package com.kakacat.minitool.garbageclassify;
+package com.kakacat.minitool.garbageclassify.model;
 
 import com.kakacat.minitool.R;
 
 public class TypeMap {
-
-    private int iconId;
-    private String typeName;
 
     public static int getIcon(int type){
         switch (type){

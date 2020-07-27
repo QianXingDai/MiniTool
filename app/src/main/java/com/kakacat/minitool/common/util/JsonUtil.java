@@ -2,9 +2,7 @@ package com.kakacat.minitool.common.util;
 
 import android.text.TextUtils;
 
-import com.google.gson.Gson;
 import com.kakacat.minitool.epidemicsituation.EpidemicData;
-import com.kakacat.minitool.garbageclassify.Garbage;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -13,25 +11,6 @@ import org.json.JSONObject;
 import java.util.List;
 
 public class JsonUtil {
-
-
-
-    public static void handleGarbageResponse(String s, List<Garbage> garbageList){
-        if(!TextUtils.isEmpty(s)){
-            try{
-                JSONObject jsonObject = new JSONObject(s);
-                JSONArray garbageObjects = jsonObject.getJSONArray("newslist");
-                Gson gson = new Gson();
-
-                for(int i = 0; i < garbageObjects.length(); i++){
-                    String str = garbageObjects.getJSONObject(i).toString();
-                    garbageList.add(gson.fromJson(str,Garbage.class));
-                }
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-    }
 
     public static void handleEpidemicResponse(String s, List<List<EpidemicData>> list){
         if(!TextUtils.isEmpty(s)){

@@ -1,4 +1,4 @@
-package com.kakacat.minitool.garbageclassify;
+package com.kakacat.minitool.garbageclassify.model;
 
 public class Garbage {
 

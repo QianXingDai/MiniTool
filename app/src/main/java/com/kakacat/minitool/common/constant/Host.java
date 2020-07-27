@@ -17,4 +17,7 @@ public class Host {
 
     //历史上的今天查询接口
     public static final String TODAY_IN_HISTORY_HOST = "http://api.juheapi.com/japi/toh?key=";
+
+
+    public static final String GARBAGE_QUERY_HOST = "https://api.tianapi.com/txapi/lajifenlei/index?key=";
 }
