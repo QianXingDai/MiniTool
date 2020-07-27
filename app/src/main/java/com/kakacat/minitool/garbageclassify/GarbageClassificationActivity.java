@@ -61,7 +61,6 @@ public class GarbageClassificationActivity extends AppCompatActivity implements 
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle("垃圾分类查询");
 
         linearLayout = findViewById(R.id.linear_layout);
         TextInputLayout til = findViewById(R.id.til);
