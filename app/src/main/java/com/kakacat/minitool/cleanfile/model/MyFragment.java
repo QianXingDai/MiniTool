@@ -1,6 +1,5 @@
-package com.kakacat.minitool.cleanfile;
+package com.kakacat.minitool.cleanfile.model;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,24 +8,23 @@ import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.cleanfile.model.FileItem;
+import com.kakacat.minitool.cleanfile.adapter.FileAdapter;
 
 import java.util.List;
 
 public class MyFragment extends Fragment {
 
-    private Context context;
-    private ItemAdapter itemAdapter;
+    private FileAdapter adapter;
     private List<FileItem> fileItemList;
+    private boolean isSelectedAll;
 
-    public MyFragment(Context context,ItemAdapter itemAdapter,List<FileItem> fileItemList) {
-        this.context = context;
-        this.itemAdapter = itemAdapter;
+    public MyFragment(List<FileItem> fileItemList) {
         this.fileItemList = fileItemList;
     }
 
@@ -35,7 +33,8 @@ public class MyFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_layout,container,false);
         RecyclerView rv = view.findViewById(R.id.rv_file);
-        itemAdapter.setOnClickListener((v, position) -> {
+        adapter = new FileAdapter(fileItemList);
+        adapter.setOnClickListener((v, position) -> {
             FileItem fileItem = fileItemList.get(position);
             CheckBox checkBox = v.findViewById(R.id.cb_selected);
             if(fileItem.getChecked()){
@@ -46,9 +45,26 @@ public class MyFragment extends Fragment {
                 fileItem.setChecked(true);
             }
         });
+        rv.setAdapter(adapter);
+        rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        rv.setAdapter(itemAdapter);
-        rv.setLayoutManager(new LinearLayoutManager(context));
         return view;
+    }
+
+    public FileAdapter getAdapter() {
+        return adapter;
+    }
+
+    public boolean isSelectedAll() {
+        return isSelectedAll;
+    }
+
+    public void setSelectedAll(boolean selectedAll, AppCompatImageView btn) {
+        isSelectedAll = selectedAll;
+        if(isSelectedAll()){
+            btn.setBackgroundResource(R.drawable.ic_clear);
+        }else{
+            btn.setBackgroundResource(R.drawable.ic_select_all);
+        }
     }
 }

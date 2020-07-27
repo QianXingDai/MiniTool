@@ -52,7 +52,7 @@ public class UiUtil {
         activity.getWindow().setAttributes(lp);
     }
 
-    public static void showHint(View view,CharSequence hint){
+    public static void showSnackBar(View view, CharSequence hint){
         Snackbar.make(view,hint,Snackbar.LENGTH_SHORT).show();
     }
 

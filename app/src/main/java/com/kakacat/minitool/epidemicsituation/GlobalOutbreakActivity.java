@@ -61,7 +61,7 @@ public class GlobalOutbreakActivity extends AppCompatActivity {
             if(msg.what == 1){
                 notifyData();
                 swipeRefreshLayout.setRefreshing(false);
-                UiUtil.showHint(swipeRefreshLayout,"更新数据成功");
+                UiUtil.showSnackBar(swipeRefreshLayout,"更新数据成功");
                 tvUpdateTime.setText(StringUtil.getDate(list.get(0).get(0).getModifyTime()));
                 progressBar.setVisibility(View.INVISIBLE);
                 viewPager.setVisibility(View.VISIBLE);

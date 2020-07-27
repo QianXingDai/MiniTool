@@ -71,7 +71,7 @@ public class AppDetailPresenter implements AppDetailContract.Presenter {
 
     @Override
     public void openDetailInSetting() {
-        SystemUtil.openAppDetailInSetting(activity,appInfo.getPackageName());
+        SystemUtil.openAppDetailInSetting(activity);
     }
 
     @Override

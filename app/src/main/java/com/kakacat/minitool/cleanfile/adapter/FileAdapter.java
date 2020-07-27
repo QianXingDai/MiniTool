@@ -1,15 +1,15 @@
-package com.kakacat.minitool.cleanfile;
+package com.kakacat.minitool.cleanfile.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.button.MaterialButton;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.cleanfile.model.FileItem;
 import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
@@ -18,16 +18,15 @@ import com.kakacat.minitool.common.util.StringUtil;
 
 import java.util.List;
 
-public class ItemAdapter extends RecyclerView.Adapter <ItemAdapter.ViewHolder>{
+public class FileAdapter extends RecyclerView.Adapter <FileAdapter.ViewHolder>{
 
     private List<FileItem> fileList;
     private LayoutInflater inflater;
     private RecycleViewItemOnClickListener onClickListener;
 
-    public ItemAdapter(List<FileItem> fileList) {
+    public FileAdapter(List<FileItem> fileList) {
         this.fileList = fileList;
     }
-
 
     public void setOnClickListener(RecycleViewItemOnClickListener onClickListener){
         this.onClickListener = onClickListener;
@@ -35,8 +34,10 @@ public class ItemAdapter extends RecyclerView.Adapter <ItemAdapter.ViewHolder>{
 
     @NonNull
     @Override
-    public ItemAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if(inflater == null) inflater = LayoutInflater.from(parent.getContext());
+    public FileAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        if(inflater == null) {
+            inflater = LayoutInflater.from(parent.getContext());
+        }
         View view = inflater.inflate(R.layout.file_item_layout,parent,false);
         return new ViewHolder(view);
     }
@@ -72,12 +73,13 @@ public class ItemAdapter extends RecyclerView.Adapter <ItemAdapter.ViewHolder>{
     }
 
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder{
+
         private CircleProgressView cvFileSize;
         private TextView tvFileName;
         private TextView tvFilePath;
         private CheckBox checkBox;
-        private Button btFileDetail;
+        private MaterialButton btFileDetail;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

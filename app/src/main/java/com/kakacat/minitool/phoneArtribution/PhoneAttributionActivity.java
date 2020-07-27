@@ -72,6 +72,8 @@ public class PhoneAttributionActivity extends AppCompatActivity implements Contr
                 UiUtil.showToast(this,"http请求错误");
             }else if(resultFlag == Result.INPUT_ERROR){
                 UiUtil.showToast(this,"输入错误");
+            }else if(resultFlag == Result.HANDLE_FAIL){
+                UiUtil.showToast(this,"处理响应数据错误");
             }
             return null;
         }, Task.UI_THREAD_EXECUTOR);

@@ -163,7 +163,7 @@ public class TranslationActivity extends AppCompatActivity implements View.OnCli
 
     private void addToMyFavourite() {
         if(TextUtils.isEmpty(editText.getText().toString())){
-            UiUtil.showHint(linearLayout,"请输入内容");
+            UiUtil.showSnackBar(linearLayout,"请输入内容");
             return;
         }
         SharedPreferences sharedPreferences = getSharedPreferences("MyFavourite",MODE_PRIVATE);
@@ -172,12 +172,12 @@ public class TranslationActivity extends AppCompatActivity implements View.OnCli
         String content = editText.getText().toString() + "  >  " + tvOutput.getText();
         editor.putString(key,content);
         editor.commit();
-        UiUtil.showHint(linearLayout,"收藏成功");
+        UiUtil.showSnackBar(linearLayout,"收藏成功");
     }
 
     private void copyToClipBoard() {
         SystemUtil.copyToClipboard(this,"translate",tvOutput.getText());
-        UiUtil.showHint(linearLayout,"复制完成");
+        UiUtil.showSnackBar(linearLayout,"复制完成");
     }
 
     private void showSelectLanguageWindow(int flag) {
@@ -226,7 +226,7 @@ public class TranslationActivity extends AppCompatActivity implements View.OnCli
                 "&salt=" + random +
                 "&sign=" + sign;
         if(TextUtils.isEmpty(content)){
-           UiUtil.showHint(linearLayout,"请输入内容");
+           UiUtil.showSnackBar(linearLayout,"请输入内容");
            return;
         }
 

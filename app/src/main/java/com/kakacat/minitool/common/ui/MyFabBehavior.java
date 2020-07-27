@@ -67,7 +67,7 @@ public class MyFabBehavior extends FloatingActionButton.Behavior {
         super.onNestedScroll(coordinatorLayout,child,target,dxConsumed,dyConsumed,dxUnconsumed,dyUnconsumed,type,consumed);
     }
 
-    public void slideUp(@NonNull View child) {
+    private void slideUp(@NonNull View child) {
         if (currentState == STATE_SCROLLED_UP) {
             return;
         }
@@ -80,7 +80,7 @@ public class MyFabBehavior extends FloatingActionButton.Behavior {
         animateChildTo(child, 0, ENTER_ANIMATION_DURATION, AnimationUtils.LINEAR_OUT_SLOW_IN_INTERPOLATOR);
     }
 
-    public void slideDown(View child) {
+    private void slideDown(View child) {
         if (currentState == STATE_SCROLLED_DOWN) {
             return;
         }

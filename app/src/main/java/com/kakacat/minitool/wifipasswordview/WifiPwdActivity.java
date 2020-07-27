@@ -50,7 +50,7 @@ public class WifiPwdActivity extends AppCompatActivity implements Contract.View 
             CharSequence wifiName = ((TextView)v.findViewById(R.id.tv_wifi_name)).getText();
             CharSequence pwd = ((TextView)v.findViewById(R.id.tv_wifi_pwd)).getText();
             SystemUtil.copyToClipboard(this,"wifiPwd",pwd);
-            UiUtil.showHint(recyclerView,"\"" + wifiName + "\"的wifi密码已复制");
+            UiUtil.showSnackBar(recyclerView,"\"" + wifiName + "\"的wifi密码已复制");
         });
     }
 

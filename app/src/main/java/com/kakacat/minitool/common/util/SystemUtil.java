@@ -167,10 +167,10 @@ public class SystemUtil {
         context.startActivity(intent);
     }
 
-    public static void openAppDetailInSetting(Activity activity,String packageName){
+    public static void openAppDetailInSetting(Activity activity){
         Intent intent = new Intent();
         intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
-        intent.setData(Uri.parse("package:" + packageName));
+        intent.setData(Uri.parse("package:" + activity.getPackageName()));
         activity.startActivity(intent);
     }
 

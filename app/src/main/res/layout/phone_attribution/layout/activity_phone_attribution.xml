@@ -149,6 +149,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:backgroundTint="@color/colorPrimary"
+            android:clickable="false"
             android:textColor="@color/white"
             android:textSize="23sp"
             android:textStyle="bold"

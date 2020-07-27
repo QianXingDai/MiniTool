@@ -11,7 +11,6 @@ import com.kakacat.minitool.common.util.HttpUtil;
 import okhttp3.Response;
 
 import static com.kakacat.minitool.common.constant.Result.INPUT_ERROR;
-import static com.kakacat.minitool.common.constant.Result.REQUEST_ERROR;
 
 public class Presenter implements Contract.Presenter {
 
@@ -38,13 +37,13 @@ public class Presenter implements Contract.Presenter {
                     }else{
                         resultFlag = Result.HANDLE_SUCCESS;
                         phoneNumber.setNumber(number);
-                        view.onRequestDataCallBack(phoneNumber, Result.HANDLE_SUCCESS);
                     }
+                    view.onRequestDataCallBack(phoneNumber, resultFlag);
                 }
 
                 @Override
                 public void onError() {
-                    view.onRequestDataCallBack(null,REQUEST_ERROR);
+                    view.onRequestDataCallBack(null,resultFlag);
                 }
             });
         }

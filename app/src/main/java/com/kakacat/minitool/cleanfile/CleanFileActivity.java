@@ -4,84 +4,86 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.cleanfile.model.FileItem;
+import com.kakacat.minitool.cleanfile.adapter.FragmentAdapter;
+import com.kakacat.minitool.cleanfile.model.MyFragment;
+import com.kakacat.minitool.common.ui.UiUtil;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
-import com.kakacat.minitool.common.util.StringUtil;
+import com.kakacat.minitool.common.util.SystemUtil;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
-public class CleanFileActivity extends AppCompatActivity implements Contract.View,View.OnClickListener,TabLayout.OnTabSelectedListener{
+public class CleanFileActivity extends AppCompatActivity implements Contract.View{
 
-    private TabLayout tabLayout;
-    private ProgressBar progressBar;
-    private ViewPager viewPager;
-    private Button btSelectAll;
-    private FloatingActionButton fab;
-
-    private ItemAdapter bigFileAdapter;
-    private ItemAdapter emptyFileAdapter;
-    private ItemAdapter emptyDirAdapter;
-    private ItemAdapter apkAdapter;
-
-    private List<FileItem> bigFileList;
-    private List<FileItem> emptyFileList;
-    private List<FileItem> emptyDirList;
-    private List<FileItem> apkList;
-
-    private long deleteFileSize;
-    private int currentTabPosition;
-    private boolean isSelectAllBigFile;
-    private boolean isSelectAllEmptyFile;
-    private boolean isSelectAllEmptyDir;
-    private boolean isSelectAllApk;
+    private static final int REQUEST_CODE = 1;
 
     private Contract.Presenter presenter;
 
-    Handler handle = new Handler(){
-        @Override
-        public void handleMessage(@NonNull Message msg) {
-            super.handleMessage(msg);
-            progressBar.setVisibility(View.GONE);
-            viewPager.setVisibility(View.VISIBLE);
-            notifyAdapter();
-        }
-    };
+    private CoordinatorLayout coordinatorLayout;
+    private ViewPager2 viewPager;
+    private BottomNavigationView btmNav;
+    private ProgressBar progressBar;
+    private AppCompatImageView btSelectAll;
+    private MyPopupWindow popupWindow;
+
+    private List<MyFragment> myFragmentList;
+    private int currentPagePosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //TODO:Snackbar弹出样式为透明...
         setContentView(R.layout.activity_clean_file);
 
-        initWidget();
-        setListener();
+        requestPermission();
+        initView();
     }
 
-    private void initWidget() {
+    @Override
+    public void requestPermission(){
+        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE};
+        List<String> requestPermissionList = new ArrayList<>();
+
+        for(String permission : permissions){
+            if(ContextCompat.checkSelfPermission(this,permission) != PackageManager.PERMISSION_GRANTED){
+                requestPermissionList.add(permission);
+            }
+        }
+
+        if(requestPermissionList.size() > 0){
+            ActivityCompat.requestPermissions(this, requestPermissionList.toArray(new String[0]),REQUEST_CODE);
+        }else{
+            initData();
+        }
+    }
+
+    @Override
+    public void initData() {
+        setPresenter(new Presenter(this));
+        myFragmentList = new ArrayList<>();
+        presenter.initData();
+    }
+
+    @Override
+    public void initView() {
         setSupportActionBar(findViewById(R.id.toolbar));
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
@@ -89,218 +91,182 @@ public class CleanFileActivity extends AppCompatActivity implements Contract.Vie
             actionBar.setDisplayShowTitleEnabled(false);
             actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
         }
+
+        coordinatorLayout = findViewById(R.id.coordinator_layout);
         progressBar = findViewById(R.id.progress_bar);
-        fab = findViewById(R.id.fab_delete);
         btSelectAll = findViewById(R.id.bt_select_all);
-        initTabLayout();
-    }
-
-    private void initTabLayout() {
-        tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.view_pager);
+        btmNav = findViewById(R.id.btm_nav);
 
-        bigFileList = new CopyOnWriteArrayList<>();
-        emptyFileList = new CopyOnWriteArrayList<>();
-        emptyDirList = new CopyOnWriteArrayList<>();
-        apkList = new CopyOnWriteArrayList<>();
-        List<String> titleList = new ArrayList<>();
-        List<MyFragment> fragmentList = new ArrayList<>();
+        presenter.getFileListList().forEach(list-> myFragmentList.add(new MyFragment(list)));
 
-        askPermissions();
-
-        titleList.add("大文件");
-        titleList.add("空文件");
-        titleList.add("空文件夹");
-        titleList.add("安装包");
-
-        bigFileAdapter = new ItemAdapter(bigFileList);
-        emptyFileAdapter = new ItemAdapter(emptyFileList);
-        emptyDirAdapter = new ItemAdapter(emptyDirList);
-        apkAdapter = new ItemAdapter(apkList);
-
-        fragmentList.add(new MyFragment(this, bigFileAdapter,bigFileList));
-        fragmentList.add(new MyFragment(this, emptyFileAdapter,emptyFileList));
-        fragmentList.add(new MyFragment(this, emptyDirAdapter,emptyDirList));
-        fragmentList.add(new MyFragment(this, apkAdapter,apkList));
-
-        SectionsPageAdapter sectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager(), titleList, fragmentList);
-        viewPager.setAdapter(sectionsPageAdapter);
-        tabLayout.setupWithViewPager(viewPager);
-
-        int threadNum = 3;
-        File[] files = Environment.getExternalStorageDirectory().listFiles();
-        int startIndex = files.length - 1;
-        int endIndex;
-        for(int i = 0; i < threadNum; i++){
-            if(i != threadNum - 1) endIndex = startIndex - files.length / threadNum;
-            else endIndex = 0;
-            ScannerThread scannerThread = new ScannerThread(this,files,threadNum,startIndex,endIndex,bigFileList,emptyFileList,emptyDirList,apkList);
-//            scannerThread.start();
-            startIndex = endIndex;
-        }
+        btmNav.setOnNavigationItemSelectedListener(getNavigationItemSelectedListener());
+        viewPager.setAdapter(new FragmentAdapter(this,myFragmentList));
+        viewPager.registerOnPageChangeCallback(getPackChangeCallBack());
     }
 
-    private void setListener(){
-        tabLayout.addOnTabSelectedListener(this);
-        btSelectAll.setOnClickListener(this);
-        fab.setOnClickListener(this);
+    private ViewPager2.OnPageChangeCallback getPackChangeCallBack(){
+        return new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                currentPagePosition = position;
+                switch (position){
+                    case 0:{
+                        if(myFragmentList.get(0).isSelectedAll()){
+                            btSelectAll.setBackgroundResource(R.drawable.ic_clear);
+                        } else{
+                            btSelectAll.setBackgroundResource(R.drawable.ic_select_all);
+                        }
+                        btmNav.setSelectedItemId(R.id.big_file);
+                        break;
+                    }
+                    case 1:{
+                        if(myFragmentList.get(1).isSelectedAll()){
+                            btSelectAll.setBackgroundResource(R.drawable.ic_clear);
+                        } else{
+                            btSelectAll.setBackgroundResource(R.drawable.ic_select_all);
+                        }
+                        btmNav.setSelectedItemId(R.id.empty_file);
+                        break;
+                    }
+                    case 2:{
+                        if(myFragmentList.get(2).isSelectedAll()){
+                            btSelectAll.setBackgroundResource(R.drawable.ic_clear);
+                        } else{
+                            btSelectAll.setBackgroundResource(R.drawable.ic_select_all);
+                        }
+                        btmNav.setSelectedItemId(R.id.apk);
+                        break;
+                    }
+                    case 3:{
+                        if(myFragmentList.get(3).isSelectedAll()){
+                            btSelectAll.setBackgroundResource(R.drawable.ic_clear);
+                        } else{
+                            btSelectAll.setBackgroundResource(R.drawable.ic_select_all);
+                        }
+                        btmNav.setSelectedItemId(R.id.video);
+                        break;
+                    }
+                    case 4:{
+                        if(myFragmentList.get(4).isSelectedAll()){
+                            btSelectAll.setBackgroundResource(R.drawable.ic_clear);
+                        } else{
+                            btSelectAll.setBackgroundResource(R.drawable.ic_select_all);
+                        }
+                        btmNav.setSelectedItemId(R.id.audio);
+                        break;
+                    }
+                    default:
+                        break;
+                }
+            }
+        };
     }
 
-    private void askPermissions(){
-        if(ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE},1);
-        }
+    private BottomNavigationView.OnNavigationItemSelectedListener getNavigationItemSelectedListener(){
+        return item -> {
+            switch (item.getItemId()){
+                case R.id.big_file:{
+                    viewPager.setCurrentItem(0,true);
+                    break;
+                }
+                case R.id.empty_file:{
+                    viewPager.setCurrentItem(1,true);
+                    break;
+                }
+                case R.id.apk:{
+                    viewPager.setCurrentItem(2,true);
+                    break;
+                }
+                case R.id.video:{
+                    viewPager.setCurrentItem(3,true);
+                    break;
+                }
+                case R.id.audio:{
+                    viewPager.setCurrentItem(4,true);
+                    break;
+                }
+                default:
+                    break;
+            }
+            return true;
+        };
+    }
+
+    @Override
+    public void onUpdateDataCallBack(){
+        progressBar.setVisibility(View.INVISIBLE);
+        viewPager.setVisibility(View.VISIBLE);
+        myFragmentList.forEach(myFragment -> myFragment.getAdapter().notifyDataSetChanged());
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(requestCode == 1){
-            for(int result : grantResults)
+        if(requestCode == REQUEST_CODE){
+            int count = 0;
+            for(int result : grantResults){
                 if(result != PackageManager.PERMISSION_GRANTED){
-                    Toast.makeText(this,"无法获得权限",Toast.LENGTH_SHORT).show();
-                    finish();
+                    count++;
+                    UiUtil.showToast(this,"获取存储权限失败,请手动打开存储权限哟");
+                    SystemUtil.openAppDetailInSetting(this);
                 }
+            }
+            if(count == 0){
+                initData();
+            }
         }
     }
 
-    @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bt_select_all:{
-                if(currentTabPosition == 0){
-                    isSelectAllBigFile = !isSelectAllBigFile;
-                    bigFileList.forEach(item->item.setChecked(isSelectAllBigFile));
-                    if(isSelectAllBigFile)
-                        btSelectAll.setBackgroundResource(R.drawable.ic_clear);
-                    else
-                        btSelectAll.setBackgroundResource(R.drawable.ic_select_all);
-                    bigFileAdapter.notifyDataSetChanged();
-                }else if(currentTabPosition == 1){
-                    isSelectAllEmptyFile = !isSelectAllEmptyFile;
-                    emptyFileList.forEach(item->item.setChecked(isSelectAllEmptyFile));
-                    if(isSelectAllEmptyFile)
-                        btSelectAll.setBackgroundResource(R.drawable.ic_clear);
-                    else
-                        btSelectAll.setBackgroundResource(R.drawable.ic_select_all);
-                    emptyFileAdapter.notifyDataSetChanged();
-                }else if(currentTabPosition == 2){
-                    isSelectAllEmptyDir= !isSelectAllEmptyDir;
-                    emptyDirList.forEach(item->item.setChecked(isSelectAllEmptyDir));
-                    if(isSelectAllEmptyDir)
-                        btSelectAll.setBackgroundResource(R.drawable.ic_clear);
-                    else
-                        btSelectAll.setBackgroundResource(R.drawable.ic_select_all);
-                    emptyDirAdapter.notifyDataSetChanged();
-                }else if(currentTabPosition == 3){
-                    isSelectAllApk = !isSelectAllApk;
-                    apkList.forEach(item -> item.setChecked(isSelectAllApk));
-                    if(isSelectAllApk)
-                        btSelectAll.setBackgroundResource(R.drawable.ic_clear);
-                    else
-                        btSelectAll.setBackgroundResource(R.drawable.ic_select_all);
-                    apkAdapter.notifyDataSetChanged();
-                }
+                selectAll();
                 break;
             }
             case R.id.fab_delete:{
-                DialogWindow dialogWindow = new DialogWindow(View.inflate(this, R.layout.popupwindow_warn1, null),
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT
-                        );
-                dialogWindow.showAtLocation(viewPager, Gravity.CENTER,0,0);
+                showDialogWindow();
+                break;
+            }
+            case R.id.bt_delete_file:{
+                popupWindow.dismiss();
+                presenter.deleteSelectedFile();
+                break;
+            }
+            case R.id.bt_cancel:{
+                popupWindow.dismiss();
                 break;
             }
         }
-    }
-
-    private int deleteSelectedFile() {
-        int num = 0;
-        deleteFileSize = 0;
-
-        for(int i = bigFileList.size() - 1; i >= 0; i--) {
-            FileItem fileItem = bigFileList.get(i);
-            if (fileItem.getChecked()) {
-                num++;
-                deleteFileSize += fileItem.getFile().length();
-                fileItem.getFile().delete();
-                bigFileList.remove(i);
-            }
-        }
-        for(int i = emptyFileList.size() - 1; i >= 0; i--) {
-            FileItem fileItem = emptyFileList.get(i);
-            if (fileItem.getChecked()) {
-                num++;
-                deleteFileSize += fileItem.getFile().length();
-                fileItem.getFile().delete();
-                emptyFileList.remove(i);
-            }
-        }
-        for(int i = emptyDirList.size() - 1; i >= 0; i--) {
-            FileItem fileItem = emptyDirList.get(i);
-            if (fileItem.getChecked()) {
-                num++;
-                deleteFileSize += fileItem.getFile().length();
-                fileItem.getFile().delete();
-                emptyDirList.remove(i);
-            }
-        }
-        for(int i = apkList.size() - 1; i >= 0; i--) {
-            FileItem fileItem = apkList.get(i);
-            if (fileItem.getChecked()) {
-                num++;
-                deleteFileSize += fileItem.getFile().length();
-                fileItem.getFile().delete();
-                apkList.remove(i);
-            }
-        }
-        return num;
-    }
-
-    private void notifyAdapter(){
-        bigFileAdapter.notifyDataSetChanged();
-        emptyFileAdapter.notifyDataSetChanged();
-        emptyDirAdapter.notifyDataSetChanged();
-        apkAdapter.notifyDataSetChanged();
-    }
-
-
-    @Override
-    public void onTabSelected(TabLayout.Tab tab) {
-        currentTabPosition = tab.getPosition();
-        switch (currentTabPosition){
-            case 0:{
-                if(isSelectAllBigFile) btSelectAll.setBackgroundResource(R.drawable.ic_clear);
-                else btSelectAll.setBackgroundResource(R.drawable.ic_select_all);
-                break;
-            }
-            case 1:{
-                if(isSelectAllEmptyFile) btSelectAll.setBackgroundResource(R.drawable.ic_clear);
-                else btSelectAll.setBackgroundResource(R.drawable.ic_select_all);
-                break;
-            }
-            case 2:{
-                if(isSelectAllEmptyDir) btSelectAll.setBackgroundResource(R.drawable.ic_clear);
-                else btSelectAll.setBackgroundResource(R.drawable.ic_select_all);
-                break;
-            }
-            case 3:{
-                if(isSelectAllApk) btSelectAll.setBackgroundResource(R.drawable.ic_clear);
-                else btSelectAll.setBackgroundResource(R.drawable.ic_select_all);
-                break;
-            }
-        }
-
     }
 
     @Override
-    public void onTabUnselected(TabLayout.Tab tab) {
-
+    public void selectAll(){
+        MyFragment myFragment = myFragmentList.get(currentPagePosition);
+        myFragment.setSelectedAll(!myFragment.isSelectedAll(),btSelectAll);
+        presenter.selectAll(currentPagePosition,myFragmentList.get(currentPagePosition).isSelectedAll());
     }
 
     @Override
-    public void onTabReselected(TabLayout.Tab tab) {
+    public void onSelectedAllCallBack(){
+        myFragmentList.get(currentPagePosition).getAdapter().notifyDataSetChanged();
+    }
 
+    @Override
+    public void onFileDeletedCallBack(String result){
+        myFragmentList.forEach(myFragment -> myFragment.getAdapter().notifyDataSetChanged());
+        //TODO:透明的,不知道为啥。。。
+        UiUtil.showSnackBar(coordinatorLayout,result);
+    }
+
+    @Override
+    public void showDialogWindow(){
+        if(popupWindow == null){
+            View view = LayoutInflater.from(this).inflate(R.layout.dialog,viewPager,false);
+            popupWindow = new MyPopupWindow(this,view,ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        }
+        popupWindow.showAtLocation(viewPager, Gravity.CENTER,0,0);
     }
 
     @Override
@@ -312,58 +278,12 @@ public class CleanFileActivity extends AppCompatActivity implements Contract.Vie
     }
 
     @Override
-    public void initData() {
-        setPresenter(new Presenter(this));
-        presenter.initData();
-    }
-
-    @Override
     public void setPresenter(Contract.Presenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
-    public void initView() {
-
-    }
-
-    @Override
     public Context getContext() {
         return this;
-    }
-
-    class DialogWindow extends MyPopupWindow implements View.OnClickListener{
-        private View contentView;
-
-        DialogWindow(View contentView, int width, int height) {
-            super(CleanFileActivity.this,contentView, width, height);
-            this.contentView = contentView;
-            initView();
-        }
-
-        private void initView(){
-            Button btDelete = contentView.findViewById(R.id.bt_delete_file);
-            Button btCancel = contentView.findViewById(R.id.bt_cancel);
-            btDelete.setOnClickListener(this);
-            btCancel.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()){
-                case R.id.bt_delete_file:{
-                    int num = deleteSelectedFile();
-                    notifyAdapter();
-                    dismiss();
-                    String s = "一共清理了" + num + "个文件,释放空间" + StringUtil.byteToMegabyte(deleteFileSize);
-                    Snackbar.make(tabLayout, s,Snackbar.LENGTH_SHORT).show();
-                    break;
-                }
-                case R.id.bt_cancel:{
-                    dismiss();
-                    break;
-                }
-            }
-        }
     }
 }

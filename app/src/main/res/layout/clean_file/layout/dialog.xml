@@ -32,13 +32,14 @@
             android:id="@+id/bt_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
+            android:onClick="onClick"
             android:text="取消"/>
         <Button
             android:id="@+id/bt_delete_file"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
+            android:layout_marginStart="20dp"
+            android:onClick="onClick"
             android:text="确定"/>
     </LinearLayout>
 

@@ -81,7 +81,7 @@ public class MainActivity extends FrescoInitActivity implements Contract.View{
             }
         }
         swipeRefreshLayout.setRefreshing(false);
-        UiUtil.showHint(swipeRefreshLayout,s);
+        UiUtil.showSnackBar(swipeRefreshLayout,s);
     }
 
     @Override
