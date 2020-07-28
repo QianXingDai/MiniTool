@@ -20,4 +20,12 @@ public class AppKey {
 
     //垃圾分类查询接口key
     public static final String GARBAGE_QUERY = "c3886d3637d56c2730a4a7066fb9fa47";
+
+
+    //百度提供的翻译查询接口appid
+    public static final String TRANSLATE_APP_ID = "20200420000425201";
+
+
+    //百度提供的翻译查询接口密钥
+    public static final String TRANSLATE_SECRET_KEY = "qceN7y1RBpEp8x1g47_i";
 }

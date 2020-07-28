@@ -1,4 +1,4 @@
-package com.kakacat.minitool.translation;
+package com.kakacat.minitool.translation.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,19 +13,18 @@ import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHolder> {
 
     private List<String> languageList;
     private RecycleViewItemOnClickListener listener;
 
-    public MyAdapter(List<String> languageList) {
+    public LanguageAdapter(List<String> languageList) {
         this.languageList = languageList;
     }
 
     public void setOnClickListener(RecycleViewItemOnClickListener listener){
         this.listener = listener;
     }
-
 
     @NonNull
     @Override
@@ -49,8 +48,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder{
+
         private TextView tvLanguage;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvLanguage = (TextView)itemView;

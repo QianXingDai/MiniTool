@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MiniTool</string>
 
+
     <string name="title_currency_conversion">汇率转换</string>
     <string name="title_inquire_ip">IP查询</string>
     <string name="title_phone_attribution">号码属地</string>
@@ -16,6 +17,7 @@
     <string name="title_global_outbreak">全球疫情</string>
     <string name="title_translation">语言翻译</string>
     <string name="title_bing_pic">必应图片</string>
+    <string name="title_delivery">快递查询</string>
 
     <string name="note_currency_conversion">各国货币汇率转换</string>
     <string name="note_inquire_ip">查询设备IP地址信息</string>
@@ -26,12 +28,13 @@
     <string name="note_text_encryption">提供文本加密</string>
     <string name="note_modify_dpi">修改屏幕DPI(慎用)</string>
     <string name="note_battery_info">自定义电量水平</string>
-    <string name="note_clean_info">清理大文件 空文件 文件夹等</string>
+    <string name="note_clean_info">清理本机文件</string>
     <string name="note_audio_capture">从视频提取音频</string>
     <string name="note_garbage_classification">你是什么垃圾啊?</string>
     <string name="note_global_outbreak">全球各地疫情情况汇总</string>
     <string name="note_translation">提供各种语言互译</string>
     <string name="note_bing_pic">提供必应每日图片</string>
+    <string name="note_delivery">提供主流快递查询</string>
 
     <string name="name_us">US</string>
     <string name="name_eu">EU</string>

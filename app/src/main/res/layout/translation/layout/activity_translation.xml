@@ -35,12 +35,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:padding="10dp"
-                android:layout_marginRight="40dp"
+                android:layout_marginEnd="40dp"
                 android:clickable="true"
                 android:src="@drawable/ic_white_star"
                 android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="onClick"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                android:focusable="true" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -69,7 +71,9 @@
                 android:padding="10dp"
                 android:text="自动检测"
                 android:textColor="@color/colorPrimary"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:focusable="true"
+                android:onClick="onClick"/>
 
             <View
                 android:layout_width="2dp"
@@ -82,11 +86,13 @@
                 android:layout_weight="1"
                 android:background="@drawable/item_selector"
                 android:clickable="true"
-                android:gravity="center_vertical|right"
+                android:gravity="center_vertical|end"
                 android:padding="10dp"
                 android:text="英语"
                 android:textColor="@color/colorPrimary"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:focusable="true"
+                android:onClick="onClick"/>
         </LinearLayout>
 
         <FrameLayout
@@ -114,7 +120,8 @@
                 android:layout_height="50dp"
                 android:layout_gravity="end|bottom"
                 android:src="@drawable/ic_clear2"
-                android:background="?attr/selectableItemBackgroundBorderless"/>
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="onClick"/>
 
         </FrameLayout>
 
@@ -154,7 +161,9 @@
                     android:padding="10dp"
                     android:clickable="true"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:src="@drawable/ic_copy"/>
+                    android:src="@drawable/ic_copy"
+                    android:focusable="true"
+                    android:onClick="onClick"/>
                 <ImageView
                     android:id="@+id/iv_collect"
                     android:layout_width="50dp"
@@ -162,7 +171,9 @@
                     android:padding="10dp"
                     android:clickable="true"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:src="@drawable/ic_black_star"/>
+                    android:src="@drawable/ic_black_star"
+                    android:focusable="true"
+                    android:onClick="onClick"/>
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -172,6 +183,7 @@
             android:layout_width="56dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:onClick="onClick"
             app:srcCompat="@drawable/ic_translate"
             app:elevation="8dp"
             app:layout_anchor="@id/card_view"

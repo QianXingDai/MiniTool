@@ -16,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.base.FrescoInitActivity;
+import com.kakacat.minitool.common.util.SystemUtil;
 import com.kakacat.minitool.main.adapter.FragmentAdapter;
 import com.kakacat.minitool.main.navigation.AboutViewItemOn;
 import com.kakacat.minitool.main.navigation.ChangeThemeDialog;
@@ -42,6 +43,7 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
 
     @Override
     public void initView(){
+        SystemUtil.setTranslucentStatusBar(this.getWindow(),false);
         initToolbar();
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -78,6 +80,7 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
         //初始化navigation
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(item -> {
+            //TODO:这里功能基本
             switch (item.getItemId()){
                 case R.id.nav_theme:{
                     showChangeThemeDialog();
@@ -104,6 +107,7 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
         });
     }
 
+    @Override
     public void showChangeThemeDialog(){
         ChangeThemeDialog changeThemeDialog = ChangeThemeDialog.getInstance(this, View.inflate(this,R.layout.select_theme,null), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         changeThemeDialog.showAtLocation(drawerLayout, Gravity.CENTER,0,0);

@@ -15,5 +15,6 @@ public interface MainContract {
 
     interface View extends IView<Presenter>{
         void initData();
+        void showChangeThemeDialog();
     }
 }

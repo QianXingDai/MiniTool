@@ -6,13 +6,18 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.MediaExtractor;
 import android.media.MediaFormat;
 import android.net.Uri;
 import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Environment;
 import android.os.Vibrator;
 import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -189,6 +194,26 @@ public class SystemUtil {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void setTranslucentStatusBar(Window window, boolean isDark) {
+        if (null != window && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            if (isDark) {
+                window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_VISIBLE);
+            } else {
+                int vis = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    vis = vis | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+                }
+                window.getDecorView().setSystemUiVisibility(vis);
+            }
+
+            window.setStatusBarColor(Color.TRANSPARENT);
+        }
     }
 
 }

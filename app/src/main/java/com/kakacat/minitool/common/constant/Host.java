@@ -2,7 +2,6 @@ package com.kakacat.minitool.common.constant;
 
 public class Host {
 
-
     //手机号码归属地查询
     public static final String PHONE_NUMBER_HOST = "http://apis.juhe.cn/mobile/get?phone=";
 
@@ -19,5 +18,10 @@ public class Host {
     public static final String TODAY_IN_HISTORY_HOST = "http://api.juheapi.com/japi/toh?key=";
 
 
+    //垃圾分类查询接口
     public static final String GARBAGE_QUERY_HOST = "https://api.tianapi.com/txapi/lajifenlei/index?key=";
+
+
+    //百度提供的翻译查询接口
+    public static final String TRANSLATE_HOST = "https://api.fanyi.baidu.com/api/trans/vip/translate?";
 }

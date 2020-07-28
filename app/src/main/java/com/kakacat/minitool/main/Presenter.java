@@ -30,6 +30,7 @@ public class Presenter implements MainContract.Presenter {
         dailyList.add(new MainItem(R.string.title_global_outbreak,R.drawable.ic_global_outbreak,R.string.note_global_outbreak));
         dailyList.add(new MainItem(R.string.title_translation,R.drawable.ic_dictionary,R.string.note_translation));
         dailyList.add(new MainItem(R.string.title_bing_pic,R.drawable.ic_bing,R.string.note_bing_pic));
+        dailyList.add(new MainItem(R.string.title_delivery,R.drawable.ic_delivery,R.string.note_delivery));
 
         geekList.add(new MainItem(R.string.title_text_encryption,R.drawable.ic_lock,R.string.note_text_encryption));
         geekList.add(new MainItem(R.string.title_modify_dpi,R.drawable.ic_dpi,R.string.note_modify_dpi));
