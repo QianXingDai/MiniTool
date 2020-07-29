@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.constant.Result;
-import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 import com.kakacat.minitool.garbageclassify.model.Garbage;
 import com.kakacat.minitool.garbageclassify.model.TypeMap;

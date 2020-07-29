@@ -20,7 +20,7 @@ import com.kakacat.minitool.R;
 import com.kakacat.minitool.appInfo.contract.AppDetailContract;
 import com.kakacat.minitool.appInfo.model.AppInfo;
 import com.kakacat.minitool.appInfo.presenter.AppDetailPresenter;
-import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 
 public class AppDetailActivity extends AppCompatActivity implements AppDetailContract.View,View.OnClickListener{
 

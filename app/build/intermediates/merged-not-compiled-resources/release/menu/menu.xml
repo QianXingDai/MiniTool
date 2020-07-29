@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/big_file"
+        android:title="大文件"
+        android:icon="@drawable/ic_big_file" />
+    <item
+        android:id="@+id/empty_file"
+        android:title="空文件"
+        android:icon="@drawable/ic_empty_file" />
+    <item
+        android:id="@+id/apk"
+        android:title="安装包"
+        android:icon="@drawable/ic_apk" />
+    <item
+        android:id="@+id/video"
+        android:title="视频"
+        android:icon="@drawable/ic_video" />
+    <item
+        android:id="@+id/audio"
+        android:title="音乐"
+        android:icon="@drawable/ic_audio" />
+
+</menu>

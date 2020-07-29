@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import com.kakacat.minitool.appInfo.activity.AppDetailActivity;
 import com.kakacat.minitool.appInfo.contract.AppDetailContract;
 import com.kakacat.minitool.appInfo.model.AppInfo;
-import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.common.util.SystemUtil;
 
 import java.io.File;

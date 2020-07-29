@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.common.util.EncryptionUtil;
 import com.kakacat.minitool.common.util.SystemUtil;
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_encryption_method"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:textSize="32px"
+    android:padding="5dp"
+    android:background="@drawable/round_background_color_primary3"
+    android:textColor="@color/white"
+    android:focusableInTouchMode="true">
+</TextView>

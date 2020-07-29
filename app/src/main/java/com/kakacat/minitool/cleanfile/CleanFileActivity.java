@@ -24,7 +24,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.cleanfile.adapter.FragmentAdapter;
 import com.kakacat.minitool.cleanfile.model.MyFragment;
-import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 import com.kakacat.minitool.common.util.SystemUtil;
 

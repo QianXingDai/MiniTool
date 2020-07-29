@@ -9,7 +9,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.base.FrescoInitActivity;
 import com.kakacat.minitool.common.constant.Result;
-import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 
 
 public class MainActivity extends FrescoInitActivity implements Contract.View{

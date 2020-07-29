@@ -19,7 +19,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.myinterface.HttpCallback;
-import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.common.util.HttpUtil;
 import com.kakacat.minitool.common.util.JsonUtil;
 import com.kakacat.minitool.common.util.StringUtil;

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="30dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        tools:ignore="RtlSymmetry">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_us"
+            app:roundAsCircle="true"/>
+        <TextView
+            android:id="@+id/tv_country_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:gravity="center_vertical"
+            android:text="@string/name_us"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/edit_text_background_with_black_border"
+            android:gravity="center|right"
+            android:hint="0"
+            android:inputType="numberDecimal"
+            tools:ignore="RtlHardcoded" />
+        <TextView
+            android:id="@+id/tv_money_unit"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:text="@string/unit_us"
+            android:gravity="center" />
+        </LinearLayout>
+</androidx.cardview.widget.CardView>
+

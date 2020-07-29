@@ -10,22 +10,18 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.constant.Result;
-import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 import com.kakacat.minitool.common.util.SystemUtil;
 import com.kakacat.minitool.translation.adapter.CollectionAdapter;
 import com.kakacat.minitool.translation.adapter.LanguageAdapter;
-
 import java.util.concurrent.Callable;
-
 import bolts.Task;
 
 
@@ -84,7 +80,7 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
             View view = inflater.inflate(R.layout.collection_layout,linearLayout,false);
             collectionDialog = new MyPopupWindow(this,view,ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
             RecyclerView rv = view.findViewById(R.id.rv);
-            rv.setAdapter(new CollectionAdapter(presenter.getCollectionList()));
+            rv.setAdapter(getCollectionAdapter());
             rv.setLayoutManager(new LinearLayoutManager(this));
         }
         collectionDialog.showAtLocation(linearLayout,Gravity.BOTTOM,0,0);
@@ -93,6 +89,7 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
     @Override
     public void onAddToMyFavouriteCallBack(String s) {
         UiUtil.showSnackBar(linearLayout,s);
+        collectionAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -192,10 +189,10 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
                 break;
             }
             case R.id.bt_back:{
-                if(selectLanguageDialog1.isShowing()){
+                if(selectLanguageDialog1 != null && selectLanguageDialog1.isShowing()){
                     selectLanguageDialog1.dismiss();
                 }
-                if(selectLanguageDialog2.isShowing()){
+                if(selectLanguageDialog2 != null && selectLanguageDialog2.isShowing()){
                     selectLanguageDialog2.dismiss();
                 }
                 break;
@@ -203,4 +200,10 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
         }
     }
 
+    private CollectionAdapter getCollectionAdapter() {
+        if(collectionAdapter == null){
+            collectionAdapter = new CollectionAdapter(presenter.getCollectionList());
+        }
+        return collectionAdapter;
+    }
 }

@@ -2,7 +2,6 @@ package com.kakacat.minitool.currencyconversion;
 
 import android.content.Context;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.constant.AppKey;
@@ -79,7 +78,7 @@ public class Presenter implements Contract.Presenter {
                 Rate.writeRateToLocal(context);
                 return true;
             }else{
-                Log.d("hhh","汇率数据空");
+                return false;
             }
         }catch (Exception e){
             e.printStackTrace();

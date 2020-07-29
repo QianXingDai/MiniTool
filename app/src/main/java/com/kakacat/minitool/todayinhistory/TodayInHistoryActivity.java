@@ -8,7 +8,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.base.FrescoInitActivity;
 import com.kakacat.minitool.common.constant.Result;
-import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 
 import bolts.Task;
 

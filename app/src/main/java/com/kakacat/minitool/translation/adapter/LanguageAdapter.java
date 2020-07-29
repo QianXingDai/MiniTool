@@ -22,10 +22,6 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
         this.languageList = languageList;
     }
 
-    public void setOnClickListener(RecycleViewItemOnClickListener listener){
-        this.listener = listener;
-    }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -47,6 +43,9 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
         return languageList.size();
     }
 
+    public void setOnClickListener(RecycleViewItemOnClickListener listener){
+        this.listener = listener;
+    }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
 

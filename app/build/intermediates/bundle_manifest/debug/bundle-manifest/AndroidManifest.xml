@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kakacat.minitool"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="24"
+        android:targetSdkVersion="30" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:extractNativeLibs="false"
+        android:icon="@drawable/ic_shortcut_mt"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.kakacat.minitool.common.base.FrescoInitActivity" />
+        <activity
+            android:name="com.kakacat.minitool.bingpic.BingPicActivity"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+
+        <service
+            android:name="com.kakacat.minitool.audiocapture.GetAudioService"
+            android:exported="false" />
+
+        <activity android:name="com.kakacat.minitool.translation.TranslationActivity" />
+        <activity android:name="com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity" />
+        <activity
+            android:name="com.kakacat.minitool.garbageclassify.GarbageClassificationActivity"
+            android:theme="@style/MyMaterialNoActionBarStyle" />
+        <activity
+            android:name="com.kakacat.minitool.cleanfile.CleanFileActivity"
+            android:theme="@style/MyMaterialNoActionBarStyle" />
+        <activity android:name="com.kakacat.minitool.textencryption.TextEncryptionActivity" />
+        <activity android:name="com.kakacat.minitool.appInfo.activity.AppDetailActivity" />
+        <activity android:name="com.kakacat.minitool.appInfo.activity.AppInfoActivity" />
+        <activity android:name="com.kakacat.minitool.wifipasswordview.WifiPwdActivity" />
+        <activity
+            android:name="com.kakacat.minitool.todayinhistory.TodayInHistoryActivity"
+            android:label="@string/title_today_in_history"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.kakacat.minitool.phoneartribution.PhoneAttributionActivity"
+            android:theme="@style/MyMaterialNoActionBarStyle" />
+        <activity
+            android:name="com.kakacat.minitool.inquireip.InquireIpActivity"
+            android:theme="@style/MyMaterialNoActionBarStyle" />
+        <activity
+            android:name="com.kakacat.minitool.currencyconversion.MainActivity"
+            android:label="@string/title_currency_conversion" />
+        <activity
+            android:name="com.kakacat.minitool.main.MainActivity"
+            android:configChanges="orientation|screenSize" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.kakacat.minitool.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
+    </application>
+
+</manifest>

@@ -38,10 +38,20 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            keyAlias 'key'
+            keyPassword 'Dqx1548870774.'
+            storeFile file('C:\\Users\\kakacat\\Android\\sign_key.jks')
+            storePassword 'Dqx1548870774.'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -84,6 +94,7 @@ buildscript {
     dependencies {
         classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.18'
     }
+
 }
 
 andResGuard {

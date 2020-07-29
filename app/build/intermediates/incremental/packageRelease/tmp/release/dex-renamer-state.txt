@@ -1,0 +1,4 @@
+#Tue Jul 28 11:33:46 CST 2020
+base.0=E\:\\Android Projects\\MiniTool\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

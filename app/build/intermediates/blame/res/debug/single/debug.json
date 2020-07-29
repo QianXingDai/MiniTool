@@ -1,0 +1,1046 @@
+[
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_click_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\global_outbreak\\layout\\click_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_marshmallow.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_marshmallow.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\text_encryption\\layout\\item_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_pie.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_pie.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_search.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_search.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_big_image_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\bing_pic\\layout\\big_image_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_za.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_za.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_select_country.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\currency_conversion\\layout\\dialog_select_country.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_sg.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_sg.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_help.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_help.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_action_back.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_action_back.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_loading_view.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\garbage_classification\\layout\\loading_view.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_ma.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_ma.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_white_star.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_white_star.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_kitkat.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_kitkat.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_background_white.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable\\round_background_white.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_eclair.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_eclair.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_wet.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_wet.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_recycleable.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_recycleable.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_help.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_help.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_theme.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\main\\layout\\select_theme.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_wifi_item_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\wifi_pwd_view\\layout\\wifi_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_action_slide.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_action_slide.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_background_grey.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable\\round_background_grey.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_daily.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_daily.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_api_percent.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\app_info\\layout\\item_api_percent.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_inquire_ip.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\inquire_ip\\layout\\activity_inquire_ip.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_nz.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_nz.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_donut.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_donut.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_audio_capture.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_audio_capture.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_exit.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\exit.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_translate.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_translate.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_btm_nav.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\main\\menu\\menu_btm_nav.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_burn.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_burn.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_help.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_help.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_recycleable.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_recycleable.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_inquire.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_inquire.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_language_item_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\translation\\layout\\language_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_back.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_back.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_shortcut_mt.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_shortcut_mt.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_bing_pic_item_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\bing_pic\\layout\\bing_pic_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_up_arrow.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_up_arrow.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_clear.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_clear.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_clear.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_clear.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_money.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_money.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_delete.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_delete.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_country_view_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\currency_conversion\\layout\\country_view_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\main\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_bg_place_holder.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\bg_place_holder.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_view.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\garbage_classification\\layout\\content_view.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_phone.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_phone.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_ca.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_ca.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_header_api_percent.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\app_info\\layout\\header_api_percent.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_geek.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_geek.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_geek.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_geek.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_dry.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_dry.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_today_in_history.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_today_in_history.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_app_info.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\app_info\\layout\\activity_app_info.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_arrow_right.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_arrow_right.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_dry.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_dry.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_search.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_search.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_clear.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_clear.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_background_primary.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable\\round_background_primary.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_select_all.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_select_all.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_black_star.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_black_star.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_action_inquire.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_action_inquire.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_select_all.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_select_all.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\anim_recycleview_anim.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\anim\\recycleview_anim.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_delete.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_delete.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_no.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_no.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_bg_place_holder.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\bg_place_holder.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_empty_file.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_empty_file.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_edit_text_background_with_black_border.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable\\edit_text_background_with_black_border.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\anim_item_anim_from_bottom.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\anim\\item_anim_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\clean_file\\menu\\menu.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_geek.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_geek.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_shortcut_mt.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_shortcut_mt.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_harmful.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_harmful.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_dpi.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_dpi.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_wet.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_wet.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_drawer.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\main\\layout\\drawer.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_action_slide.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_action_slide.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_lock.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_lock.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_option_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\bing_pic\\layout\\option_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_action_slide.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_action_slide.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_sort.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_sort.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_kr.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_kr.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_clear2.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_clear2.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_action_back.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_action_back.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_help.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_help.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_nav_avatar.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\nav_avatar.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_wet.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_wet.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_clear2.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_clear2.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_ph.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_ph.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_version.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_version.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_translation.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\translation\\layout\\activity_translation.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_burn.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_burn.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_harmful.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_harmful.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_header_app_info.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\app_info\\layout\\header_app_info.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_action_back.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_action_back.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_th.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_th.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_clear2.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_clear2.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_about_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\main\\layout\\about_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_burn.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_burn.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_apk.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_apk.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_sort.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_sort.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_version.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_version.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_dry.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_dry.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_bing.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_bing.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_video.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_video.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_harmful.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_harmful.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_garbage_classification.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\garbage_classification\\layout\\activity_garbage_classification.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_bg_place_holder.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\bg_place_holder.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_cupcake.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_cupcake.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_burn.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_burn.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_translate.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_translate.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_version.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_version.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_dry.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_dry.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_recycleable.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_recycleable.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_bg_place_holder.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\bg_place_holder.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_arrow_right.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_arrow_right.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_copy.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_copy.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_select_all.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_select_all.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_clear.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_clear.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_se.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_se.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_clean_file.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\clean_file\\layout\\activity_clean_file.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_white_star.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_white_star.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_collection_item_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\translation\\layout\\collection_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\anim_activity_enter_anim.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\anim\\activity_enter_anim.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_gingerbread.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_gingerbread.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_search.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_search.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_ru.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_ru.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\clean_file\\layout\\fragment_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_action_slide.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_action_slide.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_daily.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_daily.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_shortcut_mt.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_shortcut_mt.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_up_arrow.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_up_arrow.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_internet.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_internet.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_cn.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_cn.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_big_file.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_big_file.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_bg_place_holder.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxxhdpi\\bg_place_holder.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_daily.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_daily.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_sort.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_sort.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_text_encryption.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\text_encryption\\layout\\activity_text_encryption.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_background_color_primary3.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable\\round_background_color_primary3.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_garbage_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\garbage_classification\\layout\\garbage_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_arrow_right.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_arrow_right.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_tw.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_tw.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_dk.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_dk.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_collection_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\translation\\layout\\collection_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_about.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\about.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_recycleable.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_recycleable.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_ice_cream_sandwich.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_ice_cream_sandwich.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_app_info.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\app_info\\layout\\item_app_info.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_hk.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_hk.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_wet.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_wet.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_geek.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_geek.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_sort.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_sort.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_from_window.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\translation\\layout\\select_from_window.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_up_arrow.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_up_arrow.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_recycleable.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_recycleable.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_background_color_primary2.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable\\round_background_color_primary2.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_black_star.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_black_star.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_item_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\main\\layout\\main_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_select_all.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_select_all.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_global_outbreak.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_global_outbreak.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_geek.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_geek.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_uk.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_uk.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_jp.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_jp.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_slide.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_slide.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_q.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_q.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_translate.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_translate.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_translate.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_translate.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_action_inquire.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_action_inquire.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_copy.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_copy.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_copy.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_copy.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_background_color_primary.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable\\round_background_color_primary.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_audio.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_audio.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_about_item_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\main\\layout\\about_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_clean_file.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_clean_file.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_modify_dpi_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\layout\\modify_dpi_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_black_star.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_black_star.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_white_star.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_white_star.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_action_inquire.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_action_inquire.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_select_all.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_select_all.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_up_arrow.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_up_arrow.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_clear2.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_clear2.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_nougat.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_nougat.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_copy.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_copy.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_harmful.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_harmful.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_honeycomb.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_honeycomb.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\xml_network_security_config.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\xml\\network_security_config.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_br.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_br.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_white_star.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_white_star.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_copy.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_copy.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_arrow_right.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_arrow_right.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_help.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_help.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_clear.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_clear.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_r.jpeg.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_r.jpeg"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_detail.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\global_outbreak\\layout\\item_detail.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_clear2.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_clear2.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_black_star.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_black_star.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_item_selector.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-v21\\item_selector.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_shortcut_mt.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_shortcut_mt.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_version.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_version.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_version.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_version.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_jelly_bean.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_jelly_bean.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_phone_attribution.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\phone_attribution\\layout\\activity_phone_attribution.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_shortcut_mt.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_shortcut_mt.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_delete.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_delete.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_fake_battery_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\layout\\fake_battery_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_wifi_pwd_view.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\wifi_pwd_view\\layout\\activity_wifi_pwd_view.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_country_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\currency_conversion\\layout\\item_country_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_wet.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_wet.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_harmful.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_harmful.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_background_preload.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\background_preload.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_translate.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_translate.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_delete.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_delete.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_white_star.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_white_star.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_article_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\today_in_history\\layout\\article_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_froyo.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_froyo.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_eu.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_eu.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\clean_file\\layout\\dialog.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_file_item_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\clean_file\\layout\\file_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_currency_conversion.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\currency_conversion\\layout\\activity_currency_conversion.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_app_detail.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\app_info\\layout\\activity_app_detail.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_delete.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_delete.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_theme.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\theme.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_au.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_au.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_oreo.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_oreo.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_daily.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_daily.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_setting.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\setting.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_scrolling.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\today_in_history\\layout\\activity_scrolling.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_my.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_my.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_burn.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_burn.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_app_info.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_app_info.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_bing_pic.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\bing_pic\\layout\\activity_bing_pic.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_battery.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_battery.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_search.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_search.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\menu_nav_menu.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\main\\menu\\nav_menu.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_delivery.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_delivery.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_arrow_right.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_arrow_right.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_fragment_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\main\\layout\\main_fragment_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_daily.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_daily.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_action_inquire.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_action_inquire.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_garbage.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_garbage.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_layout2.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\global_outbreak\\layout\\fragment_layout2.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_us.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_us.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_dictionary.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_dictionary.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_ch.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_ch.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_search.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_search.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\anim_activity_open.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\anim\\activity_open.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_wifi.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_wifi.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_black_star.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xhdpi\\ic_black_star.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_android_lollipop.webp.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\android_lollipop.webp"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_sort.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-mdpi\\ic_sort.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_dry.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-xxhdpi\\ic_dry.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_up_arrow.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-anydpi\\ic_up_arrow.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_global_outbreak.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\global_outbreak\\layout\\activity_global_outbreak.xml"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_action_back.png.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\drawable-hdpi\\ic_action_back.png"
+    },
+    {
+        "merged": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\res\\merged\\debug\\layout_sort_dialog_layout.xml.flat",
+        "source": "E:\\Android Projects\\MiniTool\\app\\src\\main\\res\\layout\\app_info\\layout\\sort_dialog_layout.xml"
+    }
+]

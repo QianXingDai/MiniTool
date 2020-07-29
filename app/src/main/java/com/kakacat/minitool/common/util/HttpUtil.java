@@ -28,7 +28,7 @@ public class HttpUtil {
     }
 
 
-    public static OkHttpClient getInstance(){
+    private static OkHttpClient getInstance(){
         if(okHttpClient == null){
             okHttpClient = new OkHttpClient();
         }

@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.kakacat.minitool.common.constant.Host;
-import com.kakacat.minitool.common.ui.UiUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;

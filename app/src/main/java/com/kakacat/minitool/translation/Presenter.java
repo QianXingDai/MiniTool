@@ -10,6 +10,7 @@ import com.kakacat.minitool.common.constant.Result;
 import com.kakacat.minitool.common.myinterface.HttpCallback;
 import com.kakacat.minitool.common.util.EncryptionUtil;
 import com.kakacat.minitool.common.util.HttpUtil;
+import com.kakacat.minitool.common.util.SystemUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,6 +32,10 @@ public class Presenter implements Contract.Presenter {
 
     private List<String> languageList1;
     private List<String> languageList2;
+    private List<String> collectionList;
+    private SharedPreferences.OnSharedPreferenceChangeListener sharedPreferenceChangeListener;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     public Presenter(Contract.View view) {
         this.view = view;
@@ -63,9 +68,12 @@ public class Presenter implements Contract.Presenter {
 
     @Override
     public List<String> getCollectionList(){
-        SharedPreferences sharedPreferences = context.getSharedPreferences("MyFavourite",Context.MODE_PRIVATE);
-        Map<String,String> map = (Map<String, String>) sharedPreferences.getAll();
-        return new ArrayList<>(map.keySet());
+        if(collectionList == null){
+            collectionList = new ArrayList<>();
+            Map<String,String> map = (Map<String, String>) getSharedPreferences().getAll();
+            collectionList.addAll(map.keySet());
+        }
+        return collectionList;
     }
 
     @Override
@@ -73,9 +81,8 @@ public class Presenter implements Contract.Presenter {
         if(TextUtils.isEmpty(source)){
             view.onAddToMyFavouriteCallBack("请输入内容");
         }else{
-            SharedPreferences sharedPreferences = context.getSharedPreferences("MyFavourite",Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            String s = source + ">" + target;
+            editor = getEditor();
+            String s = source + " > " + target;
             editor.putString(s,s);
             editor.commit();
             view.onAddToMyFavouriteCallBack("收藏成功");
@@ -135,5 +142,30 @@ public class Presenter implements Contract.Presenter {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public SharedPreferences getSharedPreferences() {
+        if(sharedPreferences == null){
+            sharedPreferences = context.getSharedPreferences("MyFavourite",Context.MODE_PRIVATE);
+            sharedPreferences.registerOnSharedPreferenceChangeListener(getSharedPreferenceChangeListener());
+        }
+        return sharedPreferences;
+    }
+
+    public SharedPreferences.Editor getEditor() {
+        if(editor == null){
+            editor = getSharedPreferences().edit();
+        }
+        return editor;
+    }
+
+    private SharedPreferences.OnSharedPreferenceChangeListener getSharedPreferenceChangeListener(){
+        if(sharedPreferenceChangeListener == null){
+            sharedPreferenceChangeListener = (sharedPreferences, s) -> {
+                getCollectionList().add(sharedPreferences.getString(s,""));
+                SystemUtil.log("add " + s);
+            };
+        }
+        return sharedPreferenceChangeListener;
     }
 }
