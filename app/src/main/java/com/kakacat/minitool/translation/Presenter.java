@@ -144,6 +144,7 @@ public class Presenter implements Contract.Presenter {
         return null;
     }
 
+    @Override
     public SharedPreferences getSharedPreferences() {
         if(sharedPreferences == null){
             sharedPreferences = context.getSharedPreferences("MyFavourite",Context.MODE_PRIVATE);
@@ -152,14 +153,15 @@ public class Presenter implements Contract.Presenter {
         return sharedPreferences;
     }
 
-    public SharedPreferences.Editor getEditor() {
+    private SharedPreferences.Editor getEditor() {
         if(editor == null){
             editor = getSharedPreferences().edit();
         }
         return editor;
     }
 
-    private SharedPreferences.OnSharedPreferenceChangeListener getSharedPreferenceChangeListener(){
+    @Override
+    public SharedPreferences.OnSharedPreferenceChangeListener getSharedPreferenceChangeListener(){
         if(sharedPreferenceChangeListener == null){
             sharedPreferenceChangeListener = (sharedPreferences, s) -> {
                 getCollectionList().add(sharedPreferences.getString(s,""));

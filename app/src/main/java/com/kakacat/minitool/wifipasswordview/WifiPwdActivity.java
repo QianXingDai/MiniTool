@@ -17,19 +17,19 @@ import com.kakacat.minitool.common.util.SystemUtil;
 public class WifiPwdActivity extends AppCompatActivity implements Contract.View {
 
     private Contract.Presenter presenter;
+    private Adapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wifi_pwd_view);
 
-        initData();
         initView();
+        initData();
     }
 
     @Override
     public void initData(){
-        setPresenter(new Presenter(this));
         presenter.initData();
     }
 
@@ -42,11 +42,13 @@ public class WifiPwdActivity extends AppCompatActivity implements Contract.View 
     public void initView() {
         initToolbar();
 
-        MyAdapter myAdapter = new MyAdapter(presenter.getWifiList());
+        setPresenter(new Presenter(this));
+
+        adapter = new Adapter(presenter.getWifiList());
         RecyclerView recyclerView = findViewById(R.id.rv_wifi);
-        recyclerView.setAdapter(myAdapter);
+        recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this,1));
-        myAdapter.setLongClickListener((v, position) -> {
+        adapter.setLongClickListener((v, position) -> {
             CharSequence wifiName = ((TextView)v.findViewById(R.id.tv_wifi_name)).getText();
             CharSequence pwd = ((TextView)v.findViewById(R.id.tv_wifi_pwd)).getText();
             SystemUtil.copyToClipboard(this,"wifiPwd",pwd);
@@ -67,6 +69,7 @@ public class WifiPwdActivity extends AppCompatActivity implements Contract.View 
     @Override
     public void onGetWifiDataCallBack(String result) {
         UiUtil.showToast(this,result);
+        adapter.notifyDataSetChanged();
     }
 
     @Override

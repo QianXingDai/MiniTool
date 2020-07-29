@@ -42,7 +42,9 @@
         <activity
             android:name="com.kakacat.minitool.cleanfile.CleanFileActivity"
             android:theme="@style/MyMaterialNoActionBarStyle" />
-        <activity android:name="com.kakacat.minitool.textencryption.TextEncryptionActivity" />
+        <activity
+            android:name="com.kakacat.minitool.textencryption.TextEncryptionActivity"
+            android:theme="@style/MyMaterialNoActionBarStyle" />
         <activity android:name="com.kakacat.minitool.appInfo.activity.AppDetailActivity" />
         <activity android:name="com.kakacat.minitool.appInfo.activity.AppInfoActivity" />
         <activity android:name="com.kakacat.minitool.wifipasswordview.WifiPwdActivity" />

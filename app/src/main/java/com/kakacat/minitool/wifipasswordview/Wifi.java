@@ -1,17 +1,12 @@
 package com.kakacat.minitool.wifipasswordview;
 
 public class Wifi {
+
     private String wifiImage;
     private String wifiName;
     private String wifiPwd;
 
     public Wifi(){}
-
-    public Wifi(String wifiImage, String wifiName, String wifiPwd) {
-        this.wifiImage = wifiImage;
-        this.wifiName = wifiName;
-        this.wifiPwd = wifiPwd;
-    }
 
     public String getWifiImage() {
         return wifiImage;

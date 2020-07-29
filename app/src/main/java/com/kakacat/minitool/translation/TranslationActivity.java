@@ -51,6 +51,13 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
     }
 
     @Override
+    protected void onDestroy() {
+        presenter.getSharedPreferences().unregisterOnSharedPreferenceChangeListener(presenter.getSharedPreferenceChangeListener());
+        presenter = null;
+        super.onDestroy();
+    }
+
+    @Override
     public void initData() {
         setPresenter(new Presenter(this));
         inflater = LayoutInflater.from(this);

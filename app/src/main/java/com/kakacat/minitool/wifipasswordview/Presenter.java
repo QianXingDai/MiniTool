@@ -16,6 +16,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import bolts.Continuation;
+import bolts.Task;
+
 public class Presenter implements Contract.Presenter {
 
     private Contract.View view;
@@ -30,21 +33,26 @@ public class Presenter implements Contract.Presenter {
 
     @Override
     public void initData(){
-        String result = "获取wifi配置信息失败,请检查是否有ROOT权限";
-        wifiList = getWifiList();
-        if(getWifiConfig()){
-            result =  "获取wifi配置文件成功,但是处理失败";
-            String filePath = Objects.requireNonNull(context.getExternalCacheDir()).getAbsolutePath() + "/WifiConfigStore.xml";
-            try{
-                SAXParserFactory factory = SAXParserFactory.newInstance();
-                SAXParser parser = factory.newSAXParser();
-                parser.parse(new File(filePath),new WiFiConfigSAXHandle(wifiList));
-                result = "解析成功";
-            } catch (ParserConfigurationException | IOException | SAXException e) {
-                e.printStackTrace();
+        Task.callInBackground(() -> {
+            String result = "获取wifi配置信息失败,请检查是否有ROOT权限";
+            wifiList = getWifiList();
+            if(getWifiConfig()){
+                result =  "获取wifi配置文件成功,但是处理失败";
+                String filePath = Objects.requireNonNull(context.getExternalCacheDir()).getAbsolutePath() + "/WifiConfigStore.xml";
+                try{
+                    SAXParserFactory factory = SAXParserFactory.newInstance();
+                    SAXParser parser = factory.newSAXParser();
+                    parser.parse(new File(filePath),new WiFiConfigSAXHandle(wifiList));
+                    result = "解析成功";
+                } catch (ParserConfigurationException | IOException | SAXException e) {
+                    e.printStackTrace();
+                }
             }
-        }
-        view.onGetWifiDataCallBack(result);
+            return result;
+        }).onSuccess((Continuation<String, Void>) task -> {
+            view.onGetWifiDataCallBack(task.getResult());
+            return null;
+        },Task.UI_THREAD_EXECUTOR);
     }
 
     private boolean getWifiConfig(){

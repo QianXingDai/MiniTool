@@ -1,20 +1,19 @@
-com/kakacat/minitool/todayinhistory/Adapter.java
- com.kakacat.minitool.todayinhistory.Adapter
- com.kakacat.minitool.todayinhistory.Adapter$ViewHolder
+com/kakacat/minitool/common/util/UiUtil.java
+ com.kakacat.minitool.common.util.UiUtil
+com/kakacat/minitool/main/fragment/MyFragment.java
+ com.kakacat.minitool.main.fragment.MyFragment
 com/kakacat/minitool/BuildConfig.java
  com.kakacat.minitool.BuildConfig
 com/kakacat/minitool/currencyconversion/Contract.java
  com.kakacat.minitool.currencyconversion.Contract
  com.kakacat.minitool.currencyconversion.Contract$Presenter
  com.kakacat.minitool.currencyconversion.Contract$View
-com/kakacat/minitool/wifipasswordview/MyAdapter.java
- com.kakacat.minitool.wifipasswordview.MyAdapter
- com.kakacat.minitool.wifipasswordview.MyAdapter$ViewHolder
-com/kakacat/minitool/main/fragment/MyFragment.java
- com.kakacat.minitool.main.fragment.MyFragment
-com/kakacat/minitool/appInfo/adapter/AppInfoAdapter.java
- com.kakacat.minitool.appInfo.adapter.AppInfoAdapter
- com.kakacat.minitool.appInfo.adapter.AppInfoAdapter$ViewHolder
+com/kakacat/minitool/common/util/SystemUtil.java
+ com.kakacat.minitool.common.util.SystemUtil
+com/kakacat/minitool/epidemicsituation/MyPageAdapter.java
+ com.kakacat.minitool.epidemicsituation.MyPageAdapter
+com/kakacat/minitool/translation/TranslationActivity.java
+ com.kakacat.minitool.translation.TranslationActivity
 com/kakacat/minitool/todayinhistory/Contract.java
  com.kakacat.minitool.todayinhistory.Contract
  com.kakacat.minitool.todayinhistory.Contract$Presenter
@@ -25,16 +24,16 @@ com/kakacat/minitool/main/adapter/MainAdapter.java
 com/kakacat/minitool/cleanfile/MyFabBehavior.java
  com.kakacat.minitool.cleanfile.MyFabBehavior
  com.kakacat.minitool.cleanfile.MyFabBehavior$1
-com/kakacat/minitool/appInfo/model/ApiPercent.java
- com.kakacat.minitool.appInfo.model.ApiPercent
+com/kakacat/minitool/appInfo/activity/AppInfoActivity.java
+ com.kakacat.minitool.appInfo.activity.AppInfoActivity
 com/kakacat/minitool/bingpic/ImageAdapter.java
  com.kakacat.minitool.bingpic.ImageAdapter
  com.kakacat.minitool.bingpic.ImageAdapter$ViewHolder
-com/kakacat/minitool/main/adapter/FragmentAdapter.java
- com.kakacat.minitool.main.adapter.FragmentAdapter
-com/kakacat/minitool/appInfo/adapter/ApiPercentAdapter.java
- com.kakacat.minitool.appInfo.adapter.ApiPercentAdapter
- com.kakacat.minitool.appInfo.adapter.ApiPercentAdapter$ViewHolder
+com/kakacat/minitool/todayinhistory/TodayInHistoryActivity.java
+ com.kakacat.minitool.todayinhistory.TodayInHistoryActivity
+com/kakacat/minitool/translation/Presenter.java
+ com.kakacat.minitool.translation.Presenter
+ com.kakacat.minitool.translation.Presenter$1
 com/kakacat/minitool/bingpic/Contract.java
  com.kakacat.minitool.bingpic.Contract
  com.kakacat.minitool.bingpic.Contract$Presenter
@@ -47,20 +46,22 @@ com/kakacat/minitool/garbageclassify/MyAdapter.java
  com.kakacat.minitool.garbageclassify.MyAdapter$ViewHolder
 com/kakacat/minitool/common/constant/AppKey.java
  com.kakacat.minitool.common.constant.AppKey
+com/kakacat/minitool/main/DepthPageTransformer.java
+ com.kakacat.minitool.main.DepthPageTransformer
 com/kakacat/minitool/inquireip/Contract.java
  com.kakacat.minitool.inquireip.Contract
  com.kakacat.minitool.inquireip.Contract$Presenter
  com.kakacat.minitool.inquireip.Contract$View
 com/kakacat/minitool/common/myinterface/RecycleViewOnTouchListener.java
  com.kakacat.minitool.common.myinterface.RecycleViewOnTouchListener
-com/kakacat/minitool/common/ui/MyFabBehavior.java
- com.kakacat.minitool.common.ui.MyFabBehavior
- com.kakacat.minitool.common.ui.MyFabBehavior$1
+com/kakacat/minitool/inquireip/Presenter.java
+ com.kakacat.minitool.inquireip.Presenter
+ com.kakacat.minitool.inquireip.Presenter$1
 com/kakacat/minitool/epidemicsituation/MyAdapter.java
  com.kakacat.minitool.epidemicsituation.MyAdapter
  com.kakacat.minitool.epidemicsituation.MyAdapter$ViewHolder
-com/kakacat/minitool/todayinhistory/MyListView.java
- com.kakacat.minitool.todayinhistory.MyListView
+com/kakacat/minitool/common/util/HttpUtil.java
+ com.kakacat.minitool.common.util.HttpUtil
 com/kakacat/minitool/epidemicsituation/DetailPopupWindow.java
  com.kakacat.minitool.epidemicsituation.DetailPopupWindow
 com/kakacat/minitool/translation/Contract.java
@@ -69,8 +70,9 @@ com/kakacat/minitool/translation/Contract.java
  com.kakacat.minitool.translation.Contract$View
 com/kakacat/minitool/common/util/JsonUtil.java
  com.kakacat.minitool.common.util.JsonUtil
-com/kakacat/minitool/epidemicsituation/MyPageAdapter.java
- com.kakacat.minitool.epidemicsituation.MyPageAdapter
+com/kakacat/minitool/fakebattery/FakeBatteryView.java
+ com.kakacat.minitool.fakebattery.FakeBatteryView
+ com.kakacat.minitool.fakebattery.FakeBatteryView$1
 com/kakacat/minitool/common/ui/view/MyPopupWindow.java
  com.kakacat.minitool.common.ui.view.MyPopupWindow
 com/kakacat/minitool/main/model/AboutItem.java
@@ -79,48 +81,42 @@ com/kakacat/minitool/appInfo/contract/AppInfoContract.java
  com.kakacat.minitool.appInfo.contract.AppInfoContract
  com.kakacat.minitool.appInfo.contract.AppInfoContract$Presenter
  com.kakacat.minitool.appInfo.contract.AppInfoContract$View
-com/kakacat/minitool/common/base/FrescoInitActivity.java
- com.kakacat.minitool.common.base.FrescoInitActivity
 com/kakacat/minitool/translation/LanguageMap.java
  com.kakacat.minitool.translation.LanguageMap
+com/kakacat/minitool/textencryption/Presenter.java
+ com.kakacat.minitool.textencryption.Presenter
 com/kakacat/minitool/cleanfile/model/FileItem.java
  com.kakacat.minitool.cleanfile.model.FileItem
-com/kakacat/minitool/textencryption/ItemAdapter.java
- com.kakacat.minitool.textencryption.ItemAdapter
- com.kakacat.minitool.textencryption.ItemAdapter$ViewHolder
 com/kakacat/minitool/main/navigation/ChangeThemeDialog.java
  com.kakacat.minitool.main.navigation.ChangeThemeDialog
-com/kakacat/minitool/common/ui/FlowLayoutManager.java
- com.kakacat.minitool.common.ui.FlowLayoutManager
- com.kakacat.minitool.common.ui.FlowLayoutManager$LayoutParams
- com.kakacat.minitool.common.ui.FlowLayoutManager$Orientation
-com/kakacat/minitool/wifipasswordview/Contract.java
- com.kakacat.minitool.wifipasswordview.Contract
- com.kakacat.minitool.wifipasswordview.Contract$Presenter
- com.kakacat.minitool.wifipasswordview.Contract$View
-com/kakacat/minitool/epidemicsituation/MyFragment.java
- com.kakacat.minitool.epidemicsituation.MyFragment
-com/kakacat/minitool/appInfo/model/AndroidMap.java
- com.kakacat.minitool.appInfo.model.AndroidMap
-com/kakacat/minitool/main/DepthPageTransformer.java
- com.kakacat.minitool.main.DepthPageTransformer
-com/kakacat/minitool/common/util/EncryptionUtil.java
- com.kakacat.minitool.common.util.EncryptionUtil
-com/kakacat/minitool/garbageclassify/model/Garbage.java
- com.kakacat.minitool.garbageclassify.model.Garbage
+com/kakacat/minitool/inquireip/InquireIpActivity.java
+ com.kakacat.minitool.inquireip.InquireIpActivity
+com/kakacat/minitool/main/navigation/AboutViewItemOn.java
+ com.kakacat.minitool.main.navigation.AboutViewItemOn
+com/kakacat/minitool/phoneartribution/PhoneAttributionActivity.java
+ com.kakacat.minitool.phoneartribution.PhoneAttributionActivity
+com/kakacat/minitool/wifipasswordview/WifiPwdActivity.java
+ com.kakacat.minitool.wifipasswordview.WifiPwdActivity
+com/kakacat/minitool/main/fragment/DailyFragment.java
+ com.kakacat.minitool.main.fragment.DailyFragment
+com/kakacat/minitool/bingpic/Presenter.java
+ com.kakacat.minitool.bingpic.Presenter
+com/kakacat/minitool/appInfo/contract/AppDetailContract.java
+ com.kakacat.minitool.appInfo.contract.AppDetailContract
+ com.kakacat.minitool.appInfo.contract.AppDetailContract$Presenter
+ com.kakacat.minitool.appInfo.contract.AppDetailContract$View
 com/kakacat/minitool/common/constant/Result.java
  com.kakacat.minitool.common.constant.Result
 com/kakacat/minitool/main/MainContract.java
  com.kakacat.minitool.main.MainContract
  com.kakacat.minitool.main.MainContract$Presenter
  com.kakacat.minitool.main.MainContract$View
-com/kakacat/minitool/common/myinterface/RecycleViewItemOnLongClickListener.java
- com.kakacat.minitool.common.myinterface.RecycleViewItemOnLongClickListener
-com/kakacat/minitool/currencyconversion/CountryAdapter.java
- com.kakacat.minitool.currencyconversion.CountryAdapter
- com.kakacat.minitool.currencyconversion.CountryAdapter$ViewHolder
-com/kakacat/minitool/common/base/IPresenter.java
- com.kakacat.minitool.common.base.IPresenter
+com/kakacat/minitool/appInfo/presenter/AppDetailPresenter.java
+ com.kakacat.minitool.appInfo.presenter.AppDetailPresenter
+com/kakacat/minitool/inquireip/IpModel.java
+ com.kakacat.minitool.inquireip.IpModel
+com/kakacat/minitool/modifydpi/ModifyDpiView.java
+ com.kakacat.minitool.modifydpi.ModifyDpiView
 com/kakacat/minitool/wifipasswordview/WiFiConfigSAXHandle.java
  com.kakacat.minitool.wifipasswordview.WiFiConfigSAXHandle
 com/kakacat/minitool/main/Presenter.java
@@ -128,13 +124,14 @@ com/kakacat/minitool/main/Presenter.java
 com/kakacat/minitool/appInfo/model/AppInfo.java
  com.kakacat.minitool.appInfo.model.AppInfo
  com.kakacat.minitool.appInfo.model.AppInfo$1
-com/kakacat/minitool/garbageclassify/model/TypeMap.java
- com.kakacat.minitool.garbageclassify.model.TypeMap
-com/kakacat/minitool/appInfo/presenter/AppInfoPresenter.java
- com.kakacat.minitool.appInfo.presenter.AppInfoPresenter
-com/kakacat/minitool/main/adapter/AboutItemAdapter.java
- com.kakacat.minitool.main.adapter.AboutItemAdapter
- com.kakacat.minitool.main.adapter.AboutItemAdapter$ViewHolder
+com/kakacat/minitool/phoneartribution/Presenter.java
+ com.kakacat.minitool.phoneartribution.Presenter
+ com.kakacat.minitool.phoneartribution.Presenter$1
+com/kakacat/minitool/main/MainActivity.java
+ com.kakacat.minitool.main.MainActivity
+ com.kakacat.minitool.main.MainActivity$1
+com/kakacat/minitool/wifipasswordview/Presenter.java
+ com.kakacat.minitool.wifipasswordview.Presenter
 com/kakacat/minitool/wifipasswordview/Wifi.java
  com.kakacat.minitool.wifipasswordview.Wifi
 com/kakacat/minitool/cleanfile/model/MyFragment.java
@@ -143,8 +140,10 @@ com/kakacat/minitool/common/myinterface/HttpCallback.java
  com.kakacat.minitool.common.myinterface.HttpCallback
 com/kakacat/minitool/currencyconversion/model/Country.java
  com.kakacat.minitool.currencyconversion.model.Country
-com/kakacat/minitool/cleanfile/Presenter.java
- com.kakacat.minitool.cleanfile.Presenter
+com/kakacat/minitool/garbageclassify/GarbageClassificationActivity.java
+ com.kakacat.minitool.garbageclassify.GarbageClassificationActivity
+ com.kakacat.minitool.garbageclassify.GarbageClassificationActivity$1
+ com.kakacat.minitool.garbageclassify.GarbageClassificationActivity$ContentDialogHolder
 com/kakacat/minitool/common/util/StringUtil.java
  com.kakacat.minitool.common.util.StringUtil
 com/kakacat/minitool/main/model/MainItem.java
@@ -172,10 +171,11 @@ com/kakacat/minitool/cleanfile/Contract.java
  com.kakacat.minitool.cleanfile.Contract$View
 com/kakacat/minitool/common/ui/ItemDecoration.java
  com.kakacat.minitool.common.ui.ItemDecoration
-com/kakacat/minitool/common/ui/view/CircleProgressView.java
- com.kakacat.minitool.common.ui.view.CircleProgressView
-com/kakacat/minitool/todayinhistory/Article.java
- com.kakacat.minitool.todayinhistory.Article
+com/kakacat/minitool/currencyconversion/Presenter.java
+ com.kakacat.minitool.currencyconversion.Presenter
+ com.kakacat.minitool.currencyconversion.Presenter$1
+com/kakacat/minitool/appInfo/activity/AppDetailActivity.java
+ com.kakacat.minitool.appInfo.activity.AppDetailActivity
 com/kakacat/minitool/epidemicsituation/EpidemicData.java
  com.kakacat.minitool.epidemicsituation.EpidemicData
 com/kakacat/minitool/phoneartribution/Contract.java
@@ -184,96 +184,99 @@ com/kakacat/minitool/phoneartribution/Contract.java
  com.kakacat.minitool.phoneartribution.Contract$View
 com/kakacat/minitool/cleanfile/adapter/FragmentAdapter.java
  com.kakacat.minitool.cleanfile.adapter.FragmentAdapter
-com/kakacat/minitool/wifipasswordview/Presenter.java
- com.kakacat.minitool.wifipasswordview.Presenter
+com/kakacat/minitool/garbageclassify/Presenter.java
+ com.kakacat.minitool.garbageclassify.Presenter
+ com.kakacat.minitool.garbageclassify.Presenter$1
 com/kakacat/minitool/common/base/IView.java
  com.kakacat.minitool.common.base.IView
 com/kakacat/minitool/currencyconversion/model/Rate.java
  com.kakacat.minitool.currencyconversion.model.Rate
-com/kakacat/minitool/common/myinterface/RecycleViewItemOnClickListener.java
- com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener
-com/kakacat/minitool/common/util/UiUtil.java
- com.kakacat.minitool.common.util.UiUtil
+com/kakacat/minitool/audiocapture/GetAudioService.java
+ com.kakacat.minitool.audiocapture.GetAudioService
+com/kakacat/minitool/cleanfile/Presenter.java
+ com.kakacat.minitool.cleanfile.Presenter
+com/kakacat/minitool/currencyconversion/MainActivity.java
+ com.kakacat.minitool.currencyconversion.MainActivity
+com/kakacat/minitool/wifipasswordview/Adapter.java
+ com.kakacat.minitool.wifipasswordview.Adapter
+ com.kakacat.minitool.wifipasswordview.Adapter$ViewHolder
 com/kakacat/minitool/cleanfile/CleanFileActivity.java
  com.kakacat.minitool.cleanfile.CleanFileActivity
  com.kakacat.minitool.cleanfile.CleanFileActivity$1
-com/kakacat/minitool/fakebattery/FakeBatteryView.java
- com.kakacat.minitool.fakebattery.FakeBatteryView
- com.kakacat.minitool.fakebattery.FakeBatteryView$1
-com/kakacat/minitool/common/util/SystemUtil.java
- com.kakacat.minitool.common.util.SystemUtil
-com/kakacat/minitool/main/fragment/GeekFragment.java
- com.kakacat.minitool.main.fragment.GeekFragment
-com/kakacat/minitool/bingpic/BingPicActivity.java
- com.kakacat.minitool.bingpic.BingPicActivity
- com.kakacat.minitool.bingpic.BingPicActivity$1
-com/kakacat/minitool/garbageclassify/GarbageClassificationActivity.java
- com.kakacat.minitool.garbageclassify.GarbageClassificationActivity
- com.kakacat.minitool.garbageclassify.GarbageClassificationActivity$1
- com.kakacat.minitool.garbageclassify.GarbageClassificationActivity$ContentDialogHolder
-com/kakacat/minitool/inquireip/InquireIpActivity.java
- com.kakacat.minitool.inquireip.InquireIpActivity
-com/kakacat/minitool/main/navigation/AboutViewItemOn.java
- com.kakacat.minitool.main.navigation.AboutViewItemOn
-com/kakacat/minitool/currencyconversion/Presenter.java
- com.kakacat.minitool.currencyconversion.Presenter
- com.kakacat.minitool.currencyconversion.Presenter$1
-com/kakacat/minitool/appInfo/activity/AppInfoActivity.java
- com.kakacat.minitool.appInfo.activity.AppInfoActivity
-com/kakacat/minitool/phoneartribution/PhoneAttributionActivity.java
- com.kakacat.minitool.phoneartribution.PhoneAttributionActivity
-com/kakacat/minitool/wifipasswordview/WifiPwdActivity.java
- com.kakacat.minitool.wifipasswordview.WifiPwdActivity
+com/kakacat/minitool/todayinhistory/MyListView.java
+ com.kakacat.minitool.todayinhistory.MyListView
+com/kakacat/minitool/common/base/FrescoInitActivity.java
+ com.kakacat.minitool.common.base.FrescoInitActivity
+com/kakacat/minitool/main/adapter/FragmentAdapter.java
+ com.kakacat.minitool.main.adapter.FragmentAdapter
+com/kakacat/minitool/garbageclassify/model/TypeMap.java
+ com.kakacat.minitool.garbageclassify.model.TypeMap
+com/kakacat/minitool/todayinhistory/Adapter.java
+ com.kakacat.minitool.todayinhistory.Adapter
+ com.kakacat.minitool.todayinhistory.Adapter$ViewHolder
 com/kakacat/minitool/translation/adapter/CollectionAdapter.java
  com.kakacat.minitool.translation.adapter.CollectionAdapter
  com.kakacat.minitool.translation.adapter.CollectionAdapter$ViewHolder
-com/kakacat/minitool/todayinhistory/TodayInHistoryActivity.java
- com.kakacat.minitool.todayinhistory.TodayInHistoryActivity
-com/kakacat/minitool/currencyconversion/MainActivity.java
- com.kakacat.minitool.currencyconversion.MainActivity
-com/kakacat/minitool/bingpic/Presenter.java
- com.kakacat.minitool.bingpic.Presenter
-com/kakacat/minitool/appInfo/contract/AppDetailContract.java
- com.kakacat.minitool.appInfo.contract.AppDetailContract
- com.kakacat.minitool.appInfo.contract.AppDetailContract$Presenter
- com.kakacat.minitool.appInfo.contract.AppDetailContract$View
+com/kakacat/minitool/common/base/IPresenter.java
+ com.kakacat.minitool.common.base.IPresenter
+com/kakacat/minitool/bingpic/BingPicActivity.java
+ com.kakacat.minitool.bingpic.BingPicActivity
+ com.kakacat.minitool.bingpic.BingPicActivity$1
+com/kakacat/minitool/common/ui/view/CircleProgressView.java
+ com.kakacat.minitool.common.ui.view.CircleProgressView
+com/kakacat/minitool/appInfo/model/ApiPercent.java
+ com.kakacat.minitool.appInfo.model.ApiPercent
+com/kakacat/minitool/epidemicsituation/MyFragment.java
+ com.kakacat.minitool.epidemicsituation.MyFragment
+com/kakacat/minitool/todayinhistory/Article.java
+ com.kakacat.minitool.todayinhistory.Article
+com/kakacat/minitool/wifipasswordview/Contract.java
+ com.kakacat.minitool.wifipasswordview.Contract
+ com.kakacat.minitool.wifipasswordview.Contract$Presenter
+ com.kakacat.minitool.wifipasswordview.Contract$View
+com/kakacat/minitool/garbageclassify/model/Garbage.java
+ com.kakacat.minitool.garbageclassify.model.Garbage
+com/kakacat/minitool/common/util/EncryptionUtil.java
+ com.kakacat.minitool.common.util.EncryptionUtil
+com/kakacat/minitool/appInfo/adapter/ApiPercentAdapter.java
+ com.kakacat.minitool.appInfo.adapter.ApiPercentAdapter
+ com.kakacat.minitool.appInfo.adapter.ApiPercentAdapter$ViewHolder
+com/kakacat/minitool/textencryption/Contract.java
+ com.kakacat.minitool.textencryption.Contract
+ com.kakacat.minitool.textencryption.Contract$Presenter
+ com.kakacat.minitool.textencryption.Contract$View
+com/kakacat/minitool/appInfo/model/AndroidMap.java
+ com.kakacat.minitool.appInfo.model.AndroidMap
+com/kakacat/minitool/main/adapter/AboutItemAdapter.java
+ com.kakacat.minitool.main.adapter.AboutItemAdapter
+ com.kakacat.minitool.main.adapter.AboutItemAdapter$ViewHolder
+com/kakacat/minitool/appInfo/presenter/AppInfoPresenter.java
+ com.kakacat.minitool.appInfo.presenter.AppInfoPresenter
 com/kakacat/minitool/epidemicsituation/GlobalOutbreakActivity.java
  com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity
  com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity$1
  com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity$2
-com/kakacat/minitool/appInfo/activity/AppDetailActivity.java
- com.kakacat.minitool.appInfo.activity.AppDetailActivity
-com/kakacat/minitool/appInfo/presenter/AppDetailPresenter.java
- com.kakacat.minitool.appInfo.presenter.AppDetailPresenter
-com/kakacat/minitool/inquireip/IpModel.java
- com.kakacat.minitool.inquireip.IpModel
-com/kakacat/minitool/textencryption/TextEncryptionActivity.java
- com.kakacat.minitool.textencryption.TextEncryptionActivity
-com/kakacat/minitool/modifydpi/ModifyDpiView.java
- com.kakacat.minitool.modifydpi.ModifyDpiView
+com/kakacat/minitool/common/myinterface/RecycleViewItemOnClickListener.java
+ com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener
+com/kakacat/minitool/appInfo/adapter/AppInfoAdapter.java
+ com.kakacat.minitool.appInfo.adapter.AppInfoAdapter
+ com.kakacat.minitool.appInfo.adapter.AppInfoAdapter$ViewHolder
+com/kakacat/minitool/common/ui/MyFabBehavior.java
+ com.kakacat.minitool.common.ui.MyFabBehavior
+ com.kakacat.minitool.common.ui.MyFabBehavior$1
+com/kakacat/minitool/common/ui/FlowLayoutManager.java
+ com.kakacat.minitool.common.ui.FlowLayoutManager
+ com.kakacat.minitool.common.ui.FlowLayoutManager$LayoutParams
+ com.kakacat.minitool.common.ui.FlowLayoutManager$Orientation
 com/kakacat/minitool/todayinhistory/Presenter.java
  com.kakacat.minitool.todayinhistory.Presenter
  com.kakacat.minitool.todayinhistory.Presenter$1
-com/kakacat/minitool/garbageclassify/Presenter.java
- com.kakacat.minitool.garbageclassify.Presenter
- com.kakacat.minitool.garbageclassify.Presenter$1
-com/kakacat/minitool/audiocapture/GetAudioService.java
- com.kakacat.minitool.audiocapture.GetAudioService
-com/kakacat/minitool/phoneartribution/Presenter.java
- com.kakacat.minitool.phoneartribution.Presenter
- com.kakacat.minitool.phoneartribution.Presenter$1
-com/kakacat/minitool/inquireip/Presenter.java
- com.kakacat.minitool.inquireip.Presenter
- com.kakacat.minitool.inquireip.Presenter$1
-com/kakacat/minitool/main/MainActivity.java
- com.kakacat.minitool.main.MainActivity
- com.kakacat.minitool.main.MainActivity$1
-com/kakacat/minitool/common/util/HttpUtil.java
- com.kakacat.minitool.common.util.HttpUtil
-com/kakacat/minitool/translation/Presenter.java
- com.kakacat.minitool.translation.Presenter
- com.kakacat.minitool.translation.Presenter$1
-com/kakacat/minitool/translation/TranslationActivity.java
- com.kakacat.minitool.translation.TranslationActivity
-com/kakacat/minitool/main/fragment/DailyFragment.java
- com.kakacat.minitool.main.fragment.DailyFragment
+com/kakacat/minitool/currencyconversion/CountryAdapter.java
+ com.kakacat.minitool.currencyconversion.CountryAdapter
+ com.kakacat.minitool.currencyconversion.CountryAdapter$ViewHolder
+com/kakacat/minitool/common/myinterface/RecycleViewItemOnLongClickListener.java
+ com.kakacat.minitool.common.myinterface.RecycleViewItemOnLongClickListener
+com/kakacat/minitool/textencryption/TextEncryptionActivity.java
+ com.kakacat.minitool.textencryption.TextEncryptionActivity
+com/kakacat/minitool/main/fragment/GeekFragment.java
+ com.kakacat.minitool.main.fragment.GeekFragment

@@ -24,7 +24,7 @@
 14-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:9:22-63
 15
 16    <application
-16-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:11:5-63:19
+16-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:11:5-65:19
 17        android:allowBackup="true"
 17-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:12:9-35
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -79,72 +79,75 @@
 43-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:35:13-56
 44            android:theme="@style/MyMaterialNoActionBarStyle" />
 44-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:36:13-62
-45        <activity android:name="com.kakacat.minitool.textencryption.TextEncryptionActivity" />
-45-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:37:9-75
-45-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:37:19-72
-46        <activity android:name="com.kakacat.minitool.appInfo.activity.AppDetailActivity" />
-46-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:38:9-72
-46-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:38:19-69
-47        <activity android:name="com.kakacat.minitool.appInfo.activity.AppInfoActivity" />
-47-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:39:9-70
-47-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:39:19-67
-48        <activity android:name="com.kakacat.minitool.wifipasswordview.WifiPwdActivity" />
-48-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:40:9-70
-48-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:40:19-67
-49        <activity
-49-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:41:9-44:59
-50            android:name="com.kakacat.minitool.todayinhistory.TodayInHistoryActivity"
-50-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:42:13-66
-51            android:label="@string/title_today_in_history"
-51-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:43:13-59
-52            android:theme="@style/AppTheme.NoActionBar" />
-52-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:44:13-56
-53        <activity
-53-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:45:9-47:65
-54            android:name="com.kakacat.minitool.phoneartribution.PhoneAttributionActivity"
-54-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:46:13-70
-55            android:theme="@style/MyMaterialNoActionBarStyle" />
-55-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:47:13-62
-56        <activity
-56-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:48:9-50:64
-57            android:name="com.kakacat.minitool.inquireip.InquireIpActivity"
-57-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:49:13-56
-58            android:theme="@style/MyMaterialNoActionBarStyle" />
-58-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:50:13-62
-59        <activity
-59-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:51:9-53:65
-60            android:name="com.kakacat.minitool.currencyconversion.MainActivity"
-60-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:52:13-60
-61            android:label="@string/title_currency_conversion" />
-61-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:53:13-62
-62        <activity
-62-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:54:9-62:20
-63            android:name="com.kakacat.minitool.main.MainActivity"
-63-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:55:13-46
-64            android:configChanges="orientation|screenSize" >
-64-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:56:13-59
-65            <intent-filter>
-65-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:57:13-61:29
-66                <action android:name="android.intent.action.MAIN" />
-66-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:58:17-69
-66-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:58:25-66
-67
-68                <category android:name="android.intent.category.LAUNCHER" />
-68-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:60:17-77
-68-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:60:27-74
-69            </intent-filter>
-70        </activity>
-71
-72        <provider
-72-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kakacat\.gradle\caches\transforms-2\files-2.1\5f0a462837f28482b18bdc2c904e0875\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-73            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-73-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kakacat\.gradle\caches\transforms-2\files-2.1\5f0a462837f28482b18bdc2c904e0875\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-74            android:authorities="com.kakacat.minitool.lifecycle-process"
-74-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kakacat\.gradle\caches\transforms-2\files-2.1\5f0a462837f28482b18bdc2c904e0875\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-75            android:exported="false"
-75-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kakacat\.gradle\caches\transforms-2\files-2.1\5f0a462837f28482b18bdc2c904e0875\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-76            android:multiprocess="true" />
-76-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kakacat\.gradle\caches\transforms-2\files-2.1\5f0a462837f28482b18bdc2c904e0875\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-77    </application>
-78
-79</manifest>
+45        <activity
+45-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:37:9-39:64
+46            android:name="com.kakacat.minitool.textencryption.TextEncryptionActivity"
+46-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:38:13-66
+47            android:theme="@style/MyMaterialNoActionBarStyle" />
+47-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:39:13-62
+48        <activity android:name="com.kakacat.minitool.appInfo.activity.AppDetailActivity" />
+48-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:40:9-72
+48-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:40:19-69
+49        <activity android:name="com.kakacat.minitool.appInfo.activity.AppInfoActivity" />
+49-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:41:9-70
+49-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:41:19-67
+50        <activity android:name="com.kakacat.minitool.wifipasswordview.WifiPwdActivity" />
+50-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:42:9-70
+50-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:42:19-67
+51        <activity
+51-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:43:9-46:59
+52            android:name="com.kakacat.minitool.todayinhistory.TodayInHistoryActivity"
+52-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:44:13-66
+53            android:label="@string/title_today_in_history"
+53-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:45:13-59
+54            android:theme="@style/AppTheme.NoActionBar" />
+54-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:46:13-56
+55        <activity
+55-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:47:9-49:65
+56            android:name="com.kakacat.minitool.phoneartribution.PhoneAttributionActivity"
+56-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:48:13-70
+57            android:theme="@style/MyMaterialNoActionBarStyle" />
+57-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:49:13-62
+58        <activity
+58-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:50:9-52:64
+59            android:name="com.kakacat.minitool.inquireip.InquireIpActivity"
+59-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:51:13-56
+60            android:theme="@style/MyMaterialNoActionBarStyle" />
+60-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:52:13-62
+61        <activity
+61-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:53:9-55:65
+62            android:name="com.kakacat.minitool.currencyconversion.MainActivity"
+62-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:54:13-60
+63            android:label="@string/title_currency_conversion" />
+63-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:55:13-62
+64        <activity
+64-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:56:9-64:20
+65            android:name="com.kakacat.minitool.main.MainActivity"
+65-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:57:13-46
+66            android:configChanges="orientation|screenSize" >
+66-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:58:13-59
+67            <intent-filter>
+67-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:59:13-63:29
+68                <action android:name="android.intent.action.MAIN" />
+68-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:60:17-69
+68-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:60:25-66
+69
+70                <category android:name="android.intent.category.LAUNCHER" />
+70-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:62:17-77
+70-->E:\Android Projects\MiniTool\app\src\main\AndroidManifest.xml:62:27-74
+71            </intent-filter>
+72        </activity>
+73
+74        <provider
+74-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kakacat\.gradle\caches\transforms-2\files-2.1\5f0a462837f28482b18bdc2c904e0875\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+75            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+75-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kakacat\.gradle\caches\transforms-2\files-2.1\5f0a462837f28482b18bdc2c904e0875\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+76            android:authorities="com.kakacat.minitool.lifecycle-process"
+76-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kakacat\.gradle\caches\transforms-2\files-2.1\5f0a462837f28482b18bdc2c904e0875\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+77            android:exported="false"
+77-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kakacat\.gradle\caches\transforms-2\files-2.1\5f0a462837f28482b18bdc2c904e0875\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+78            android:multiprocess="true" />
+78-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\kakacat\.gradle\caches\transforms-2\files-2.1\5f0a462837f28482b18bdc2c904e0875\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+79    </application>
+80
+81</manifest>

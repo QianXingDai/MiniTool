@@ -5,57 +5,44 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.util.UiUtil;
-import com.kakacat.minitool.common.util.EncryptionUtil;
 import com.kakacat.minitool.common.util.SystemUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 
-import java.util.ArrayList;
-import java.util.List;
+public class TextEncryptionActivity extends AppCompatActivity implements Contract.View{
 
-public class TextEncryptionActivity extends AppCompatActivity implements View.OnClickListener{
-
-    private Context context;
+    private Contract.Presenter presenter;
 
     private Toolbar toolbar;
-
-    private ItemAdapter adapter;
-
-    private RecyclerView recyclerView;
-
-    private Button btCode;
-    private Button btDecode;
-    private Button btDeleteInput;
-    private Button btCopy;
-
-    private EditText editText;
-
-    private TextView tvSubTitle;
     private TextView tvOutput;
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_encryption);
 
-        initWidget();
-        setListener();
+        initData();
+        initView();
     }
 
+    @Override
+    public void initData() {
+        setPresenter(new Presenter(this));
+        presenter.initData();
+    }
 
-    private void initWidget() {
+    @Override
+    public void initView() {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -65,86 +52,49 @@ public class TextEncryptionActivity extends AppCompatActivity implements View.On
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        context = TextEncryptionActivity.this;
-
-        initAdapter();
-        recyclerView = findViewById(R.id.recycler_view);
-        recyclerView.setAdapter(adapter);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
-        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        btCode = findViewById(R.id.bt_code);
-        btDecode = findViewById(R.id.bt_decode);
-        btDeleteInput = findViewById(R.id.bt_delete_input);
-        btCopy = findViewById(R.id.bt_copy);
-
-        editText = findViewById(R.id.edit_text1);
+        ChipGroup chipGroup = findViewById(R.id.chip_group);
+        for (String s : presenter.getEncryptionMethods()){
+            Chip chip = new Chip(getContext());
+            chip.setCheckable(true);
+            chip.setChipIconVisible(false);
+            chip.setCloseIconVisible(false);
+            chip.setCheckedIconResource(R.drawable.ic_mtrl_chip_checked_black);
+            chip.setOnCheckedChangeListener((compoundButton, b) -> {
+                if(b) {
+                    toolbar.setSubtitle(s);
+                    toolbar.setSubtitleTextColor(getColor(android.R.color.white));
+                }
+            });
+            chip.setText(s);
+            chipGroup.addView(chip);
+        }
+        ((Chip)chipGroup.getChildAt(0)).setChecked(true);
 
         tvOutput = findViewById(R.id.tv_output);
-        tvSubTitle = findViewById(R.id.tv_sub_title);
-    }
-
-
-    private void setListener(){
-        btCode.setOnClickListener(this);
-        btDecode.setOnClickListener(this);
-        btDeleteInput.setOnClickListener(this);
-        btCopy.setOnClickListener(this);
-
-        adapter.setFocusChangeListener((v, hasFocus) -> {
-            TextView tv = (TextView) v;
-            if(hasFocus){
-                tv.setTextSize(16);
-                tvSubTitle.setText(tv.getText());
-            }
-            else tv.setTextSize(12);
-        });
+        editText = findViewById(R.id.edit_text);
         editText.setOnFocusChangeListener((v, hasFocus) -> {
-            if(!hasFocus) UiUtil.closeKeyboard(context,v);
+            if(!hasFocus) {
+                UiUtil.closeKeyboard(getContext(),v);
+            }
         });
     }
-
-    private void initAdapter(){
-        List<String> stringList = new ArrayList<>();
-        stringList.add("BASE64");
-        stringList.add("MD5");
-        stringList.add("HmacSHA1");
-        adapter = new ItemAdapter(stringList);
-    }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem){
-        switch (menuItem.getItemId()){
-            case android.R.id.home:{
-                finish();
-                break;
-            }
-            default:
-                break;
+        if (menuItem.getItemId() == android.R.id.home) {
+            finish();
         }
         return true;
     }
 
-    @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bt_code:{
-                String code = editText.getText().toString();
-                if(!TextUtils.isEmpty(code)){
-                    String decode = getCode(code);
-                    if(!TextUtils.isEmpty(decode)){
-                        tvOutput.setText(decode);
-                        break;
-                    }
-                }
-                Toast.makeText(context,"加密错误",Toast.LENGTH_SHORT).show();
-                tvOutput.setText("");
+                presenter.encryptText(editText.getText().toString(),toolbar.getSubtitle());
                 break;
             }
             case R.id.bt_decode:{
-
+                //TODO:还没实现，看看网上有没有合适的接口
                 break;
             }
 
@@ -153,26 +103,31 @@ public class TextEncryptionActivity extends AppCompatActivity implements View.On
                 break;
             }
             case R.id.bt_copy:{
-                SystemUtil.copyToClipboard(context,"codeContent",tvOutput.getText());
-                Snackbar.make(tvOutput,"复制成功",Snackbar.LENGTH_SHORT).show();
+                SystemUtil.copyToClipboard(getContext(),"codeContent",tvOutput.getText());
+                UiUtil.showToast(getContext(),"复制成功");
                 break;
             }
         }
     }
 
+    @Override
+    public void onEncryptResult(String decode) {
+        if(!TextUtils.isEmpty(decode)){
+            tvOutput.setText(decode);
+            UiUtil.showToast(getContext(),"加密成功");
+        }else{
+            UiUtil.showToast(getContext(),"加密失败");
+        }
+    }
 
-    private String getCode(String content){
-        String result = "";
-        CharSequence encryptionMethod = tvSubTitle.getText();
+    @Override
+    public void setPresenter(Contract.Presenter presenter) {
+        this.presenter = presenter;
+    }
 
-        if(encryptionMethod.equals("MD5"))
-            result = EncryptionUtil.encryptionMD5(content.getBytes(),false);
-        else if(encryptionMethod.equals("BASE64"))
-            result = EncryptionUtil.encryptBASE64(content.getBytes());
-        else if(encryptionMethod.equals("HmacSHA1"))
-            result = EncryptionUtil.encryptHmacSHA1(content.getBytes());
-
-        return result;
+    @Override
+    public Context getContext() {
+        return this;
     }
 
 }

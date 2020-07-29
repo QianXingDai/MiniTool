@@ -14,13 +14,13 @@ import com.kakacat.minitool.common.ui.view.CircleProgressView;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     private LayoutInflater inflater;
     private List<Wifi> wifiList;
     private RecycleViewItemOnLongClickListener longClickListener;
 
-    public MyAdapter(List<Wifi> wifiList) {
+    public Adapter(List<Wifi> wifiList) {
         this.wifiList = wifiList;
     }
 

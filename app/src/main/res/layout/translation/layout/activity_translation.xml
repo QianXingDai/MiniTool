@@ -108,9 +108,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@null"
-                android:gravity="left|start"
+                android:gravity="start"
                 android:hint="请输入内容"
-                android:paddingLeft="5dp"
+                android:paddingStart="5dp"
                 android:paddingTop="5dp"/>
 
             <ImageView

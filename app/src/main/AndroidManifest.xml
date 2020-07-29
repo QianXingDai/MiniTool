@@ -34,7 +34,9 @@
         <activity
             android:name=".cleanfile.CleanFileActivity"
             android:theme="@style/MyMaterialNoActionBarStyle"/>
-        <activity android:name=".textencryption.TextEncryptionActivity" />
+        <activity
+            android:name=".textencryption.TextEncryptionActivity"
+            android:theme="@style/MyMaterialNoActionBarStyle"/>
         <activity android:name=".appInfo.activity.AppDetailActivity" />
         <activity android:name=".appInfo.activity.AppInfoActivity" />
         <activity android:name=".wifipasswordview.WifiPwdActivity" />

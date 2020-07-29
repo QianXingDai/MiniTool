@@ -46,25 +46,5 @@ public class EncryptionUtil {
     }
 
 
-    public static String encryptHmacSHA1(byte[] encryptText) {
-        try{
-            String encryptKey = EncryptionUtil.encryptBASE64(encryptText);
-            byte[] data = encryptKey.getBytes();
-            //根据给定的字节数组构造一个密钥,第二参数指定一个密钥算法的名称
-            SecretKey secretKey = new SecretKeySpec(data, "HmacSHA1");
-            //生成一个指定 Mac 算法 的 Mac 对象
-            Mac mac = Mac.getInstance("HmacSHA1");
-            //用给定密钥初始化 Mac 对象
-            mac.init(secretKey);
-            //完成 Mac 操作
-            byte[] bytes = mac.doFinal(encryptText);
-            return StringUtil.byteToString(bytes,false);
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return null;
-    }
-
 
 }

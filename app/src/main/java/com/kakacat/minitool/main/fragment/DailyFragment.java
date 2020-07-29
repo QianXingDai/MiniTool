@@ -3,7 +3,6 @@ package com.kakacat.minitool.main.fragment;
 import android.content.Intent;
 import android.view.View;
 
-import com.kakacat.minitool.R;
 import com.kakacat.minitool.appInfo.activity.AppInfoActivity;
 import com.kakacat.minitool.bingpic.BingPicActivity;
 import com.kakacat.minitool.cleanfile.CleanFileActivity;
@@ -18,10 +17,6 @@ import com.kakacat.minitool.translation.TranslationActivity;
 import com.kakacat.minitool.wifipasswordview.WifiPwdActivity;
 
 public class DailyFragment extends MyFragment implements RecycleViewItemOnClickListener {
-
-    public DailyFragment(){
-        super();
-    }
 
     public DailyFragment(MainContract.Presenter presenter) {
         super(presenter.getDailyList());
@@ -76,7 +71,6 @@ public class DailyFragment extends MyFragment implements RecycleViewItemOnClickL
 
         if(intent != null) {
             startActivity(intent);
-            getActivity().overridePendingTransition(R.anim.activity_open,R.anim.activity_enter_anim);
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.kakacat.minitool.translation;
 
+import android.content.SharedPreferences;
+
 import com.kakacat.minitool.common.base.IPresenter;
 import com.kakacat.minitool.common.base.IView;
 
@@ -23,5 +25,7 @@ public interface Contract {
         void requestData(String input,CharSequence from,CharSequence to);
         void addToMyFavourite(String source,String target);
         String handleTranslationResponse(Response response);
+        SharedPreferences getSharedPreferences();
+        SharedPreferences.OnSharedPreferenceChangeListener getSharedPreferenceChangeListener();
     }
 }

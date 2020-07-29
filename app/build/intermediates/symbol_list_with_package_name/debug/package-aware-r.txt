@@ -1690,7 +1690,6 @@ id drawer_layout
 id dropdown_menu
 id edit_query
 id edit_text
-id edit_text1
 id empty_file
 id end
 id end_padder
@@ -1996,7 +1995,6 @@ id tv_permission
 id tv_province
 id tv_save_image
 id tv_security_patch_level
-id tv_sub_title
 id tv_suspected_count
 id tv_target_api
 id tv_tip
