@@ -21,8 +21,6 @@ public class StringUtil {
         return sdf.format(time);
     }
 
-
-
     public static String byteToString(byte[] bytes,boolean addColon){
         StringBuilder sb = new StringBuilder();
 

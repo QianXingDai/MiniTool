@@ -35,7 +35,9 @@
             android:exported="false" />
 
         <activity android:name="com.kakacat.minitool.translation.TranslationActivity" />
-        <activity android:name="com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity" />
+        <activity
+            android:name="com.kakacat.minitool.epidemicinquiry.EpidemicInquiryActivity"
+            android:theme="@style/MyMaterialNoActionBarStyle" />
         <activity
             android:name="com.kakacat.minitool.garbageclassify.GarbageClassificationActivity"
             android:theme="@style/MyMaterialNoActionBarStyle" />

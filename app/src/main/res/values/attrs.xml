@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <declare-styleable name="CircleProgressView">
         <attr name="progress" format="integer"/>
         <attr name="circle_width" format="integer"/>
@@ -8,4 +9,11 @@
         <attr name="text_size" format="integer"/>
         <attr name="text" format="string"/>
     </declare-styleable>
+
+    <declare-styleable name="TitleView">
+        <attr name="title" format="reference|string"/>
+        <attr name="count" format="reference|integer"/>
+        <attr name="count_text_color" format="reference|color"/>
+    </declare-styleable>
+
 </resources>

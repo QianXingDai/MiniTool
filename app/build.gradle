@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 29
     buildToolsVersion '29.0.3'
 
     sourceSets {
@@ -20,7 +20,7 @@ android {
                             'src/main/res/layout/text_encryption',
                             'src/main/res/layout/clean_file',
                             'src/main/res/layout/garbage_classification',
-                            'src/main/res/layout/global_outbreak',
+                            'src/main/res/layout/epidemic_inquiry',
                             'src/main/res/layout/translation',
                             'src/main/res/layout/bing_pic',
                             'src/main/res'
@@ -32,7 +32,7 @@ android {
         resConfigs('zh-rCN', 'ko')
         applicationId "com.kakacat.minitool"
         minSdkVersion 24
-        targetSdkVersion 30
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

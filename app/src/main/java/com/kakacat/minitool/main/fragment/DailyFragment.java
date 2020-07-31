@@ -8,7 +8,7 @@ import com.kakacat.minitool.bingpic.BingPicActivity;
 import com.kakacat.minitool.cleanfile.CleanFileActivity;
 import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
 import com.kakacat.minitool.currencyconversion.MainActivity;
-import com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity;
+import com.kakacat.minitool.epidemicinquiry.EpidemicInquiryActivity;
 import com.kakacat.minitool.garbageclassify.GarbageClassificationActivity;
 import com.kakacat.minitool.main.MainContract;
 import com.kakacat.minitool.phoneartribution.PhoneAttributionActivity;
@@ -17,6 +17,10 @@ import com.kakacat.minitool.translation.TranslationActivity;
 import com.kakacat.minitool.wifipasswordview.WifiPwdActivity;
 
 public class DailyFragment extends MyFragment implements RecycleViewItemOnClickListener {
+
+    public DailyFragment(){
+
+    }
 
     public DailyFragment(MainContract.Presenter presenter) {
         super(presenter.getDailyList());
@@ -56,7 +60,7 @@ public class DailyFragment extends MyFragment implements RecycleViewItemOnClickL
                 break;
             }
             case 7:{
-                intent = new Intent(super.context, GlobalOutbreakActivity.class);
+                intent = new Intent(super.context, EpidemicInquiryActivity.class);
                 break;
             }
             case 8:{

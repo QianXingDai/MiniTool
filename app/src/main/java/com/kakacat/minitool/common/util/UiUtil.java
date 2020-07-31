@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.PopupWindow;
@@ -79,6 +82,41 @@ public class UiUtil {
 
     public static void slideUpToTop(NestedScrollView nestedScrollView){
         nestedScrollView.fullScroll(View.FOCUS_UP);
+    }
+
+
+    public static void setTranslucentStatusBar(Activity activity, boolean isDark) {
+        Window window = activity.getWindow();
+        if (null != window && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            if (isDark) {
+                window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_VISIBLE);
+            } else {
+                int vis = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    vis = vis | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+                }
+                window.getDecorView().setSystemUiVisibility(vis);
+            }
+
+            window.setStatusBarColor(Color.TRANSPARENT);
+        }
+    }
+
+    public static void setLightNavigationBar(Window window, boolean light) {
+        if (null == window || Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            return;
+        }
+        int vis = window.getDecorView().getSystemUiVisibility();
+        if (light) {
+            vis |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+        } else {
+            vis &= ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+        }
+        window.getDecorView().setSystemUiVisibility(vis);
     }
 
 }

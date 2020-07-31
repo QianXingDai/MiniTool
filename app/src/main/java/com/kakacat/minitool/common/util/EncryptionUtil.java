@@ -6,10 +6,6 @@ import android.util.Base64;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import javax.crypto.Mac;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
-
 public class EncryptionUtil {
 
     /**
@@ -44,7 +40,5 @@ public class EncryptionUtil {
         String result = Base64.encodeToString(key,Base64.DEFAULT);
         return result;
     }
-
-
 
 }

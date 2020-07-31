@@ -5,10 +5,10 @@
     android:viewportHeight="28.8"
     android:tint="#0A0312"
     android:alpha="0.8">
-  <group android:translateX="2.4"
+  <model android:translateX="2.4"
       android:translateY="2.4">
       <path
           android:fillColor="#FF000000"
           android:pathData="M3,4l9,16 9,-16L3,4zM6.38,6h11.25L12,16 6.38,6z"/>
-  </group>
+  </model>
 </vector>

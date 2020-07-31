@@ -27,7 +27,10 @@
             android:exported="false" />
 
         <activity android:name=".translation.TranslationActivity" />
-        <activity android:name=".epidemicsituation.GlobalOutbreakActivity" />
+
+        <activity
+            android:name=".epidemicinquiry.EpidemicInquiryActivity"
+            android:theme="@style/MyMaterialNoActionBarStyle"/>
         <activity
             android:name=".garbageclassify.GarbageClassificationActivity"
             android:theme="@style/MyMaterialNoActionBarStyle" />
