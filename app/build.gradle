@@ -8,8 +8,11 @@ android {
         main {
             res.srcDirs =
                     [
+                            'src/main/res',
                             'src/main/res/layout',
                             'src/main/res/layout/layout',
+                            'src/main/res/layout/common',
+                            'src/main/res/layout/other',
                             'src/main/res/layout/main',
                             'src/main/res/layout/currency_conversion',
                             'src/main/res/layout/inquire_ip',
@@ -23,7 +26,6 @@ android {
                             'src/main/res/layout/epidemic_inquiry',
                             'src/main/res/layout/translation',
                             'src/main/res/layout/bing_pic',
-                            'src/main/res',
                             'src/main/res/layout/express_inquiry'
                     ]
         }

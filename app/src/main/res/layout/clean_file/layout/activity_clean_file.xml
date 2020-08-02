@@ -27,7 +27,6 @@
                 app:title="@string/title_clean_file"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay">
-
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/bt_select_all"
                     android:background="@drawable/ic_select_all"
@@ -38,9 +37,6 @@
                     android:onClick="onClick"/>
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <ProgressBar

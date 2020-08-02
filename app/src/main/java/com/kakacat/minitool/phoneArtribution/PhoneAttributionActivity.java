@@ -6,7 +6,6 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -41,7 +40,8 @@ public class PhoneAttributionActivity extends AppCompatActivity implements Contr
 
     @Override
     public void initView() {
-        initToolbar();
+        UiUtil.setTranslucentStatusBarBlack(this);
+        UiUtil.initToolbar(this,true);
 
         TextInputLayout til = findViewById(R.id.text_input_layout);
         EditText et = findViewById(R.id.et_input);
@@ -74,16 +74,6 @@ public class PhoneAttributionActivity extends AppCompatActivity implements Contr
             tvNumber.setText(phoneNumber.getNumber());
         }
         UiUtil.showToast(this, result);
-    }
-
-    private void initToolbar() {
-        setSupportActionBar(findViewById(R.id.toolbar_phone_attribution));
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
-            actionBar.setDisplayShowTitleEnabled(false);
-        }
     }
 
     @Override

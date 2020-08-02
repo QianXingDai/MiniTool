@@ -27,8 +27,6 @@ import com.kakacat.minitool.common.base.FrescoInitActivity;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 import com.kakacat.minitool.common.util.UiUtil;
 
-import java.util.Objects;
-
 
 public class AppInfoActivity extends FrescoInitActivity implements AppInfoContract.View, View.OnClickListener {
 
@@ -64,7 +62,8 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
 
     @Override
     public void initView() {
-        initToolbar();
+        UiUtil.setTranslucentStatusBarWhite(this);
+        UiUtil.initToolbar(this,false);
 
         nestedScrollView = findViewById(R.id.nested_scroll_view);
         linearLayout = findViewById(R.id.linear_layout);
@@ -78,15 +77,14 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
     public void onUpdateDataSet() {
         apiPercentAdapter.notifyDataSetChanged();
         appInfoAdapter.notifyDataSetChanged();
+        UiUtil.dismissLoadingWindow();
         linearLayout.setVisibility(View.VISIBLE);
         progressBar.setVisibility(View.INVISIBLE);
     }
 
     @SuppressLint("SetTextI18n")
-    @Override
     public void initToolbar() {
-        super.initToolbar();
-        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        UiUtil.initToolbar(this,false);
 
         TextView tvAndroidVersion = findViewById(R.id.tv_android_version);
         TextView tvSecurityPatchLevel = findViewById(R.id.tv_security_patch_level);
@@ -127,7 +125,6 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
         return true;
     }
 
-
     @Override
     public AppInfoContract.Presenter getPresenter() {
         if (presenter == null) {
@@ -145,7 +142,7 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.fab: {
-                slideUpToTop();
+                UiUtil.slideUpToTop(nestedScrollView);
                 break;
             }
             case R.id.iv_sort: {
@@ -153,31 +150,33 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
                 break;
             }
             case R.id.rb_sort_by_app_name: {
-                getPresenter().sortAppInfoList(AppInfoModel.SORT_BY_APP_NAME);
+                sort(AppInfoModel.SORT_BY_APP_NAME);
                 break;
             }
             case R.id.rb_sort_by_target_api: {
-                getPresenter().sortAppInfoList(AppInfoModel.SORT_BY_TARGET_API);
+                sort(AppInfoModel.SORT_BY_TARGET_API);
                 break;
             }
             case R.id.rb_sort_by_min_api: {
-                getPresenter().sortAppInfoList(AppInfoModel.SORT_BY_MIN_API);
+                sort(AppInfoModel.SORT_BY_MIN_API);
                 break;
             }
             case R.id.rb_sort_by_first_install_time: {
-                getPresenter().sortAppInfoList(AppInfoModel.SORT_BY_FIRST_INSTALL_TIME);
+                sort(AppInfoModel.SORT_BY_FIRST_INSTALL_TIME);
                 break;
             }
             case R.id.rb_sort_by_last_update_time: {
-                getPresenter().sortAppInfoList(AppInfoModel.SORT_BY_LAST_UPDATE_TIME);
+                sort(AppInfoModel.SORT_BY_LAST_UPDATE_TIME);
                 break;
             }
         }
     }
 
     @Override
-    public void slideUpToTop() {
-        UiUtil.slideUpToTop(nestedScrollView);
+    public void sort(int sortFlag){
+        sortDialog.dismiss();
+        UiUtil.showLoading(this,nestedScrollView);
+        getPresenter().sortAppInfoList(sortFlag);
     }
 
     @Override

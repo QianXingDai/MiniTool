@@ -7,7 +7,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.widget.ViewPager2;
@@ -17,6 +16,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.base.FrescoInitActivity;
 import com.kakacat.minitool.common.ui.DepthPageTransformer;
+import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.main.adapter.FragmentAdapter;
 import com.kakacat.minitool.main.navigation.AboutViewItemOn;
 import com.kakacat.minitool.main.navigation.ChangeThemeDialog;
@@ -50,7 +50,8 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
 
     @Override
     public void initView() {
-        initToolbar();
+        UiUtil.setTranslucentStatusBarWhite(this);
+        UiUtil.initToolbar(this,true,R.drawable.ic_action_slide);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         btmNav = findViewById(R.id.btm_nav);
@@ -79,15 +80,6 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
     public void showChangeThemeDialog() {
         ChangeThemeDialog changeThemeDialog = ChangeThemeDialog.getInstance(this, View.inflate(this, R.layout.select_theme, null), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         changeThemeDialog.showAtLocation(drawerLayout, Gravity.CENTER, 0, 0);
-    }
-
-    @Override
-    public void initToolbar() {
-        super.initToolbar();
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_action_slide);
-        }
     }
 
     @Override

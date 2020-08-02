@@ -1526,6 +1526,8 @@ drawable ic_wifi
 drawable ic_za
 drawable item_selector
 drawable material_1
+drawable material_2
+drawable material_3
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1949,7 +1951,6 @@ id title_view_container
 id toolbar
 id toolbar_inquire_ip
 id toolbar_layout
-id toolbar_phone_attribution
 id top
 id topPanel
 id touch_outside
@@ -2167,6 +2168,7 @@ layout item_app_info
 layout item_country_layout
 layout item_layout
 layout language_item_layout
+layout loading_layout
 layout loading_view
 layout main_fragment_layout
 layout main_item_layout

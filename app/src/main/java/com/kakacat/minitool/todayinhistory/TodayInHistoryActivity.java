@@ -2,10 +2,10 @@ package com.kakacat.minitool.todayinhistory;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
+import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.kakacat.minitool.R;
@@ -40,12 +40,8 @@ public class TodayInHistoryActivity extends FrescoInitActivity implements Contra
 
     @Override
     public void initView() {
-
-        Window window = getWindow();
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-        window.setStatusBarColor(Color.TRANSPARENT);
-
-        super.initToolbar();
+        UiUtil.setTranslucentStatusBarWhite(this);
+        UiUtil.initToolbar(this,true);
 
         MyListView listView = findViewById(R.id.list_view);
         adapter = new Adapter(this, R.layout.article_layout, presenter.getArticleList());
@@ -86,5 +82,13 @@ public class TodayInHistoryActivity extends FrescoInitActivity implements Contra
             }, presenter.getYear(), presenter.getMonth() - 1, presenter.getDay());
         }
         datePickerDialog.show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            finish();
+        }
+        return true;
     }
 }

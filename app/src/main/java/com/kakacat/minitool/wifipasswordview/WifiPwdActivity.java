@@ -3,9 +3,7 @@ package com.kakacat.minitool.wifipasswordview;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,7 +32,8 @@ public class WifiPwdActivity extends AppCompatActivity implements Contract.View 
 
     @Override
     public void initView() {
-        initToolbar();
+        UiUtil.setTranslucentStatusBarWhite(this);
+        UiUtil.initToolbar(this,true);
 
         presenter = getPresenter();
 
@@ -42,13 +41,7 @@ public class WifiPwdActivity extends AppCompatActivity implements Contract.View 
         RecyclerView recyclerView = findViewById(R.id.rv_wifi);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
-        adapter.setLongClickListener((v, position) -> {
-            presenter.copyToClipboard(position);
-            CharSequence wifiName = ((TextView) v.findViewById(R.id.tv_wifi_name)).getText();
-            CharSequence pwd = ((TextView) v.findViewById(R.id.tv_wifi_pwd)).getText();
-
-
-        });
+        adapter.setLongClickListener((v, position) -> presenter.copyToClipboard(position));
     }
 
     @Override
@@ -62,16 +55,6 @@ public class WifiPwdActivity extends AppCompatActivity implements Contract.View 
     @Override
     public void onCopyCallback(String result) {
         UiUtil.showToast(this, result);
-    }
-
-    private void initToolbar() {
-        setSupportActionBar(findViewById(R.id.toolbar));
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
-            actionBar.setDisplayShowTitleEnabled(false);
-        }
     }
 
     @Override

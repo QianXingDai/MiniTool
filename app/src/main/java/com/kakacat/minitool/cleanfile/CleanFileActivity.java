@@ -3,18 +3,15 @@ package com.kakacat.minitool.cleanfile;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ActivityCompat;
@@ -86,17 +83,8 @@ public class CleanFileActivity extends AppCompatActivity implements Contract.Vie
 
     @Override
     public void initView() {
-        Window window = getWindow();
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-        window.setStatusBarColor(Color.TRANSPARENT);
-
-        setSupportActionBar(findViewById(R.id.toolbar));
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setDisplayShowTitleEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
-        }
+        UiUtil.setTranslucentStatusBarWhite(this);
+        UiUtil.initToolbar(this,true);
 
         coordinatorLayout = findViewById(R.id.coordinator_layout);
         progressBar = findViewById(R.id.progress_bar);

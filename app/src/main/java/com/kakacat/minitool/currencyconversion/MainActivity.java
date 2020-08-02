@@ -1,11 +1,10 @@
 package com.kakacat.minitool.currencyconversion;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -37,12 +36,8 @@ public class MainActivity extends FrescoInitActivity implements Contract.View {
 
     @Override
     public void initView() {
-
-        Window window = getWindow();
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-        window.setStatusBarColor(Color.TRANSPARENT);
-
-        super.initToolbar();
+        UiUtil.setTranslucentStatusBarWhite(this);
+        UiUtil.initToolbar(this,true);
 
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(() -> {
@@ -81,6 +76,14 @@ public class MainActivity extends FrescoInitActivity implements Contract.View {
     public void onRefreshExchangeRate(String result) {
         swipeRefreshLayout.setRefreshing(false);
         UiUtil.showSnackBar(swipeRefreshLayout, result);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            finish();
+        }
+        return true;
     }
 
     @Override

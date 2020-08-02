@@ -22,7 +22,7 @@ public interface AppInfoContract {
     interface View extends IView<Presenter> {
         void onUpdateDataSet();
 
-        void slideUpToTop();
+        void sort(int sortFlag);
 
         void showSortDialog();
     }
