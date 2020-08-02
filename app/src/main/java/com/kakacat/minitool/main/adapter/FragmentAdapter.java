@@ -21,7 +21,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
         init();
     }
 
-    private void init(){
+    private void init() {
         myFragments = new MyFragment[2];
         myFragments[0] = new DailyFragment(presenter);
         myFragments[1] = new GeekFragment(presenter);

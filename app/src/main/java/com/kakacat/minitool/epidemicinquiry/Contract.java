@@ -8,13 +8,15 @@ import java.util.List;
 
 public interface Contract {
 
-    interface Presenter extends IPresenter{
+    interface Presenter extends IPresenter {
         void requestData();
+
         List<GroupBean> getGroupList();
     }
 
-    interface View extends IView<Presenter>{
+    interface View extends IView<Presenter> {
         void onUpdateViewSuccessful();
-        void onUpdateViewError();
+
+        void onUpdateViewError(String error);
     }
 }

@@ -11,12 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.constant.Result;
 import com.kakacat.minitool.common.util.UiUtil;
 
-import bolts.Task;
-
-public class InquireIpActivity extends AppCompatActivity implements Contract.View{
+public class InquireIpActivity extends AppCompatActivity implements Contract.View {
 
     private Contract.Presenter presenter;
 
@@ -38,7 +35,7 @@ public class InquireIpActivity extends AppCompatActivity implements Contract.Vie
 
     @Override
     public void initData() {
-        setPresenter(new Presenter(this));
+        getPresenter();
     }
 
     @Override
@@ -57,46 +54,37 @@ public class InquireIpActivity extends AppCompatActivity implements Contract.Vie
     }
 
     @Override
-    public void onUpdateDataCallBack(IpModel ipModel, int resultFlag){
-        Task.call(() -> {
-            switch (resultFlag){
-                case Result.INPUT_ERROR:{
-                    UiUtil.showToast(getContext(),"输入错误");
-                    break;
-                }
-                case Result.HANDLE_FAIL:{
-                    UiUtil.showToast(getContext(),"请求成功,但是处理响应数据错误");
-                    break;
-                }
-                case Result.HANDLE_SUCCESS:{
-
-                    tvCountry.setText(ipModel.getCountry());
-                    tvProvince.setText(ipModel.getProvince());
-                    tvCity.setText(ipModel.getCity());
-                    tvIsp.setText(ipModel.getIsp());
-                    tvIp.setText(ipModel.getIpAddress());
-                    UiUtil.showToast(getContext(),"查询成功");
-                }
-                default:
-                    break;
-            }
-            return null;
-        },Task.UI_THREAD_EXECUTOR);
+    public Contract.Presenter getPresenter() {
+        if (presenter == null) {
+            presenter = new Presenter(this);
+        }
+        return presenter;
     }
 
-    private void initToolbar(){
+    @Override
+    public void onUpdateDataCallBack(IpBean ipBean, String result) {
+        UiUtil.showToast(this, result);
+        if (ipBean != null) {
+            tvCountry.setText(ipBean.getCountry());
+            tvProvince.setText(ipBean.getProvince());
+            tvCity.setText(ipBean.getCity());
+            tvIsp.setText(ipBean.getIsp());
+            tvIp.setText(ipBean.getIpAddress());
+        }
+    }
+
+    private void initToolbar() {
         setSupportActionBar(findViewById(R.id.toolbar_inquire_ip));
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
             actionBar.setDisplayShowTitleEnabled(false);
         }
     }
 
-
     @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem){
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() == android.R.id.home) {
             finish();
         }
@@ -104,13 +92,9 @@ public class InquireIpActivity extends AppCompatActivity implements Contract.Vie
     }
 
     @Override
-    public void setPresenter(Contract.Presenter presenter) {
-        this.presenter = presenter;
-    }
-
-    @Override
     public Context getContext() {
         return this;
     }
+
 
 }

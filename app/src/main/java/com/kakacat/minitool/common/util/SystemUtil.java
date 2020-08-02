@@ -17,32 +17,33 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
+import java.util.Objects;
 
 public class SystemUtil {
 
-    public static void log(String log){
-        Log.d("hhh",log);
+    public static void log(String log) {
+        Log.d("hhh", log);
     }
 
-    public static void modifyDpi(String val){
+    public static void modifyDpi(String val) {
         String[] commands = new String[]{
                 "wm density " + val + "\n"
         };
-        executeLinuxCommand(commands,true,false);
+        executeLinuxCommand(commands, true, false);
     }
 
-    public static void executeLinuxCommand(String[] commands,boolean needRoot,boolean waitFor){
-        try{
-            if(needRoot){
+    public static void executeLinuxCommand(String[] commands, boolean needRoot, boolean waitFor) {
+        try {
+            if (needRoot) {
                 Process process = Runtime.getRuntime().exec("su");
                 DataOutputStream os = new DataOutputStream(process.getOutputStream());
-                for(String command : commands) os.writeBytes(command);
+                for (String command : commands) os.writeBytes(command);
                 os.flush();
-                if(waitFor) process.waitFor();
-            } else{
+                if (waitFor) process.waitFor();
+            } else {
                 Runtime runtime = Runtime.getRuntime();
-                for(String cmd : commands){
-                    runtime.exec(new String[]{"/bin/sh","-c",cmd});
+                for (String cmd : commands) {
+                    runtime.exec(new String[]{"/bin/sh", "-c", cmd});
                 }
             }
         } catch (Exception e) {
@@ -50,9 +51,14 @@ public class SystemUtil {
         }
     }
 
-    public static void copyToClipboard(Context context, String label, CharSequence content){
+    public static CharSequence getDataFormClipBoard(Context context) {
+        ClipboardManager clipboardManager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+        return Objects.requireNonNull(clipboardManager.getPrimaryClip()).getItemAt(0).getText();
+    }
+
+    public static void copyToClipboard(Context context, String label, CharSequence content) {
         ClipboardManager cm = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
-        cm.setPrimaryClip(ClipData.newPlainText(label,content));
+        cm.setPrimaryClip(ClipData.newPlainText(label, content));
     }
 
     public static int getElectricity(Context context) {
@@ -61,43 +67,43 @@ public class SystemUtil {
         return batterymanager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
     }
 
-    public static void setBatteryLevel(String val){
+    public static void setBatteryLevel(String val) {
         String[] commands = new String[]{
-          "dumpsys battery set level " + val + "\n"
+                "dumpsys battery set level " + val + "\n"
         };
-        executeLinuxCommand(commands,true,false);
+        executeLinuxCommand(commands, true, false);
     }
 
-    public static void resetBattery(){
+    public static void resetBattery() {
         String[] commands = new String[]{
                 "dumpsys battery reset" + "\n"
         };
-        executeLinuxCommand(commands,true,false);
+        executeLinuxCommand(commands, true, false);
     }
 
-    public static void vibrate(Context context, long milliseconds){
+    public static void vibrate(Context context, long milliseconds) {
         Vibrator vibrator = (Vibrator) context.getSystemService(Service.VIBRATOR_SERVICE);
         vibrator.vibrate(milliseconds);
     }
 
-    public static void openMarket(Context context){
+    public static void openMarket(Context context) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("market://details?id=" + context.getPackageName()));
         context.startActivity(intent);
     }
 
-    public static void openAppDetailInSetting(Activity activity){
+    public static void openAppDetailInSetting(Activity activity) {
         Intent intent = new Intent();
         intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
         intent.setData(Uri.parse("package:" + activity.getPackageName()));
         activity.startActivity(intent);
     }
 
-    public static String getLocalIPAddress(){
-        try{
-            for(Enumeration<NetworkInterface> mEnumeration = NetworkInterface.getNetworkInterfaces(); mEnumeration.hasMoreElements();) {
+    public static String getLocalIPAddress() {
+        try {
+            for (Enumeration<NetworkInterface> mEnumeration = NetworkInterface.getNetworkInterfaces(); mEnumeration.hasMoreElements(); ) {
                 NetworkInterface intf = mEnumeration.nextElement();
-                for(Enumeration<InetAddress> enumIPAddr = intf.getInetAddresses(); enumIPAddr.hasMoreElements();) {
+                for (Enumeration<InetAddress> enumIPAddr = intf.getInetAddresses(); enumIPAddr.hasMoreElements(); ) {
                     InetAddress inetAddress = enumIPAddr.nextElement();
                     if (inetAddress instanceof Inet4Address && !inetAddress.isLoopbackAddress()) {
                         return inetAddress.getHostAddress();

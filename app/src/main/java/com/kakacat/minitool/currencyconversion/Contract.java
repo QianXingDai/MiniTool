@@ -2,23 +2,27 @@ package com.kakacat.minitool.currencyconversion;
 
 import com.kakacat.minitool.common.base.IPresenter;
 import com.kakacat.minitool.common.base.IView;
-import com.kakacat.minitool.currencyconversion.model.Country;
+import com.kakacat.minitool.currencyconversion.model.CountryBean;
 
 import java.util.List;
 
 public interface Contract {
 
-    interface Presenter extends IPresenter{
+    interface Presenter extends IPresenter {
         void initData();
+
         void refreshExchangeRate();
-        boolean handleRateResponse(String response);
-        String getResult(CharSequence val,double rate1,double rate2);
-        List<Country> getCountryList();
+
+        String getResult(CharSequence val, double rate1, double rate2);
+
+        List<CountryBean> getCountryList();
     }
 
-    interface View extends IView<Presenter>{
+    interface View extends IView<Presenter> {
         void initData();
-        void onRefreshExchangeRate(int flag);
-        void onTextChanged(CharSequence s,int flag);
+
+        void onRefreshExchangeRate(String result);
+
+        void onTextChanged(CharSequence s, int flag);
     }
 }

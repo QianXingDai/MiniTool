@@ -1,117 +1,76 @@
 package com.kakacat.minitool.todayinhistory;
 
-import com.google.gson.Gson;
-import com.kakacat.minitool.common.constant.AppKey;
-import com.kakacat.minitool.common.constant.Host;
-import com.kakacat.minitool.common.constant.Result;
 import com.kakacat.minitool.common.myinterface.HttpCallback;
-import com.kakacat.minitool.common.util.HttpUtil;
+import com.kakacat.minitool.common.util.ThreadUtil;
+import com.kakacat.minitool.todayinhistory.model.Article;
+import com.kakacat.minitool.todayinhistory.model.Model;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Objects;
 
 import okhttp3.Response;
 
 public class Presenter implements Contract.Presenter {
 
     private Contract.View view;
-    private List<Article> articleList;
-
-    private int year;
-    private int month;
-    private int day;
+    private Model model;
 
     public Presenter(Contract.View view) {
         this.view = view;
+        this.model = Model.getInstance();
     }
 
     @Override
-    public void initData(){
-        articleList = getArticleList();
-        Calendar c = Calendar.getInstance();
-        year = c.get(Calendar.YEAR);
-        month = c.get(Calendar.MONTH) + 1;
-        day = c.get(Calendar.DATE);
+    public void initData() {
+        model.initData();
     }
 
     @Override
-    public void refreshData(){
-        HttpUtil.sendOkHttpRequest(getAddress(), new HttpCallback() {
-            int resultFlag = Result.REQUEST_ERROR;
+    public void refreshData() {
+        model.sendRequest(new HttpCallback() {
+            String result = "请求错误";
+            boolean needRefresh = false;
+
             @Override
             public void onSuccess(Response response) {
-                if(!handleHistoryResponse(response,getArticleList())){
-                    resultFlag = Result.HANDLE_FAIL;
-                }else{
-                    resultFlag = Result.HANDLE_SUCCESS;
+                if (!model.handleHistoryResponse(response)) {
+                    result = "处理失败";
+                } else {
+                    result = "处理成功";
+                    needRefresh = true;
                 }
-                view.onUpdateDataCallBack(resultFlag);
+                ThreadUtil.callInUiThread(() -> view.onUpdateDataCallBack(result, needRefresh));
             }
 
             @Override
             public void onError() {
-                view.onUpdateDataCallBack(resultFlag);
+                ThreadUtil.callInUiThread(() -> view.onUpdateDataCallBack(result, needRefresh));
             }
         });
     }
 
-    @Override
-    public boolean handleHistoryResponse(Response response, List<Article> articleList){
-        try{
-            String s = Objects.requireNonNull(response.body()).string();
-            JSONObject jsonObject = new JSONObject(s);
-            JSONArray result = jsonObject.getJSONArray("result");
-            Gson gson = new Gson();
-
-            articleList.clear();
-            for(int i = 0; i < result.length(); i++){
-                String str = result.getJSONObject(i).toString();
-                Article article = gson.fromJson(str,Article.class);
-                articleList.add(article);
-            }
-            return true;
-        }catch (IOException | JSONException e){
-            e.printStackTrace();
-        }
-        return false;
-    }
 
     @Override
     public List<Article> getArticleList() {
-        if(articleList == null){
-            articleList = new ArrayList<>();
-        }
-        return articleList;
+        return model.getArticleList();
     }
 
     public int getYear() {
-        return year;
+        return model.getYear();
     }
 
     public int getMonth() {
-        return month;
+        return model.getMonth();
     }
 
     public void setMonth(int month) {
-        this.month = month;
+        model.setMonth(month);
     }
 
     public int getDay() {
-        return day;
+        return model.getDay();
     }
 
     public void setDay(int day) {
-        this.day = day;
-    }
-
-    private String getAddress(){
-        return Host.TODAY_IN_HISTORY_HOST + AppKey.TODAY_IN_HISTORY_KEY + "&v=1.0&month=" + month + "&day=" + day;
+        model.setDay(day);
     }
 }

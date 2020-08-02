@@ -2,17 +2,8 @@ package com.kakacat.minitool.currencyconversion.model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
 
 import com.kakacat.minitool.R;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.util.Objects;
-
-import okhttp3.Response;
 
 public class Rate {
     public static double us = 7.0847;
@@ -39,220 +30,313 @@ public class Rate {
     public static double za = 0.4077;
     public static double cn = 1.0;
 
-    public static void setRate(double rate,int num){
-        switch (num){
-            case 1  : us = rate; break;
-            case 2  : eu = rate; break;
-            case 3  : hk = rate; break;
-            case 4  : jp = rate; break;
-            case 5  : uk = rate; break;
-            case 6  : au = rate; break;
-            case 7  : ca = rate; break;
-            case 8  : th = rate; break;
-            case 9  : sg = rate; break;
-            case 10 : ch = rate; break;
-            case 11 : dk = rate; break;
-            case 12 : ma = rate; break;
-            case 13 : my = rate; break;
-            case 14 : no = rate; break;
-            case 15 : nz = rate; break;
-            case 16 : ph = rate; break;
-            case 17 : ru = rate; break;
-            case 18 : se = rate; break;
-            case 19 : tw = rate; break;
-            case 20 : br = rate; break;
-            case 21 : kr = rate; break;
-            case 22 : za = rate; break;
-            case 23 : cn = rate; break;
-            default :            break;
+    public static void setRate(double rate, int num) {
+        switch (num) {
+            case 1:
+                us = rate;
+                break;
+            case 2:
+                eu = rate;
+                break;
+            case 3:
+                hk = rate;
+                break;
+            case 4:
+                jp = rate;
+                break;
+            case 5:
+                uk = rate;
+                break;
+            case 6:
+                au = rate;
+                break;
+            case 7:
+                ca = rate;
+                break;
+            case 8:
+                th = rate;
+                break;
+            case 9:
+                sg = rate;
+                break;
+            case 10:
+                ch = rate;
+                break;
+            case 11:
+                dk = rate;
+                break;
+            case 12:
+                ma = rate;
+                break;
+            case 13:
+                my = rate;
+                break;
+            case 14:
+                no = rate;
+                break;
+            case 15:
+                nz = rate;
+                break;
+            case 16:
+                ph = rate;
+                break;
+            case 17:
+                ru = rate;
+                break;
+            case 18:
+                se = rate;
+                break;
+            case 19:
+                tw = rate;
+                break;
+            case 20:
+                br = rate;
+                break;
+            case 21:
+                kr = rate;
+                break;
+            case 22:
+                za = rate;
+                break;
+            case 23:
+                cn = rate;
+                break;
+            default:
+                break;
         }
     }
 
-    public static double getRate(int num){
-        switch (num){
-            case 1  : return us;
-            case 2  : return eu;
-            case 3  : return hk;
-            case 4  : return jp;
-            case 5  : return uk;
-            case 6  : return au;
-            case 7  : return ca;
-            case 8  : return th;
-            case 9  : return sg;
-            case 10 : return ch;
-            case 11 : return dk;
-            case 12 : return ma;
-            case 13 : return my;
-            case 14 : return no;
-            case 15 : return nz;
-            case 16 : return ph;
-            case 17 : return ru;
-            case 18 : return se;
-            case 19 : return tw;
-            case 20 : return br;
-            case 21 : return kr;
-            case 22 : return za;
-            default : return cn;
+    public static double getRate(int num) {
+        switch (num) {
+            case 1:
+                return us;
+            case 2:
+                return eu;
+            case 3:
+                return hk;
+            case 4:
+                return jp;
+            case 5:
+                return uk;
+            case 6:
+                return au;
+            case 7:
+                return ca;
+            case 8:
+                return th;
+            case 9:
+                return sg;
+            case 10:
+                return ch;
+            case 11:
+                return dk;
+            case 12:
+                return ma;
+            case 13:
+                return my;
+            case 14:
+                return no;
+            case 15:
+                return nz;
+            case 16:
+                return ph;
+            case 17:
+                return ru;
+            case 18:
+                return se;
+            case 19:
+                return tw;
+            case 20:
+                return br;
+            case 21:
+                return kr;
+            case 22:
+                return za;
+            default:
+                return cn;
         }
     }
 
-    public static int getNameId(int num){
-        switch (num){
-            case 1  : return R.string.name_us;
-            case 2  : return R.string.name_eu;
-            case 3  : return R.string.name_hk;
-            case 4  : return R.string.name_jp;
-            case 5  : return R.string.name_uk;
-            case 6  : return R.string.name_au;
-            case 7  : return R.string.name_ca;
-            case 8  : return R.string.name_th;
-            case 9  : return R.string.name_sg;
-            case 10 : return R.string.name_ch;
-            case 11 : return R.string.name_dk;
-            case 12 : return R.string.name_ma;
-            case 13 : return R.string.name_my;
-            case 14 : return R.string.name_no;
-            case 15 : return R.string.name_nz;
-            case 16 : return R.string.name_ph;
-            case 17 : return R.string.name_ru;
-            case 18 : return R.string.name_se;
-            case 19 : return R.string.name_tw;
-            case 20 : return R.string.name_br;
-            case 21 : return R.string.name_kr;
-            case 22 : return R.string.name_za;
-            default : return R.string.name_cn;
+    public static int getNameId(int num) {
+        switch (num) {
+            case 1:
+                return R.string.name_us;
+            case 2:
+                return R.string.name_eu;
+            case 3:
+                return R.string.name_hk;
+            case 4:
+                return R.string.name_jp;
+            case 5:
+                return R.string.name_uk;
+            case 6:
+                return R.string.name_au;
+            case 7:
+                return R.string.name_ca;
+            case 8:
+                return R.string.name_th;
+            case 9:
+                return R.string.name_sg;
+            case 10:
+                return R.string.name_ch;
+            case 11:
+                return R.string.name_dk;
+            case 12:
+                return R.string.name_ma;
+            case 13:
+                return R.string.name_my;
+            case 14:
+                return R.string.name_no;
+            case 15:
+                return R.string.name_nz;
+            case 16:
+                return R.string.name_ph;
+            case 17:
+                return R.string.name_ru;
+            case 18:
+                return R.string.name_se;
+            case 19:
+                return R.string.name_tw;
+            case 20:
+                return R.string.name_br;
+            case 21:
+                return R.string.name_kr;
+            case 22:
+                return R.string.name_za;
+            default:
+                return R.string.name_cn;
         }
     }
 
-    public static int getIconId(int num){
-        switch (num){
-            case 1  : return R.drawable.ic_us;
-            case 2  : return R.drawable.ic_eu;
-            case 3  : return R.drawable.ic_hk;
-            case 4  : return R.drawable.ic_jp;
-            case 5  : return R.drawable.ic_uk;
-            case 6  : return R.drawable.ic_au;
-            case 7  : return R.drawable.ic_ca;
-            case 8  : return R.drawable.ic_th;
-            case 9  : return R.drawable.ic_sg;
-            case 10 : return R.drawable.ic_ch;
-            case 11 : return R.drawable.ic_dk;
-            case 12 : return R.drawable.ic_ma;
-            case 13 : return R.drawable.ic_my;
-            case 14 : return R.drawable.ic_no;
-            case 15 : return R.drawable.ic_nz;
-            case 16 : return R.drawable.ic_ph;
-            case 17 : return R.drawable.ic_ru;
-            case 18 : return R.drawable.ic_se;
-            case 19 : return R.drawable.ic_tw;
-            case 20 : return R.drawable.ic_br;
-            case 21 : return R.drawable.ic_kr;
-            case 22 : return R.drawable.ic_za;
-            default : return R.drawable.ic_cn;
+    public static int getIconId(int num) {
+        switch (num) {
+            case 1:
+                return R.drawable.ic_us;
+            case 2:
+                return R.drawable.ic_eu;
+            case 3:
+                return R.drawable.ic_hk;
+            case 4:
+                return R.drawable.ic_jp;
+            case 5:
+                return R.drawable.ic_uk;
+            case 6:
+                return R.drawable.ic_au;
+            case 7:
+                return R.drawable.ic_ca;
+            case 8:
+                return R.drawable.ic_th;
+            case 9:
+                return R.drawable.ic_sg;
+            case 10:
+                return R.drawable.ic_ch;
+            case 11:
+                return R.drawable.ic_dk;
+            case 12:
+                return R.drawable.ic_ma;
+            case 13:
+                return R.drawable.ic_my;
+            case 14:
+                return R.drawable.ic_no;
+            case 15:
+                return R.drawable.ic_nz;
+            case 16:
+                return R.drawable.ic_ph;
+            case 17:
+                return R.drawable.ic_ru;
+            case 18:
+                return R.drawable.ic_se;
+            case 19:
+                return R.drawable.ic_tw;
+            case 20:
+                return R.drawable.ic_br;
+            case 21:
+                return R.drawable.ic_kr;
+            case 22:
+                return R.drawable.ic_za;
+            default:
+                return R.drawable.ic_cn;
         }
     }
 
-    public static int getMoneyTypeId(int num){
-        switch (num){
-            case 1  : return R.string.unit_us;
-            case 2  : return R.string.unit_eu;
-            case 3  : return R.string.unit_hk;
-            case 4  : return R.string.unit_jp;
-            case 5  : return R.string.unit_uk;
-            case 6  : return R.string.unit_au;
-            case 7  : return R.string.unit_ca;
-            case 8  : return R.string.unit_th;
-            case 9  : return R.string.unit_sg;
-            case 10 : return R.string.unit_ch;
-            case 11 : return R.string.unit_dk;
-            case 12 : return R.string.unit_ma;
-            case 13 : return R.string.unit_my;
-            case 14 : return R.string.unit_no;
-            case 15 : return R.string.unit_nz;
-            case 16 : return R.string.unit_ph;
-            case 17 : return R.string.unit_ru;
-            case 18 : return R.string.unit_se;
-            case 19 : return R.string.unit_tw;
-            case 20 : return R.string.unit_br;
-            case 21 : return R.string.unit_kr;
-            case 22 : return R.string.unit_za;
-            default : return R.string.unit_cn;
+    public static int getMoneyTypeId(int num) {
+        switch (num) {
+            case 1:
+                return R.string.unit_us;
+            case 2:
+                return R.string.unit_eu;
+            case 3:
+                return R.string.unit_hk;
+            case 4:
+                return R.string.unit_jp;
+            case 5:
+                return R.string.unit_uk;
+            case 6:
+                return R.string.unit_au;
+            case 7:
+                return R.string.unit_ca;
+            case 8:
+                return R.string.unit_th;
+            case 9:
+                return R.string.unit_sg;
+            case 10:
+                return R.string.unit_ch;
+            case 11:
+                return R.string.unit_dk;
+            case 12:
+                return R.string.unit_ma;
+            case 13:
+                return R.string.unit_my;
+            case 14:
+                return R.string.unit_no;
+            case 15:
+                return R.string.unit_nz;
+            case 16:
+                return R.string.unit_ph;
+            case 17:
+                return R.string.unit_ru;
+            case 18:
+                return R.string.unit_se;
+            case 19:
+                return R.string.unit_tw;
+            case 20:
+                return R.string.unit_br;
+            case 21:
+                return R.string.unit_kr;
+            case 22:
+                return R.string.unit_za;
+            default:
+                return R.string.unit_cn;
         }
     }
 
-    public static void readRateFromLocal(Context context){
-        SharedPreferences sharedPreferences = context.getSharedPreferences("rate",Context.MODE_PRIVATE);
-        Rate.us = sharedPreferences.getFloat("us", (float) Rate.us);
-        Rate.eu = sharedPreferences.getFloat("eu", (float) Rate.eu);
-        Rate.hk = sharedPreferences.getFloat("hk", (float) Rate.hk);
-        Rate.jp = sharedPreferences.getFloat("jp", (float) Rate.jp);
-        Rate.uk = sharedPreferences.getFloat("uk", (float) Rate.uk);
-        Rate.au = sharedPreferences.getFloat("au", (float) Rate.au);
-        Rate.ca = sharedPreferences.getFloat("ca", (float) Rate.ca);
-        Rate.th = sharedPreferences.getFloat("th", (float) Rate.th);
-        Rate.sg = sharedPreferences.getFloat("sg", (float) Rate.sg);
-        Rate.ch = sharedPreferences.getFloat("ch", (float) Rate.ch);
-        Rate.dk = sharedPreferences.getFloat("dk", (float) Rate.dk);
-        Rate.ma = sharedPreferences.getFloat("ma", (float) Rate.ma);
-        Rate.my = sharedPreferences.getFloat("my", (float) Rate.my);
-        Rate.no = sharedPreferences.getFloat("no", (float) Rate.no);
-        Rate.nz = sharedPreferences.getFloat("nz", (float) Rate.nz);
-        Rate.ph = sharedPreferences.getFloat("ph", (float) Rate.ph);
-        Rate.ru = sharedPreferences.getFloat("ru", (float) Rate.ru);
-        Rate.se = sharedPreferences.getFloat("se", (float) Rate.se);
-        Rate.tw = sharedPreferences.getFloat("tw", (float) Rate.tw);
-        Rate.br = sharedPreferences.getFloat("br", (float) Rate.br);
-        Rate.kr = sharedPreferences.getFloat("kr", (float) Rate.kr);
-        Rate.za = sharedPreferences.getFloat("za", (float) Rate.za);
-    }
 
-    public static void writeRateToLocal(Context context){
-        SharedPreferences sharedPreferences = context.getSharedPreferences("rate",Context.MODE_PRIVATE);
+    public static void writeRateToLocal(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("rate", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putFloat("us",(float) Rate.us);
-        editor.putFloat("eu",(float) Rate.eu);
-        editor.putFloat("hk",(float) Rate.hk);
-        editor.putFloat("jp",(float) Rate.jp);
-        editor.putFloat("uk",(float) Rate.uk);
-        editor.putFloat("au",(float) Rate.au);
-        editor.putFloat("ca",(float) Rate.ca);
-        editor.putFloat("th",(float) Rate.th);
-        editor.putFloat("sg",(float) Rate.sg);
-        editor.putFloat("ch",(float) Rate.ch);
-        editor.putFloat("dk",(float) Rate.dk);
-        editor.putFloat("ma",(float) Rate.ma);
-        editor.putFloat("my",(float) Rate.my);
-        editor.putFloat("no",(float) Rate.no);
-        editor.putFloat("nz",(float) Rate.nz);
-        editor.putFloat("ph",(float) Rate.ph);
-        editor.putFloat("ru",(float) Rate.ru);
-        editor.putFloat("se",(float) Rate.se);
-        editor.putFloat("tw",(float) Rate.tw);
-        editor.putFloat("br",(float) Rate.br);
-        editor.putFloat("kr",(float) Rate.kr);
-        editor.putFloat("za",(float) Rate.za);
+        editor.putFloat("us", (float) Rate.us);
+        editor.putFloat("eu", (float) Rate.eu);
+        editor.putFloat("hk", (float) Rate.hk);
+        editor.putFloat("jp", (float) Rate.jp);
+        editor.putFloat("uk", (float) Rate.uk);
+        editor.putFloat("au", (float) Rate.au);
+        editor.putFloat("ca", (float) Rate.ca);
+        editor.putFloat("th", (float) Rate.th);
+        editor.putFloat("sg", (float) Rate.sg);
+        editor.putFloat("ch", (float) Rate.ch);
+        editor.putFloat("dk", (float) Rate.dk);
+        editor.putFloat("ma", (float) Rate.ma);
+        editor.putFloat("my", (float) Rate.my);
+        editor.putFloat("no", (float) Rate.no);
+        editor.putFloat("nz", (float) Rate.nz);
+        editor.putFloat("ph", (float) Rate.ph);
+        editor.putFloat("ru", (float) Rate.ru);
+        editor.putFloat("se", (float) Rate.se);
+        editor.putFloat("tw", (float) Rate.tw);
+        editor.putFloat("br", (float) Rate.br);
+        editor.putFloat("kr", (float) Rate.kr);
+        editor.putFloat("za", (float) Rate.za);
         editor.apply();
     }
 
-    public static boolean handleResponse(Response response){
-        try {
-            String s = Objects.requireNonNull(response.body()).string();
-            if(!TextUtils.isEmpty(s)){
-                return false;
-            }else{
-                JSONObject jsonObject = new JSONObject(s);
-                JSONObject result = jsonObject.getJSONArray("result").getJSONObject(0);
-                for(int i = 1; i <= 22;i ++){
-                    JSONObject data = result.getJSONObject("data" + i);
-                    double rate = Double.parseDouble(data.getString("bankConversionPri")) / 100;
-                    Rate.setRate(rate,i);
-                }
-                return true;
-            }
-
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
 }

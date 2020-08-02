@@ -13,7 +13,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
 
     private List<MyFragment> myFragmentList;
 
-    public FragmentAdapter(@NonNull FragmentActivity fragmentActivity,List<MyFragment> myFragmentList) {
+    public FragmentAdapter(@NonNull FragmentActivity fragmentActivity, List<MyFragment> myFragmentList) {
         super(fragmentActivity);
         this.myFragmentList = myFragmentList;
     }

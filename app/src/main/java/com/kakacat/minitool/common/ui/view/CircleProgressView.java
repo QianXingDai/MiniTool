@@ -40,27 +40,27 @@ public class CircleProgressView extends View {
 
 
     public CircleProgressView(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public CircleProgressView(Context context, AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
-    public CircleProgressView(Context context,AttributeSet attrs, int defStyleAttr) {
+    public CircleProgressView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context,attrs);
+        init(context, attrs);
     }
 
-    private void init(Context context,AttributeSet attrs){
-        TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.CircleProgressView);
-        progress = a.getInt(R.styleable.CircleProgressView_progress,PROGRESS);
-        mCircleColor = a.getColor(R.styleable.CircleProgressView_circle_color,CIRCLE_COLOR);
-        mCircleWidth = a.getInt(R.styleable.CircleProgressView_circle_width,CIRCLE_WIDTH);
-        mTextColor = a.getColor(R.styleable.CircleProgressView_text_color,TEXT_COLOR);
-        mTextSize = a.getInt(R.styleable.CircleProgressView_text_size,TEXT_SIZE);
+    private void init(Context context, AttributeSet attrs) {
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleProgressView);
+        progress = a.getInt(R.styleable.CircleProgressView_progress, PROGRESS);
+        mCircleColor = a.getColor(R.styleable.CircleProgressView_circle_color, CIRCLE_COLOR);
+        mCircleWidth = a.getInt(R.styleable.CircleProgressView_circle_width, CIRCLE_WIDTH);
+        mTextColor = a.getColor(R.styleable.CircleProgressView_text_color, TEXT_COLOR);
+        mTextSize = a.getInt(R.styleable.CircleProgressView_text_size, TEXT_SIZE);
         text = a.getString(R.styleable.CircleProgressView_text);
-        if(TextUtils.isEmpty(text))
+        if (TextUtils.isEmpty(text))
             text = TEXT;
         a.recycle();
 
@@ -71,26 +71,26 @@ public class CircleProgressView extends View {
     }
 
     @Override
-    public void onDraw(Canvas canvas){
+    public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
         int width = getWidth();
         int height = getHeight();
 
         //设置大圆
-        mRectF.set(0,0,width,height);      //设置大圆rect的长宽
+        mRectF.set(0, 0, width, height);      //设置大圆rect的长宽
         bigCirclePaint.setStyle(Paint.Style.STROKE);   //设置大圆为空心,不填充内部
         bigCirclePaint.setColor(mCircleColor);   //大圆颜色
         //画弧形,从0到给定进度的弧形,100对应360度,所以进度*3.6
-        canvas.drawArc(mRectF,0, (float) (progress * 3.6),false,bigCirclePaint);
+        canvas.drawArc(mRectF, 0, (float) (progress * 3.6), false, bigCirclePaint);
 
         //设置小圆
-        mRectF.set(mCircleWidth,mCircleWidth,width - mCircleWidth,height - mCircleWidth);
+        mRectF.set(mCircleWidth, mCircleWidth, width - mCircleWidth, height - mCircleWidth);
         smallCirclePaint.setStyle(Paint.Style.STROKE); //小圆设置空心
         smallCirclePaint.setStrokeWidth(mCircleWidth * 2); //设置宽度,填充圆环颜色
         smallCirclePaint.setColor(mCircleColor); //设置小圆颜色
         //画弧,原理同上
-        canvas.drawArc(mRectF,0,(float) (progress * 3.6),false,smallCirclePaint);
+        canvas.drawArc(mRectF, 0, (float) (progress * 3.6), false, smallCirclePaint);
 
         //设置中间的文字
         textPaint.setAntiAlias(true);
@@ -99,39 +99,39 @@ public class CircleProgressView extends View {
         textPaint.setStyle(Paint.Style.FILL);
         textPaint.setTextSize(dpToPixel(mTextSize));
         textPaint.setTextAlign(Paint.Align.CENTER);//设置对齐方式
-        canvas.drawText(text,width / 2,(height - textPaint.ascent() - textPaint.descent()) / 2,textPaint);
+        canvas.drawText(text, width / 2, (height - textPaint.ascent() - textPaint.descent()) / 2, textPaint);
     }
 
 
-    public int getProgress(){
+    public int getProgress() {
         return progress;
     }
 
-    public void setProgress(int progress){
+    public void setProgress(int progress) {
         this.progress = progress;
         invalidate();
     }
 
 
-    public void setText(String text){
+    public void setText(String text) {
         this.text = text;
         invalidate();
     }
 
 
-    public void setCircleColor(int color){
+    public void setCircleColor(int color) {
         this.mCircleColor = color;
         invalidate();
     }
 
 
-    public void setCircleWidth(int circleWidth){
+    public void setCircleWidth(int circleWidth) {
         this.mCircleWidth = circleWidth;
         invalidate();
     }
 
 
-    private float dpToPixel(float dp){
+    private float dpToPixel(float dp) {
         DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
         return dp * metrics.density;
     }

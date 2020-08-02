@@ -8,7 +8,7 @@ import androidx.core.view.NestedScrollingChild;
 import androidx.core.view.NestedScrollingChildHelper;
 
 
-public class MyListView extends ListView implements NestedScrollingChild{
+public class MyListView extends ListView implements NestedScrollingChild {
 
     private final NestedScrollingChildHelper mScrollingChildHelper;
 
@@ -19,13 +19,13 @@ public class MyListView extends ListView implements NestedScrollingChild{
     }
 
     @Override
-    public void setNestedScrollingEnabled(boolean enabled) {
-        mScrollingChildHelper.setNestedScrollingEnabled(enabled);
+    public boolean isNestedScrollingEnabled() {
+        return mScrollingChildHelper.isNestedScrollingEnabled();
     }
 
     @Override
-    public boolean isNestedScrollingEnabled() {
-        return mScrollingChildHelper.isNestedScrollingEnabled();
+    public void setNestedScrollingEnabled(boolean enabled) {
+        mScrollingChildHelper.setNestedScrollingEnabled(enabled);
     }
 
     @Override

@@ -28,7 +28,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.garbage_layout,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.garbage_layout, parent, false);
         return new ViewHolder(view);
     }
 
@@ -39,8 +39,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.tvName.setText(garbage.getName());
         holder.tvType.setText(TypeMap.getTypeName(type));
         holder.ivIcon.setBackgroundResource(TypeMap.getIcon(type));
-        if(listener != null){
-            holder.itemView.setOnClickListener((v-> listener.onClick(holder.itemView,position)));
+        if (listener != null) {
+            holder.itemView.setOnClickListener((v -> listener.onClick(holder.itemView, position)));
         }
     }
 
@@ -49,13 +49,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         return garbageList.size();
     }
 
-    public void setOnClickListener(RecycleViewItemOnClickListener listener){
+    public void setOnClickListener(RecycleViewItemOnClickListener listener) {
         this.listener = listener;
     }
 
 
-
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView ivIcon;
         private TextView tvName;

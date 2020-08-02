@@ -66,7 +66,7 @@ public class GroupBean {
     }
 
     public List<ChildBean> getChildBeanList() {
-        if(childBeanList == null){
+        if (childBeanList == null) {
             childBeanList = new ArrayList<>();
         }
         return childBeanList;

@@ -2,27 +2,33 @@ package com.kakacat.minitool.todayinhistory;
 
 import com.kakacat.minitool.common.base.IPresenter;
 import com.kakacat.minitool.common.base.IView;
+import com.kakacat.minitool.todayinhistory.model.Article;
 
 import java.util.List;
 
-import okhttp3.Response;
+public interface Contract {
 
-public interface Contract{
-
-    interface Presenter extends IPresenter{
+    interface Presenter extends IPresenter {
         void initData();
+
         void refreshData();
+
         int getYear();
+
         int getMonth();
+
         void setMonth(int month);
+
         int getDay();
+
         void setDay(int day);
-        boolean handleHistoryResponse(Response response, List<Article> articleList);
+
         List<Article> getArticleList();
     }
 
-    interface View extends IView<Presenter>{
-        void onUpdateDataCallBack(int resultFlag);
+    interface View extends IView<Presenter> {
+        void onUpdateDataCallBack(String result, boolean needRefresh);
+
         void showCalendarDialog();
     }
 }

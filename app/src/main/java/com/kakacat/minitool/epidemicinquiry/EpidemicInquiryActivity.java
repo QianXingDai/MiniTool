@@ -39,8 +39,7 @@ public class EpidemicInquiryActivity extends FrescoInitActivity implements Contr
 
     @Override
     public void initData() {
-        setPresenter(new Presenter(this));
-        presenter.initData();
+        getPresenter().initData();
     }
 
     @Override
@@ -52,29 +51,29 @@ public class EpidemicInquiryActivity extends FrescoInitActivity implements Contr
         window.setStatusBarColor(Color.TRANSPARENT);
 
         TabLayout tabLayout = findViewById(R.id.tab_layout);
-        ViewPager2 viewPager = findViewById(R.id.view_pager);
+        ViewPager2 viewPager = findViewById(R.id.fragment_container);
 
-        getTabNameList().forEach(tabName->{
+        getTabNameList().forEach(tabName -> {
             TabLayout.Tab tab = tabLayout.newTab();
             tab.setText(tabName);
             tabLayout.addTab(tab);
         });
-        viewPager.setAdapter(new FragmentAdapter(this,getFragmentList()));
+        viewPager.setAdapter(new FragmentAdapter(this, getFragmentList()));
         new TabLayoutMediator(tabLayout, viewPager, true, (tab, position) -> tab.setText(tabNameList.get(position))).attach();
     }
 
     @Override
-    public void onUpdateViewSuccessful(){
+    public void onUpdateViewSuccessful() {
         getFragmentList().get(0).updateView();
     }
 
     @Override
-    public void onUpdateViewError(){
-        UiUtil.showToast(this,"请求失败");
+    public void onUpdateViewError(String error) {
+        UiUtil.showToast(this, error);
     }
 
-    private List<MyFragment> getFragmentList(){
-        if(myFragmentList == null){
+    private List<MyFragment> getFragmentList() {
+        if (myFragmentList == null) {
             myFragmentList = new ArrayList<>();
             myFragmentList.add(new MyFragment(presenter));
             myFragmentList.add(new MyFragment(presenter));
@@ -83,8 +82,8 @@ public class EpidemicInquiryActivity extends FrescoInitActivity implements Contr
         return myFragmentList;
     }
 
-    private List<String> getTabNameList(){
-        if(tabNameList == null){
+    private List<String> getTabNameList() {
+        if (tabNameList == null) {
             tabNameList = new ArrayList<>();
             tabNameList.add("国内疫情");
             tabNameList.add("国外疫情");
@@ -94,8 +93,11 @@ public class EpidemicInquiryActivity extends FrescoInitActivity implements Contr
     }
 
     @Override
-    public void setPresenter(Contract.Presenter presenter) {
-        this.presenter = presenter;
+    public Contract.Presenter getPresenter() {
+        if (presenter == null) {
+            presenter = new Presenter(this);
+        }
+        return presenter;
     }
 
     @Override

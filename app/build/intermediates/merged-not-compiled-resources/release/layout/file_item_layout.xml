@@ -27,7 +27,7 @@
             android:orientation="horizontal">
 
             <com.kakacat.minitool.common.ui.view.CircleProgressView
-                android:id="@+id/circle_progress_view"
+                android:id="@+id/tv_head"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"

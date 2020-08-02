@@ -2,6 +2,7 @@ package com.kakacat.minitool.translation;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -10,22 +11,21 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.constant.Result;
-import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 import com.kakacat.minitool.common.util.SystemUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.translation.adapter.CollectionAdapter;
 import com.kakacat.minitool.translation.adapter.LanguageAdapter;
-import java.util.concurrent.Callable;
-import bolts.Task;
 
 
-public class TranslationActivity extends AppCompatActivity implements Contract.View{
+public class TranslationActivity extends AppCompatActivity implements Contract.View {
 
     private Contract.Presenter presenter;
 
@@ -51,24 +51,16 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
     }
 
     @Override
-    protected void onDestroy() {
-        presenter.getSharedPreferences().unregisterOnSharedPreferenceChangeListener(presenter.getSharedPreferenceChangeListener());
-        presenter = null;
-        super.onDestroy();
-    }
-
-    @Override
     public void initData() {
-        setPresenter(new Presenter(this));
         inflater = LayoutInflater.from(this);
-        presenter.initData();
+        getPresenter().initData();
     }
 
     @Override
     public void initView() {
         setSupportActionBar(findViewById(R.id.toolbar));
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
             actionBar.setDisplayShowTitleEnabled(false);
@@ -82,29 +74,37 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
     }
 
     @Override
+    public Contract.Presenter getPresenter() {
+        if (presenter == null) {
+            presenter = new Presenter(this);
+        }
+        return presenter;
+    }
+
+    @Override
     public void showCollectionWindow() {
-        if(collectionDialog == null){
-            View view = inflater.inflate(R.layout.collection_layout,linearLayout,false);
-            collectionDialog = new MyPopupWindow(this,view,ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        if (collectionDialog == null) {
+            View view = inflater.inflate(R.layout.collection_layout, linearLayout, false);
+            collectionDialog = new MyPopupWindow(this, view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             RecyclerView rv = view.findViewById(R.id.rv);
             rv.setAdapter(getCollectionAdapter());
             rv.setLayoutManager(new LinearLayoutManager(this));
         }
-        collectionDialog.showAtLocation(linearLayout,Gravity.BOTTOM,0,0);
+        collectionDialog.showAtLocation(linearLayout, Gravity.BOTTOM, 0, 0);
     }
 
     @Override
     public void onAddToMyFavouriteCallBack(String s) {
-        UiUtil.showSnackBar(linearLayout,s);
+        UiUtil.showSnackBar(linearLayout, s);
         collectionAdapter.notifyDataSetChanged();
     }
 
     @Override
     public void showSelectLanguageWindow(int flag) {
-        if(flag == 1){
-            if(selectLanguageDialog1 == null){
-                View view = inflater.inflate(R.layout.select_from_window,linearLayout,false);
-                selectLanguageDialog1 = new MyPopupWindow(this,view, ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        if (flag == 1) {
+            if (selectLanguageDialog1 == null) {
+                View view = inflater.inflate(R.layout.select_from_window, linearLayout, false);
+                selectLanguageDialog1 = new MyPopupWindow(this, view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 RecyclerView rv = view.findViewById(R.id.rv_from);
                 LanguageAdapter languageAdapter = new LanguageAdapter(presenter.getLanguageList1());
                 languageAdapter.setOnClickListener((v, position) -> {
@@ -114,11 +114,11 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
                 rv.setAdapter(languageAdapter);
                 rv.setLayoutManager(new LinearLayoutManager(this));
             }
-            selectLanguageDialog1.showAtLocation(linearLayout, Gravity.CENTER,0,0);
-        }else if(flag == 2){
-            if(selectLanguageDialog2 == null){
-                View view = inflater.inflate(R.layout.select_from_window,linearLayout,false);
-                selectLanguageDialog2 = new MyPopupWindow(this,view, ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+            selectLanguageDialog1.showAtLocation(linearLayout, Gravity.CENTER, 0, 0);
+        } else if (flag == 2) {
+            if (selectLanguageDialog2 == null) {
+                View view = inflater.inflate(R.layout.select_from_window, linearLayout, false);
+                selectLanguageDialog2 = new MyPopupWindow(this, view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 RecyclerView rv = view.findViewById(R.id.rv_from);
                 LanguageAdapter languageAdapter = new LanguageAdapter(presenter.getLanguageList2());
                 languageAdapter.setOnClickListener((v, position) -> {
@@ -128,35 +128,24 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
                 rv.setAdapter(languageAdapter);
                 rv.setLayoutManager(new LinearLayoutManager(this));
             }
-            selectLanguageDialog2.showAtLocation(linearLayout, Gravity.CENTER,0,0);
+            selectLanguageDialog2.showAtLocation(linearLayout, Gravity.CENTER, 0, 0);
         }
     }
 
     @Override
-    public void onRequestCallBack(String result,int resultFlag){
-        Task.call((Callable<Void>) () -> {
-            if(resultFlag == Result.HANDLE_SUCCESS){
-                tvOutput.setText(result);
-            }else if(resultFlag == Result.INPUT_ERROR){
-                UiUtil.showToast(getContext(),"输入错误");
-            }else if(resultFlag == Result.HANDLE_FAIL){
-                UiUtil.showToast(getContext(),"处理响应数据错误");
-            }
-            return null;
-        },Task.UI_THREAD_EXECUTOR);
+    public void onRequestCallBack(String result, String warn) {
+        if (!TextUtils.isEmpty(result)) {
+            tvOutput.setText(result);
+        }
+        UiUtil.showToast(this, warn);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem){
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() == android.R.id.home) {
             finish();
         }
         return true;
-    }
-
-    @Override
-    public void setPresenter(Contract.Presenter presenter) {
-        this.presenter = presenter;
     }
 
     @Override
@@ -165,41 +154,41 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
     }
 
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.iv_open_collect:{
+        switch (v.getId()) {
+            case R.id.iv_open_collect: {
                 showCollectionWindow();
                 break;
             }
-            case R.id.iv_clear:{
+            case R.id.iv_clear: {
                 editText.setText("");
                 break;
             }
-            case R.id.tv_from:{
+            case R.id.tv_from: {
                 showSelectLanguageWindow(1);
                 break;
             }
-            case R.id.tv_to:{
+            case R.id.tv_to: {
                 showSelectLanguageWindow(2);
                 break;
             }
-            case R.id.fab:{
-                presenter.requestData(editText.getText().toString(),tvFrom.getText(),tvTo.getText());
+            case R.id.fab: {
+                presenter.requestData(editText.getText().toString(), tvFrom.getText(), tvTo.getText());
                 break;
             }
-            case R.id.iv_copy:{
-                SystemUtil.copyToClipboard(this,"translate",tvOutput.getText());
-                UiUtil.showSnackBar(linearLayout,"复制完成");
+            case R.id.iv_copy: {
+                SystemUtil.copyToClipboard(this, "translate", tvOutput.getText());
+                UiUtil.showSnackBar(linearLayout, "复制完成");
                 break;
             }
-            case R.id.iv_collect:{
-                presenter.addToMyFavourite(editText.getText().toString(),tvOutput.getText().toString());
+            case R.id.iv_collect: {
+                presenter.addToMyFavourite(editText.getText().toString(), tvOutput.getText().toString());
                 break;
             }
-            case R.id.bt_back:{
-                if(selectLanguageDialog1 != null && selectLanguageDialog1.isShowing()){
+            case R.id.bt_back: {
+                if (selectLanguageDialog1 != null && selectLanguageDialog1.isShowing()) {
                     selectLanguageDialog1.dismiss();
                 }
-                if(selectLanguageDialog2 != null && selectLanguageDialog2.isShowing()){
+                if (selectLanguageDialog2 != null && selectLanguageDialog2.isShowing()) {
                     selectLanguageDialog2.dismiss();
                 }
                 break;
@@ -208,7 +197,7 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
     }
 
     private CollectionAdapter getCollectionAdapter() {
-        if(collectionAdapter == null){
+        if (collectionAdapter == null) {
             collectionAdapter = new CollectionAdapter(presenter.getCollectionList());
         }
         return collectionAdapter;

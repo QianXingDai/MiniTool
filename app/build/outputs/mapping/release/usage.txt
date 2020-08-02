@@ -732,6 +732,8 @@ com.google.android.material.datepicker.MaterialDatePicker:
     private static final java.lang.String TITLE_TEXT_RES_ID_KEY
     private static final java.lang.String TITLE_TEXT_KEY
 androidx.recyclerview.widget.ItemTouchHelper$Callback$1
+com.kakacat.minitool.expressinquiry.activity.ExpressInquiryActivity:
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
 androidx.core.view.inputmethod.InputConnectionCompat
 kotlin.ULongArray$Iterator
 androidx.slidingpanelayout.R$dimen
@@ -865,6 +867,9 @@ kotlin.math.MathKt__MathJVMKt
 okhttp3.Dns$Companion:
     static final synthetic okhttp3.Dns$Companion $$INSTANCE
 androidx.legacy.app.ActionBarDrawerToggle$SetIndicatorInfo
+com.kakacat.minitool.garbageclassify.model.Model:
+    private static final java.lang.String HOST
+    private static final java.lang.String KEY
 android.support.v4.media.MediaBrowserCompat$ConnectionCallback$ConnectionCallbackInternal
 androidx.transition.Slide$GravityFlag
 kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$1
@@ -1025,7 +1030,7 @@ com.kakacat.minitool.main.model.AboutItem:
     public void setIconId(int)
     public void setTitle(java.lang.String)
 com.kakacat.minitool.currencyconversion.MainActivity:
-    public synthetic bridge void setPresenter(com.kakacat.minitool.common.base.IPresenter)
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
 android.support.v4.media.session.MediaControllerCompat$Callback$MessageHandler:
     void <init>(android.support.v4.media.session.MediaControllerCompat$Callback,android.os.Looper)
     public void handleMessage(android.os.Message)
@@ -1129,6 +1134,10 @@ bolts.Task$TaskCompletionSource
 android.support.v4.media.MediaBrowserCompatApi23$ItemCallback
 androidx.legacy.v4.R$integer
 androidx.interpolator.R
+com.kakacat.minitool.expressinquiry.model.PackageDetail:
+    public void <init>(java.lang.String,java.lang.String)
+    public void setTime(java.lang.String)
+    public void setContent(java.lang.String)
 androidx.transition.Slide$5
 kotlin.time.DurationKt
 com.facebook.drawee.view.DraweeView:
@@ -1291,6 +1300,11 @@ androidx.legacy.coreutils.R$attr
 androidx.core.content.pm.ShortcutInfoCompatSaver$NoopImpl
 androidx.transition.Transition$ArrayListManager
 kotlin.contracts.ConditionalEffect
+com.kakacat.minitool.currencyconversion.model.CountryBean:
+    public void setRate(double)
+    public void setIconId(int)
+    public void setNameId(int)
+    public void setUnitId(int)
 okio.Okio__JvmOkioKt:
     public static final okio.Sink sink(java.io.OutputStream)
     public static final okio.Sink sink(java.io.File,boolean)
@@ -1385,7 +1399,7 @@ androidx.core.widget.ContentLoadingProgressBar:
     private static final int MIN_DELAY
 com.google.android.material.internal.ViewUtils$1
 com.kakacat.minitool.appInfo.activity.AppInfoActivity:
-    public synthetic bridge void setPresenter(com.kakacat.minitool.common.base.IPresenter)
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
 androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath:
     public boolean canApplyTheme()
     public void applyTheme(android.content.res.Resources$Theme)
@@ -1414,8 +1428,6 @@ androidx.appcompat.graphics.drawable.DrawableContainer:
     private static final boolean DEBUG
     private static final java.lang.String TAG
     private static final boolean DEFAULT_DITHER
-com.kakacat.minitool.todayinhistory.Contract$Presenter:
-    public abstract boolean handleHistoryResponse(okhttp3.Response,java.util.List)
 android.support.v4.media.MediaBrowserCompat$ConnectionCallback$StubApi21
 androidx.fragment.R$color
 com.facebook.imagepipeline.producers.BaseProducerContextCallbacks:
@@ -1440,7 +1452,6 @@ androidx.fragment.R$anim:
     private void <init>()
 com.facebook.imagepipeline.systrace.DefaultFrescoSystrace$DefaultArgsBuilder
 android.support.v4.media.session.MediaControllerCompatApi24$TransportControls
-okhttp3.FormBody$Companion
 androidx.recyclerview.widget.BatchingListUpdateCallback
 kotlin.collections.ArraysKt___ArraysKt$asIterable$$inlined$Iterable$2
 androidx.core.os.HandlerCompat
@@ -1656,6 +1667,10 @@ kotlin.sequences.SequencesKt:
 kotlin.coroutines.experimental.migration.ExperimentalSuspendFunction1Migration
 com.facebook.imagepipeline.producers.PriorityNetworkFetcher
 kotlin.text.MatcherMatchResult
+com.facebook.drawee.view.DraweeHolder:
+    public boolean isAttached()
+    public boolean hasHierarchy()
+    protected com.facebook.drawee.components.DraweeEventTracker getDraweeEventTracker()
 bolts.WebViewAppLinkResolver:
     private static java.util.Map parseAlData(org.json.JSONArray)
     private static java.util.List getAlList(java.util.Map,java.lang.String)
@@ -1679,10 +1694,6 @@ bolts.WebViewAppLinkResolver:
     private static final java.lang.String KEY_WEB_URL
     private static final java.lang.String KEY_WEB
     private static final java.lang.String KEY_ANDROID
-com.facebook.drawee.view.DraweeHolder:
-    public boolean isAttached()
-    public boolean hasHierarchy()
-    protected com.facebook.drawee.components.DraweeEventTracker getDraweeEventTracker()
 androidx.core.R$styleable:
     private void <init>()
 com.google.android.material.textfield.TextInputLayout$EndIconMode
@@ -1877,7 +1888,6 @@ com.facebook.datasource.AbstractDataSource:
 com.kakacat.minitool.R$style
 kotlin.jvm.internal.LocalVariableReferencesKt
 androidx.appcompat.widget.DecorToolbar:
-    public abstract void setTitle(java.lang.CharSequence)
     public abstract java.lang.CharSequence getSubtitle()
     public abstract void setSubtitle(java.lang.CharSequence)
     public abstract boolean hasIcon()
@@ -1959,7 +1969,7 @@ kotlin.sequences.SequencesKt___SequencesKt$minus$3
 com.google.android.material.shape.CutCornerTreatment:
     public void <init>(float)
 com.kakacat.minitool.phoneartribution.PhoneAttributionActivity:
-    public synthetic bridge void setPresenter(com.kakacat.minitool.common.base.IPresenter)
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
 com.facebook.imagepipeline.multiuri.MultiUri
 androidx.core.content.pm.ShortcutManagerCompat$1
 kotlin.text.StringsKt___StringsKt$windowedSequence$1
@@ -2157,8 +2167,6 @@ com.facebook.imagepipeline.producers.BitmapPrepareProducer:
     public static final java.lang.String PRODUCER_NAME
 kotlin.ranges.UIntProgression$Companion
 com.kakacat.minitool.R$drawable
-com.kakacat.minitool.wifipasswordview.Wifi:
-    public void <init>(java.lang.String,java.lang.String,java.lang.String)
 okhttp3.internal.platform.Platform$Companion:
     public static synthetic void resetForTests$default(okhttp3.internal.platform.Platform$Companion,okhttp3.internal.platform.Platform,int,java.lang.Object)
     public final void resetForTests(okhttp3.internal.platform.Platform)
@@ -2181,8 +2189,6 @@ kotlin.collections.SetsKt__SetsKt:
     public void <init>()
 kotlin.UInt
 androidx.recyclerview.widget.ItemTouchHelper$3
-com.kakacat.minitool.translation.LanguageMap:
-    public void <init>()
 kotlin.text.CharCategory
 kotlin.io.FilesKt__FilePathComponentsKt
 androidx.appcompat.app.ActionBarDrawerToggle$1
@@ -2376,6 +2382,8 @@ androidx.recyclerview.widget.LinearSmoothScroller:
 com.facebook.imagepipeline.systrace.FrescoSystrace:
     public static void provide(com.facebook.imagepipeline.systrace.FrescoSystrace$Systrace)
     public static com.facebook.imagepipeline.systrace.FrescoSystrace$ArgsBuilder beginSectionWithArgs(java.lang.String)
+com.kakacat.minitool.translation.model.LanguageMap:
+    public void <init>()
 com.facebook.drawee.R$id
 android.support.v4.media.session.MediaSessionCompat$MediaSessionImpl
 androidx.core.text.util.LinkifyCompat$1
@@ -2601,7 +2609,7 @@ androidx.appcompat.app.AlertDialog$Builder:
     public androidx.appcompat.app.AlertDialog show()
 androidx.core.provider.FontsContractCompat$FontRequestCallback
 com.kakacat.minitool.garbageclassify.GarbageClassificationActivity:
-    public synthetic bridge void setPresenter(com.kakacat.minitool.common.base.IPresenter)
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
 kotlin.jvm.internal.FunctionReferenceImpl
 kotlin.UByteArray
 androidx.core.app.NotificationManagerCompat$SideChannelManager$ListenerRecord
@@ -2628,7 +2636,12 @@ androidx.loader.app.LoaderManagerImpl$LoaderObserver:
 com.facebook.soloader.MergedSoMapping:
     void <init>()
 androidx.coordinatorlayout.R$color
-com.google.android.material.tabs.TabLayoutMediator$PagerAdapterObserver
+com.google.android.material.tabs.TabLayoutMediator$PagerAdapterObserver:
+    public void onItemRangeChanged(int,int)
+    public void onItemRangeChanged(int,int,java.lang.Object)
+    public void onItemRangeInserted(int,int)
+    public void onItemRangeRemoved(int,int)
+    public void onItemRangeMoved(int,int,int)
 com.facebook.imagepipeline.transcoder.DownsampleUtil:
     private void <init>()
     public static int roundToPowerOfTwo(int)
@@ -2652,6 +2665,14 @@ com.google.android.material.appbar.AppBarLayout$BaseBehavior$BaseDragCallback:
     public void <init>()
 bolts.AppLink
 androidx.transition.FloatArrayEvaluator
+com.kakacat.minitool.common.util.UiUtil:
+    public void <init>()
+    public static void showKeyboard(android.content.Context,android.view.View)
+    public static void initPopupWindow(android.app.Activity,android.widget.PopupWindow)
+    public static void setShadow(android.app.Activity)
+    public static void setTranslucentStatusBar(android.app.Activity,boolean)
+    public static void setLightNavigationBar(android.view.Window,boolean)
+    private static synthetic void lambda$initPopupWindow$0(android.app.Activity)
 com.google.android.material.floatingactionbutton.BaseMotionStrategy:
     public final void addAnimationListener(android.animation.Animator$AnimatorListener)
     public final void removeAnimationListener(android.animation.Animator$AnimatorListener)
@@ -4104,6 +4125,7 @@ androidx.fragment.app.FragmentTransaction:
     public androidx.fragment.app.FragmentTransaction setBreadCrumbShortTitle(java.lang.CharSequence)
     public androidx.fragment.app.FragmentTransaction setAllowOptimization(boolean)
     public androidx.fragment.app.FragmentTransaction runOnCommit(java.lang.Runnable)
+    public abstract int commitAllowingStateLoss()
     static final int OP_NULL
     static final int OP_ADD
     static final int OP_REPLACE
@@ -4259,6 +4281,9 @@ android.support.v4.media.session.MediaControllerCompat$MediaControllerImplApi21:
 com.kakacat.minitool.garbageclassify.Contract$View:
     public abstract void requestData(java.lang.String)
     public abstract void showContentView(int)
+com.kakacat.minitool.inquireip.Model:
+    private static final java.lang.String QUERY_IP_HOST
+    private static final java.lang.String QUERY_IP_KEY
 androidx.recyclerview.widget.AsyncListDiffer$MainThreadExecutor
 okhttp3.internal.cache.CacheStrategy$Factory:
     public final okhttp3.Request getRequest$okhttp()
@@ -4439,7 +4464,7 @@ kotlin.reflect.KClass:
     public abstract boolean equals(java.lang.Object)
     public abstract int hashCode()
 com.kakacat.minitool.bingpic.BingPicActivity:
-    public synthetic bridge void setPresenter(com.kakacat.minitool.common.base.IPresenter)
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
     private static final int REQUEST_PERMISSION_CODE
 android.support.v4.media.session.MediaControllerCompatApi21$TransportControls
 kotlin.collections.LongIterator
@@ -4588,9 +4613,8 @@ com.facebook.imagepipeline.image.OriginalEncodedImageInfo:
     public android.net.Uri getUri()
     public java.lang.Object getCallerContext()
     public com.facebook.imagepipeline.image.EncodedImageOrigin getOrigin()
-com.google.android.material.tabs.TabLayoutMediator$TabLayoutOnPageChangeCallback
 com.kakacat.minitool.todayinhistory.TodayInHistoryActivity:
-    public synthetic bridge void setPresenter(com.kakacat.minitool.common.base.IPresenter)
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
 androidx.recyclerview.widget.ItemTouchHelper$SimpleCallback
 kotlin.ranges.CharProgression
 kotlin.text.StringsKt__RegexExtensionsKt:
@@ -4768,11 +4792,6 @@ com.google.android.material.card.MaterialCardView:
     private static final java.lang.String LOG_TAG
 androidx.core.net.ConnectivityManagerCompat
 com.facebook.imagepipeline.core.ImageTranscoderType
-com.kakacat.minitool.currencyconversion.model.Country:
-    public void setRate(double)
-    public void setIconId(int)
-    public void setNameId(int)
-    public void setUnitId(int)
 com.google.gson.JsonDeserializationContext:
     public abstract java.lang.Object deserialize(com.google.gson.JsonElement,java.lang.reflect.Type)
 androidx.customview.R$styleable
@@ -4899,6 +4918,7 @@ androidx.fragment.app.BackStackRecord:
     public androidx.fragment.app.FragmentTransaction hide(androidx.fragment.app.Fragment)
     public androidx.fragment.app.FragmentTransaction show(androidx.fragment.app.Fragment)
     public androidx.fragment.app.FragmentTransaction setPrimaryNavigationFragment(androidx.fragment.app.Fragment)
+    public int commitAllowingStateLoss()
     private static final java.lang.String TAG
 kotlin.collections.ArraysKt___ArraysKt$withIndex$6
 com.kakacat.minitool.common.util.EncryptionUtil:
@@ -4939,6 +4959,9 @@ com.facebook.imagepipeline.platform.PlatformDecoderFactory:
 android.support.v4.media.session.PlaybackStateCompat$ShuffleMode
 kotlin.TypeCastException:
     public void <init>()
+com.kakacat.minitool.phoneartribution.model.Model:
+    private static final java.lang.String HOST
+    private static final java.lang.String KEY
 androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo:
     public int changeFlags
 kotlin.jvm.internal.TypeReference$WhenMappings
@@ -4957,21 +4980,22 @@ com.google.android.material.internal.CheckableImageButton:
 com.google.android.material.textfield.DropdownMenuEndIconDelegate:
     private static final int ANIMATION_FADE_OUT_DURATION
     private static final int ANIMATION_FADE_IN_DURATION
-com.kakacat.minitool.epidemicsituation.EpidemicData:
-    public java.lang.String getContinents()
-    public java.lang.String getCountryShortCode()
 kotlin.contracts.CallsInPlace
 com.kakacat.minitool.translation.TranslationActivity:
-    public synthetic bridge void setPresenter(com.kakacat.minitool.common.base.IPresenter)
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
 com.google.android.material.R$id:
     private void <init>()
 kotlin.ranges.UIntRange$Companion
+com.kakacat.minitool.textencryption.Contract
 okio.DeflaterSink
 kotlin.sequences.SequencesKt___SequencesKt$minus$2
 android.support.v4.media.session.MediaSessionCompatApi23
 bolts.AppLink$Target
 androidx.appcompat.app.ActionBar$NavigationMode
 androidx.appcompat.widget.AbsActionBarView$1
+com.kakacat.minitool.expressinquiry.model.Model:
+    private static final java.lang.String KEY
+    private static final java.lang.String HOST
 androidx.appcompat.view.menu.MenuPopupHelper:
     public void <init>(android.content.Context,androidx.appcompat.view.menu.MenuBuilder)
     public void <init>(android.content.Context,androidx.appcompat.view.menu.MenuBuilder,android.view.View)
@@ -5235,10 +5259,6 @@ okhttp3.Cache:
     private static final int ENTRY_BODY
     private static final int ENTRY_COUNT
     public static final okhttp3.Cache$Companion Companion
-com.kakacat.minitool.bingpic.Presenter:
-    private static final int DEFAULT_LOAD_NUM
-    private static final int REQUEST_IMAGE_WIDTH
-    private static final int REQUEST_IMAGE_HEIGHT
 androidx.recyclerview.widget.ItemTouchHelper$Callback
 okio.-Platform:
     public static final java.lang.Object synchronized(java.lang.Object,kotlin.jvm.functions.Function0)
@@ -5303,12 +5323,6 @@ org.intellij.lang.annotations.JdkConstants$HorizontalAlignment
 com.google.android.material.bottomsheet.BottomSheetBehavior$State
 androidx.annotation.RequiresFeature
 android.support.v4.media.session.MediaControllerCompat$TransportControls
-com.kakacat.minitool.common.ui.UiUtil:
-    public void <init>()
-    public static void showKeyboard(android.content.Context,android.view.View)
-    public static void initPopupWindow(android.app.Activity,android.widget.PopupWindow)
-    public static void setShadow(android.app.Activity)
-    private static synthetic void lambda$initPopupWindow$0(android.app.Activity)
 androidx.media.AudioAttributesCompat$Builder
 androidx.core.os.ParcelCompat
 android.support.v4.media.session.MediaSessionCompat$MediaSessionImplApi21
@@ -5331,6 +5345,8 @@ androidx.core.util.Supplier
 androidx.core.view.WindowCompat
 com.kakacat.minitool.R$animator
 okhttp3.internal.ws.WebSocketReader
+com.kakacat.minitool.cleanfile.model.Model:
+    private static final int THREAD_NUM
 androidx.appcompat.app.ActionBarDrawerToggle$FrameworkActionBarDelegate
 android.support.v4.media.session.PlaybackStateCompat$CustomAction:
     public java.lang.Object getCustomAction()
@@ -5910,10 +5926,21 @@ kotlin.jvm.internal.EnumCompanionObject
 com.kakacat.minitool.R$anim
 androidx.vectordrawable.graphics.drawable.VectorDrawableCommon:
     protected void onBoundsChange(android.graphics.Rect)
+com.kakacat.minitool.currencyconversion.model.Model:
+    private static final java.lang.String EXCHANGE_RATE_HOST
+    private static final java.lang.String EXCHANGE_RATE_KEY
+    public static final java.lang.String REQUEST_ADDRESS
+com.kakacat.minitool.appInfo.model.AppInfoModel:
+    public static final int SORT_BY_APP_NAME
+    public static final int SORT_BY_TARGET_API
+    public static final int SORT_BY_MIN_API
+    public static final int SORT_BY_FIRST_INSTALL_TIME
+    public static final int SORT_BY_LAST_UPDATE_TIME
 com.facebook.drawee.view.MultiDraweeHolder
 de.hdodenhof.circleimageview.R$attr
 bolts.Task$1
 androidx.viewpager.widget.ViewPager:
+    public void <init>(android.content.Context,android.util.AttributeSet)
     public void clearOnPageChangeListeners()
     public void setPageTransformer(boolean,androidx.viewpager.widget.ViewPager$PageTransformer)
     public void setPageTransformer(boolean,androidx.viewpager.widget.ViewPager$PageTransformer,int)
@@ -5955,8 +5982,6 @@ androidx.lifecycle.SavedStateHandleController:
     static final java.lang.String TAG_SAVED_STATE_HANDLE_CONTROLLER
 okhttp3.Handshake$Companion$get$1
 androidx.vectordrawable.graphics.drawable.Animatable2Compat
-com.kakacat.minitool.garbageclassify.Contract$Presenter:
-    public abstract boolean handleResponse(okhttp3.Response)
 okhttp3.internal.cache.DiskLruCache$Editor
 androidx.core.app.FrameMetricsAggregator
 kotlin.coroutines.experimental.CoroutinesKt
@@ -5968,7 +5993,13 @@ androidx.recyclerview.R$attr:
 com.kakacat.minitool.appInfo.adapter.AppInfoAdapter:
     public void setOnClickListener(com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener)
     private static final int HEADER_VIEW_TYPE
-okhttp3.FormBody
+okhttp3.FormBody:
+    public final int size()
+    public final int -deprecated_size()
+    public final java.lang.String encodedName(int)
+    public final java.lang.String name(int)
+    public final java.lang.String encodedValue(int)
+    public final java.lang.String value(int)
 androidx.constraintlayout.solver.widgets.Rectangle:
     public void setBounds(int,int,int,int)
     void grow(int,int)
@@ -6054,17 +6085,11 @@ com.facebook.imagepipeline.memory.DefaultFlexByteArrayPoolParams:
     private void <init>()
     public static final int DEFAULT_MAX_BYTE_ARRAY_SIZE
     private static final int DEFAULT_MIN_BYTE_ARRAY_SIZE
-com.kakacat.minitool.appInfo.contract.AppInfoContract$Presenter:
-    public abstract java.util.List getPackageInfoList()
-androidx.fragment.app.FragmentPagerAdapter:
-    private static final java.lang.String TAG
-    private static final boolean DEBUG
-    public static final int BEHAVIOR_SET_USER_VISIBLE_HINT
-    public static final int BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
-bolts.Task$15$1
+androidx.fragment.app.FragmentPagerAdapter
 androidx.legacy.coreui.R$styleable
 com.google.android.material.shape.MaterialShapeDrawable$CompatibilityShadowMode
 androidx.annotation.IntegerRes
+com.kakacat.minitool.epidemicinquiry.Contract
 kotlin.ranges.LongProgression$Companion
 com.facebook.fresco.memorytypes.nativememory.R$integer
 okhttp3.Credentials:
@@ -6453,7 +6478,6 @@ kotlin.reflect.KProperty0
 androidx.swiperefreshlayout.widget.SwipeRefreshLayout:
     public void setProgressViewOffset(boolean,int,int)
     public void setProgressViewEndTarget(boolean,int)
-    public boolean isRefreshing()
     public boolean startNestedScroll(int,int)
     public void stopNestedScroll(int)
     public boolean hasNestedScrollingParent(int)
@@ -6638,7 +6662,6 @@ okhttp3.internal.http2.Http2Connection:
     public static final int DEGRADED_PING
     public static final int AWAIT_PING
     public static final int DEGRADED_PONG_TIMEOUT_NS
-com.google.android.material.tabs.TabLayoutMediator$ViewPagerOnTabSelectedListener
 okhttp3.internal.ws.MessageInflater
 com.facebook.imagepipelinebase.BuildConfig
 androidx.recyclerview.widget.ItemTouchHelper$Callback$2
@@ -6980,7 +7003,6 @@ androidx.core.graphics.drawable.IconCompat:
 androidx.legacy.v4.R$drawable
 com.google.android.material.bottomnavigation.BottomNavigationMenu:
     public static final int MAX_ITEM_COUNT
-bolts.Task$11
 androidx.core.content.res.GradientColorInflaterCompat:
     private void <init>()
     static android.graphics.Shader createFromXml(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.content.res.Resources$Theme)
@@ -7073,7 +7095,6 @@ androidx.appcompat.view.menu.MenuItemImpl:
 kotlin.collections.ArrayDeque
 kotlin.coroutines.RestrictsSuspension
 kotlin.coroutines.experimental.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnchecked$$inlined$buildContinuationByInvokeCall$IntrinsicsKt__IntrinsicsJvmKt$2
-com.google.android.material.tabs.TabLayoutMediator$TabConfigurationStrategy
 com.facebook.drawee.drawable.ScalingUtils:
     public void <init>()
 com.facebook.imagepipeline.producers.LocalContentUriThumbnailFetchProducer:
@@ -7498,6 +7519,10 @@ androidx.legacy.v4.R$styleable
 androidx.customview.R$dimen
 androidx.core.provider.FontsContractCompat$4$5
 androidx.asynclayoutinflater.R$style
+com.kakacat.minitool.epidemicinquiry.model.Model:
+    private static final java.lang.String HOST
+    private static final java.lang.String KEY
+    public static final java.lang.String ADDRESS
 com.kakacat.minitool.main.fragment.MyFragment:
     public void <init>()
 androidx.core.content.ContextCompat$LegacyServiceMapHolder
@@ -7759,8 +7784,6 @@ androidx.core.content.PermissionChecker:
     public static final int PERMISSION_DENIED
     public static final int PERMISSION_DENIED_APP_OP
 kotlin.RequiresOptIn$Level
-com.kakacat.minitool.appInfo.model.AndroidMap:
-    public void <init>()
 com.facebook.common.internal.Suppliers:
     public void <init>()
 kotlin.coroutines.experimental.AbstractCoroutineContextElement
@@ -8123,7 +8146,6 @@ okhttp3.internal.ws.RealWebSocket$Streams
 com.google.android.material.appbar.AppBarLayout$LayoutParams$ScrollFlags
 com.kakacat.minitool.common.util.SystemUtil:
     public void <init>()
-    public static void log(java.lang.String)
 kotlin.text.StringsKt__StringNumberConversionsJVMKt:
     private static final java.lang.String toString(byte,int)
     private static final java.lang.String toString(short,int)
@@ -8161,6 +8183,8 @@ androidx.core.text.BidiFormatter$Builder:
     public androidx.core.text.BidiFormatter$Builder stereoReset(boolean)
     public androidx.core.text.BidiFormatter$Builder setTextDirectionHeuristic(androidx.core.text.TextDirectionHeuristicCompat)
 kotlin.jvm.functions.FunctionN
+com.kakacat.minitool.common.ui.DepthPageTransformer:
+    private static final float MIN_SCALE
 com.facebook.imagepipeline.cache.NativeMemoryCacheTrimStrategy$1
 kotlin.collections.MapWithDefaultImpl
 com.facebook.imagepipeline.memory.SharedByteArray
@@ -8291,6 +8315,7 @@ androidx.fragment.app.Fragment:
     public final boolean isMenuVisible()
     public void setRetainInstance(boolean)
     public void setHasOptionsMenu(boolean)
+    public void setUserVisibleHint(boolean)
     public boolean getUserVisibleHint()
     public androidx.loader.app.LoaderManager getLoaderManager()
     public void startIntentSenderForResult(android.content.IntentSender,int,android.content.Intent,int,int,int,android.os.Bundle)
@@ -8497,7 +8522,6 @@ com.google.android.material.badge.BadgeDrawable:
     static final java.lang.String DEFAULT_EXCEED_MAX_BADGE_NUMBER_SUFFIX
 okhttp3.Authenticator$Companion:
     static final synthetic okhttp3.Authenticator$Companion $$INSTANCE
-bolts.Task$12
 kotlin.jvm.functions.Function4
 androidx.core.widget.PopupWindowCompat:
     private void <init>()
@@ -8901,7 +8925,7 @@ com.google.android.material.datepicker.MaterialTextInputPicker$1
 androidx.fragment.R$layout
 androidx.core.app.NotificationCompat$MessagingStyle
 com.kakacat.minitool.cleanfile.CleanFileActivity:
-    public synthetic bridge void setPresenter(com.kakacat.minitool.common.base.IPresenter)
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
     private static final int REQUEST_CODE
 androidx.appcompat.app.ActionBar$LayoutParams:
     public void <init>(int,int,int)
@@ -9269,8 +9293,6 @@ android.support.v4.app.INotificationSideChannel
 androidx.media.MediaBrowserServiceCompat$ServiceBinderImpl$3
 bolts.BoltsExecutors$ImmediateExecutor:
     private static final int MAX_DEPTH
-com.kakacat.minitool.translation.Contract$Presenter:
-    public abstract java.lang.String handleTranslationResponse(okhttp3.Response)
 kotlin.StandardKt__SynchronizedKt
 kotlin.jvm.internal.markers.KMutableMap$Entry
 androidx.collection.CircularArray
@@ -9725,6 +9747,7 @@ androidx.fragment.app.DialogFragment:
 androidx.appcompat.R$styleable:
     private void <init>()
 okhttp3.Cookie$Builder
+com.kakacat.minitool.expressinquiry.Contract
 com.facebook.imagepipeline.nativecode.R$string
 androidx.appcompat.app.AlertController:
     public void setButtonPanelLayoutHint(int)
@@ -9972,7 +9995,8 @@ com.facebook.common.internal.ByteStreams:
     public static byte[] toByteArray(java.io.InputStream,int)
     public static void readFully(java.io.InputStream,byte[],int,int)
     private static final int BUF_SIZE
-okhttp3.FormBody$Builder
+okhttp3.FormBody$Builder:
+    public final okhttp3.FormBody$Builder addEncoded(java.lang.String,java.lang.String)
 org.intellij.lang.annotations.Subst
 androidx.recyclerview.widget.TileList
 kotlin.text.Regex$Companion:
@@ -10223,22 +10247,6 @@ kotlin.text.Regex:
     private java.util.Set _options
 androidx.core.app.NotificationManagerCompat
 androidx.vectordrawable.animated.R
-com.kakacat.minitool.todayinhistory.Article:
-    public void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
-    public java.lang.String get_id()
-    public void set_id(java.lang.String)
-    public void setTitle(java.lang.String)
-    public void setPic(java.lang.String)
-    public void setYear(java.lang.String)
-    public void setMonth(java.lang.String)
-    public void setDay(java.lang.String)
-    public java.lang.String getDes()
-    public void setDes(java.lang.String)
-    public java.lang.String getLunar()
-    public void setLunar(java.lang.String)
-    private java.lang.String _id
-    private java.lang.String des
-    private java.lang.String lunar
 androidx.core.app.RemoteInput$Source
 kotlin.sequences.MergingSequence$iterator$1
 androidx.appcompat.app.NavItemSelectedListener
@@ -10282,6 +10290,8 @@ androidx.savedstate.SavedStateRegistry:
     public boolean isRestored()
     private static final java.lang.String SAVED_COMPONENTS_KEY
 kotlin.OptIn
+com.kakacat.minitool.expressinquiry.adapter.DeliveryDetailAdapter:
+    private static final int HEAD_VIEW
 com.google.gson.internal.Streams:
     private void <init>()
     public static java.io.Writer writerForAppendable(java.lang.Appendable)
@@ -10294,8 +10304,6 @@ com.facebook.imagepipeline.memory.DefaultByteArrayPoolParams:
 okhttp3.internal.platform.OpenJSSEPlatform:
     public javax.net.ssl.X509TrustManager trustManager(javax.net.ssl.SSLSocketFactory)
 de.hdodenhof.circleimageview.BuildConfig
-com.kakacat.minitool.cleanfile.Presenter:
-    private static final int THREAD_NUM
 androidx.vectordrawable.animated.R$styleable
 com.facebook.imagepipeline.systrace.FrescoSystrace$ArgsBuilder:
     public abstract void flush()
@@ -10570,7 +10578,6 @@ com.facebook.fresco.memorytypes.simple.R$styleable
 bolts.Task:
     public static void setUnobservedExceptionHandler(bolts.Task$UnobservedExceptionHandler)
     public static bolts.Task$TaskCompletionSource create()
-    public static bolts.Task cancelled()
     public static bolts.Task delay(long)
     public static bolts.Task delay(long,bolts.CancellationToken)
     static bolts.Task delay(long,java.util.concurrent.ScheduledExecutorService,bolts.CancellationToken)
@@ -10579,8 +10586,6 @@ bolts.Task:
     public static bolts.Task whenAnyResult(java.util.Collection)
     public static bolts.Task whenAny(java.util.Collection)
     public static bolts.Task whenAllResult(java.util.Collection)
-    private static void completeAfterTask(bolts.TaskCompletionSource,bolts.Continuation,bolts.Task,java.util.concurrent.Executor,bolts.CancellationToken)
-    static synthetic void access$100(bolts.TaskCompletionSource,bolts.Continuation,bolts.Task,java.util.concurrent.Executor,bolts.CancellationToken)
     public void waitForCompletion()
     public boolean waitForCompletion(long,java.util.concurrent.TimeUnit)
     public bolts.Task cast()
@@ -10590,12 +10595,8 @@ bolts.Task:
     public bolts.Task continueWhile(java.util.concurrent.Callable,bolts.Continuation,java.util.concurrent.Executor)
     public bolts.Task continueWhile(java.util.concurrent.Callable,bolts.Continuation,java.util.concurrent.Executor,bolts.CancellationToken)
     public bolts.Task continueWith(bolts.Continuation,bolts.CancellationToken)
-    public bolts.Task continueWithTask(bolts.Continuation,java.util.concurrent.Executor)
-    public bolts.Task continueWithTask(bolts.Continuation,java.util.concurrent.Executor,bolts.CancellationToken)
     public bolts.Task continueWithTask(bolts.Continuation)
     public bolts.Task continueWithTask(bolts.Continuation,bolts.CancellationToken)
-    public bolts.Task onSuccess(bolts.Continuation,java.util.concurrent.Executor)
-    public bolts.Task onSuccess(bolts.Continuation,java.util.concurrent.Executor,bolts.CancellationToken)
     public bolts.Task onSuccess(bolts.Continuation)
     public bolts.Task onSuccess(bolts.Continuation,bolts.CancellationToken)
     public bolts.Task onSuccessTask(bolts.Continuation,java.util.concurrent.Executor)
@@ -10642,6 +10643,8 @@ androidx.fragment.app.FragmentContainerView:
     public void <init>(android.content.Context,android.util.AttributeSet)
     public void <init>(android.content.Context,android.util.AttributeSet,int)
 androidx.coordinatorlayout.R$dimen
+com.kakacat.minitool.expressinquiry.Contract$View:
+    public abstract void showWindows(android.view.View)
 com.facebook.drawee.generic.RoundingParams:
     public static com.facebook.drawee.generic.RoundingParams asCircle()
     public static com.facebook.drawee.generic.RoundingParams fromCornersRadius(float)
@@ -10743,7 +10746,7 @@ okio.-GzipSourceExtensions
 androidx.media.MediaBrowserServiceCompat$MediaBrowserServiceImplBase$3
 kotlin.collections.CollectionsKt___CollectionsKt$elementAt$1
 com.kakacat.minitool.inquireip.InquireIpActivity:
-    public synthetic bridge void setPresenter(com.kakacat.minitool.common.base.IPresenter)
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
 androidx.viewpager.widget.PagerAdapter:
     public void notifyDataSetChanged()
     public static final int POSITION_UNCHANGED
@@ -10845,6 +10848,17 @@ androidx.drawerlayout.R$layout
 kotlin.io.FileTreeWalk
 androidx.appcompat.resources.R$styleable:
     private void <init>()
+com.kakacat.minitool.epidemicinquiry.model.ChildBean:
+    public void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    public void setCityName(java.lang.String)
+    public void setCurrentConfirmedCount(java.lang.String)
+    public void setConfirmedCount(java.lang.String)
+    public void setSusPectedCount(java.lang.String)
+    public void setCuredCount(java.lang.String)
+    public void setDeadCount(java.lang.String)
+    public java.lang.String getLocationId()
+    public void setLocationId(java.lang.String)
+    private java.lang.String locationId
 androidx.core.provider.FontsContractCompat$Columns
 kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt
 com.facebook.imagepipeline.nativecode.R$id
@@ -10924,6 +10938,8 @@ androidx.constraintlayout.widget.ConstraintLayout:
     public static final int DESIGN_INFO_ID
 kotlin.reflect.KMutableProperty2$Setter
 kotlin.Function
+com.kakacat.minitool.epidemicinquiry.model.GroupBean:
+    public void setChildBeanList(java.util.List)
 androidx.transition.ChangeImageTransform$1
 androidx.drawerlayout.widget.DrawerLayout$LayoutParams:
     public void <init>(int,int,int)
@@ -10964,6 +10980,8 @@ androidx.documentfile.provider.TreeDocumentFile
 kotlin.collections.AbstractIterator$WhenMappings
 kotlin.reflect.KProperty$Getter
 org.intellij.lang.annotations.JdkConstants$CalendarMonth
+com.kakacat.minitool.epidemicinquiry.EpidemicInquiryActivity:
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
 androidx.core.view.MarginLayoutParamsCompat:
     public static boolean isMarginRelative(android.view.ViewGroup$MarginLayoutParams)
     public static int getLayoutDirection(android.view.ViewGroup$MarginLayoutParams)
@@ -11040,6 +11058,22 @@ com.facebook.imagepipeline.producers.ResizeAndRotateProducer:
     private static final java.lang.String TRANSCODING_RESULT
     private static final java.lang.String TRANSCODER_ID
     static final int MIN_TRANSFORM_INTERVAL_MS
+com.kakacat.minitool.todayinhistory.model.Article:
+    public void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    public java.lang.String get_id()
+    public void set_id(java.lang.String)
+    public void setTitle(java.lang.String)
+    public void setPic(java.lang.String)
+    public void setYear(java.lang.String)
+    public void setMonth(java.lang.String)
+    public void setDay(java.lang.String)
+    public java.lang.String getDes()
+    public void setDes(java.lang.String)
+    public java.lang.String getLunar()
+    public void setLunar(java.lang.String)
+    private java.lang.String _id
+    private java.lang.String des
+    private java.lang.String lunar
 kotlin.collections.FloatIterator
 com.google.android.material.shape.ShapeAppearanceModel:
     public com.google.android.material.shape.ShapeAppearanceModel withCornerSize(com.google.android.material.shape.CornerSize)
@@ -11111,6 +11145,8 @@ com.facebook.imagepipeline.producers.DecodeProducer$ProgressiveDecoder:
 androidx.core.app.JobIntentService$GenericWorkItem
 androidx.transition.ViewOverlayApi14$OverlayViewGroup:
     protected android.view.ViewParent invalidateChildInParentFast(int,int,android.graphics.Rect)
+com.kakacat.minitool.inquireip.IpBean:
+    public void setIpAddress(java.lang.String)
 com.google.android.material.dialog.MaterialDialogs:
     private void <init>()
 kotlin.comparisons.ComparisonsKt___ComparisonsKt:
@@ -11444,6 +11480,8 @@ com.google.android.material.R$anim
 com.facebook.imagepipeline.systrace.DefaultFrescoSystrace:
     public com.facebook.imagepipeline.systrace.FrescoSystrace$ArgsBuilder beginSectionWithArgs(java.lang.String)
 kotlin.collections.AbstractMutableList
+com.kakacat.minitool.textencryption.TextEncryptionActivity:
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
 com.google.gson.internal.Streams$AppendableWriter$CurrentWrite
 android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$1
 androidx.lifecycle.process.R
@@ -11523,7 +11561,7 @@ com.facebook.nativeimagetranscoder.R$attr
 com.kakacat.minitool.common.base.IView:
     public abstract void initData()
     public abstract void initView()
-    public abstract void setPresenter(com.kakacat.minitool.common.base.IPresenter)
+    public abstract com.kakacat.minitool.common.base.IPresenter getPresenter()
 com.facebook.imagepipeline.core.ImagePipelineConfig$DefaultImageRequestConfig:
     public void setProgressiveRenderingEnabled(boolean)
 androidx.core.content.FileProvider
@@ -11533,6 +11571,8 @@ kotlin.text.CharDirectionality$Companion
 com.facebook.fbcore.R
 kotlin.ranges.CharProgressionIterator
 androidx.core.app.FrameMetricsAggregator$FrameMetricsApi24Impl$1
+com.kakacat.minitool.common.util.ThreadUtil:
+    public void <init>()
 com.facebook.common.internal.Predicate
 com.google.android.material.R$attr:
     private void <init>()
@@ -11791,13 +11831,13 @@ androidx.appcompat.app.ActionBar:
     public abstract void setSelectedNavigationItem(int)
     public abstract int getSelectedNavigationIndex()
     public abstract int getNavigationItemCount()
-    public abstract void setTitle(java.lang.CharSequence)
     public abstract void setTitle(int)
     public abstract void setSubtitle(java.lang.CharSequence)
     public abstract void setSubtitle(int)
     public abstract void setDisplayOptions(int)
     public abstract void setDisplayOptions(int,int)
     public abstract void setDisplayUseLogoEnabled(boolean)
+    public abstract void setDisplayShowHomeEnabled(boolean)
     public abstract void setDisplayShowCustomEnabled(boolean)
     public abstract void setBackgroundDrawable(android.graphics.drawable.Drawable)
     public void setStackedBackgroundDrawable(android.graphics.drawable.Drawable)
@@ -11849,6 +11889,12 @@ android.support.v4.media.session.MediaSessionCompat$2
 kotlin.collections.IndexingIterator
 com.google.gson.JsonIOException:
     private static final long serialVersionUID
+com.kakacat.minitool.bingpic.Model:
+    public void initData()
+    private static final java.lang.String BING_PIC_HOST
+    private static final int DEFAULT_LOAD_NUM
+    private static final int REQUEST_IMAGE_WIDTH
+    private static final int REQUEST_IMAGE_HEIGHT
 androidx.lifecycle.extensions.R$layout
 androidx.transition.ChangeClipBounds
 androidx.asynclayoutinflater.view.AsyncLayoutInflater:
@@ -11964,7 +12010,6 @@ com.facebook.imageutils.WebpUtil:
 okhttp3.MultipartReader$Companion
 com.google.android.material.tabs.TabLayout:
     public void addTab(com.google.android.material.tabs.TabLayout$Tab,int)
-    public void addOnTabSelectedListener(com.google.android.material.tabs.TabLayout$OnTabSelectedListener)
     public void removeOnTabSelectedListener(com.google.android.material.tabs.TabLayout$OnTabSelectedListener)
     public void clearOnTabSelectedListeners()
     public void removeTab(com.google.android.material.tabs.TabLayout$Tab)
@@ -12114,7 +12159,7 @@ com.facebook.cache.disk.DefaultDiskStorage:
 com.facebook.imagepipeline.nativecode.R
 kotlin.reflect.KVisibility
 com.kakacat.minitool.appInfo.activity.AppDetailActivity:
-    public synthetic bridge void setPresenter(com.kakacat.minitool.common.base.IPresenter)
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
     private static final int SAVE_ICON
     private static final int SAVE_APK
 androidx.core.app.NotificationManagerCompat$ServiceConnectedEvent
@@ -12160,13 +12205,13 @@ androidx.appcompat.app.ToolbarActionBar:
     public void setSelectedNavigationItem(int)
     public int getSelectedNavigationIndex()
     public int getNavigationItemCount()
-    public void setTitle(java.lang.CharSequence)
     public void setTitle(int)
     public boolean requestFocus()
     public void setSubtitle(java.lang.CharSequence)
     public void setSubtitle(int)
     public void setDisplayOptions(int)
     public void setDisplayUseLogoEnabled(boolean)
+    public void setDisplayShowHomeEnabled(boolean)
     public void setDisplayShowCustomEnabled(boolean)
     public void setBackgroundDrawable(android.graphics.drawable.Drawable)
     public android.view.View getCustomView()
@@ -12205,7 +12250,7 @@ androidx.media.MediaBrowserServiceCompat$MediaBrowserServiceImplApi23$1
 okhttp3.internal.ws.RealWebSocket$Close
 androidx.core.hardware.fingerprint.FingerprintManagerCompat$AuthenticationResult
 com.kakacat.minitool.wifipasswordview.WifiPwdActivity:
-    public synthetic bridge void setPresenter(com.kakacat.minitool.common.base.IPresenter)
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
 kotlin.reflect.KParameter$Kind
 androidx.transition.Styleable$Slide
 okhttp3.internal.http2.Header:
@@ -12280,6 +12325,9 @@ okio.Okio__OkioKt:
 androidx.core.app.NotificationCompat$Action$WearableExtender
 com.facebook.nativefilters.BuildConfig
 com.kakacat.minitool.R$interpolator
+com.kakacat.minitool.todayinhistory.model.Model:
+    private static final java.lang.String HOST
+    private static final java.lang.String KEY
 kotlin.collections.CollectionsKt___CollectionsJvmKt:
     public static final java.util.List filterIsInstance(java.lang.Iterable,java.lang.Class)
     public static final java.util.Collection filterIsInstanceTo(java.lang.Iterable,java.util.Collection,java.lang.Class)
@@ -12448,6 +12496,8 @@ androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState:
     boolean wasLastOpen
     android.os.Bundle frozenMenuState
 androidx.core.app.DialogCompat
+com.kakacat.minitool.epidemicinquiry.Contract$Presenter:
+    public abstract void requestData()
 androidx.core.view.MenuItemCompat$1
 androidx.media.R$color
 com.facebook.imagepipeline.memory.DefaultBitmapPoolParams:
@@ -12558,8 +12608,6 @@ com.facebook.imagepipeline.cache.BitmapMemoryCacheTrimStrategy:
     public double getTrimRatio(com.facebook.common.memory.MemoryTrimType)
     private static final java.lang.String TAG
 kotlin.jvm.internal.ShortCompanionObject
-com.kakacat.minitool.currencyconversion.Contract$Presenter:
-    public abstract boolean handleRateResponse(java.lang.String)
 androidx.core.content.pm.PackageInfoCompat
 androidx.fragment.app.FragmentManagerViewModel:
     void restoreFromSnapshot(androidx.fragment.app.FragmentManagerNonConfig)
@@ -12574,8 +12622,6 @@ com.facebook.imagepipeline.memory.Bucket:
     private static final java.lang.String TAG
 androidx.swiperefreshlayout.widget.CircularProgressDrawable$ProgressDrawableSize
 androidx.appcompat.app.ActionBarDrawerToggle$DelegateProvider
-com.kakacat.minitool.common.util.HttpUtil:
-    public void <init>()
 kotlin.coroutines.experimental.CoroutineContext$Element
 okhttp3.internal.authenticator.JavaNetAuthenticator:
     public void <init>()
@@ -12734,11 +12780,11 @@ com.kakacat.minitool.common.ui.FlowLayoutManager:
     public int getRow(int)
     public int getColumn(int)
     public int getColumnCountOfRow(int)
-    static final int LAYOUT_START
-    static final int LAYOUT_END
     public static final int HORIZONTAL
     public static final int VERTICAL
     public static final int INVALID_OFFSET
+    static final int LAYOUT_START
+    static final int LAYOUT_END
     private static final int DEFAULT_HORIZONTAL_SPACE
     private static final int DEFAULT_VERTICAL_SPACE
 kotlin.ranges.RangesKt:
@@ -12896,9 +12942,6 @@ androidx.loader.content.ModernAsyncTask:
     private static final int KEEP_ALIVE
     private static final int MESSAGE_POST_RESULT
     private static final int MESSAGE_POST_PROGRESS
-com.kakacat.minitool.currencyconversion.Presenter:
-    public boolean handleRateResponse(java.lang.String)
-    private static final java.lang.String requestAddress
 androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListener
 kotlin.jvm.JvmOverloads
 androidx.swiperefreshlayout.widget.CircleImageView:
@@ -12932,8 +12975,6 @@ androidx.viewpager2.widget.ViewPager2$DataSetChangeObserver:
     public final void onItemRangeMoved(int,int,int)
 androidx.swiperefreshlayout.R$attr
 kotlin.ranges.ClosedRange$DefaultImpls
-com.kakacat.minitool.common.util.JsonUtil:
-    public void <init>()
 android.support.v4.media.session.MediaControllerCompat$MediaControllerImpl
 com.facebook.imagepipeline.producers.LocalExifThumbnailProducer:
     private static final int COMMON_EXIF_THUMBNAIL_MAX_DIMENSION
@@ -13027,9 +13068,7 @@ okhttp3.Request$Builder:
     public okhttp3.Request$Builder url(java.net.URL)
     public okhttp3.Request$Builder addHeader(java.lang.String,java.lang.String)
     public okhttp3.Request$Builder cacheControl(okhttp3.CacheControl)
-    public okhttp3.Request$Builder get()
     public okhttp3.Request$Builder head()
-    public okhttp3.Request$Builder post(okhttp3.RequestBody)
     public okhttp3.Request$Builder delete(okhttp3.RequestBody)
     public okhttp3.Request$Builder delete()
     public okhttp3.Request$Builder put(okhttp3.RequestBody)
@@ -13224,7 +13263,7 @@ com.facebook.imagepipeline.transcoder.JpegTranscoderUtils:
     public static final int SCALE_DENOMINATOR
     public static final int DEFAULT_JPEG_QUALITY
 com.kakacat.minitool.main.MainActivity:
-    public synthetic bridge void setPresenter(com.kakacat.minitool.common.base.IPresenter)
+    public synthetic bridge com.kakacat.minitool.common.base.IPresenter getPresenter()
 okio.BufferedSink:
     public abstract okio.Buffer buffer()
     public abstract okio.BufferedSink write(okio.ByteString,int,int)
@@ -13457,7 +13496,9 @@ kotlin.collections.BooleanIterator
 kotlin.UseExperimental
 kotlin.coroutines.jvm.internal.ModuleNameRetriever
 com.facebook.drawee.R$integer
-com.google.android.material.tabs.TabLayoutMediator
+com.google.android.material.tabs.TabLayoutMediator:
+    public void <init>(com.google.android.material.tabs.TabLayout,androidx.viewpager2.widget.ViewPager2,com.google.android.material.tabs.TabLayoutMediator$TabConfigurationStrategy)
+    public void detach()
 com.google.gson.internal.$Gson$Preconditions:
     private void <init>()
 androidx.transition.VisibilityPropagation
@@ -13994,12 +14035,12 @@ androidx.appcompat.app.WindowDecorActionBar:
     public void removeOnMenuVisibilityListener(androidx.appcompat.app.ActionBar$OnMenuVisibilityListener)
     public void setCustomView(int)
     public void setDisplayUseLogoEnabled(boolean)
+    public void setDisplayShowHomeEnabled(boolean)
     public void setDisplayShowCustomEnabled(boolean)
     public void setTitle(int)
     public void setSubtitle(int)
     public void setSelectedNavigationItem(int)
     public void removeAllTabs()
-    public void setTitle(java.lang.CharSequence)
     public boolean requestFocus()
     public void setSubtitle(java.lang.CharSequence)
     public void setDisplayOptions(int)
@@ -14265,12 +14306,6 @@ kotlin.text.StringsKt:
 kotlin.text.StringsKt___StringsKt$withIndex$1
 com.kakacat.minitool.R
 com.google.android.material.internal.ContextUtils
-com.kakacat.minitool.appInfo.presenter.AppInfoPresenter:
-    public static final int SORT_BY_APP_NAME
-    public static final int SORT_BY_TARGET_API
-    public static final int SORT_BY_MIN_API
-    public static final int SORT_BY_FIRST_INSTALL_TIME
-    public static final int SORT_BY_LAST_UPDATE_TIME
 com.facebook.common.webp.WebpBitmapFactory$WebpErrorLogger:
     public abstract void onWebpErrorLog(java.lang.String,java.lang.String)
 com.google.android.material.tabs.TabLayout$TabView:
@@ -14428,7 +14463,6 @@ kotlin.text.StringsKt__StringsKt:
     static synthetic java.util.List split$default(java.lang.CharSequence,kotlin.text.Regex,int,int,java.lang.Object)
     public void <init>()
 com.facebook.fresco.soloader.BuildConfig
-bolts.Task$15
 com.kakacat.minitool.bingpic.Contract$View:
     public abstract void showBigImage(android.view.View)
     public abstract void showOptionDialog(android.view.View)
@@ -14646,6 +14680,8 @@ androidx.core.view.ActionProvider$VisibilityListener:
     public abstract void onActionProviderVisibilityChanged(boolean)
 com.facebook.imagepipeline.producers.ThreadHandoffProducerQueueImpl:
     public final void execInQueue()
+com.kakacat.minitool.textencryption.Contract$View:
+    public abstract void onEncryptResult(java.lang.String)
 androidx.cardview.widget.CardViewBaseImpl
 androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VClipPath
 androidx.core.view.accessibility.AccessibilityViewCommand$MoveHtmlArguments
@@ -14795,6 +14831,9 @@ androidx.core.graphics.TypefaceCompat:
 kotlin.sequences.DropSequence:
     public static final synthetic kotlin.sequences.Sequence access$getSequence$p(kotlin.sequences.DropSequence)
     public static final synthetic int access$getCount$p(kotlin.sequences.DropSequence)
+com.kakacat.minitool.main.model.Model:
+    public static com.kakacat.minitool.main.model.Model getInstance()
+    public void initData()
 androidx.appcompat.app.AlertController$AlertParams$2
 android.support.v4.media.MediaDescriptionCompat:
     public void <init>(android.os.Parcel)
@@ -14887,10 +14926,12 @@ okhttp3.internal.http1.Http1ExchangeCodec$AbstractSource:
     public final boolean getClosed()
     public final void setClosed(boolean)
 com.kakacat.minitool.appInfo.presenter.AppDetailPresenter:
+    public void saveIcon()
     public void openMarket()
+    public void saveApk()
     public void openDetailInSetting()
     public void copyMd5()
-    public com.kakacat.minitool.appInfo.model.AppInfo getAppInfo()
+    public com.kakacat.minitool.appInfo.model.bean.AppInfoBean getAppInfoBean()
 com.google.android.material.shape.MaterialShapeUtils
 androidx.core.view.NestedScrollingChild:
     public abstract boolean isNestedScrollingEnabled()
@@ -15054,18 +15095,15 @@ com.google.android.material.datepicker.MaterialDatePicker:
     public static final java.lang.Object CONFIRM_BUTTON_TAG
     public static final java.lang.Object CANCEL_BUTTON_TAG
     public static final java.lang.Object TOGGLE_BUTTON_TAG
-com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity:
-    public static void access$000(com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity)
-    public static synthetic androidx.swiperefreshlayout.widget.SwipeRefreshLayout access$100(com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity)
-    public static synthetic java.util.List access$200(com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity)
-    public static synthetic android.widget.TextView access$300(com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity)
-    public static synthetic android.widget.ProgressBar access$400(com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity)
-    public static synthetic androidx.viewpager.widget.ViewPager access$500(com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity)
-    public static synthetic android.os.Handler access$600(com.kakacat.minitool.epidemicsituation.GlobalOutbreakActivity)
-    public final void initWidget()
-    public final void fillList()
-    public final void notifyData()
-    public androidx.coordinatorlayout.widget.CoordinatorLayout coordinatorLayout
+com.kakacat.minitool.expressinquiry.activity.ExpressInquiryActivity:
+    public static synthetic com.google.android.material.bottomnavigation.BottomNavigationView access$000(com.kakacat.minitool.expressinquiry.activity.ExpressInquiryActivity)
+    public void initData()
+    public void initView()
+    public com.kakacat.minitool.expressinquiry.Contract$Presenter getPresenter()
+    public android.content.Context getContext()
+    public final androidx.viewpager2.widget.ViewPager2$OnPageChangeCallback getOnPageChangeCallback()
+    public final com.google.android.material.bottomnavigation.BottomNavigationView$OnNavigationItemSelectedListener getBottomOnNavigationItemSelectedListener()
+    public final java.util.List getMyFragmentList()
 com.kakacat.minitool.main.navigation.ChangeThemeDialog:
     public static com.kakacat.minitool.main.navigation.ChangeThemeDialog getInstance(android.content.Context,android.view.View,int,int)
     public final void initView()
@@ -15252,17 +15290,16 @@ androidx.transition.ViewGroupUtilsApi14:
     public static java.lang.Class wrap(java.lang.Class)
     public static com.google.gson.JsonElement parse(com.google.gson.stream.JsonReader)
     public static void write(com.google.gson.JsonElement,com.google.gson.stream.JsonWriter)
-    public static void slideUpToTop(androidx.core.widget.NestedScrollView)
     public static java.lang.String getSignMd5Str(android.content.pm.Signature)
     public static java.lang.String encryptBASE64(byte[])
-    public static java.lang.String encryptHmacSHA1(byte[])
-    public static okhttp3.OkHttpClient getInstance()
-    public static void handleEpidemicResponse(java.lang.String,java.util.List)
-    public static void addADTStoPacket(byte[],int)
-    public static java.lang.String separateAudioFromVideo(java.lang.String)
+    public static java.lang.String getDate(long)
+    public static void log(java.lang.String)
+    public static java.lang.CharSequence getDataFormClipBoard(android.content.Context)
     public static void vibrate(android.content.Context,long)
     public static java.lang.String getLocalIPAddress()
-    public static void setTranslucentStatusBar(android.view.Window,boolean)
+    public static java.util.concurrent.Callable runToCall(java.lang.Runnable)
+    public static void closeKeyboard(android.content.Context,android.view.View)
+    public static void slideUpToTop(androidx.core.widget.NestedScrollView)
     public static int getIcon(int)
     public static final void addSuppressed(java.lang.Throwable,java.lang.Throwable)
     public static final kotlin.Lazy lazy(kotlin.jvm.functions.Function0)
@@ -15346,6 +15383,11 @@ androidx.recyclerview.widget.RecyclerView$5:
     public void onEnteredHiddenState(android.view.View)
     public void onLeftHiddenState(android.view.View)
 okhttp3.Dns$Companion
+com.kakacat.minitool.garbageclassify.model.Model:
+    public static com.kakacat.minitool.garbageclassify.model.Model getInstance()
+    public boolean handleResponse(okhttp3.Response)
+    public java.lang.String getAddress(java.lang.String)
+    public java.util.List getGarbageList()
 com.google.android.material.button.MaterialButtonHelper:
     public static void <clinit>()
     public void loadFromAttributes(android.content.res.TypedArray)
@@ -15474,7 +15516,7 @@ androidx.collection.SparseArrayCompat:
     public int indexOfValue(java.lang.Object)
     public void clear()
 com.kakacat.minitool.currencyconversion.Contract$View:
-    public abstract void onRefreshExchangeRate(int)
+    public abstract void onRefreshExchangeRate(java.lang.String)
     public abstract void onTextChanged(java.lang.CharSequence,int)
 com.facebook.drawee.drawable.RoundedBitmapDrawable:
     public final void updatePaint()
@@ -15533,8 +15575,9 @@ com.kakacat.minitool.main.model.AboutItem:
 com.kakacat.minitool.currencyconversion.MainActivity:
     public void initData()
     public void initView()
+    public com.kakacat.minitool.currencyconversion.Contract$Presenter getPresenter()
     public void onTextChanged(java.lang.CharSequence,int)
-    public void setPresenter(com.kakacat.minitool.currencyconversion.Contract$Presenter)
+    public void onRefreshExchangeRate(java.lang.String)
     public android.content.Context getContext()
 kotlin.ranges.IntProgression:
     public static void <clinit>()
@@ -15559,20 +15602,6 @@ com.google.gson.internal.JavaVersion:
     public static boolean isJava9OrLater()
 com.google.android.material.appbar.ViewOffsetBehavior:
     public boolean setTopAndBottomOffset(int)
-com.kakacat.minitool.phoneartribution.PhoneNumber:
-    public static com.kakacat.minitool.phoneartribution.PhoneNumber response2PhoneNumber(okhttp3.Response)
-    public java.lang.String getNumber()
-    public void setNumber(java.lang.String)
-    public java.lang.String getProvince()
-    public void setProvince(java.lang.String)
-    public java.lang.String getCity()
-    public void setCity(java.lang.String)
-    public java.lang.String getAreaCode()
-    public void setAreaCode(java.lang.String)
-    public java.lang.String getZip()
-    public void setZip(java.lang.String)
-    public java.lang.String getCompany()
-    public void setCompany(java.lang.String)
 androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$Transition
 android.support.v4.media.session.PlaybackStateCompatApi21
 okhttp3.internal.http2.Http2Connection$Listener:
@@ -15634,6 +15663,11 @@ com.facebook.drawee.drawable.ArrayDrawable:
 okhttp3.internal.http.ExchangeCodec:
     public static void <clinit>()
     public static final okhttp3.internal.http.ExchangeCodec$Companion Companion
+com.kakacat.minitool.expressinquiry.model.PackageDetail:
+    public java.lang.String getTime()
+    public java.lang.String getContent()
+    public java.lang.String time
+    public java.lang.String content
 com.facebook.drawee.backends.pipeline.info.ImageOriginRequestListener:
     public void init(java.lang.String)
 com.facebook.drawee.view.DraweeView:
@@ -15740,6 +15774,11 @@ bolts.AndroidExecutors$UIThreadExecutor:
     public void <init>()
 com.facebook.imagepipeline.memory.AshmemMemoryChunkPool:
     public com.facebook.imagepipeline.memory.AshmemMemoryChunk alloc(int)
+com.kakacat.minitool.currencyconversion.model.CountryBean:
+    public double getRate()
+    public int getIconId()
+    public int getNameId()
+    public int getUnitId()
 com.google.android.material.internal.NavigationMenuPresenter$NavigationMenuTextItem:
     public androidx.appcompat.view.menu.MenuItemImpl getMenuItem()
 okio.Okio__JvmOkioKt
@@ -15858,9 +15897,6 @@ androidx.core.widget.ContentLoadingProgressBar:
 com.kakacat.minitool.appInfo.activity.AppInfoActivity:
     public void initData()
     public void initView()
-    public void onUpdateDataSet()
-    public void onUpdateAppInfoDataSet()
-    public void setPresenter(com.kakacat.minitool.appInfo.contract.AppInfoContract$Presenter)
     public android.content.Context getContext()
     public void slideUpToTop()
     public void showSortDialog()
@@ -15926,15 +15962,12 @@ com.kakacat.minitool.main.adapter.AboutItemAdapter:
     public void setOnClickListener(com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener)
     public com.kakacat.minitool.main.adapter.AboutItemAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup)
     public void onBindViewHolder(com.kakacat.minitool.main.adapter.AboutItemAdapter$ViewHolder,int)
+okhttp3.FormBody$Companion
 com.facebook.imagepipeline.producers.BranchOnSeparateImagesProducer:
     public static synthetic com.facebook.imagepipeline.producers.Producer access$100(com.facebook.imagepipeline.producers.BranchOnSeparateImagesProducer)
 com.facebook.imagepipeline.memory.NoOpPoolStatsTracker:
     public static void <clinit>()
-okhttp3.RequestBody$Companion$toRequestBody$2:
-    public void <init>(byte[],okhttp3.MediaType,int,int)
-    public okhttp3.MediaType contentType()
-    public long contentLength()
-    public void writeTo(okio.BufferedSink)
+okhttp3.RequestBody$Companion$toRequestBody$2
 androidx.constraintlayout.solver.widgets.ResolutionNode:
     public void addDependent(androidx.constraintlayout.solver.widgets.ResolutionNode)
     public void reset()
@@ -16087,8 +16120,6 @@ androidx.coordinatorlayout.widget.CoordinatorLayout$LayoutParams:
 okhttp3.Protocol$Companion:
     public void <init>()
 kotlin.sequences.SequencesKt
-bolts.WebViewAppLinkResolver:
-    public final android.content.Context context
 com.facebook.drawee.view.DraweeHolder:
     public static com.facebook.drawee.view.DraweeHolder create(com.facebook.drawee.interfaces.DraweeHierarchy,android.content.Context)
     public void registerWithContext()
@@ -16099,6 +16130,8 @@ com.facebook.drawee.view.DraweeHolder:
     public com.facebook.drawee.interfaces.DraweeController getController()
     public com.facebook.drawee.interfaces.DraweeHierarchy getHierarchy()
     public final void setVisibilityCallback(com.facebook.drawee.drawable.VisibilityCallback)
+bolts.WebViewAppLinkResolver:
+    public final android.content.Context context
 androidx.transition.ViewGroupOverlayApi14
 androidx.viewpager.widget.PagerTabStrip:
     public void <init>(android.content.Context,android.util.AttributeSet)
@@ -16157,7 +16190,9 @@ android.support.v4.media.session.MediaControllerCompatApi21
 okhttp3.internal.connection.RouteSelector$Selection:
     public final okhttp3.Route next()
     public final java.util.List getRoutes()
-com.kakacat.minitool.wifipasswordview.Contract$Presenter
+com.kakacat.minitool.wifipasswordview.Contract$Presenter:
+    public abstract void copyToClipboard(int)
+    public abstract java.util.List getWifiList()
 okhttp3.HttpUrl$Builder$Companion:
     public void <init>()
     public static final int access$schemeDelimiterOffset(okhttp3.HttpUrl$Builder$Companion,java.lang.String,int,int)
@@ -16530,7 +16565,7 @@ com.google.gson.internal.bind.TypeAdapters$12:
 com.kakacat.minitool.phoneartribution.PhoneAttributionActivity:
     public void initData()
     public void initView()
-    public void setPresenter(com.kakacat.minitool.phoneartribution.Contract$Presenter)
+    public com.kakacat.minitool.phoneartribution.Contract$Presenter getPresenter()
     public android.content.Context getContext()
     public final void initToolbar()
 com.google.android.material.internal.CheckableImageButton$SavedState$1:
@@ -16785,13 +16820,6 @@ com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1:
     public final synthetic com.google.gson.internal.bind.ReflectiveTypeAdapterFactory this$0
 com.kakacat.minitool.translation.adapter.CollectionAdapter$ViewHolder:
     public static synthetic android.widget.TextView access$000(com.kakacat.minitool.translation.adapter.CollectionAdapter$ViewHolder)
-com.kakacat.minitool.wifipasswordview.Wifi:
-    public java.lang.String getWifiImage()
-    public void setWifiImage(java.lang.String)
-    public java.lang.String getWifiName()
-    public void setWifiName(java.lang.String)
-    public java.lang.String getWifiPwd()
-    public void setWifiPwd(java.lang.String)
 okhttp3.internal.platform.Platform$Companion:
     public void <init>()
     public static final okhttp3.internal.platform.Platform access$findPlatform(okhttp3.internal.platform.Platform$Companion)
@@ -16832,8 +16860,6 @@ androidx.recyclerview.widget.RecyclerView$Recycler:
 kotlin.collections.SetsKt__SetsKt
 okio.AsyncTimeout$sink$1:
     public okio.AsyncTimeout timeout()
-com.kakacat.minitool.translation.LanguageMap:
-    public static java.lang.String[] getLanguages()
 com.kakacat.minitool.cleanfile.model.MyFragment:
     public com.kakacat.minitool.cleanfile.adapter.FileAdapter getAdapter()
     public boolean isSelectedAll()
@@ -16895,7 +16921,7 @@ com.kakacat.minitool.appInfo.contract.AppDetailContract$Presenter:
     public abstract void saveApk()
     public abstract void openDetailInSetting()
     public abstract void copyMd5()
-    public abstract com.kakacat.minitool.appInfo.model.AppInfo getAppInfo()
+    public abstract com.kakacat.minitool.appInfo.model.bean.AppInfoBean getAppInfoBean()
 com.facebook.imagepipeline.memory.LruBitmapPool:
     public synchronized android.graphics.Bitmap get(int)
     public void release(android.graphics.Bitmap)
@@ -16938,10 +16964,6 @@ androidx.appcompat.widget.ActionMenuView:
     public final void onMeasureExactFormat(int,int)
 com.facebook.imageutils.TiffUtil$1
 com.facebook.cache.common.CacheErrorLogger$CacheErrorCategory
-com.kakacat.minitool.wifipasswordview.MyAdapter:
-    public com.kakacat.minitool.wifipasswordview.MyAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup)
-    public void onBindViewHolder(com.kakacat.minitool.wifipasswordview.MyAdapter$ViewHolder,int)
-    public void setLongClickListener(com.kakacat.minitool.common.myinterface.RecycleViewItemOnLongClickListener)
 androidx.recyclerview.widget.ViewInfoStore:
     public void clear()
     public androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo popFromPreLayout(androidx.recyclerview.widget.RecyclerView$ViewHolder)
@@ -17028,6 +17050,8 @@ com.facebook.imagepipeline.systrace.FrescoSystrace:
     public static void endSection()
     public static void <clinit>()
     public static final com.facebook.imagepipeline.systrace.FrescoSystrace$ArgsBuilder NO_OP_ARGS_BUILDER
+com.kakacat.minitool.translation.model.LanguageMap:
+    public static java.lang.String[] getLanguages()
 com.facebook.imagepipeline.platform.KitKatPurgeableDecoder:
     public static void putEOI(byte[],int)
 com.facebook.imagepipeline.cache.ImageCacheStatsTracker:
@@ -17184,10 +17208,14 @@ androidx.appcompat.app.AlertDialog$Builder:
 com.kakacat.minitool.garbageclassify.GarbageClassificationActivity:
     public void initData()
     public void initView()
+    public com.kakacat.minitool.garbageclassify.Contract$Presenter getPresenter()
     public void showContentView(int)
-    public void setPresenter(com.kakacat.minitool.garbageclassify.Contract$Presenter)
     public android.content.Context getContext()
     public static final synthetic boolean $assertionsDisabled
+com.kakacat.minitool.expressinquiry.adapter.DeliveryAdapter:
+    public void setItemListener(com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener)
+    public com.kakacat.minitool.expressinquiry.adapter.DeliveryAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup)
+    public void onBindViewHolder(com.kakacat.minitool.expressinquiry.adapter.DeliveryAdapter$ViewHolder,int)
 com.facebook.drawee.drawable.RoundedDrawable:
     public boolean getPaintFilterBitmap()
 com.google.android.material.bottomnavigation.BottomNavigationView$SavedState$1:
@@ -17215,12 +17243,21 @@ androidx.core.graphics.TypefaceCompatBaseImpl:
     public final void addFontFamily(android.graphics.Typeface,androidx.core.content.res.FontResourcesParserCompat$FontFamilyFilesResourceEntry)
 com.facebook.datasource.AbstractDataSource$DataSourceInstrumenter
 com.google.android.material.appbar.AppBarLayout$BaseBehavior$BaseDragCallback
+com.kakacat.minitool.common.util.UiUtil
 com.google.android.material.floatingactionbutton.BaseMotionStrategy:
     public final void setMotionSpec(com.google.android.material.animation.MotionSpec)
     public final java.util.List getListeners()
     public com.google.android.material.animation.MotionSpec getMotionSpec()
 com.facebook.imagepipeline.cache.EncodedCountingMemoryCacheFactory$1:
     public int getSizeInBytes(com.facebook.common.memory.PooledByteBuffer)
+com.kakacat.minitool.translation.model.Model:
+    public static com.kakacat.minitool.translation.model.Model getInstance()
+    public void initData()
+    public java.util.List getLanguageList1()
+    public void addToMyFavourite(java.lang.String,java.lang.String,android.content.Context)
+    public java.lang.String getAddress(java.lang.String,java.lang.CharSequence,java.lang.CharSequence)
+    public java.lang.String handleTranslationResponse(okhttp3.Response)
+    public final android.content.SharedPreferences$Editor getEditor(android.content.Context)
 okhttp3.internal.platform.android.AndroidSocketAdapter:
     public static void <clinit>()
     public static final okhttp3.internal.platform.android.AndroidSocketAdapter$Companion Companion
@@ -17333,11 +17370,11 @@ androidx.fragment.app.FragmentTransaction:
     public androidx.fragment.app.FragmentTransaction add(int,androidx.fragment.app.Fragment,java.lang.String)
     public androidx.fragment.app.FragmentTransaction add(android.view.ViewGroup,androidx.fragment.app.Fragment,java.lang.String)
     public androidx.fragment.app.FragmentTransaction remove(androidx.fragment.app.Fragment)
+    public androidx.fragment.app.FragmentTransaction detach(androidx.fragment.app.Fragment)
     public androidx.fragment.app.FragmentTransaction attach(androidx.fragment.app.Fragment)
     public abstract boolean isEmpty()
     public androidx.fragment.app.FragmentTransaction disallowAddToBackStack()
     public androidx.fragment.app.FragmentTransaction setReorderingAllowed(boolean)
-    public abstract int commitAllowingStateLoss()
     public abstract void commitNowAllowingStateLoss()
     public final androidx.fragment.app.FragmentFactory mFragmentFactory
     public final java.lang.ClassLoader mClassLoader
@@ -17448,7 +17485,11 @@ com.facebook.common.disk.NoOpDiskTrimmableRegistry:
 android.support.v4.media.session.MediaControllerCompat$MediaControllerImplApi21
 okio.Segment$Companion
 com.kakacat.minitool.garbageclassify.Contract$View:
-    public abstract void onRequestCallBack(int)
+    public abstract void onRequestCallBack(java.lang.String)
+com.kakacat.minitool.inquireip.Model:
+    public static com.kakacat.minitool.inquireip.Model getInstance()
+    public java.lang.String getAddress(java.lang.String)
+    public com.kakacat.minitool.inquireip.IpBean handleIpDataResponse(okhttp3.Response)
 okhttp3.internal.cache.CacheStrategy$Factory
 okhttp3.internal.http.DatesKt$STANDARD_DATE_FORMAT$1:
     public java.text.DateFormat initialValue()
@@ -17505,6 +17546,7 @@ androidx.fragment.app.FragmentManager:
     public void addRetainedFragment(androidx.fragment.app.Fragment)
     public androidx.fragment.app.Fragment$SavedState saveFragmentInstanceState(androidx.fragment.app.Fragment)
     public boolean isDestroyed()
+    public void performPendingDeferredStart(androidx.fragment.app.Fragment)
     public boolean isStateAtLeast(int)
     public void moveToState(androidx.fragment.app.Fragment)
     public void enqueueAction(androidx.fragment.app.FragmentManager$OpGenerator,boolean)
@@ -17654,6 +17696,15 @@ okhttp3.internal.http2.Http2Connection$ReaderRunnable$ping$$inlined$execute$1:
     public final synthetic boolean $cancelable
 com.facebook.drawee.controller.AbstractDraweeControllerBuilder$2:
     public com.facebook.datasource.DataSource get()
+com.kakacat.minitool.expressinquiry.model.Delivery:
+    public void setStatus(java.lang.String)
+    public java.lang.String getCompanyName()
+    public java.lang.String getCode()
+    public java.lang.String getTel()
+    public java.lang.String getUpdateTime()
+    public void setUpdateTime(java.lang.String)
+    public java.util.List getPackageDetailList()
+    public void setPackageDetailList(java.util.List)
 okhttp3.internal.http2.Http2Reader$Companion
 okhttp3.Address:
     public final okhttp3.HttpUrl url()
@@ -17671,10 +17722,10 @@ kotlin.reflect.KClass
 com.kakacat.minitool.bingpic.BingPicActivity:
     public void initData()
     public void initView()
+    public com.kakacat.minitool.bingpic.Contract$Presenter getPresenter()
     public void saveImage()
     public void onSaveImageCallBack(java.lang.String)
     public void onUpdateImagesCallBack()
-    public void setPresenter(com.kakacat.minitool.bingpic.Contract$Presenter)
     public android.content.Context getContext()
 com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout:
     public void <init>(android.content.Context,android.util.AttributeSet)
@@ -17746,12 +17797,14 @@ com.facebook.imagepipeline.image.OriginalEncodedImageInfo:
     public final int mWidth
     public final int mHeight
     public final int mSize
+com.google.android.material.tabs.TabLayoutMediator$TabLayoutOnPageChangeCallback:
+    public void reset()
 com.kakacat.minitool.todayinhistory.TodayInHistoryActivity:
     public void initData()
-    public void setPresenter(com.kakacat.minitool.todayinhistory.Contract$Presenter)
     public void initView()
+    public com.kakacat.minitool.todayinhistory.Contract$Presenter getPresenter()
     public android.content.Context getContext()
-    public void onUpdateDataCallBack(int)
+    public void onUpdateDataCallBack(java.lang.String,boolean)
     public void showCalendarDialog()
 kotlin.text.StringsKt__RegexExtensionsKt
 kotlin.collections.SetsKt__SetsJVMKt
@@ -17878,6 +17931,9 @@ com.google.android.material.shape.ShapeAppearanceModel$Builder:
     public com.google.android.material.shape.ShapeAppearanceModel$Builder setBottomLeftCorner(int,com.google.android.material.shape.CornerSize)
     public com.google.android.material.shape.ShapeAppearanceModel$Builder setBottomLeftCorner(com.google.android.material.shape.CornerTreatment)
     public com.google.android.material.shape.ShapeAppearanceModel$Builder setTopEdge(com.google.android.material.shape.EdgeTreatment)
+com.kakacat.minitool.appInfo.model.bean.AppInfoBean$1:
+    public com.kakacat.minitool.appInfo.model.bean.AppInfoBean createFromParcel(android.os.Parcel)
+    public com.kakacat.minitool.appInfo.model.bean.AppInfoBean[] newArray(int)
 okhttp3.internal.http.RequestLine
 androidx.fragment.app.FragmentTabHost$SavedState$1:
     public androidx.fragment.app.FragmentTabHost$SavedState createFromParcel(android.os.Parcel)
@@ -17885,7 +17941,7 @@ androidx.fragment.app.FragmentTabHost$SavedState$1:
 com.facebook.imagepipeline.decoder.SimpleProgressiveJpegConfig$DefaultDynamicValueConfig:
     public void <init>()
 com.kakacat.minitool.inquireip.Contract$View:
-    public abstract void onUpdateDataCallBack(com.kakacat.minitool.inquireip.IpModel,int)
+    public abstract void onUpdateDataCallBack(com.kakacat.minitool.inquireip.IpBean,java.lang.String)
 okhttp3.internal.tls.CertificateChainCleaner$Companion
 okio.-Util
 androidx.recyclerview.widget.RecyclerView$State:
@@ -17907,12 +17963,14 @@ com.google.android.material.card.MaterialCardView:
 com.google.android.material.transformation.FabTransformationSheetBehavior:
     public com.google.android.material.transformation.FabTransformationBehavior$FabTransformationSpec onCreateMotionSpec(android.content.Context,boolean)
     public final void updateImportantForAccessibility(android.view.View,boolean)
-com.kakacat.minitool.currencyconversion.model.Country:
-    public double getRate()
-    public int getIconId()
-    public int getNameId()
-    public int getUnitId()
 com.google.android.material.shape.ShapeAppearanceModel$CornerSizeUnaryOperator
+com.kakacat.minitool.appInfo.model.AppDetailModel:
+    public static com.kakacat.minitool.appInfo.model.AppDetailModel getInstance()
+    public java.lang.String saveIcon()
+    public void openMarket(android.app.Activity)
+    public java.lang.String saveApk()
+    public java.lang.String copyMd5(android.app.Activity)
+    public void openDetailInSetting(android.app.Activity)
 androidx.transition.TransitionManager:
     public static void sceneChangeRunTransition(android.view.ViewGroup,androidx.transition.Transition)
     public static void sceneChangeSetup(android.view.ViewGroup,androidx.transition.Transition)
@@ -17930,6 +17988,12 @@ okhttp3.Handshake$Companion$handshake$1:
     public final java.util.List invoke()
 com.facebook.imagepipeline.producers.ResizeAndRotateProducer$TransformingConsumer$1:
     public final synthetic com.facebook.imagepipeline.producers.ResizeAndRotateProducer val$this$0
+com.kakacat.minitool.expressinquiry.adapter.DeliveryDetailAdapter$ViewHolder:
+    public static synthetic boolean access$000(com.kakacat.minitool.expressinquiry.adapter.DeliveryDetailAdapter$ViewHolder)
+    public static synthetic android.widget.TextView access$100(com.kakacat.minitool.expressinquiry.adapter.DeliveryDetailAdapter$ViewHolder)
+    public static synthetic android.widget.TextView access$200(com.kakacat.minitool.expressinquiry.adapter.DeliveryDetailAdapter$ViewHolder)
+    public static synthetic android.widget.TextView access$300(com.kakacat.minitool.expressinquiry.adapter.DeliveryDetailAdapter$ViewHolder)
+    public static synthetic android.widget.TextView access$400(com.kakacat.minitool.expressinquiry.adapter.DeliveryDetailAdapter$ViewHolder)
 okhttp3.internal.http2.Http2Connection$pushDataLater$$inlined$execute$1:
     public final synthetic java.lang.String $name
     public final synthetic boolean $cancelable
@@ -18032,6 +18096,19 @@ androidx.viewpager2.widget.AnimateLayoutChangeDetector:
     public boolean mayHaveInterferingAnimations()
     public final boolean arePagesLaidOutContiguously()
     public final boolean hasRunningChangingLayoutTransition()
+com.kakacat.minitool.phoneartribution.model.PhoneNumber:
+    public java.lang.String getNumber()
+    public void setNumber(java.lang.String)
+    public java.lang.String getProvince()
+    public void setProvince(java.lang.String)
+    public java.lang.String getCity()
+    public void setCity(java.lang.String)
+    public java.lang.String getAreaCode()
+    public void setAreaCode(java.lang.String)
+    public java.lang.String getZip()
+    public void setZip(java.lang.String)
+    public java.lang.String getCompany()
+    public void setCompany(java.lang.String)
 androidx.constraintlayout.solver.Metrics
 com.facebook.common.internal.Objects
 androidx.transition.TransitionManager$MultiListener:
@@ -18050,9 +18127,10 @@ androidx.appcompat.app.AppCompatDelegateImpl$ListMenuDecorView:
 androidx.fragment.app.BackStackRecord:
     public void dump(java.lang.String,java.io.PrintWriter)
     public androidx.fragment.app.FragmentTransaction remove(androidx.fragment.app.Fragment)
+    public androidx.fragment.app.FragmentTransaction detach(androidx.fragment.app.Fragment)
     public void runOnCommitRunnables()
-    public int commitAllowingStateLoss()
     public void commitNowAllowingStateLoss()
+    public int commitInternal(boolean)
     public androidx.fragment.app.Fragment expandOps(java.util.ArrayList,androidx.fragment.app.Fragment)
     public androidx.fragment.app.Fragment trackAddedFragmentsInPop(java.util.ArrayList,androidx.fragment.app.Fragment)
     public boolean isPostponed()
@@ -18076,6 +18154,10 @@ okio.internal.ByteStringKt:
 com.facebook.imagepipeline.platform.PlatformDecoderFactory
 com.google.gson.internal.JsonReaderInternalAccess:
     public abstract void promoteNameToValue(com.google.gson.stream.JsonReader)
+com.kakacat.minitool.phoneartribution.model.Model:
+    public static com.kakacat.minitool.phoneartribution.model.Model getInstance()
+    public com.kakacat.minitool.phoneartribution.model.PhoneNumber response2PhoneNumber(okhttp3.Response)
+    public java.lang.String getAddress(java.lang.String)
 androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo:
     public androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo setFrom(androidx.recyclerview.widget.RecyclerView$ViewHolder)
     public androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo setFrom1(androidx.recyclerview.widget.RecyclerView$ViewHolder)
@@ -18115,34 +18197,14 @@ com.google.android.material.textfield.DropdownMenuEndIconDelegate:
     public final void initAnimators()
     public final varargs android.animation.ValueAnimator getAlphaAnimator(int,float[])
     public static final boolean IS_LOLLIPOP
-com.kakacat.minitool.epidemicsituation.EpidemicData:
-    public int getDeadCountRank()
-    public void setDeadCountRank(int)
-    public double getDeadCountRate()
-    public void setDeadCountRate(double)
-    public long getModifyTime()
-    public void setModifyTime(long)
-    public void setContinents(java.lang.String)
-    public java.lang.String getProvinceName()
-    public void setProvinceName(java.lang.String)
-    public int getCurrentConfirmedCount()
-    public void setCurrentConfirmedCount(int)
-    public int getConfirmedCount()
-    public void setConfirmedCount(int)
-    public int getSuspectedCount()
-    public void setSuspectedCount(int)
-    public int getDeadCount()
-    public void setDeadCount(int)
-    public void setCountryShortCode(java.lang.String)
-    public java.lang.String continents
-    public java.lang.String countryShortCode
 com.kakacat.minitool.translation.TranslationActivity:
     public void initData()
     public void initView()
+    public com.kakacat.minitool.translation.Contract$Presenter getPresenter()
     public void showCollectionWindow()
     public void onAddToMyFavouriteCallBack(java.lang.String)
-    public void setPresenter(com.kakacat.minitool.translation.Contract$Presenter)
     public android.content.Context getContext()
+    public final com.kakacat.minitool.translation.adapter.CollectionAdapter getCollectionAdapter()
 androidx.core.app.ActivityCompat$1
 androidx.appcompat.widget.ResourceManagerInternal$ColorFilterLruCache:
     public static int generateCacheKey(int,android.graphics.PorterDuff$Mode)
@@ -18150,6 +18212,17 @@ androidx.appcompat.widget.ResourceManagerInternal$ColorFilterLruCache:
     public android.graphics.PorterDuffColorFilter put(int,android.graphics.PorterDuff$Mode,android.graphics.PorterDuffColorFilter)
 com.kakacat.minitool.main.adapter.FragmentAdapter:
     public final void init()
+com.kakacat.minitool.expressinquiry.model.Model:
+    public static com.kakacat.minitool.expressinquiry.model.Model getInstance()
+    public void initData(android.content.Context)
+    public void sendRequest(java.lang.String,com.kakacat.minitool.common.myinterface.HttpCallback)
+    public boolean checkInput(java.lang.String)
+    public boolean isInSignedList(java.lang.String)
+    public boolean handleResponse(okhttp3.Response,java.lang.String)
+    public void saveDataToLocal(android.content.Context)
+    public java.util.List getList(int)
+    public final com.kakacat.minitool.expressinquiry.model.Delivery handle(okhttp3.Response,java.lang.String)
+    public final void loadDataFromLocal(android.content.Context)
 androidx.appcompat.view.menu.MenuPopupHelper:
     public void <init>(android.content.Context,androidx.appcompat.view.menu.MenuBuilder,android.view.View,boolean,int)
     public void setOnDismissListener(android.widget.PopupWindow$OnDismissListener)
@@ -18232,7 +18305,6 @@ com.facebook.imagepipeline.core.ProducerSequenceFactory:
     public java.util.Map mCloseableImagePrefetchSequences
 androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VObject
 com.kakacat.minitool.main.navigation.AboutViewItemOn:
-    public static com.kakacat.minitool.main.navigation.AboutViewItemOn getInstance(android.app.Activity,android.view.View,int,int)
     public final void initView()
 androidx.appcompat.widget.ResourceManagerInternal:
     public static void installDefaultInflateDelegates(androidx.appcompat.widget.ResourceManagerInternal)
@@ -18270,10 +18342,9 @@ androidx.lifecycle.LiveData$LifecycleBoundObserver:
     public boolean isAttachedTo(androidx.lifecycle.LifecycleOwner)
     public void detachObserver()
 com.kakacat.minitool.bingpic.Presenter:
-    public static void <clinit>()
+    public void initData()
+    public void saveImage(com.facebook.drawee.view.SimpleDraweeView)
     public java.util.List getAddressList()
-    public final java.lang.String getNextAddress()
-    public static final synthetic boolean $assertionsDisabled
 com.facebook.drawee.gestures.GestureDetector:
     public static com.facebook.drawee.gestures.GestureDetector newInstance(android.content.Context)
     public void init()
@@ -18306,7 +18377,7 @@ androidx.core.provider.SelfDestructiveThread$3:
     public final synthetic androidx.core.provider.SelfDestructiveThread this$0
 com.kakacat.minitool.translation.Contract$View:
     public abstract void onAddToMyFavouriteCallBack(java.lang.String)
-    public abstract void onRequestCallBack(java.lang.String,int)
+    public abstract void onRequestCallBack(java.lang.String,java.lang.String)
 com.facebook.common.internal.Ints
 com.google.android.material.bottomnavigation.BottomNavigationView:
     public void <init>(android.content.Context,android.util.AttributeSet,int)
@@ -18331,7 +18402,6 @@ androidx.appcompat.view.menu.MenuItemImpl$1:
     public void onActionProviderVisibilityChanged(boolean)
 com.google.gson.internal.ConstructorConstructor$2:
     public final synthetic com.google.gson.internal.ConstructorConstructor this$0
-com.kakacat.minitool.common.ui.UiUtil
 androidx.core.view.ViewPropertyAnimatorUpdateListener:
     public abstract void onAnimationUpdate(android.view.View)
 okhttp3.internal.cache.CacheStrategy:
@@ -18345,9 +18415,10 @@ com.facebook.imagepipeline.core.ImagePipelineExperiments$DefaultProducerFactoryM
 androidx.customview.widget.ViewDragHelper$Callback:
     public int getOrderedChildIndex(int)
 com.kakacat.minitool.garbageclassify.Presenter:
-    public static synthetic com.kakacat.minitool.garbageclassify.Contract$View access$000(com.kakacat.minitool.garbageclassify.Presenter)
+    public static synthetic com.kakacat.minitool.garbageclassify.model.Model access$000(com.kakacat.minitool.garbageclassify.Presenter)
+    public static synthetic com.kakacat.minitool.garbageclassify.Contract$View access$100(com.kakacat.minitool.garbageclassify.Presenter)
+    public void initData()
     public void requestData(java.lang.String)
-    public boolean handleResponse(okhttp3.Response)
     public java.util.List getGarbageList()
 androidx.fragment.app.BackStackState:
     public androidx.fragment.app.BackStackRecord instantiate(androidx.fragment.app.FragmentManager)
@@ -18355,6 +18426,13 @@ com.facebook.imageutils.TiffUtil$TiffHeader
 androidx.versionedparcelable.ParcelImpl$1:
     public androidx.versionedparcelable.ParcelImpl createFromParcel(android.os.Parcel)
     public androidx.versionedparcelable.ParcelImpl[] newArray(int)
+com.kakacat.minitool.cleanfile.model.Model:
+    public static com.kakacat.minitool.cleanfile.model.Model getInstance()
+    public static void <clinit>()
+    public long[] deleteSelectedFile()
+    public void selectAll(int,boolean)
+    public static com.kakacat.minitool.cleanfile.model.Model model
+    public static final synthetic boolean $assertionsDisabled
 com.google.android.material.snackbar.BaseTransientBottomBar$8:
     public void onDismiss(android.view.View)
     public void onDragStateChanged(int)
@@ -18396,8 +18474,15 @@ com.google.android.material.chip.ChipGroup$PassThroughHierarchyChangeListener:
     public void <init>(com.google.android.material.chip.ChipGroup)
     public static synthetic android.view.ViewGroup$OnHierarchyChangeListener access$202(com.google.android.material.chip.ChipGroup$PassThroughHierarchyChangeListener,android.view.ViewGroup$OnHierarchyChangeListener)
 com.kakacat.minitool.inquireip.Presenter:
-    public static synthetic com.kakacat.minitool.inquireip.Contract$View access$000(com.kakacat.minitool.inquireip.Presenter)
+    public static synthetic com.kakacat.minitool.inquireip.Model access$000(com.kakacat.minitool.inquireip.Presenter)
+    public static synthetic com.kakacat.minitool.inquireip.Contract$View access$100(com.kakacat.minitool.inquireip.Presenter)
     public void initData()
+com.kakacat.minitool.expressinquiry.Contract$Presenter:
+    public abstract void saveData()
+    public abstract void requestData(java.lang.String)
+    public abstract void refreshAll()
+    public abstract java.lang.CharSequence getDataFromClipBoard()
+    public abstract java.util.List getDeliveryList(int)
 com.facebook.drawee.backends.pipeline.PipelineDraweeController:
     public void setDrawDebugOverlay(boolean)
     public void setCustomDrawableFactories(com.facebook.common.internal.ImmutableList)
@@ -18500,6 +18585,10 @@ com.facebook.imagepipeline.core.ImagePipelineExperiments:
     public com.facebook.common.internal.Supplier getSuppressBitmapPrefetchingSupplier()
     public long getMemoryType()
     public boolean shouldKeepCancelledFetchAsLowPriority()
+com.kakacat.minitool.wifipasswordview.Adapter$ViewHolder:
+    public static synthetic android.widget.TextView access$000(com.kakacat.minitool.wifipasswordview.Adapter$ViewHolder)
+    public static synthetic android.widget.TextView access$100(com.kakacat.minitool.wifipasswordview.Adapter$ViewHolder)
+    public static synthetic android.widget.TextView access$200(com.kakacat.minitool.wifipasswordview.Adapter$ViewHolder)
 androidx.recyclerview.widget.LinearLayoutManager$AnchorInfo:
     public boolean isViewValidAsAnchor(android.view.View,androidx.recyclerview.widget.RecyclerView$State)
 androidx.appcompat.widget.AlertDialogLayout:
@@ -18769,10 +18858,26 @@ androidx.vectordrawable.graphics.drawable.VectorDrawableCommon:
     public void setChangingConfigurations(int)
     public boolean setState(int[])
     public android.graphics.drawable.Drawable mDelegateDrawable
+com.kakacat.minitool.currencyconversion.model.Model:
+    public static com.kakacat.minitool.currencyconversion.model.Model getInstance()
+    public void readRateFromLocal(android.content.Context)
+    public boolean handleResponse(okhttp3.Response)
+    public java.lang.String getResult(java.lang.CharSequence,double,double)
+    public final void fillCountryList()
+com.kakacat.minitool.appInfo.model.AppInfoModel:
+    public static com.kakacat.minitool.appInfo.model.AppInfoModel getModelInstance()
+    public void initData(android.content.pm.PackageManager)
+    public java.util.List getApiPercentBeanList()
+    public java.util.List getPackageInfoList()
+    public java.util.List getAppInfoBeanList()
+    public void sortAppInfoList(int)
+    public final void initApiPercentData()
+    public final void initAppInfoData()
 com.facebook.cache.common.WriterCallback:
     public abstract void write(java.io.OutputStream)
 androidx.viewpager.widget.ViewPager:
     public static boolean isDecorView(android.view.View)
+    public void initViewPager()
     public void addOnAdapterChangeListener(androidx.viewpager.widget.ViewPager$OnAdapterChangeListener)
     public void removeOnAdapterChangeListener(androidx.viewpager.widget.ViewPager$OnAdapterChangeListener)
     public void setCurrentItem(int,boolean)
@@ -18842,6 +18947,8 @@ com.kakacat.minitool.appInfo.adapter.AppInfoAdapter:
     public void onBindViewHolder(com.kakacat.minitool.appInfo.adapter.AppInfoAdapter$ViewHolder,int)
     public synthetic void lambda$onBindViewHolder$0$AppInfoAdapter(com.kakacat.minitool.appInfo.adapter.AppInfoAdapter$ViewHolder,int,android.view.View)
     public com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener clickListener
+okhttp3.FormBody:
+    public static final okhttp3.FormBody$Companion Companion
 androidx.cursoradapter.widget.CursorFilter$CursorFilterClient:
     public abstract java.lang.CharSequence convertToString(android.database.Cursor)
     public abstract android.database.Cursor runQueryOnBackgroundThread(java.lang.CharSequence)
@@ -18938,17 +19045,10 @@ okhttp3.internal.connection.RouteSelector$resetNextProxy$1
 com.kakacat.minitool.appInfo.contract.AppInfoContract$Presenter:
     public abstract void initData()
     public abstract void sortAppInfoList(int)
-    public abstract java.util.List getApiPercentList()
-    public abstract java.util.List getAppInfoList()
-androidx.fragment.app.FragmentPagerAdapter:
-    public void <init>(androidx.fragment.app.FragmentManager,int)
-    public abstract androidx.fragment.app.Fragment getItem(int)
-    public java.lang.Object instantiateItem(android.view.ViewGroup,int)
-    public void setPrimaryItem(android.view.ViewGroup,int,java.lang.Object)
-    public boolean isViewFromObject(android.view.View,java.lang.Object)
-    public android.os.Parcelable saveState()
-    public void restoreState(android.os.Parcelable,java.lang.ClassLoader)
-    public long getItemId(int)
+    public abstract java.util.List getApiPercentBeanList()
+    public abstract java.util.List getAppInfoBeanList()
+bolts.Task$15$1:
+    public java.lang.Void then(bolts.Task)
 androidx.slidingpanelayout.widget.SlidingPaneLayout$SavedState$1:
     public androidx.slidingpanelayout.widget.SlidingPaneLayout$SavedState createFromParcel1(android.os.Parcel)
     public androidx.slidingpanelayout.widget.SlidingPaneLayout$SavedState createFromParcel(android.os.Parcel)
@@ -19335,6 +19435,7 @@ com.google.android.material.tabs.TabItem:
     public void <init>(android.content.Context,android.util.AttributeSet)
 kotlin.text.StringsKt__IndentKt$getIndentFunction$2
 androidx.swiperefreshlayout.widget.SwipeRefreshLayout:
+    public boolean isRefreshing()
     public void dispatchNestedScroll(int,int,int,int,int[],int,int[])
     public final void createProgressView()
     public final void startScaleUpAnimation(android.view.animation.Animation$AnimationListener)
@@ -19352,6 +19453,35 @@ androidx.constraintlayout.solver.LinearSystem$Row:
     public abstract void clear()
     public abstract void initFromRow(androidx.constraintlayout.solver.LinearSystem$Row)
     public abstract androidx.constraintlayout.solver.SolverVariable getKey()
+com.kakacat.minitool.appInfo.model.bean.AppInfoBean:
+    public android.graphics.drawable.Drawable getIcon()
+    public void setIcon(android.graphics.drawable.Drawable)
+    public java.lang.String getAppName()
+    public void setAppName(java.lang.String)
+    public java.lang.String getPackageName()
+    public void setPackageName(java.lang.String)
+    public java.lang.String getVersionName()
+    public void setVersionName(java.lang.String)
+    public java.lang.String getAndroidVersionName()
+    public void setAndroidVersionName(java.lang.String)
+    public int getTargetSdkVersion()
+    public void setTargetSdkVersion(int)
+    public int getMinSdkVersion()
+    public void setMinSdkVersion(int)
+    public long getFirstInstallTime()
+    public void setFirstInstallTime(long)
+    public java.lang.String getFirstInstallTime2()
+    public long getLastUpdateTime()
+    public void setLastUpdateTime(long)
+    public java.lang.String getLastUpdateTime2()
+    public void setSignature(android.content.pm.Signature)
+    public int getPermissionCount()
+    public void setPermissions(java.lang.String[])
+    public java.lang.String getPermission()
+    public java.lang.String getSourceDir()
+    public void setSourceDir(java.lang.String)
+    public final byte[] objectToBytes(java.lang.Object)
+    public final java.lang.Object bytesToObject(byte[])
 com.facebook.datasource.DataSources
 com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior:
     public static int getAppBarLayoutOffset(com.google.android.material.appbar.AppBarLayout)
@@ -19427,6 +19557,9 @@ androidx.recyclerview.widget.RecyclerView$ItemAnimator:
     public void onAnimationFinished()
     public abstract boolean canReuseUpdatedViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder)
     public androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo obtainHolderInfo()
+com.kakacat.minitool.epidemicinquiry.Contract$View:
+    public abstract void onUpdateViewSuccessful()
+    public abstract void onUpdateViewError(java.lang.String)
 okhttp3.internal.http2.Http2Connection:
     public static void start$default(okhttp3.internal.http2.Http2Connection,boolean,okhttp3.internal.concurrent.TaskRunner,int)
     public static final synthetic boolean access$isShutdown$p(okhttp3.internal.http2.Http2Connection)
@@ -19604,9 +19737,6 @@ okio.ForwardingTimeout:
     public final okio.ForwardingTimeout setDelegate(okio.Timeout)
     public long timeoutNanos()
     public final okio.Timeout delegate()
-com.kakacat.minitool.textencryption.ItemAdapter$ViewHolder:
-    public static synthetic android.widget.TextView access$000(com.kakacat.minitool.textencryption.ItemAdapter$ViewHolder)
-    public final synthetic com.kakacat.minitool.textencryption.ItemAdapter this$0
 okhttp3.EventListener:
     public void callStart(okhttp3.Call)
     public void proxySelectStart(okhttp3.Call,okhttp3.HttpUrl)
@@ -19716,8 +19846,6 @@ androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat$PathDataEvaluat
 androidx.constraintlayout.widget.ConstraintLayout$LayoutParams:
     public float dimensionRatioValue
 com.facebook.common.internal.Suppliers$2
-com.kakacat.minitool.epidemicsituation.MyFragment:
-    public void refresh()
 androidx.lifecycle.ViewModelProvider
 androidx.loader.app.LoaderManagerImpl:
     public static void <clinit>()
@@ -19751,6 +19879,9 @@ androidx.core.graphics.drawable.IconCompat:
 com.facebook.imagepipeline.request.ImageRequest$RequestLevel:
     public static com.facebook.imagepipeline.request.ImageRequest$RequestLevel getMax(com.facebook.imagepipeline.request.ImageRequest$RequestLevel,com.facebook.imagepipeline.request.ImageRequest$RequestLevel)
     public int getValue()
+bolts.Task$11:
+    public java.lang.Void then(bolts.Task)
+    public final synthetic bolts.Task this$0
 androidx.core.content.res.GradientColorInflaterCompat
 com.google.android.material.textview.MaterialTextView:
     public void <init>(android.content.Context,android.util.AttributeSet,int)
@@ -19810,9 +19941,6 @@ androidx.coordinatorlayout.widget.CoordinatorLayout$SavedState$1:
     public androidx.coordinatorlayout.widget.CoordinatorLayout$SavedState[] newArray(int)
 bolts.CancellationToken:
     public abstract boolean isCancellationRequested()
-com.kakacat.minitool.appInfo.model.AppInfo$1:
-    public com.kakacat.minitool.appInfo.model.AppInfo createFromParcel(android.os.Parcel)
-    public com.kakacat.minitool.appInfo.model.AppInfo[] newArray(int)
 com.facebook.drawee.drawable.DrawableProperties:
     public void setAlpha(int)
     public void setColorFilter(android.graphics.ColorFilter)
@@ -19957,21 +20085,18 @@ kotlin.collections.CollectionsKt
 androidx.recyclerview.widget.GridLayoutManager$LayoutParams:
     public int getSpanIndex()
     public int getSpanSize()
-com.kakacat.minitool.epidemicsituation.MyAdapter$ViewHolder:
-    public static synthetic android.widget.TextView access$000(com.kakacat.minitool.epidemicsituation.MyAdapter$ViewHolder)
-    public final synthetic com.kakacat.minitool.epidemicsituation.MyAdapter this$0
 com.google.android.material.bottomsheet.BottomSheetBehavior$SettleRunnable:
     public static synthetic boolean access$100(com.google.android.material.bottomsheet.BottomSheetBehavior$SettleRunnable)
     public static synthetic boolean access$102(com.google.android.material.bottomsheet.BottomSheetBehavior$SettleRunnable,boolean)
 com.kakacat.minitool.todayinhistory.Presenter:
-    public static synthetic com.kakacat.minitool.todayinhistory.Contract$View access$000(com.kakacat.minitool.todayinhistory.Presenter)
-    public boolean handleHistoryResponse(okhttp3.Response,java.util.List)
+    public static synthetic com.kakacat.minitool.todayinhistory.model.Model access$000(com.kakacat.minitool.todayinhistory.Presenter)
+    public static synthetic com.kakacat.minitool.todayinhistory.Contract$View access$100(com.kakacat.minitool.todayinhistory.Presenter)
+    public java.util.List getArticleList()
     public int getYear()
     public int getMonth()
     public void setMonth(int)
     public int getDay()
     public void setDay(int)
-    public final java.lang.String getAddress()
 androidx.appcompat.view.menu.StandardMenuPopup:
     public final boolean tryShow()
 com.google.gson.LongSerializationPolicy:
@@ -19984,6 +20109,17 @@ com.kakacat.minitool.cleanfile.MyFabBehavior:
     public final void slideEnd(android.view.View)
 androidx.viewpager.widget.ViewPager$1:
     public int compare(androidx.viewpager.widget.ViewPager$ItemInfo,androidx.viewpager.widget.ViewPager$ItemInfo)
+com.kakacat.minitool.audiocapture.GetAudioService:
+    public final void addADTStoPacket(byte[],int)
+    public final java.lang.String separateAudioFromVideo(java.lang.String)
+    public static final synthetic boolean $assertionsDisabled
+com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$ChildViewHolder:
+    public static synthetic android.widget.TextView access$600(com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$ChildViewHolder)
+    public static synthetic android.widget.TextView access$700(com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$ChildViewHolder)
+    public static synthetic android.widget.TextView access$800(com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$ChildViewHolder)
+    public static synthetic android.widget.TextView access$900(com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$ChildViewHolder)
+    public static synthetic android.widget.TextView access$1000(com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$ChildViewHolder)
+    public static synthetic android.widget.TextView access$1100(com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$ChildViewHolder)
 com.kakacat.minitool.garbageclassify.model.TypeMap
 com.facebook.imagepipeline.producers.JobScheduler$JobStartExecutorSupplier
 androidx.customview.widget.FocusStrategy$BoundsAdapter:
@@ -20038,6 +20174,7 @@ com.facebook.soloader.ExoSoSource$ExoUnpacker:
     public final synthetic com.facebook.soloader.ExoSoSource this$0
 com.google.android.material.button.MaterialButtonToggleGroup$CheckedStateTracker:
     public void <init>(com.google.android.material.button.MaterialButtonToggleGroup)
+com.kakacat.minitool.textencryption.Contract$Presenter
 com.facebook.common.util.HashCodeUtil
 okhttp3.internal.platform.android.StandardAndroidSocketAdapter$Companion:
     public static okhttp3.internal.platform.android.SocketAdapter buildIfSupported$default(okhttp3.internal.platform.android.StandardAndroidSocketAdapter$Companion,java.lang.String,int)
@@ -20047,6 +20184,11 @@ androidx.appcompat.widget.AbsActionBarView:
     public static int next(int,int,boolean)
 androidx.core.view.LayoutInflaterCompat
 android.support.v4.media.session.MediaControllerCompat$Callback$StubCompat
+com.kakacat.minitool.textencryption.Model:
+    public static com.kakacat.minitool.textencryption.Model getInstance()
+    public java.lang.String[] getEncryptionMethods()
+    public java.lang.String encryptText(java.lang.String,java.lang.CharSequence)
+    public final java.lang.String encryptHmacSHA1(byte[])
 androidx.core.view.MotionEventCompat
 androidx.core.view.NestedScrollingChildHelper:
     public void setNestedScrollingEnabled(boolean)
@@ -20087,6 +20229,10 @@ com.google.android.material.internal.CollapsingTextHelper:
     public final void ensureExpandedTexture()
     public final void clearTexture()
     public static final boolean USE_SCALING_TEXTURE
+com.kakacat.minitool.epidemicinquiry.model.Model:
+    public static com.kakacat.minitool.epidemicinquiry.model.Model getInstance()
+    public java.util.List getGroupBeanList()
+    public boolean handleResponse(okhttp3.Response)
 androidx.appcompat.widget.AppCompatRadioButton:
     public void <init>(android.content.Context,android.util.AttributeSet)
 com.kakacat.minitool.main.fragment.MyFragment:
@@ -20207,8 +20353,6 @@ com.google.android.material.snackbar.BaseTransientBottomBar:
     public com.google.android.material.snackbar.BaseTransientBottomBar$Behavior behavior
     public static final boolean USE_OFFSET_API
     public static final java.lang.String TAG
-com.kakacat.minitool.epidemicsituation.MyPageAdapter:
-    public androidx.fragment.app.Fragment getItem(int)
 okhttp3.internal.connection.RouteSelector:
     public static void <clinit>()
     public static final synthetic okhttp3.Address access$getAddress$p(okhttp3.internal.connection.RouteSelector)
@@ -20223,6 +20367,11 @@ com.facebook.datasource.IncreasingQualityDataSourceSupplier:
     public static synthetic boolean access$000(com.facebook.datasource.IncreasingQualityDataSourceSupplier)
     public static synthetic java.util.List access$100(com.facebook.datasource.IncreasingQualityDataSourceSupplier)
     public com.facebook.datasource.DataSource get()
+com.kakacat.minitool.expressinquiry.adapter.DeliveryAdapter$ViewHolder:
+    public static synthetic android.widget.TextView access$000(com.kakacat.minitool.expressinquiry.adapter.DeliveryAdapter$ViewHolder)
+    public static synthetic android.widget.TextView access$100(com.kakacat.minitool.expressinquiry.adapter.DeliveryAdapter$ViewHolder)
+    public static synthetic android.widget.TextView access$200(com.kakacat.minitool.expressinquiry.adapter.DeliveryAdapter$ViewHolder)
+    public static synthetic android.widget.TextView access$300(com.kakacat.minitool.expressinquiry.adapter.DeliveryAdapter$ViewHolder)
 okhttp3.internal.platform.OpenJSSEPlatform$Companion:
     public void <init>()
     public final boolean isSupported()
@@ -20353,6 +20502,13 @@ com.google.android.material.datepicker.MaterialCalendarGridView:
     public static int horizontalMidPoint(android.view.View)
     public final void gainFocus(int,android.graphics.Rect)
 androidx.core.graphics.TypefaceCompatBaseImpl$2
+com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$GroupViewHolder:
+    public static synthetic com.google.android.material.button.MaterialButton access$000(com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$GroupViewHolder)
+    public static synthetic android.widget.TextView access$100(com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$GroupViewHolder)
+    public static synthetic android.widget.TextView access$200(com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$GroupViewHolder)
+    public static synthetic android.widget.TextView access$300(com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$GroupViewHolder)
+    public static synthetic android.widget.TextView access$400(com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$GroupViewHolder)
+    public static synthetic android.widget.TextView access$500(com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter$GroupViewHolder)
 androidx.core.content.PermissionChecker
 com.facebook.common.internal.Suppliers
 com.google.gson.internal.bind.TypeAdapters$15:
@@ -20568,6 +20724,8 @@ com.kakacat.minitool.common.util.SystemUtil
 kotlin.text.StringsKt__StringNumberConversionsJVMKt
 com.google.android.material.ripple.RippleDrawableCompat
 androidx.core.text.BidiFormatter$Builder
+com.kakacat.minitool.common.ui.DepthPageTransformer:
+    public void transformPage(android.view.View,float)
 androidx.lifecycle.LiveData$ObserverWrapper:
     public void <init>(androidx.lifecycle.LiveData,androidx.lifecycle.Observer)
     public boolean isAttachedTo(androidx.lifecycle.LifecycleOwner)
@@ -20634,6 +20792,10 @@ androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityAction
     public static final androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat ACTION_MOVE_WINDOW
     public static final androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat ACTION_SHOW_TOOLTIP
     public static final androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat ACTION_HIDE_TOOLTIP
+com.kakacat.minitool.expressinquiry.Presenter:
+    public static synthetic com.kakacat.minitool.expressinquiry.model.Model access$000(com.kakacat.minitool.expressinquiry.Presenter)
+    public static synthetic com.kakacat.minitool.expressinquiry.Contract$View access$100(com.kakacat.minitool.expressinquiry.Presenter)
+    public void saveData()
 androidx.fragment.app.FragmentAnim
 com.facebook.imagepipeline.memory.PoolBackend
 androidx.core.util.Pools$Pool
@@ -20656,6 +20818,7 @@ androidx.fragment.app.Fragment:
     public void setInitialSavedState(androidx.fragment.app.Fragment$SavedState)
     public final androidx.fragment.app.Fragment getTargetFragment()
     public final android.content.Context requireContext()
+    public final androidx.fragment.app.FragmentActivity getActivity()
     public final androidx.fragment.app.FragmentActivity requireActivity()
     public final java.lang.Object getHost()
     public final java.lang.String getString(int)
@@ -20665,6 +20828,7 @@ androidx.fragment.app.Fragment:
     public final boolean isHidden()
     public void onHiddenChanged()
     public final boolean getRetainInstance()
+    public void setMenuVisibility(boolean)
     public void startActivity(android.content.Intent,android.os.Bundle)
     public void startActivityForResult(android.content.Intent,int)
     public void startActivityForResult(android.content.Intent,int,android.os.Bundle)
@@ -20777,8 +20941,6 @@ androidx.core.content.ContentResolverCompat
 androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate:
     public androidx.core.view.AccessibilityDelegateCompat getItemDelegate()
 com.kakacat.minitool.currencyconversion.model.Rate:
-    public static void readRateFromLocal(android.content.Context)
-    public static boolean handleResponse(okhttp3.Response)
     public static void <clinit>()
 androidx.constraintlayout.solver.ArrayLinkedVariables:
     public final boolean containsKey(androidx.constraintlayout.solver.SolverVariable)
@@ -20854,6 +21016,9 @@ com.google.android.material.badge.BadgeDrawable:
     public final void drawText(android.graphics.Canvas)
     public final void updateMaxBadgeNumber()
 okhttp3.Authenticator$Companion
+bolts.Task$12:
+    public bolts.Task then(bolts.Task)
+    public final synthetic bolts.Task this$0
 androidx.core.widget.PopupWindowCompat
 androidx.fragment.app.FragmentTransitionImpl$1:
     public final synthetic androidx.fragment.app.FragmentTransitionImpl this$0
@@ -20944,35 +21109,6 @@ com.facebook.datasource.IncreasingQualityDataSourceSupplier$IncreasingQualityDat
 okio.internal.BufferKt:
     public static final byte[] getHEX_DIGIT_BYTES()
     public static synthetic int selectPrefix$default(okio.Buffer,okio.Options,boolean,int)
-com.kakacat.minitool.appInfo.model.AppInfo:
-    public android.graphics.drawable.Drawable getIcon()
-    public void setIcon(android.graphics.drawable.Drawable)
-    public java.lang.String getAppName()
-    public void setAppName(java.lang.String)
-    public java.lang.String getPackageName()
-    public void setPackageName(java.lang.String)
-    public java.lang.String getVersionName()
-    public void setVersionName(java.lang.String)
-    public java.lang.String getAndroidVersionName()
-    public void setAndroidVersionName(java.lang.String)
-    public int getTargetSdkVersion()
-    public void setTargetSdkVersion(int)
-    public int getMinSdkVersion()
-    public void setMinSdkVersion(int)
-    public long getFirstInstallTime()
-    public void setFirstInstallTime(long)
-    public java.lang.String getFirstInstallTime2()
-    public long getLastUpdateTime()
-    public void setLastUpdateTime(long)
-    public java.lang.String getLastUpdateTime2()
-    public void setSignature(android.content.pm.Signature)
-    public int getPermissionCount()
-    public void setPermissions(java.lang.String[])
-    public java.lang.String getPermission()
-    public java.lang.String getSourceDir()
-    public void setSourceDir(java.lang.String)
-    public final byte[] objectToBytes(java.lang.Object)
-    public final java.lang.Object bytesToObject(byte[])
 okhttp3.internal.http2.Http2Connection$ReaderRunnable$settings$$inlined$execute$1:
     public final synthetic java.lang.String $name
     public final synthetic boolean $cancelable
@@ -21024,12 +21160,12 @@ com.kakacat.minitool.cleanfile.CleanFileActivity:
     public void requestPermission()
     public void initData()
     public void initView()
+    public com.kakacat.minitool.cleanfile.Contract$Presenter getPresenter()
     public void onUpdateDataCallBack()
     public void selectAll()
     public void onSelectedAllCallBack()
     public void onFileDeletedCallBack(java.lang.String)
     public void showDialogWindow()
-    public void setPresenter(com.kakacat.minitool.cleanfile.Contract$Presenter)
     public android.content.Context getContext()
     public final androidx.viewpager2.widget.ViewPager2$OnPageChangeCallback getPackChangeCallBack()
     public final com.google.android.material.bottomnavigation.BottomNavigationView$OnNavigationItemSelectedListener getNavigationItemSelectedListener()
@@ -21152,24 +21288,9 @@ com.google.android.material.floatingactionbutton.FloatingActionButtonImpl$Shadow
     public void <init>(com.google.android.material.floatingactionbutton.FloatingActionButtonImpl)
 okhttp3.internal.http.RetryAndFollowUpInterceptor$Companion
 com.google.android.material.circularreveal.CircularRevealCompat
-com.kakacat.minitool.inquireip.IpModel:
-    public static boolean checkIp(java.lang.String)
-    public static com.kakacat.minitool.inquireip.IpModel handleIpDataResponse(okhttp3.Response)
-    public static void <clinit>()
-    public java.lang.String getCountry()
-    public void setCountry(java.lang.String)
-    public java.lang.String getProvince()
-    public void setProvince(java.lang.String)
-    public java.lang.String getCity()
-    public void setCity(java.lang.String)
-    public java.lang.String getIsp()
-    public void setIsp(java.lang.String)
-    public java.lang.String getIpAddress()
-    public void setIpAddress(java.lang.String)
-    public static final synthetic boolean $assertionsDisabled
 kotlin.text.StringsKt__StringBuilderJVMKt
 com.kakacat.minitool.phoneartribution.Contract$View:
-    public abstract void onRequestDataCallBack(com.kakacat.minitool.phoneartribution.PhoneNumber,int)
+    public abstract void onRequestDataCallBack(com.kakacat.minitool.phoneartribution.model.PhoneNumber,java.lang.String)
 kotlin.collections.SetsKt___SetsKt
 com.facebook.common.media.MediaUtils:
     public static java.lang.String extractExtension(java.lang.String)
@@ -21246,6 +21367,11 @@ androidx.appcompat.widget.ContentFrameLayout$OnAttachListener:
 com.facebook.imagepipeline.nativecode.DalvikPurgeableDecoder:
     public static android.graphics.BitmapFactory$Options getBitmapFactoryOptions(int,android.graphics.Bitmap$Config)
 androidx.appcompat.app.AlertController$AlertParams$OnPrepareListViewListener
+com.kakacat.minitool.wifipasswordview.model.Model:
+    public static com.kakacat.minitool.wifipasswordview.model.Model getInstance()
+    public boolean handleWifiConfig(android.content.Context)
+    public boolean copyWifiConfigToCache(android.content.Context)
+    public java.util.List getWifiList()
 okhttp3.internal.http2.Http2Connection$ReaderRunnable$applyAndAckSettings$$inlined$synchronized$lambda$1:
     public final synthetic java.lang.String $name
     public final synthetic boolean $cancelable
@@ -21327,6 +21453,10 @@ com.facebook.imagepipeline.memory.DummyTrackingInUseBitmapPool:
     public android.graphics.Bitmap get(int)
     public void release(android.graphics.Bitmap)
 kotlin.sequences.SequencesKt___SequencesKt
+com.kakacat.minitool.expressinquiry.activity.DeliveryDetailActivity:
+    public final void initView()
+    public final void initToolbar()
+    public static final synthetic boolean $assertionsDisabled
 okhttp3.CipherSuite$Companion:
     public void <init>()
     public final java.util.Comparator getORDER_BY_NAME$okhttp()
@@ -21467,6 +21597,8 @@ com.facebook.drawee.backends.pipeline.PipelineDraweeControllerBuilderSupplier:
     public com.facebook.drawee.backends.pipeline.PipelineDraweeControllerBuilder get()
 com.facebook.common.disk.DiskTrimmableRegistry:
     public abstract void registerDiskTrimmable(com.facebook.common.disk.DiskTrimmable)
+com.kakacat.minitool.expressinquiry.MyFragment:
+    public com.kakacat.minitool.expressinquiry.adapter.DeliveryAdapter getAdapter()
 com.google.android.material.internal.NavigationMenuPresenter$NavigationMenuAdapter:
     public com.google.android.material.internal.NavigationMenuPresenter$ViewHolder onCreateViewHolder(android.view.ViewGroup,int)
     public void onBindViewHolder(com.google.android.material.internal.NavigationMenuPresenter$ViewHolder,int)
@@ -21542,6 +21674,10 @@ kotlin.collections.EmptyList:
     public int indexOf(java.lang.Void)
     public int lastIndexOf(java.lang.Void)
 com.facebook.common.internal.ByteStreams
+okhttp3.FormBody$Builder:
+    public void <init>(java.nio.charset.Charset)
+    public void <init>(java.nio.charset.Charset,int)
+    public final okhttp3.FormBody build()
 kotlin.text.Regex$Companion
 androidx.core.widget.TintableCompoundButton
 com.facebook.common.file.FileUtils
@@ -21769,17 +21905,6 @@ kotlin.text.Regex:
     public static void <clinit>()
     public final java.lang.String replace(java.lang.CharSequence,java.lang.String)
     public static final kotlin.text.Regex$Companion Companion
-com.kakacat.minitool.todayinhistory.Article:
-    public java.lang.String getTitle()
-    public java.lang.String getPic()
-    public java.lang.String getYear()
-    public java.lang.String getMonth()
-    public java.lang.String getDay()
-    public java.lang.String title
-    public java.lang.String pic
-    public java.lang.String year
-    public java.lang.String month
-    public java.lang.String day
 com.kakacat.minitool.main.Presenter:
     public java.util.List getDailyList()
     public java.util.List getGeekList()
@@ -21819,18 +21944,18 @@ androidx.savedstate.SavedStateRegistry:
     public void registerSavedStateProvider(java.lang.String,androidx.savedstate.SavedStateRegistry$SavedStateProvider)
     public void performRestore(androidx.lifecycle.Lifecycle,android.os.Bundle)
     public void performSave(android.os.Bundle)
+com.kakacat.minitool.expressinquiry.adapter.DeliveryDetailAdapter:
+    public com.kakacat.minitool.expressinquiry.adapter.DeliveryDetailAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup,int)
+    public void onBindViewHolder(com.kakacat.minitool.expressinquiry.adapter.DeliveryDetailAdapter$ViewHolder,int)
 com.google.gson.internal.Streams
 com.facebook.imagepipeline.memory.DefaultByteArrayPoolParams
 okhttp3.internal.platform.OpenJSSEPlatform:
     public static final synthetic boolean access$isSupported$cp()
     public synthetic void <init>(kotlin.jvm.internal.DefaultConstructorMarker)
 com.kakacat.minitool.cleanfile.Presenter:
-    public static void lambda$selectAll$2(boolean,com.kakacat.minitool.cleanfile.model.FileItem)
-    public static void <clinit>()
     public void selectAll(int,boolean)
     public void deleteSelectedFile()
     public java.util.List getFileListList()
-    public static final synthetic boolean $assertionsDisabled
 com.facebook.imagepipeline.systrace.FrescoSystrace$ArgsBuilder
 com.google.android.material.resources.MaterialResources
 androidx.swiperefreshlayout.widget.SwipeRefreshLayout$8
@@ -22037,18 +22162,28 @@ androidx.appcompat.view.menu.ActionMenuItemView:
 androidx.core.content.res.TypedArrayUtils
 bolts.Task:
     public static bolts.Task$UnobservedExceptionHandler getUnobservedExceptionHandler()
+    public static bolts.Task cancelled()
     public static bolts.Task call(java.util.concurrent.Callable)
     public static void completeImmediately(bolts.TaskCompletionSource,bolts.Continuation,bolts.Task,java.util.concurrent.Executor)
+    public static void completeAfterTask(bolts.TaskCompletionSource,bolts.Continuation,bolts.Task,java.util.concurrent.Executor)
     public static void access$000(bolts.TaskCompletionSource,bolts.Continuation,bolts.Task,java.util.concurrent.Executor)
+    public static void access$100(bolts.TaskCompletionSource,bolts.Continuation,bolts.Task,java.util.concurrent.Executor)
     public boolean isCompleted()
     public bolts.Task continueWith(bolts.Continuation,java.util.concurrent.Executor)
-    public bolts.Task continueWith(bolts.Continuation)
+    public bolts.Task continueWithTask(bolts.Continuation,java.util.concurrent.Executor)
+    public bolts.Task continueWithTask(bolts.Continuation,java.util.concurrent.Executor,bolts.CancellationToken)
+    public bolts.Task onSuccess(bolts.Continuation,java.util.concurrent.Executor,bolts.CancellationToken)
     public boolean trySetError(java.lang.Exception)
     public static volatile bolts.Task$UnobservedExceptionHandler unobservedExceptionHandler
-    public static bolts.Task TASK_CANCELLED
 com.facebook.drawee.backends.pipeline.info.ForwardingImageOriginListener:
     public synchronized void addImageOriginListener(com.facebook.drawee.backends.pipeline.info.ImageOriginListener)
     public synchronized void removeImageOriginListener(com.facebook.drawee.backends.pipeline.info.ImageOriginListener)
+com.kakacat.minitool.appInfo.model.bean.ApiPercentBean:
+    public int getIconId()
+    public java.lang.String getVersionName()
+    public java.lang.String getVersionApi()
+    public int getAppNum()
+    public java.lang.String getAppPercent()
 androidx.fragment.app.FragmentManager$StartEnterTransitionListener:
     public void onStartEnterTransition()
     public void startListening()
@@ -22106,7 +22241,6 @@ okhttp3.internal.connection.RealCall:
     public final okhttp3.internal.connection.RealConnection getConnection()
     public final okhttp3.internal.connection.Exchange getInterceptorScopedExchange$okhttp()
     public okhttp3.internal.connection.RealCall clone()
-    public okhttp3.Response execute()
     public final void enterNetworkInterceptorExchange(okhttp3.Request,boolean)
     public final okhttp3.internal.connection.Exchange initExchange$okhttp(okhttp3.internal.http.RealInterceptorChain)
     public final void timeoutEarlyExit()
@@ -22129,24 +22263,26 @@ android.support.v4.media.session.IMediaSession$Stub
 com.kakacat.minitool.inquireip.InquireIpActivity:
     public void initData()
     public void initView()
-    public void setPresenter(com.kakacat.minitool.inquireip.Contract$Presenter)
+    public com.kakacat.minitool.inquireip.Contract$Presenter getPresenter()
     public android.content.Context getContext()
     public final void initToolbar()
 androidx.viewpager.widget.PagerAdapter:
+    public void startUpdate(android.view.ViewGroup)
     public java.lang.Object instantiateItem(android.view.ViewGroup,int)
     public void setPrimaryItem(android.view.ViewGroup,int,java.lang.Object)
+    public void finishUpdate(android.view.ViewGroup)
     public void startUpdate()
     public java.lang.Object instantiateItem()
     public void destroyItem()
     public void setPrimaryItem()
     public void finishUpdate()
-    public abstract boolean isViewFromObject(android.view.View,java.lang.Object)
     public android.os.Parcelable saveState()
-    public void restoreState(android.os.Parcelable,java.lang.ClassLoader)
+    public void restoreState()
     public int getItemPosition()
     public void registerDataSetObserver(android.database.DataSetObserver)
     public void unregisterDataSetObserver(android.database.DataSetObserver)
     public void setViewPagerObserver(android.database.DataSetObserver)
+    public java.lang.CharSequence getPageTitle()
     public float getPageWidth()
     public android.database.DataSetObserver mViewPagerObserver
 kotlin.collections.ArrayAsCollection:
@@ -22158,7 +22294,6 @@ com.facebook.imagepipeline.producers.BaseConsumer:
 androidx.appcompat.widget.ToolbarWidgetWrapper:
     public void <init>(androidx.appcompat.widget.Toolbar,boolean,int)
     public void setDefaultNavigationContentDescription(int)
-    public void setTitle(java.lang.CharSequence)
     public void setSubtitle(java.lang.CharSequence)
     public void setLogo(android.graphics.drawable.Drawable)
     public void setCustomView(android.view.View)
@@ -22189,7 +22324,6 @@ androidx.viewpager2.widget.ViewPager2:
     public static void <clinit>()
     public boolean isFakeDragging()
     public boolean isUserInputEnabled()
-    public void registerOnPageChangeCallback(androidx.viewpager2.widget.ViewPager2$OnPageChangeCallback)
     public void unregisterOnPageChangeCallback(androidx.viewpager2.widget.ViewPager2$OnPageChangeCallback)
     public void requestTransform()
     public final androidx.recyclerview.widget.RecyclerView$OnChildAttachStateChangeListener enforceChildFillListener()
@@ -22201,6 +22335,19 @@ com.facebook.imagepipeline.producers.ThrottlingProducer$ThrottlerConsumer:
     public void <init>(com.facebook.imagepipeline.producers.ThrottlingProducer,com.facebook.imagepipeline.producers.Consumer)
 androidx.fragment.app.Fragment$1
 androidx.appcompat.resources.R$styleable
+com.kakacat.minitool.epidemicinquiry.model.ChildBean:
+    public java.lang.String getCityName()
+    public java.lang.String getCurrentConfirmedCount()
+    public java.lang.String getConfirmedCount()
+    public java.lang.String getSusPectedCount()
+    public java.lang.String getCuredCount()
+    public java.lang.String getDeadCount()
+    public java.lang.String cityName
+    public java.lang.String currentConfirmedCount
+    public java.lang.String confirmedCount
+    public java.lang.String susPectedCount
+    public java.lang.String curedCount
+    public java.lang.String deadCount
 com.facebook.imagepipeline.request.Postprocessor
 androidx.loader.content.Loader:
     public void deliverCancellation()
@@ -22257,6 +22404,23 @@ androidx.constraintlayout.widget.ConstraintLayout:
     public int mLastMeasureWidthMode
     public int mLastMeasureHeightMode
     public androidx.constraintlayout.solver.Metrics mMetrics
+com.kakacat.minitool.wifipasswordview.Adapter:
+    public com.kakacat.minitool.wifipasswordview.Adapter$ViewHolder onCreateViewHolder(android.view.ViewGroup)
+    public void onBindViewHolder(com.kakacat.minitool.wifipasswordview.Adapter$ViewHolder,int)
+    public void setLongClickListener(com.kakacat.minitool.common.myinterface.RecycleViewItemOnLongClickListener)
+com.kakacat.minitool.epidemicinquiry.model.GroupBean:
+    public java.lang.String getLocation()
+    public void setLocation(java.lang.String)
+    public java.lang.String getCurrentConfirmCount()
+    public void setCurrentConfirmCount(java.lang.String)
+    public java.lang.String getTotalConfirmCount()
+    public void setTotalConfirmCount(java.lang.String)
+    public java.lang.String getSusPectCount()
+    public void setSusPectCount(java.lang.String)
+    public java.lang.String getCuredCount()
+    public void setCuredCount(java.lang.String)
+    public java.lang.String getDeadCount()
+    public void setDeadCount(java.lang.String)
 okhttp3.internal.http.BridgeInterceptor:
     public final java.lang.String cookieHeader(java.util.List)
 androidx.print.PrintHelper:
@@ -22274,6 +22438,14 @@ androidx.appcompat.widget.ActivityChooserView$Callbacks:
 com.facebook.imagepipeline.producers.LocalFetchProducer$1:
     public com.facebook.imagepipeline.image.EncodedImage getResult()
     public void disposeResult(com.facebook.imagepipeline.image.EncodedImage)
+com.kakacat.minitool.epidemicinquiry.EpidemicInquiryActivity:
+    public void initData()
+    public void initView()
+    public void onUpdateViewSuccessful()
+    public void onUpdateViewError(java.lang.String)
+    public com.kakacat.minitool.epidemicinquiry.Contract$Presenter getPresenter()
+    public android.content.Context getContext()
+    public final java.util.List getTabNameList()
 androidx.core.view.MarginLayoutParamsCompat
 com.facebook.drawee.drawable.VisibilityCallback:
     public abstract void onVisibilityChange(boolean)
@@ -22342,6 +22514,17 @@ com.facebook.imagepipeline.producers.ResizeAndRotateProducer:
 com.google.gson.internal.bind.TypeAdapters$17:
     public java.math.BigDecimal read(com.google.gson.stream.JsonReader)
     public void write(com.google.gson.stream.JsonWriter,java.math.BigDecimal)
+com.kakacat.minitool.todayinhistory.model.Article:
+    public java.lang.String getTitle()
+    public java.lang.String getPic()
+    public java.lang.String getYear()
+    public java.lang.String getMonth()
+    public java.lang.String getDay()
+    public java.lang.String title
+    public java.lang.String pic
+    public java.lang.String year
+    public java.lang.String month
+    public java.lang.String day
 com.google.android.material.shape.ShapeAppearanceModel:
     public static com.google.android.material.shape.ShapeAppearanceModel$Builder builder()
     public static com.google.android.material.shape.ShapeAppearanceModel$Builder builder(android.content.Context,android.util.AttributeSet,int,int,int)
@@ -22398,6 +22581,20 @@ com.facebook.imagepipeline.cache.DefaultCacheKeyFactory:
     public com.facebook.cache.common.CacheKey getEncodedCacheKey(com.facebook.imagepipeline.request.ImageRequest,android.net.Uri,java.lang.Object)
     public android.net.Uri getCacheKeySourceUri(android.net.Uri)
 androidx.transition.ViewOverlayApi14$OverlayViewGroup
+com.kakacat.minitool.inquireip.IpBean:
+    public static boolean checkIp(java.lang.String)
+    public static void <clinit>()
+    public java.lang.String getCountry()
+    public void setCountry(java.lang.String)
+    public java.lang.String getProvince()
+    public void setProvince(java.lang.String)
+    public java.lang.String getCity()
+    public void setCity(java.lang.String)
+    public java.lang.String getIsp()
+    public void setIsp(java.lang.String)
+    public java.lang.String getIpAddress()
+    public java.lang.String ipAddress
+    public static final synthetic boolean $assertionsDisabled
 com.google.android.material.ripple.RippleDrawableCompat$1
 com.google.android.material.dialog.MaterialDialogs
 kotlin.comparisons.ComparisonsKt___ComparisonsKt
@@ -22406,6 +22603,12 @@ com.facebook.imagepipeline.common.BytesRange:
     public static com.facebook.imagepipeline.common.BytesRange from(int)
     public static com.facebook.imagepipeline.common.BytesRange toMax(int)
     public boolean contains(com.facebook.imagepipeline.common.BytesRange)
+com.kakacat.minitool.epidemicinquiry.TitleView:
+    public void <init>(android.content.Context,android.util.AttributeSet)
+    public void <init>(android.content.Context,android.util.AttributeSet,int)
+    public void <init>(android.content.Context,android.util.AttributeSet,int,int)
+    public final void init(android.content.Context,android.util.AttributeSet)
+    public android.content.Context context
 androidx.customview.widget.FocusStrategy$CollectionAdapter:
     public abstract java.lang.Object get(java.lang.Object,int)
     public abstract int size(java.lang.Object)
@@ -22461,10 +22664,6 @@ com.facebook.imagepipeline.bitmaps.GingerbreadBitmapFactory
 androidx.core.text.PrecomputedTextCompat$Params$Builder
 kotlin.collections.ArraysKt
 com.facebook.imagepipeline.cache.EncodedCountingMemoryCacheFactory
-com.kakacat.minitool.epidemicsituation.MyAdapter:
-    public void setOnClickListener(com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener)
-    public com.kakacat.minitool.epidemicsituation.MyAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup)
-    public void onBindViewHolder(com.kakacat.minitool.epidemicsituation.MyAdapter$ViewHolder,int)
 okhttp3.CacheControl:
     public void <init>(boolean,boolean,int,int,boolean,boolean,boolean,int,int,boolean,boolean,boolean,java.lang.String)
     public final boolean noCache()
@@ -22603,10 +22802,10 @@ com.facebook.imagepipeline.systrace.DefaultFrescoSystrace:
     public boolean isTracing()
 okhttp3.Callback
 com.kakacat.minitool.textencryption.TextEncryptionActivity:
-    public final void initWidget()
-    public final void setListener()
-    public final void initAdapter()
-    public final java.lang.String getCode(java.lang.String)
+    public void initData()
+    public void initView()
+    public void onEncryptResult(java.lang.String)
+    public android.content.Context getContext()
 com.facebook.drawee.backends.pipeline.DefaultDrawableFactory:
     public static boolean hasTransformableRotationAngle(com.facebook.imagepipeline.image.CloseableStaticBitmap)
     public static boolean hasTransformableExifOrientation(com.facebook.imagepipeline.image.CloseableStaticBitmap)
@@ -22680,6 +22879,7 @@ com.facebook.imagepipeline.datasource.CloseableProducerToDataSourceAdapter:
     public com.facebook.common.references.CloseableReference getResult()
     public void closeResult(com.facebook.common.references.CloseableReference)
     public void onNewResultImpl(com.facebook.common.references.CloseableReference,int)
+com.kakacat.minitool.common.util.ThreadUtil
 androidx.core.content.ContextCompat:
     public static android.content.res.ColorStateList getColorStateList(android.content.Context,int)
     public static android.util.TypedValue sTempValue
@@ -22693,6 +22893,11 @@ com.google.android.material.animation.MotionSpec:
 androidx.core.widget.EdgeEffectCompat:
     public static void onPull(android.widget.EdgeEffect,float,float)
     public android.widget.EdgeEffect mEdgeEffect
+com.kakacat.minitool.epidemicinquiry.fragment.MyFragment:
+    public void updateView()
+    public final void initTitleView(android.view.View)
+    public final void initExpandableListView(android.view.View)
+    public final void setListViewHeightBasedOnChildren(android.widget.ListView)
 androidx.core.view.accessibility.AccessibilityViewCommand$SetSelectionArguments
 androidx.fragment.app.FragmentStateManager$1
 com.facebook.imagepipeline.memory.DummyBitmapPool:
@@ -22802,6 +23007,13 @@ okhttp3.CertificatePinner$Pin:
     public final java.lang.String getHashAlgorithm()
     public final okio.ByteString getHash()
     public final boolean matchesHostname(java.lang.String)
+com.kakacat.minitool.wifipasswordview.model.Wifi:
+    public java.lang.String getWifiImage()
+    public void setWifiImage(java.lang.String)
+    public java.lang.String getWifiName()
+    public void setWifiName(java.lang.String)
+    public java.lang.String getWifiPwd()
+    public void setWifiPwd(java.lang.String)
 androidx.core.view.MenuItemCompat
 com.facebook.drawee.controller.AbstractDraweeControllerBuilder:
     public static java.lang.String generateUniqueControllerId()
@@ -22836,6 +23048,14 @@ kotlin.ranges.IntRange:
     public static final kotlin.ranges.IntRange getEMPTY()
     public java.lang.Integer getStart()
     public java.lang.Integer getEndInclusive()
+com.kakacat.minitool.bingpic.Model:
+    public static com.kakacat.minitool.bingpic.Model getInstance()
+    public static void <clinit>()
+    public void loadMore()
+    public java.lang.String saveImage(com.facebook.drawee.view.SimpleDraweeView)
+    public java.util.List getAddressList()
+    public final java.lang.String getNextAddress()
+    public static final synthetic boolean $assertionsDisabled
 androidx.loader.content.Loader$OnLoadCompleteListener:
     public abstract void onLoadComplete(androidx.loader.content.Loader,java.lang.Object)
 okhttp3.internal.http.RetryAndFollowUpInterceptor:
@@ -22920,11 +23140,11 @@ com.google.android.material.tabs.TabLayout:
     public void setScrollPosition(int,float,boolean)
     public void addTab(com.google.android.material.tabs.TabLayout$Tab)
     public void addTab(com.google.android.material.tabs.TabLayout$Tab,int,boolean)
+    public void addOnTabSelectedListener(com.google.android.material.tabs.TabLayout$OnTabSelectedListener)
     public void addOnTabSelectedListener(com.google.android.material.tabs.TabLayout$BaseOnTabSelectedListener)
     public void removeOnTabSelectedListener(com.google.android.material.tabs.TabLayout$BaseOnTabSelectedListener)
     public com.google.android.material.tabs.TabLayout$Tab createTabFromPool()
     public boolean releaseFromTabPool(com.google.android.material.tabs.TabLayout$Tab)
-    public void removeAllTabs()
     public void setupWithViewPager(androidx.viewpager.widget.ViewPager,boolean)
     public void selectTab(com.google.android.material.tabs.TabLayout$Tab)
     public final void addTabFromItemView(com.google.android.material.tabs.TabItem)
@@ -22941,8 +23161,8 @@ okio.internal.SegmentedByteStringKt
 okhttp3.Dns:
     public static final okhttp3.Dns$Companion Companion
 com.kakacat.minitool.wifipasswordview.Presenter:
+    public void copyToClipboard(int)
     public java.util.List getWifiList()
-    public final boolean getWifiConfig()
 androidx.appcompat.widget.ActionMenuPresenter$SavedState$1:
     public androidx.appcompat.widget.ActionMenuPresenter$SavedState createFromParcel(android.os.Parcel)
     public androidx.appcompat.widget.ActionMenuPresenter$SavedState[] newArray(int)
@@ -23000,10 +23220,6 @@ kotlin.collections.EmptyMap:
     public java.util.Set getKeys()
     public java.util.Collection getValues()
 androidx.transition.AnimatorUtils$AnimatorPauseListenerCompat
-com.kakacat.minitool.textencryption.ItemAdapter:
-    public com.kakacat.minitool.textencryption.ItemAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup)
-    public void onBindViewHolder(com.kakacat.minitool.textencryption.ItemAdapter$ViewHolder,int)
-    public void setFocusChangeListener(android.view.View$OnFocusChangeListener)
 com.facebook.binaryresource.FileBinaryResource:
     public java.io.File getFile()
     public java.io.InputStream openStream()
@@ -23041,15 +23257,8 @@ com.facebook.cache.disk.DefaultDiskStorage:
     public final void mkdirs(java.io.File,java.lang.String)
     public final java.lang.String getFilename(java.lang.String)
     public final com.facebook.cache.disk.DefaultDiskStorage$FileInfo getShardFileInfo(java.io.File)
-com.kakacat.minitool.appInfo.model.ApiPercent:
-    public int getIconId()
-    public java.lang.String getVersionName()
-    public java.lang.String getVersionApi()
-    public int getAppNum()
-    public java.lang.String getAppPercent()
 com.kakacat.minitool.appInfo.activity.AppDetailActivity:
     public void initData()
-    public void setPresenter(com.kakacat.minitool.appInfo.contract.AppDetailContract$Presenter)
     public void initView()
     public android.content.Context getContext()
     public void saveIcon()
@@ -23066,6 +23275,7 @@ kotlin.TuplesKt
 kotlin.sequences.SequencesKt__SequenceBuilderKt
 androidx.appcompat.app.ToolbarActionBar:
     public android.view.Window$Callback getWrappedWindowCallback()
+    public void setDisplayOptions(int,int)
     public void populateOptionsMenu()
 com.facebook.imagepipeline.memory.BasePool:
     public void <init>(com.facebook.common.memory.MemoryTrimmableRegistry,com.facebook.imagepipeline.memory.PoolParams,com.facebook.imagepipeline.memory.PoolStatsTracker,boolean)
@@ -23083,6 +23293,8 @@ com.facebook.drawee.interfaces.SimpleDraweeControllerBuilder:
 com.kakacat.minitool.wifipasswordview.WifiPwdActivity:
     public void initData()
     public void initView()
+    public com.kakacat.minitool.wifipasswordview.Contract$Presenter getPresenter()
+    public void onCopyCallback(java.lang.String)
     public void onGetWifiDataCallBack(java.lang.String)
     public android.content.Context getContext()
     public final void initToolbar()
@@ -23129,8 +23341,17 @@ com.google.android.material.floatingactionbutton.FloatingActionButtonImpl$Disabl
     public final synthetic com.google.android.material.floatingactionbutton.FloatingActionButtonImpl this$0
 okio.Okio__OkioKt
 com.facebook.imagepipeline.nativecode.WebpTranscoder
-com.kakacat.minitool.main.MainActivity$1:
-    public final synthetic com.kakacat.minitool.main.MainActivity this$0
+com.kakacat.minitool.todayinhistory.model.Model:
+    public static com.kakacat.minitool.todayinhistory.model.Model getInstance()
+    public void initData()
+    public boolean handleHistoryResponse(okhttp3.Response)
+    public java.util.List getArticleList()
+    public java.lang.String getAddress()
+    public int getYear()
+    public int getMonth()
+    public void setMonth(int)
+    public int getDay()
+    public void setDay(int)
 kotlin.collections.CollectionsKt___CollectionsJvmKt
 okhttp3.internal.http.ExchangeCodec$Companion
 com.google.android.material.drawable.DrawableUtils
@@ -23146,10 +23367,6 @@ com.facebook.imagepipeline.producers.NetworkFetcher:
     public abstract void onFetchCompletion(com.facebook.imagepipeline.producers.FetchState,int)
     public abstract java.util.Map getExtraMap(com.facebook.imagepipeline.producers.FetchState,int)
 okhttp3.RequestBody:
-    public void <init>()
-    public abstract okhttp3.MediaType contentType()
-    public long contentLength()
-    public abstract void writeTo(okio.BufferedSink)
     public boolean isDuplex()
     public boolean isOneShot()
 com.facebook.common.media.MimeTypeMapWrapper:
@@ -23252,6 +23469,8 @@ androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState:
     public androidx.appcompat.view.menu.MenuView getListMenuView(androidx.appcompat.view.menu.MenuPresenter$Callback)
     public int x
     public int y
+com.kakacat.minitool.epidemicinquiry.Contract$Presenter:
+    public abstract java.util.List getGroupList()
 com.facebook.imagepipeline.memory.DefaultBitmapPoolParams:
     public static int getMaxSizeHardCap()
 com.google.android.material.animation.TransformationCallback:
@@ -23347,7 +23566,12 @@ androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$1
 com.facebook.imagepipeline.cache.CountingMemoryCache$1:
     public int getSizeInBytes(com.facebook.imagepipeline.cache.CountingMemoryCache$Entry)
     public final synthetic com.facebook.imagepipeline.cache.CountingMemoryCache this$0
-com.kakacat.minitool.common.util.HttpUtil
+com.kakacat.minitool.common.util.HttpUtil:
+    public void <init>()
+    public static void sendOkHttpRequest(java.lang.String,com.kakacat.minitool.common.myinterface.HttpCallback,okhttp3.RequestBody)
+    public static okhttp3.OkHttpClient getInstance()
+    public static void <clinit>()
+    public static final synthetic boolean $assertionsDisabled
 okhttp3.internal.authenticator.JavaNetAuthenticator:
     public void <init>(okhttp3.Dns)
 androidx.core.text.TextDirectionHeuristicsCompat$TextDirectionHeuristicLocale
@@ -23366,6 +23590,7 @@ com.facebook.imagepipeline.cache.CountingLruMap:
     public synchronized java.lang.Object getFirstKey()
     public synchronized java.lang.Object get(java.lang.Object)
 com.kakacat.minitool.wifipasswordview.Contract$View:
+    public abstract void onCopyCallback(java.lang.String)
     public abstract void onGetWifiDataCallBack(java.lang.String)
 androidx.transition.AnimatorUtils
 androidx.recyclerview.widget.RecyclerView$LayoutManager:
@@ -23649,9 +23874,9 @@ androidx.loader.content.ModernAsyncTask:
     public void finish(java.lang.Object)
     public static volatile java.util.concurrent.Executor sDefaultExecutor
 com.kakacat.minitool.currencyconversion.Presenter:
-    public static synthetic com.kakacat.minitool.currencyconversion.Contract$View access$000(com.kakacat.minitool.currencyconversion.Presenter)
+    public static synthetic com.kakacat.minitool.currencyconversion.model.Model access$000(com.kakacat.minitool.currencyconversion.Presenter)
+    public static synthetic com.kakacat.minitool.currencyconversion.Contract$View access$100(com.kakacat.minitool.currencyconversion.Presenter)
     public java.util.List getCountryList()
-    public final void fillCountryList()
 bolts.Task$UnobservedExceptionHandler
 androidx.swiperefreshlayout.widget.CircleImageView:
     public void setAnimationListener(android.view.animation.Animation$AnimationListener)
@@ -23669,7 +23894,6 @@ androidx.viewpager2.widget.ViewPager2$DataSetChangeObserver:
     public void <init>()
 com.google.gson.internal.ConstructorConstructor$13:
     public final synthetic com.google.gson.internal.ConstructorConstructor this$0
-com.kakacat.minitool.common.util.JsonUtil
 com.facebook.imagepipeline.producers.LocalExifThumbnailProducer:
     public static synthetic com.facebook.common.memory.PooledByteBufferFactory access$000(com.facebook.imagepipeline.producers.LocalExifThumbnailProducer)
     public static com.facebook.imagepipeline.image.EncodedImage access$100(com.facebook.imagepipeline.producers.LocalExifThumbnailProducer,com.facebook.common.memory.PooledByteBuffer,android.media.ExifInterface)
@@ -23719,6 +23943,11 @@ com.google.android.material.elevation.ElevationOverlayProvider:
     public boolean isThemeElevationOverlayEnabled()
     public final boolean isThemeSurfaceColor(int)
 androidx.core.graphics.drawable.DrawableCompat
+com.kakacat.minitool.epidemicinquiry.Presenter:
+    public static synthetic com.kakacat.minitool.epidemicinquiry.model.Model access$000(com.kakacat.minitool.epidemicinquiry.Presenter)
+    public static synthetic com.kakacat.minitool.epidemicinquiry.Contract$View access$100(com.kakacat.minitool.epidemicinquiry.Presenter)
+    public void requestData()
+    public java.util.List getGroupList()
 com.google.android.material.floatingactionbutton.FloatingActionButton:
     public void <init>(android.content.Context,android.util.AttributeSet,int)
     public static synthetic int access$000(com.google.android.material.floatingactionbutton.FloatingActionButton)
@@ -23730,6 +23959,8 @@ com.google.android.material.floatingactionbutton.FloatingActionButton:
 okhttp3.Request$Builder:
     public okhttp3.Request$Builder url(java.lang.String)
     public okhttp3.Request$Builder headers(okhttp3.Headers)
+    public okhttp3.Request$Builder get()
+    public okhttp3.Request$Builder post(okhttp3.RequestBody)
 com.facebook.imagepipeline.cache.CountingMemoryCache:
     public static void maybeNotifyExclusiveEntryInsertion(com.facebook.imagepipeline.cache.CountingMemoryCache$Entry)
     public static void access$000(com.facebook.imagepipeline.cache.CountingMemoryCache,com.facebook.imagepipeline.cache.CountingMemoryCache$Entry)
@@ -23770,7 +24001,6 @@ com.facebook.imagepipeline.image.CloseableImage:
     public void setOriginalEncodedImageInfo(com.facebook.imagepipeline.image.OriginalEncodedImageInfo)
 com.kakacat.minitool.appInfo.contract.AppInfoContract$View:
     public abstract void onUpdateDataSet()
-    public abstract void onUpdateAppInfoDataSet()
 androidx.viewpager.widget.ViewPager$MyAccessibilityDelegate:
     public final boolean canScroll()
 com.facebook.imagepipeline.core.NativeCodeSetup:
@@ -23873,13 +24103,12 @@ com.google.android.material.bottomappbar.BottomAppBarTopEdgeTreatment:
 com.google.gson.internal.bind.TypeAdapters$10:
     public java.util.concurrent.atomic.AtomicIntegerArray read(com.google.gson.stream.JsonReader)
     public void write(com.google.gson.stream.JsonWriter,java.util.concurrent.atomic.AtomicIntegerArray)
-com.kakacat.minitool.epidemicsituation.DetailPopupWindow:
-    public final void init()
-    public final void setText()
 com.google.android.material.datepicker.CalendarConstraints$1:
     public com.google.android.material.datepicker.CalendarConstraints createFromParcel(android.os.Parcel)
     public com.google.android.material.datepicker.CalendarConstraints[] newArray(int)
 com.facebook.common.references.HasBitmap
+okio.RealBufferedSink:
+    public okio.BufferedSink write(byte[],int,int)
 com.facebook.imagepipeline.transcoder.JpegTranscoderUtils:
     public static float determineResizeRatio(int,int)
     public static int roundNumerator(float,float)
@@ -23888,15 +24117,18 @@ com.facebook.imagepipeline.transcoder.JpegTranscoderUtils:
     public static android.graphics.Matrix getTransformationMatrixFromInvertedExif(int)
     public static int extractOrientationFromMetadata(com.facebook.imagepipeline.image.EncodedImage)
 com.kakacat.minitool.main.MainActivity:
+    public static synthetic com.google.android.material.bottomnavigation.BottomNavigationView access$000(com.kakacat.minitool.main.MainActivity)
     public void initData()
     public void initView()
-    public void showChangeThemeDialog()
     public android.content.Context getContext()
+    public final androidx.viewpager2.widget.ViewPager2$OnPageChangeCallback getOnPageChangeCallback()
+    public final com.google.android.material.bottomnavigation.BottomNavigationView$OnNavigationItemSelectedListener getBottomOnNavigationItemSelectedListener()
+    public final com.google.android.material.navigation.NavigationView$OnNavigationItemSelectedListener getOnNavigationItemSelectedListener()
 okio.BufferedSink:
     public abstract okio.BufferedSink write(byte[],int,int)
     public abstract okio.BufferedSink emitCompleteSegments()
 com.kakacat.minitool.todayinhistory.Contract$View:
-    public abstract void onUpdateDataCallBack(int)
+    public abstract void onUpdateDataCallBack(java.lang.String,boolean)
 com.google.gson.internal.bind.TypeAdapters$23:
     public java.net.InetAddress read(com.google.gson.stream.JsonReader)
     public void write(com.google.gson.stream.JsonWriter,java.net.InetAddress)
@@ -23904,7 +24136,8 @@ kotlin.comparisons.ComparisonsKt__ComparisonsKt
 androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView:
     public void <init>(android.content.Context,android.util.AttributeSet,int)
 com.kakacat.minitool.phoneartribution.Presenter:
-    public static synthetic com.kakacat.minitool.phoneartribution.Contract$View access$000(com.kakacat.minitool.phoneartribution.Presenter)
+    public static synthetic com.kakacat.minitool.phoneartribution.model.Model access$000(com.kakacat.minitool.phoneartribution.Presenter)
+    public static synthetic com.kakacat.minitool.phoneartribution.Contract$View access$100(com.kakacat.minitool.phoneartribution.Presenter)
     public void initData()
 okhttp3.internal.http1.Http1ExchangeCodec:
     public static void <clinit>()
@@ -24025,6 +24258,8 @@ com.google.gson.internal.Excluder$1:
 com.google.gson.internal.bind.TypeAdapters$4:
     public java.lang.Boolean read(com.google.gson.stream.JsonReader)
     public void write(com.google.gson.stream.JsonWriter,java.lang.Boolean)
+com.google.android.material.tabs.TabLayoutMediator:
+    public void attach()
 androidx.viewpager2.adapter.FragmentStateAdapter$5:
     public final synthetic androidx.viewpager2.adapter.FragmentStateAdapter this$0
 com.google.gson.internal.$Gson$Preconditions
@@ -24110,6 +24345,8 @@ com.google.android.material.textfield.PasswordToggleEndIconDelegate$3:
 okio.Timeout:
     public long timeoutNanos()
     public static final okio.Timeout$Companion Companion
+androidx.viewpager2.widget.ViewPager2$PageTransformer:
+    public abstract void transformPage(android.view.View,float)
 androidx.fragment.app.FragmentTransition$Callback:
     public abstract void onStart(androidx.fragment.app.Fragment,androidx.core.os.CancellationSignal)
     public abstract void onComplete(androidx.fragment.app.Fragment,androidx.core.os.CancellationSignal)
@@ -24315,10 +24552,6 @@ androidx.appcompat.widget.AppCompatSpinner$DropdownPopup:
 kotlin.jvm.internal.Lambda:
     public final int arity
 okhttp3.MediaType$Companion
-com.kakacat.minitool.wifipasswordview.MyAdapter$ViewHolder:
-    public static synthetic com.kakacat.minitool.common.ui.view.CircleProgressView access$000(com.kakacat.minitool.wifipasswordview.MyAdapter$ViewHolder)
-    public static synthetic android.widget.TextView access$100(com.kakacat.minitool.wifipasswordview.MyAdapter$ViewHolder)
-    public static synthetic android.widget.TextView access$200(com.kakacat.minitool.wifipasswordview.MyAdapter$ViewHolder)
 com.facebook.imagepipeline.cache.NoOpImageCacheStatsTracker:
     public static synchronized com.facebook.imagepipeline.cache.NoOpImageCacheStatsTracker getInstance()
     public static void <clinit>()
@@ -24504,12 +24737,11 @@ com.facebook.common.internal.ImmutableList:
 com.facebook.datasource.SimpleDataSource:
     public static com.facebook.datasource.SimpleDataSource create()
 com.kakacat.minitool.translation.Presenter:
-    public static synthetic com.kakacat.minitool.translation.Contract$View access$000(com.kakacat.minitool.translation.Presenter)
+    public static synthetic com.kakacat.minitool.translation.model.Model access$000(com.kakacat.minitool.translation.Presenter)
+    public static synthetic com.kakacat.minitool.translation.Contract$View access$100(com.kakacat.minitool.translation.Presenter)
     public java.util.List getCollectionList()
     public void addToMyFavourite(java.lang.String,java.lang.String)
     public void requestData(java.lang.String,java.lang.CharSequence,java.lang.CharSequence)
-    public java.lang.String handleTranslationResponse(okhttp3.Response)
-    public final java.lang.String getAddress(java.lang.String,java.lang.CharSequence,java.lang.CharSequence)
 com.facebook.imagepipeline.nativecode.ImagePipelineNativeLoader:
     public static final java.util.List DEPENDENCIES
 okhttp3.internal.HostnamesKt
@@ -24533,11 +24765,8 @@ androidx.appcompat.widget.ListPopupWindow$2
 kotlin.ranges.IntProgression$Companion
 kotlin.text.StringsKt
 com.kakacat.minitool.appInfo.presenter.AppInfoPresenter:
-    public java.util.List getApiPercentList()
-    public java.util.List getPackageInfoList()
-    public java.util.List getAppInfoList()
-    public final void initApiPercentData()
-    public final void initAppInfoData()
+    public java.util.List getApiPercentBeanList()
+    public java.util.List getAppInfoBeanList()
 com.google.android.material.tabs.TabLayout$TabView:
     public static void access$300(com.google.android.material.tabs.TabLayout$TabView,android.graphics.Canvas)
     public static synthetic boolean access$400(com.google.android.material.tabs.TabLayout$TabView)
@@ -24653,6 +24882,10 @@ androidx.appcompat.view.menu.BaseMenuPresenter:
     public void onCloseMenu(androidx.appcompat.view.menu.MenuBuilder,boolean)
     public void setId(int)
     public android.view.LayoutInflater mInflater
+com.kakacat.minitool.textencryption.Presenter:
+    public void initData()
+    public java.lang.String[] getEncryptionMethods()
+    public void encryptText(java.lang.String,java.lang.CharSequence)
 okhttp3.internal.platform.Platform:
     public static final synthetic okhttp3.internal.platform.Platform access$getPlatform$cp()
 androidx.appcompat.widget.SwitchCompat:

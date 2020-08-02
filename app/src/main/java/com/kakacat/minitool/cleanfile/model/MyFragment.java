@@ -8,11 +8,11 @@ import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.button.MaterialButton;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.cleanfile.adapter.FileAdapter;
 
@@ -31,16 +31,16 @@ public class MyFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_layout,container,false);
+        View view = inflater.inflate(R.layout.fragment_layout, container, false);
         RecyclerView rv = view.findViewById(R.id.rv_file);
         adapter = new FileAdapter(fileItemList);
         adapter.setOnClickListener((v, position) -> {
             FileItem fileItem = fileItemList.get(position);
             CheckBox checkBox = v.findViewById(R.id.cb_selected);
-            if(fileItem.getChecked()){
+            if (fileItem.getChecked()) {
                 checkBox.setChecked(false);
                 fileItem.setChecked(false);
-            }else{
+            } else {
                 checkBox.setChecked(true);
                 fileItem.setChecked(true);
             }
@@ -59,11 +59,11 @@ public class MyFragment extends Fragment {
         return isSelectedAll;
     }
 
-    public void setSelectedAll(boolean selectedAll, AppCompatImageView btn) {
+    public void setSelectedAll(boolean selectedAll, MaterialButton btn) {
         isSelectedAll = selectedAll;
-        if(isSelectedAll()){
+        if (isSelectedAll()) {
             btn.setBackgroundResource(R.drawable.ic_clear);
-        }else{
+        } else {
             btn.setBackgroundResource(R.drawable.ic_select_all);
         }
     }

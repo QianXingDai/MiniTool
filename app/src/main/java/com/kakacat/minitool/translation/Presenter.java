@@ -1,173 +1,84 @@
 package com.kakacat.minitool.translation;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.text.TextUtils;
 
-import com.kakacat.minitool.common.constant.AppKey;
-import com.kakacat.minitool.common.constant.Host;
-import com.kakacat.minitool.common.constant.Result;
 import com.kakacat.minitool.common.myinterface.HttpCallback;
-import com.kakacat.minitool.common.util.EncryptionUtil;
 import com.kakacat.minitool.common.util.HttpUtil;
-import com.kakacat.minitool.common.util.SystemUtil;
+import com.kakacat.minitool.common.util.ThreadUtil;
+import com.kakacat.minitool.translation.model.Model;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 import okhttp3.Response;
 
 public class Presenter implements Contract.Presenter {
 
     private Contract.View view;
+    private Model model;
     private Context context;
-
-    private List<String> languageList1;
-    private List<String> languageList2;
-    private List<String> collectionList;
-    private SharedPreferences.OnSharedPreferenceChangeListener sharedPreferenceChangeListener;
-    private SharedPreferences sharedPreferences;
-    private SharedPreferences.Editor editor;
 
     public Presenter(Contract.View view) {
         this.view = view;
+        this.model = Model.getInstance();
         this.context = view.getContext();
     }
 
     @Override
     public void initData() {
-        languageList1 = getLanguageList1();
-        languageList2 = getLanguageList2();
+        model.initData();
     }
 
     @Override
-    public List<String> getLanguageList1(){
-        if(languageList1 == null){
-            languageList1 = new ArrayList<>();
-            Collections.addAll(languageList1,LanguageMap.getLanguages());
-        }
-        return languageList1;
+    public List<String> getLanguageList1() {
+        return model.getLanguageList1();
     }
 
     @Override
-    public List<String> getLanguageList2(){
-        if(languageList2 == null){
-            languageList2 = new ArrayList<>();
-            languageList2.addAll(Arrays.asList(LanguageMap.getLanguages()).subList(1, LanguageMap.getLanguages().length));
-        }
-        return languageList2;
+    public List<String> getLanguageList2() {
+        return model.getLanguageList2();
     }
 
     @Override
-    public List<String> getCollectionList(){
-        if(collectionList == null){
-            collectionList = new ArrayList<>();
-            Map<String,String> map = (Map<String, String>) getSharedPreferences().getAll();
-            collectionList.addAll(map.keySet());
-        }
-        return collectionList;
+    public List<String> getCollectionList() {
+        return model.getCollectionList(context);
     }
 
     @Override
-    public void addToMyFavourite(String source,String target) {
-        if(TextUtils.isEmpty(source)){
+    public void addToMyFavourite(String source, String target) {
+        if (TextUtils.isEmpty(source)) {
             view.onAddToMyFavouriteCallBack("请输入内容");
-        }else{
-            editor = getEditor();
-            String s = source + " > " + target;
-            editor.putString(s,s);
-            editor.commit();
+        } else {
+            model.addToMyFavourite(source, target, context);
             view.onAddToMyFavouriteCallBack("收藏成功");
         }
     }
 
     @Override
-    public void requestData(String input,CharSequence from,CharSequence to){
-        if(TextUtils.isEmpty(input)){
-            view.onRequestCallBack(null, Result.INPUT_ERROR);
-            return;
-        }
-        String address = getAddress(input,from,to);
-        HttpUtil.sendOkHttpRequest(address, new HttpCallback() {
-            int resultFlag = Result.REQUEST_ERROR;
-            @Override
-            public void onSuccess(Response response) {
-                String s = handleTranslationResponse(response);
-                if(TextUtils.isEmpty(s)){
-                    resultFlag = Result.HANDLE_FAIL;
-                }else{
-                    resultFlag = Result.HANDLE_SUCCESS;
+    public void requestData(String input, CharSequence from, CharSequence to) {
+        if (TextUtils.isEmpty(input)) {
+            view.onRequestCallBack(null, "输入错误");
+        } else {
+            String address = model.getAddress(input, from, to);
+            HttpUtil.sendOkHttpRequest(address, new HttpCallback() {
+                String result = "请求错误";
+
+                @Override
+                public void onSuccess(Response response) {
+                    String s = model.handleTranslationResponse(response);
+                    if (TextUtils.isEmpty(s)) {
+                        result = "处理错误";
+                    } else {
+                        result = "请求成功";
+                    }
+                    ThreadUtil.callInUiThread(() -> view.onRequestCallBack(s, result));
                 }
-                view.onRequestCallBack(s,resultFlag);
-            }
 
-            @Override
-            public void onError() {
-                view.onRequestCallBack(null,Result.REQUEST_ERROR);
-            }
-        });
-    }
-
-    private String getAddress(String input,CharSequence from,CharSequence to){
-        from = LanguageMap.getShortCode(from);
-        to = LanguageMap.getShortCode(to);
-        String random = String.valueOf((int) (Math.random() * 1000000));
-        String s = AppKey.TRANSLATE_APP_ID + input + random + AppKey.TRANSLATE_SECRET_KEY;
-        String sign = EncryptionUtil.encryptionMD5(s.getBytes(),false);
-        return Host.TRANSLATE_HOST +
-                "q=" + input +
-                "&from=" + from +
-                "&to=" + to +
-                "&appid=" + AppKey.TRANSLATE_APP_ID +
-                "&salt=" + random +
-                "&sign=" + sign;
-    }
-
-    @Override
-    public String handleTranslationResponse(Response response){
-        try{
-            String s = Objects.requireNonNull(response.body()).string();
-            JSONObject jsonObject = new JSONObject(s);
-            JSONObject jsonObject1 = jsonObject.getJSONArray("trans_result").getJSONObject(0);
-            return jsonObject1.getString("dst");
-        }catch (IOException | JSONException e){
-            e.printStackTrace();
+                @Override
+                public void onError() {
+                    ThreadUtil.callInUiThread(() -> view.onRequestCallBack(null, result));
+                }
+            });
         }
-        return null;
-    }
-
-    @Override
-    public SharedPreferences getSharedPreferences() {
-        if(sharedPreferences == null){
-            sharedPreferences = context.getSharedPreferences("MyFavourite",Context.MODE_PRIVATE);
-            sharedPreferences.registerOnSharedPreferenceChangeListener(getSharedPreferenceChangeListener());
-        }
-        return sharedPreferences;
-    }
-
-    private SharedPreferences.Editor getEditor() {
-        if(editor == null){
-            editor = getSharedPreferences().edit();
-        }
-        return editor;
-    }
-
-    @Override
-    public SharedPreferences.OnSharedPreferenceChangeListener getSharedPreferenceChangeListener(){
-        if(sharedPreferenceChangeListener == null){
-            sharedPreferenceChangeListener = (sharedPreferences, s) -> {
-                getCollectionList().add(sharedPreferences.getString(s,""));
-                SystemUtil.log("add " + s);
-            };
-        }
-        return sharedPreferenceChangeListener;
     }
 }

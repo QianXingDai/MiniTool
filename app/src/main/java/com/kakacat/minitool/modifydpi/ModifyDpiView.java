@@ -22,8 +22,8 @@ public class ModifyDpiView extends MyPopupWindow {
         this.contentView = contentView;
     }
 
-    public static ModifyDpiView getInstance(Activity activity, View parentView,View contentView,int width,int height){
-        if(modifyDpiView == null){
+    public static ModifyDpiView getInstance(Activity activity, View parentView, View contentView, int width, int height) {
+        if (modifyDpiView == null) {
             modifyDpiView = new ModifyDpiView(activity, contentView, width, height);
             modifyDpiView.parentView = parentView;
             modifyDpiView.initView();
@@ -32,15 +32,15 @@ public class ModifyDpiView extends MyPopupWindow {
         return modifyDpiView;
     }
 
-    private void initView(){
+    private void initView() {
         Button btClear = contentView.findViewById(R.id.iv_clear);
         Button btModifyDpi = contentView.findViewById(R.id.bt_modify_dpi);
         EditText etDpi = contentView.findViewById(R.id.edit_text);
         btClear.setOnClickListener(v -> dismiss());
         btModifyDpi.setOnClickListener(v -> {
             String val = etDpi.getText().toString();
-            if(TextUtils.isEmpty(val))
-                Snackbar.make(parentView,"输入错误",Snackbar.LENGTH_SHORT).show();
+            if (TextUtils.isEmpty(val))
+                Snackbar.make(parentView, "输入错误", Snackbar.LENGTH_SHORT).show();
             else
                 SystemUtil.modifyDpi(val);
         });

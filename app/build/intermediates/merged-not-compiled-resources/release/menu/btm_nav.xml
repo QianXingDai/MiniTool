@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/unsigned"
+        android:title="未签收"
+        android:icon="@drawable/ic_truck"/>
+
+    <item
+        android:id="@+id/signed"
+        android:title="已签收"
+        android:icon="@drawable/ic_right"/>
+
+    <item
+        android:id="@+id/all"
+        android:title="全部"
+        android:icon="@drawable/ic_all"/>
+
+</menu>

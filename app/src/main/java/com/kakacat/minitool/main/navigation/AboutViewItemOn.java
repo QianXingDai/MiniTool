@@ -32,8 +32,8 @@ public class AboutViewItemOn extends MyPopupWindow implements RecycleViewItemOnC
         this.context = context;
     }
 
-    public static AboutViewItemOn getInstance(Activity activity, View contentView, int width, int height){
-        if(aboutView == null){
+    public static AboutViewItemOn getInstance(Activity activity, View contentView, int width, int height) {
+        if (aboutView == null) {
             aboutView = new AboutViewItemOn(activity, contentView, width, height);
             aboutView.initView();
         }
@@ -41,12 +41,12 @@ public class AboutViewItemOn extends MyPopupWindow implements RecycleViewItemOnC
     }
 
 
-    private void initView(){
+    private void initView() {
         RecyclerView recyclerView = contentView.findViewById(R.id.rv_about);
         List<AboutItem> list = new ArrayList<>();
 
-        list.add(new AboutItem(R.drawable.ic_black_star,"给我好评"));
-        list.add(new AboutItem(R.drawable.ic_version,"版本状态"));
+        list.add(new AboutItem(R.drawable.ic_black_star, "给我好评"));
+        list.add(new AboutItem(R.drawable.ic_version, "版本状态"));
 
         AboutItemAdapter aboutItemAdapter = new AboutItemAdapter(list);
         aboutItemAdapter.setOnClickListener(this);
@@ -60,8 +60,6 @@ public class AboutViewItemOn extends MyPopupWindow implements RecycleViewItemOnC
             SystemUtil.openMarket(context);
         }
     }
-
-
 
 
 }

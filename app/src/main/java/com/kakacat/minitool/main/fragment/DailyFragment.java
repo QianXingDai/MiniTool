@@ -9,6 +9,7 @@ import com.kakacat.minitool.cleanfile.CleanFileActivity;
 import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
 import com.kakacat.minitool.currencyconversion.MainActivity;
 import com.kakacat.minitool.epidemicinquiry.EpidemicInquiryActivity;
+import com.kakacat.minitool.expressinquiry.activity.ExpressInquiryActivity;
 import com.kakacat.minitool.garbageclassify.GarbageClassificationActivity;
 import com.kakacat.minitool.main.MainContract;
 import com.kakacat.minitool.phoneartribution.PhoneAttributionActivity;
@@ -18,7 +19,7 @@ import com.kakacat.minitool.wifipasswordview.WifiPwdActivity;
 
 public class DailyFragment extends MyFragment implements RecycleViewItemOnClickListener {
 
-    public DailyFragment(){
+    public DailyFragment() {
 
     }
 
@@ -30,50 +31,54 @@ public class DailyFragment extends MyFragment implements RecycleViewItemOnClickL
     @Override
     public void onClick(View v, int position) {
         Intent intent = null;
-        switch (position){
-            case 0 :{
+        switch (position) {
+            case 0: {
                 intent = new Intent(super.context, MainActivity.class);
                 break;
             }
-            case 1:{
+            case 1: {
                 intent = new Intent(super.context, PhoneAttributionActivity.class);
                 break;
             }
-            case 2:{
+            case 2: {
                 intent = new Intent(super.context, TodayInHistoryActivity.class);
                 break;
             }
-            case 3:{
+            case 3: {
                 intent = new Intent(super.context, WifiPwdActivity.class);
                 break;
             }
-            case 4:{
+            case 4: {
                 intent = new Intent(super.context, AppInfoActivity.class);
                 break;
             }
-            case 5:{
+            case 5: {
                 intent = new Intent(super.context, CleanFileActivity.class);
                 break;
             }
-            case 6:{
+            case 6: {
                 intent = new Intent(super.context, GarbageClassificationActivity.class);
                 break;
             }
-            case 7:{
+            case 7: {
                 intent = new Intent(super.context, EpidemicInquiryActivity.class);
                 break;
             }
-            case 8:{
+            case 8: {
                 intent = new Intent(super.context, TranslationActivity.class);
                 break;
             }
-            case 9:{
+            case 9: {
                 intent = new Intent(super.context, BingPicActivity.class);
+                break;
+            }
+            case 10: {
+                intent = new Intent(super.context, ExpressInquiryActivity.class);
                 break;
             }
         }
 
-        if(intent != null) {
+        if (intent != null) {
             startActivity(intent);
         }
     }

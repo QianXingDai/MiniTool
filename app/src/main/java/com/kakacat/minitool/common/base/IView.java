@@ -4,7 +4,10 @@ import android.content.Context;
 
 public interface IView<T extends IPresenter> {
     void initData();
+
     void initView();
-    void setPresenter(T presenter);
+
+    T getPresenter();
+
     Context getContext();
 }

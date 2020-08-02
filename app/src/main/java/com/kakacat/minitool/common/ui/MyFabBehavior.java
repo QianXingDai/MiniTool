@@ -31,9 +31,6 @@ public class MyFabBehavior extends FloatingActionButton.Behavior {
     @Nullable
     private ViewPropertyAnimator currentAnimator;
 
-    public MyFabBehavior() {
-    }
-
     public MyFabBehavior(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
@@ -64,7 +61,7 @@ public class MyFabBehavior extends FloatingActionButton.Behavior {
         } else if (dyConsumed < 0) {
             slideUp(child);
         }
-        super.onNestedScroll(coordinatorLayout,child,target,dxConsumed,dyConsumed,dxUnconsumed,dyUnconsumed,type,consumed);
+        super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, type, consumed);
     }
 
     private void slideUp(@NonNull View child) {
@@ -99,10 +96,10 @@ public class MyFabBehavior extends FloatingActionButton.Behavior {
                 .setInterpolator(interpolator)
                 .setDuration(duration)
                 .setListener(new AnimatorListenerAdapter() {
-                                    @Override
-                                    public void onAnimationEnd(Animator animation) {
-                                        currentAnimator = null;
-                                    }
-                                });
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        currentAnimator = null;
+                    }
+                });
     }
 }

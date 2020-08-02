@@ -19,17 +19,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.constant.Result;
-import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
+import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.garbageclassify.model.Garbage;
 import com.kakacat.minitool.garbageclassify.model.TypeMap;
 
-import java.util.concurrent.Callable;
-
-import bolts.Task;
-
-public class GarbageClassificationActivity extends AppCompatActivity implements Contract.View{
+public class GarbageClassificationActivity extends AppCompatActivity implements Contract.View {
 
     private Contract.Presenter presenter;
     private LinearLayout linearLayout;
@@ -50,8 +45,7 @@ public class GarbageClassificationActivity extends AppCompatActivity implements 
 
     @Override
     public void initData() {
-        setPresenter(new Presenter(this));
-        presenter.initData();
+        getPresenter().initData();
     }
 
     @Override
@@ -75,39 +69,40 @@ public class GarbageClassificationActivity extends AppCompatActivity implements 
     }
 
     @Override
-    public void requestData(String s){
-        if(loadingDialog == null){
-            View view = LayoutInflater.from(this).inflate(R.layout.loading_view,linearLayout,false);
-            loadingDialog = new MyPopupWindow(this,view, ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+    public Contract.Presenter getPresenter() {
+        if (presenter == null) {
+            presenter = new Presenter(this);
         }
-        loadingDialog.showAtLocation(linearLayout, Gravity.CENTER,0,0);
+        return presenter;
+    }
+
+    @Override
+    public void requestData(String s) {
+        if (loadingDialog == null) {
+            View view = LayoutInflater.from(this).inflate(R.layout.loading_view, linearLayout, false);
+            loadingDialog = new MyPopupWindow(this, view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        }
+        loadingDialog.showAtLocation(linearLayout, Gravity.CENTER, 0, 0);
         presenter.requestData(s);
     }
 
     @Override
-    public void onRequestCallBack(int resultFlag) {
-        Task.call((Callable<Void>) () -> {
-            loadingDialog.dismiss();
-            if(resultFlag == Result.HANDLE_SUCCESS){
-                adapter.notifyDataSetChanged();
-                UiUtil.showToast(this,"查询成功");
-            }else{
-                UiUtil.showToast(this,"输入错误或者查找不到结果");
-            }
-            return null;
-        },Task.UI_THREAD_EXECUTOR);
+    public void onRequestCallBack(String result) {
+        loadingDialog.dismiss();
+        adapter.notifyDataSetChanged();
+        UiUtil.showToast(this, result);
     }
 
     @SuppressLint("SetTextI18n")
     @Override
-    public void showContentView(int position){
+    public void showContentView(int position) {
         Garbage garbage = presenter.getGarbageList().get(position);
         int type = garbage.getType();
 
         ContentDialogHolder holder;
-        if(contentDialog == null){
-            contentView = LayoutInflater.from(this).inflate(R.layout.content_view,linearLayout,false);
-            contentDialog = new MyPopupWindow(this,contentView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        if (contentDialog == null) {
+            contentView = LayoutInflater.from(this).inflate(R.layout.content_view, linearLayout, false);
+            contentDialog = new MyPopupWindow(this, contentView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             holder = new ContentDialogHolder(contentView);
             contentView.setTag(holder);
         }
@@ -118,12 +113,7 @@ public class GarbageClassificationActivity extends AppCompatActivity implements 
         holder.tvGarbageContent2.setText(garbage.getContain());
         holder.tvTip.setText(garbage.getTip());
 
-        contentDialog.showAtLocation(linearLayout,Gravity.BOTTOM,0,0);
-    }
-
-    @Override
-    public void setPresenter(Contract.Presenter presenter) {
-        this.presenter = presenter;
+        contentDialog.showAtLocation(linearLayout, Gravity.BOTTOM, 0, 0);
     }
 
     @Override
@@ -131,7 +121,7 @@ public class GarbageClassificationActivity extends AppCompatActivity implements 
         return this;
     }
 
-    static class ContentDialogHolder{
+    static class ContentDialogHolder {
 
         private TextView tvGarbageTitle1;
         private TextView tvGarbageTitle2;
@@ -139,7 +129,7 @@ public class GarbageClassificationActivity extends AppCompatActivity implements 
         private TextView tvGarbageContent2;
         private TextView tvTip;
 
-        private ContentDialogHolder(View view){
+        private ContentDialogHolder(View view) {
             tvGarbageTitle1 = view.findViewById(R.id.tv_garbage_type_title1);
             tvGarbageContent1 = view.findViewById(R.id.tv_garbage_type_content1);
             tvGarbageTitle2 = view.findViewById(R.id.tv_garbage_type_title2);

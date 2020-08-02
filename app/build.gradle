@@ -23,7 +23,8 @@ android {
                             'src/main/res/layout/epidemic_inquiry',
                             'src/main/res/layout/translation',
                             'src/main/res/layout/bing_pic',
-                            'src/main/res'
+                            'src/main/res',
+                            'src/main/res/layout/express_inquiry'
                     ]
         }
     }
@@ -110,7 +111,7 @@ andResGuard {
     // it's always better to remove duplicated resource from repo
     mergeDuplicatedRes = true
     whiteList = [
-            // your icon
+ /*           // your icon
             "R.drawable.icon",
             // for fabric
             "R.string.com.crashlytics.*",
@@ -121,7 +122,7 @@ andResGuard {
             "R.string.ga_trackingId",
             "R.string.firebase_database_url",
             "R.string.google_api_key",
-            "R.string.google_crash_reporting_api_key"
+            "R.string.google_crash_reporting_api_key"*/
     ]
     compressFilePattern = [
             "*.png",
@@ -129,6 +130,7 @@ andResGuard {
             "*.jpeg",
             "*.gif",
             "*.webp",
+            "resources.arsc"
     ]
     sevenzip {
         artifact = 'com.tencent.mm:SevenZip:1.2.17'

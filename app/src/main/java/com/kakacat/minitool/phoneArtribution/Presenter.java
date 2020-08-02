@@ -2,48 +2,48 @@ package com.kakacat.minitool.phoneartribution;
 
 import android.text.TextUtils;
 
-import com.kakacat.minitool.common.constant.AppKey;
-import com.kakacat.minitool.common.constant.Host;
-import com.kakacat.minitool.common.constant.Result;
 import com.kakacat.minitool.common.myinterface.HttpCallback;
 import com.kakacat.minitool.common.util.HttpUtil;
+import com.kakacat.minitool.common.util.ThreadUtil;
+import com.kakacat.minitool.phoneartribution.model.Model;
+import com.kakacat.minitool.phoneartribution.model.PhoneNumber;
 
 import okhttp3.Response;
-
-import static com.kakacat.minitool.common.constant.Result.INPUT_ERROR;
 
 public class Presenter implements Contract.Presenter {
 
     private Contract.View view;
+    private Model model;
 
     public Presenter(Contract.View view) {
         this.view = view;
+        this.model = Model.getInstance();
     }
-
 
     @Override
     public void requestData(String number) {
-        if(TextUtils.isEmpty(number) || number.length() != 11){
-            view.onRequestDataCallBack(null,INPUT_ERROR);
-        }else{
-            String address = Host.PHONE_NUMBER_HOST + number + "&key=" + AppKey.PHONE_NUMBER_KEY;
+        if (TextUtils.isEmpty(number) || number.length() != 11) {
+            view.onRequestDataCallBack(null, "输入错误");
+        } else {
+            String address = model.getAddress(number);
             HttpUtil.sendOkHttpRequest(address, new HttpCallback() {
-                int resultFlag = Result.REQUEST_ERROR;
+                String result = "请求错误";
+
                 @Override
                 public void onSuccess(Response response) {
-                    PhoneNumber phoneNumber = PhoneNumber.response2PhoneNumber(response);
-                    if(phoneNumber == null){
-                        resultFlag = Result.HANDLE_FAIL;
-                    }else{
-                        resultFlag = Result.HANDLE_SUCCESS;
+                    PhoneNumber phoneNumber = model.response2PhoneNumber(response);
+                    if (phoneNumber == null) {
+                        result = "处理响应数据失败";
+                    } else {
+                        result = "请求成功";
                         phoneNumber.setNumber(number);
                     }
-                    view.onRequestDataCallBack(phoneNumber, resultFlag);
+                    ThreadUtil.callInUiThread(() -> view.onRequestDataCallBack(phoneNumber, result));
                 }
 
                 @Override
                 public void onError() {
-                    view.onRequestDataCallBack(null,resultFlag);
+                    ThreadUtil.callInUiThread(() -> view.onRequestDataCallBack(null, result));
                 }
             });
         }
@@ -51,6 +51,6 @@ public class Presenter implements Contract.Presenter {
 
     @Override
     public void initData() {
-        
+
     }
 }

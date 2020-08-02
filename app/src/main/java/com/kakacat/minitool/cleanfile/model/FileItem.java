@@ -7,7 +7,7 @@ public class FileItem {
     private File file;
     private boolean isChecked;
 
-    public FileItem(File file,boolean isChecked) {
+    public FileItem(File file, boolean isChecked) {
         this.file = file;
         this.isChecked = isChecked;
     }

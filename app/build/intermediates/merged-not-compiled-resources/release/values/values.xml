@@ -7310,6 +7310,11 @@
     <!-- Attribute used to check that a component has a TextAppearance specified on it. -->
     <attr name="android:textAppearance"/>
   </declare-styleable>
+    <declare-styleable name="TitleView">
+        <attr format="reference|string" name="title"/>
+        <attr format="reference|integer" name="count"/>
+        <attr format="reference|color" name="count_text_color"/>
+    </declare-styleable>
     <declare-styleable name="Toolbar">
         <attr format="reference" name="titleTextAppearance"/>
         <attr format="reference" name="subtitleTextAppearance"/>

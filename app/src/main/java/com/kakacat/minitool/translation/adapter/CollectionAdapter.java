@@ -24,10 +24,10 @@ public class CollectionAdapter extends RecyclerView.Adapter<CollectionAdapter.Vi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if(inflater == null){
+        if (inflater == null) {
             inflater = LayoutInflater.from(parent.getContext());
         }
-        View view = inflater.inflate(R.layout.collection_item_layout,parent,false);
+        View view = inflater.inflate(R.layout.collection_item_layout, parent, false);
         return new ViewHolder(view);
     }
 
@@ -41,7 +41,7 @@ public class CollectionAdapter extends RecyclerView.Adapter<CollectionAdapter.Vi
         return stringList.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textView;
 

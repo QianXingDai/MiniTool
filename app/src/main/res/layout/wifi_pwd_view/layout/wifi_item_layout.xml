@@ -19,16 +19,14 @@
         android:layout_height="wrap_content"
         android:padding="20dp">
 
-        <com.kakacat.minitool.common.ui.view.CircleProgressView
-            android:id="@+id/circle_progress_view"
+        <TextView
+            android:id="@+id/tv_head"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:text_size="20"
-            app:text_color="@color/black"
-            app:circle_color="@color/lightBlue"
-            app:circle_width="10"
-            app:progress="100">
-        </com.kakacat.minitool.common.ui.view.CircleProgressView>
+            android:background="@drawable/bg_wifi_head"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"/>
 
 
         <LinearLayout

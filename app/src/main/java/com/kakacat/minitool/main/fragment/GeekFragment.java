@@ -30,7 +30,7 @@ public class GeekFragment extends MyFragment implements RecycleViewItemOnClickLi
     private Activity activity;
     private View parentView;
 
-    public GeekFragment(){
+    public GeekFragment() {
 
     }
 
@@ -50,40 +50,40 @@ public class GeekFragment extends MyFragment implements RecycleViewItemOnClickLi
     @Override
     public void onClick(View v, int position) {
         Intent intent = null;
-        switch (position){
-            case 0:{
+        switch (position) {
+            case 0: {
                 intent = new Intent(activity, TextEncryptionActivity.class);
                 break;
             }
-            case 1:{
-                ModifyDpiView modifyDpiView = ModifyDpiView.getInstance(activity, parentView, View.inflate(getContext(), R.layout.modify_dpi_layout,null), ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                modifyDpiView.showAtLocation(parentView,Gravity.CENTER,0,0);
+            case 1: {
+                ModifyDpiView modifyDpiView = ModifyDpiView.getInstance(activity, parentView, View.inflate(getContext(), R.layout.modify_dpi_layout, null), ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                modifyDpiView.showAtLocation(parentView, Gravity.CENTER, 0, 0);
                 break;
             }
-            case 2:{
-                FakeBatteryView fakeBatteryView = FakeBatteryView.getInstance(activity, parentView, View.inflate(getContext(), R.layout.fake_battery_layout,null), ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                fakeBatteryView.showAtLocation(parentView, Gravity.CENTER,0,0);
+            case 2: {
+                FakeBatteryView fakeBatteryView = FakeBatteryView.getInstance(activity, parentView, View.inflate(getContext(), R.layout.fake_battery_layout, null), ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                fakeBatteryView.showAtLocation(parentView, Gravity.CENTER, 0, 0);
                 break;
             }
-            case 3:{
+            case 3: {
                 audioCapture();
                 break;
             }
-            case 4:{
+            case 4: {
                 intent = new Intent(activity, InquireIpActivity.class);
                 break;
             }
         }
 
-        if(intent != null) startActivity(intent);
+        if (intent != null) startActivity(intent);
     }
 
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(requestCode == 1){
-            if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+        if (requestCode == 1) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 startSelectVideo();
             }
         }
@@ -93,27 +93,27 @@ public class GeekFragment extends MyFragment implements RecycleViewItemOnClickLi
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         int REQUEST_WRITE = 1;
-        if(requestCode == REQUEST_WRITE && resultCode == RESULT_OK && data != null){
+        if (requestCode == REQUEST_WRITE && resultCode == RESULT_OK && data != null) {
             Intent intent = new Intent(activity, GetAudioService.class);
-            intent.putExtra("uri",data.getData());
+            intent.putExtra("uri", data.getData());
             activity.startService(intent);
         }
     }
 
     private void audioCapture() {
         String permission = Manifest.permission.WRITE_EXTERNAL_STORAGE;
-        if(ActivityCompat.checkSelfPermission(activity,permission) != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-        }else{
+        if (ActivityCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+        } else {
             startSelectVideo();
         }
     }
 
-    private void startSelectVideo(){
+    private void startSelectVideo() {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_PICK);
         intent.setType("video/*");
-        startActivityForResult(intent,1);
+        startActivityForResult(intent, 1);
     }
 
 }

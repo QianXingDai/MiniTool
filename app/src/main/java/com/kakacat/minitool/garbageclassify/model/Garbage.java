@@ -18,8 +18,6 @@ public class Garbage {
     private String tip;
 
 
-
-
     public String getName() {
         return name;
     }

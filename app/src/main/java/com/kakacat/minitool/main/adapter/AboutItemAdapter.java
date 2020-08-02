@@ -25,17 +25,17 @@ public class AboutItemAdapter extends RecyclerView.Adapter<AboutItemAdapter.View
         this.list = list;
     }
 
-    public void setOnClickListener(RecycleViewItemOnClickListener listener){
+    public void setOnClickListener(RecycleViewItemOnClickListener listener) {
         this.clickListener = listener;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if(layoutInflater == null){
+        if (layoutInflater == null) {
             layoutInflater = LayoutInflater.from(parent.getContext());
         }
-        View view = layoutInflater.inflate(R.layout.about_item_layout,parent,false);
+        View view = layoutInflater.inflate(R.layout.about_item_layout, parent, false);
         return new ViewHolder(view);
     }
 
@@ -44,8 +44,8 @@ public class AboutItemAdapter extends RecyclerView.Adapter<AboutItemAdapter.View
         AboutItem aboutItem = list.get(position);
         holder.imageView.setImageResource(aboutItem.getIconId());
         holder.textView.setText(aboutItem.getTitle());
-        if(clickListener != null){
-            holder.itemView.setOnClickListener(v -> clickListener.onClick(holder.itemView,position));
+        if (clickListener != null) {
+            holder.itemView.setOnClickListener(v -> clickListener.onClick(holder.itemView, position));
         }
     }
 
@@ -54,9 +54,10 @@ public class AboutItemAdapter extends RecyclerView.Adapter<AboutItemAdapter.View
         return list.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;
         private TextView textView;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             this.imageView = itemView.findViewById(R.id.iv_icon);

@@ -25,15 +25,15 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.language_item_layout,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.language_item_layout, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.tvLanguage.setText(languageList.get(position));
-        if(listener != null){
-            holder.itemView.setOnClickListener(v -> listener.onClick(holder.itemView,position));
+        if (listener != null) {
+            holder.itemView.setOnClickListener(v -> listener.onClick(holder.itemView, position));
         }
     }
 
@@ -43,17 +43,17 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
         return languageList.size();
     }
 
-    public void setOnClickListener(RecycleViewItemOnClickListener listener){
+    public void setOnClickListener(RecycleViewItemOnClickListener listener) {
         this.listener = listener;
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvLanguage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvLanguage = (TextView)itemView;
+            tvLanguage = (TextView) itemView;
         }
     }
 

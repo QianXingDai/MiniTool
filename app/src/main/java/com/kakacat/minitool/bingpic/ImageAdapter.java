@@ -32,10 +32,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if(inflater == null) {
+        if (inflater == null) {
             inflater = LayoutInflater.from(parent.getContext());
         }
-        View view = inflater.inflate(R.layout.bing_pic_item_layout,parent,false);
+        View view = inflater.inflate(R.layout.bing_pic_item_layout, parent, false);
         return new ViewHolder(view);
     }
 
@@ -44,17 +44,17 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.sdv.setImageURI(addressList.get(position));
 
-        if(onClickListener != null)
-            holder.sdv.setOnClickListener(v -> onClickListener.onClick(holder.itemView,position));
-        if(onLongClickListener != null){
+        if (onClickListener != null)
+            holder.sdv.setOnClickListener(v -> onClickListener.onClick(holder.itemView, position));
+        if (onLongClickListener != null) {
             holder.sdv.setOnLongClickListener(v -> {
-                onLongClickListener.onLongClick(holder.sdv,position);
+                onLongClickListener.onLongClick(holder.sdv, position);
                 return false;
             });
         }
-        if(onTouchListener != null){
+        if (onTouchListener != null) {
             holder.sdv.setOnTouchListener((v, event) -> {
-                onTouchListener.onTouch(v,event);
+                onTouchListener.onTouch(v, event);
                 return false;
             });
         }
@@ -66,20 +66,20 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     }
 
 
-    public void setOnClickListener(RecycleViewItemOnClickListener onClickListener){
+    public void setOnClickListener(RecycleViewItemOnClickListener onClickListener) {
         this.onClickListener = onClickListener;
     }
 
-    public void setOnLongClickListener(RecycleViewItemOnLongClickListener onLongClickListener){
+    public void setOnLongClickListener(RecycleViewItemOnLongClickListener onLongClickListener) {
         this.onLongClickListener = onLongClickListener;
     }
 
-    public void setOnTouchListener(RecycleViewOnTouchListener onTouchListener){
+    public void setOnTouchListener(RecycleViewOnTouchListener onTouchListener) {
         this.onTouchListener = onTouchListener;
     }
 
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         private SimpleDraweeView sdv;
 

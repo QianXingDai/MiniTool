@@ -20,12 +20,12 @@ import com.kakacat.minitool.main.model.MainItem;
 
 import java.util.List;
 
-public class MyFragment extends Fragment{
+public class MyFragment extends Fragment {
 
     Context context;
     private MainAdapter adapter;
 
-    public MyFragment(){
+    public MyFragment() {
 
     }
 
@@ -36,19 +36,19 @@ public class MyFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if(context == null){
+        if (context == null) {
             context = getContext();
         }
-        View view = inflater.inflate(R.layout.main_fragment_layout,container,false);
+        View view = inflater.inflate(R.layout.main_fragment_layout, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new ItemDecoration(30,30));
+        recyclerView.addItemDecoration(new ItemDecoration(30, 30));
 
         return view;
     }
 
-    public void setOnClickListener(RecycleViewItemOnClickListener clickListener){
+    public void setOnClickListener(RecycleViewItemOnClickListener clickListener) {
         adapter.setOnClickListener(clickListener);
     }
 }

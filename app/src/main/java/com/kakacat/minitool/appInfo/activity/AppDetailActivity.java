@@ -18,11 +18,11 @@ import androidx.core.app.ActivityCompat;
 
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.appInfo.contract.AppDetailContract;
-import com.kakacat.minitool.appInfo.model.AppInfo;
+import com.kakacat.minitool.appInfo.model.bean.AppInfoBean;
 import com.kakacat.minitool.appInfo.presenter.AppDetailPresenter;
 import com.kakacat.minitool.common.util.UiUtil;
 
-public class AppDetailActivity extends AppCompatActivity implements AppDetailContract.View,View.OnClickListener{
+public class AppDetailActivity extends AppCompatActivity implements AppDetailContract.View, View.OnClickListener {
 
     private static final int SAVE_ICON = 1;
     private static final int SAVE_APK = 2;
@@ -40,13 +40,15 @@ public class AppDetailActivity extends AppCompatActivity implements AppDetailCon
 
     @Override
     public void initData() {
-        setPresenter(new AppDetailPresenter(this));
-        presenter.initData();
+        getPresenter().initData();
     }
 
     @Override
-    public void setPresenter(AppDetailContract.Presenter presenter) {
-        this.presenter = presenter;
+    public AppDetailContract.Presenter getPresenter() {
+        if (presenter == null) {
+            presenter = new AppDetailPresenter(this);
+        }
+        return presenter;
     }
 
     @SuppressLint("SetTextI18n")
@@ -55,7 +57,7 @@ public class AppDetailActivity extends AppCompatActivity implements AppDetailCon
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
             actionBar.setDisplayShowTitleEnabled(false);
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -74,20 +76,20 @@ public class AppDetailActivity extends AppCompatActivity implements AppDetailCon
 
         ImageView ivAppIcon = findViewById(R.id.iv_app_icon);
 
-        AppInfo appInfo = presenter.getAppInfo();
+        AppInfoBean appInfoBean = getPresenter().getAppInfoBean();
 
-        tvAppName.setText(appInfo.getAppName());
-        tvPackageName.setText(appInfo.getPackageName());
-        tvVersionName.setText(appInfo.getVersionName());
-        tvFirstInstallTime.setText(appInfo.getFirstInstallTime2());
-        tvLastUpdateTime.setText(appInfo.getLastUpdateTime2());
-        tvTargetApi.setText(String.valueOf(appInfo.getTargetSdkVersion()));
-        tvMinApi.setText(String.valueOf(appInfo.getMinSdkVersion()));
-        tvMd5Signature.setText(appInfo.getSignMd5());
-        tvHeader3.setText("权限声明" + "(" + appInfo.getPermissionCount() + "个)");
-        tvPermission.setText(appInfo.getPermission());
+        tvAppName.setText(appInfoBean.getAppName());
+        tvPackageName.setText(appInfoBean.getPackageName());
+        tvVersionName.setText(appInfoBean.getVersionName());
+        tvFirstInstallTime.setText(appInfoBean.getFirstInstallTime2());
+        tvLastUpdateTime.setText(appInfoBean.getLastUpdateTime2());
+        tvTargetApi.setText(String.valueOf(appInfoBean.getTargetSdkVersion()));
+        tvMinApi.setText(String.valueOf(appInfoBean.getMinSdkVersion()));
+        tvMd5Signature.setText(appInfoBean.getSignMd5());
+        tvHeader3.setText("权限声明" + "(" + appInfoBean.getPermissionCount() + "个)");
+        tvPermission.setText(appInfoBean.getPermission());
 
-        ivAppIcon.setImageDrawable(appInfo.getIcon());
+        ivAppIcon.setImageDrawable(appInfoBean.getIcon());
     }
 
     @Override
@@ -97,25 +99,25 @@ public class AppDetailActivity extends AppCompatActivity implements AppDetailCon
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.bt_save_icon : {
+        switch (v.getId()) {
+            case R.id.bt_save_icon: {
                 saveIcon();
                 break;
             }
-            case R.id.bt_open_market : {
-                presenter.openMarket();
+            case R.id.bt_open_market: {
+                getPresenter().openMarket();
                 break;
             }
-            case R.id.bt_get_apk : {
+            case R.id.bt_get_apk: {
                 saveApk();
                 break;
             }
-            case R.id.bt_open_detail : {
-                presenter.openDetailInSetting();
+            case R.id.bt_open_detail: {
+                getPresenter().openDetailInSetting();
                 break;
             }
-            case R.id.bt_copy_md5 : {
-                presenter.copyMd5();
+            case R.id.bt_copy_md5: {
+                getPresenter().copyMd5();
                 break;
             }
         }
@@ -123,37 +125,37 @@ public class AppDetailActivity extends AppCompatActivity implements AppDetailCon
 
 
     @Override
-    public void saveIcon(){
+    public void saveIcon() {
         String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        if(ActivityCompat.checkSelfPermission(this,permissions[0]) != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(permissions,SAVE_ICON);
-        }else{
-            presenter.saveIcon();
+        if (ActivityCompat.checkSelfPermission(this, permissions[0]) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(permissions, SAVE_ICON);
+        } else {
+            getPresenter().saveIcon();
         }
     }
 
     @Override
-    public void onSaveIconResult(String result){
-        UiUtil.showToast(this,result);
+    public void onSaveIconResult(String result) {
+        UiUtil.showToast(this, result);
     }
 
     @Override
     public void saveApk() {
         String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        if(ActivityCompat.checkSelfPermission(this,permissions[0]) != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(permissions,SAVE_APK);
-        }else{
-            presenter.saveApk();
+        if (ActivityCompat.checkSelfPermission(this, permissions[0]) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(permissions, SAVE_APK);
+        } else {
+            getPresenter().saveApk();
         }
     }
 
     @Override
-    public void onCopyMd5Result(String result){
-        UiUtil.showToast(this,result);
+    public void onCopyMd5Result(String result) {
+        UiUtil.showToast(this, result);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem){
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() == android.R.id.home) {
             finish();
         }
@@ -163,20 +165,20 @@ public class AppDetailActivity extends AppCompatActivity implements AppDetailCon
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
-            if(requestCode == SAVE_ICON){
-                presenter.saveIcon();
-            }else if(requestCode == SAVE_APK){
-                presenter.saveApk();
+        if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (requestCode == SAVE_ICON) {
+                getPresenter().saveIcon();
+            } else if (requestCode == SAVE_APK) {
+                getPresenter().saveApk();
             }
-        }else{
-            UiUtil.showToast(this,"获取存储权限失败");
+        } else {
+            UiUtil.showToast(this, "获取存储权限失败");
         }
     }
 
     @Override
-    public void onSaveApkResult(String result){
-        UiUtil.showToast(this,result);
+    public void onSaveApkResult(String result) {
+        UiUtil.showToast(this, result);
     }
 
     @Override

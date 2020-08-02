@@ -2,15 +2,15 @@ package com.kakacat.minitool.todayinhistory;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.base.FrescoInitActivity;
-import com.kakacat.minitool.common.constant.Result;
 import com.kakacat.minitool.common.util.UiUtil;
-
-import bolts.Task;
 
 public class TodayInHistoryActivity extends FrescoInitActivity implements Contract.View {
 
@@ -27,34 +27,40 @@ public class TodayInHistoryActivity extends FrescoInitActivity implements Contra
         initView();
     }
 
-
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         presenter.refreshData();
     }
 
     @Override
-    public void initData(){
-        setPresenter(new Presenter(this));
-        presenter.initData();
-    }
-
-    @Override
-    public void setPresenter(Contract.Presenter presenter) {
-        this.presenter = presenter;
+    public void initData() {
+        getPresenter().initData();
     }
 
     @Override
     public void initView() {
-        initToolbar();
+
+        Window window = getWindow();
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+        window.setStatusBarColor(Color.TRANSPARENT);
+
+        super.initToolbar();
 
         MyListView listView = findViewById(R.id.list_view);
-        adapter = new Adapter(this,R.layout.article_layout,presenter.getArticleList());
+        adapter = new Adapter(this, R.layout.article_layout, presenter.getArticleList());
         listView.setAdapter(adapter);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> showCalendarDialog());
+    }
+
+    @Override
+    public Contract.Presenter getPresenter() {
+        if (presenter == null) {
+            presenter = new Presenter(this);
+        }
+        return presenter;
     }
 
     @Override
@@ -63,23 +69,17 @@ public class TodayInHistoryActivity extends FrescoInitActivity implements Contra
     }
 
     @Override
-    public void onUpdateDataCallBack(int resultFlag){
-        Task.call(() -> {
-            if(resultFlag == Result.HANDLE_SUCCESS){
-                adapter.notifyDataSetChanged();
-            }else if(resultFlag == Result.REQUEST_ERROR){
-                UiUtil.showToast(this,"请求错误");
-            }else if(resultFlag == Result.HANDLE_FAIL){
-                UiUtil.showToast(this,"处理响应数据失败");
-            }
-            return null;
-        },Task.UI_THREAD_EXECUTOR);
+    public void onUpdateDataCallBack(String result, boolean needRefresh) {
+        if (needRefresh) {
+            adapter.notifyDataSetChanged();
+        }
+        UiUtil.showToast(getContext(), result);
     }
 
     @Override
-    public void showCalendarDialog(){
-        if(datePickerDialog == null){
-                datePickerDialog = new DatePickerDialog(this, (datePicker, year, monthOfYear, dayOfMonth) -> {
+    public void showCalendarDialog() {
+        if (datePickerDialog == null) {
+            datePickerDialog = new DatePickerDialog(this, (datePicker, year, monthOfYear, dayOfMonth) -> {
                 presenter.setMonth(monthOfYear + 1);
                 presenter.setDay(dayOfMonth);
                 presenter.refreshData();

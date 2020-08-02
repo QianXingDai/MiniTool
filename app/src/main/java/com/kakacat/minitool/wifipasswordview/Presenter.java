@@ -3,80 +3,49 @@ package com.kakacat.minitool.wifipasswordview;
 import android.content.Context;
 
 import com.kakacat.minitool.common.util.SystemUtil;
+import com.kakacat.minitool.common.util.ThreadUtil;
+import com.kakacat.minitool.wifipasswordview.model.Model;
+import com.kakacat.minitool.wifipasswordview.model.Wifi;
 
-import org.xml.sax.SAXException;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
-import bolts.Continuation;
-import bolts.Task;
 
 public class Presenter implements Contract.Presenter {
 
     private Contract.View view;
+    private Model model;
     private Context context;
-
-    private List<Wifi> wifiList;
 
     public Presenter(Contract.View view) {
         this.view = view;
+        this.model = Model.getInstance();
         this.context = view.getContext();
     }
 
     @Override
-    public void initData(){
-        Task.callInBackground(() -> {
+    public void initData() {
+        ThreadUtil.callInBackground(() -> {
             String result = "获取wifi配置信息失败,请检查是否有ROOT权限";
-            wifiList = getWifiList();
-            if(getWifiConfig()){
-                result =  "获取wifi配置文件成功,但是处理失败";
-                String filePath = Objects.requireNonNull(context.getExternalCacheDir()).getAbsolutePath() + "/WifiConfigStore.xml";
-                try{
-                    SAXParserFactory factory = SAXParserFactory.newInstance();
-                    SAXParser parser = factory.newSAXParser();
-                    parser.parse(new File(filePath),new WiFiConfigSAXHandle(wifiList));
+            if (model.copyWifiConfigToCache(context)) {
+                if (model.handleWifiConfig(context)) {
                     result = "解析成功";
-                } catch (ParserConfigurationException | IOException | SAXException e) {
-                    e.printStackTrace();
+                } else {
+                    result = "获取wifi配置文件成功,但是处理失败";
                 }
             }
-            return result;
-        }).onSuccess((Continuation<String, Void>) task -> {
-            view.onGetWifiDataCallBack(task.getResult());
-            return null;
-        },Task.UI_THREAD_EXECUTOR);
-    }
-
-    private boolean getWifiConfig(){
-        try{
-            String fileName = "/data/misc/wifi/WifiConfigStore.xml";
-            String cacheDir = Objects.requireNonNull(context.getExternalCacheDir()).getAbsolutePath();
-            String[] commands = new String[]{
-                    "chmod 777 " + fileName + "\n",
-                    "cp " + fileName + " " + cacheDir + "\n",
-                    "exit\n"
-            };
-            SystemUtil.executeLinuxCommand(commands,true,true);
-            return true;
-        }catch (Exception e){
-            e.printStackTrace();
-            return false;
-        }
+            String finalResult = result;
+            ThreadUtil.callInUiThread(() -> view.onGetWifiDataCallBack(finalResult));
+        });
     }
 
     @Override
-    public List<Wifi> getWifiList(){
-        if(wifiList == null){
-            wifiList = new ArrayList<>();
-        }
-        return wifiList;
+    public void copyToClipboard(int position) {
+        Wifi wifi = getWifiList().get(position);
+        SystemUtil.copyToClipboard(context, "wifiPwd", wifi.getWifiPwd());
+        view.onCopyCallback("\"" + wifi.getWifiName() + "\"的wifi密码已复制");
+    }
+
+    @Override
+    public List<Wifi> getWifiList() {
+        return model.getWifiList();
     }
 }

@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.util.UiUtil;
-import com.kakacat.minitool.common.util.SystemUtil;
 
 public class WifiPwdActivity extends AppCompatActivity implements Contract.View {
 
@@ -29,37 +28,46 @@ public class WifiPwdActivity extends AppCompatActivity implements Contract.View 
     }
 
     @Override
-    public void initData(){
+    public void initData() {
         presenter.initData();
-    }
-
-    @Override
-    public void setPresenter(Contract.Presenter presenter) {
-        this.presenter = presenter;
     }
 
     @Override
     public void initView() {
         initToolbar();
 
-        setPresenter(new Presenter(this));
+        presenter = getPresenter();
 
         adapter = new Adapter(presenter.getWifiList());
         RecyclerView recyclerView = findViewById(R.id.rv_wifi);
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,1));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         adapter.setLongClickListener((v, position) -> {
-            CharSequence wifiName = ((TextView)v.findViewById(R.id.tv_wifi_name)).getText();
-            CharSequence pwd = ((TextView)v.findViewById(R.id.tv_wifi_pwd)).getText();
-            SystemUtil.copyToClipboard(this,"wifiPwd",pwd);
-            UiUtil.showSnackBar(recyclerView,"\"" + wifiName + "\"的wifi密码已复制");
+            presenter.copyToClipboard(position);
+            CharSequence wifiName = ((TextView) v.findViewById(R.id.tv_wifi_name)).getText();
+            CharSequence pwd = ((TextView) v.findViewById(R.id.tv_wifi_pwd)).getText();
+
+
         });
     }
 
-    private void initToolbar(){
+    @Override
+    public Contract.Presenter getPresenter() {
+        if (presenter == null) {
+            presenter = new Presenter(this);
+        }
+        return presenter;
+    }
+
+    @Override
+    public void onCopyCallback(String result) {
+        UiUtil.showToast(this, result);
+    }
+
+    private void initToolbar() {
         setSupportActionBar(findViewById(R.id.toolbar));
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
             actionBar.setDisplayShowTitleEnabled(false);
@@ -68,7 +76,7 @@ public class WifiPwdActivity extends AppCompatActivity implements Contract.View 
 
     @Override
     public void onGetWifiDataCallBack(String result) {
-        UiUtil.showToast(this,result);
+        UiUtil.showToast(this, result);
         adapter.notifyDataSetChanged();
     }
 
@@ -78,11 +86,10 @@ public class WifiPwdActivity extends AppCompatActivity implements Contract.View 
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem){
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() == android.R.id.home) {
             finish();
         }
         return true;
     }
-
 }

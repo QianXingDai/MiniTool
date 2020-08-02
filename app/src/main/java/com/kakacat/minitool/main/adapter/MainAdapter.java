@@ -25,17 +25,17 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         this.itemList = itemList;
     }
 
-    public void setOnClickListener(RecycleViewItemOnClickListener listener){
+    public void setOnClickListener(RecycleViewItemOnClickListener listener) {
         this.listener = listener;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if(inflater == null){
+        if (inflater == null) {
             inflater = LayoutInflater.from(parent.getContext());
         }
-        View view = inflater.inflate(R.layout.main_item_layout,parent,false);
+        View view = inflater.inflate(R.layout.main_item_layout, parent, false);
         return new ViewHolder(view);
     }
 
@@ -46,8 +46,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         holder.title.setText(item.getTitleId());
         holder.note.setText(item.getNoteId());
 
-        if(listener != null){
-            holder.itemView.setOnClickListener(v -> listener.onClick(holder.itemView,position));
+        if (listener != null) {
+            holder.itemView.setOnClickListener(v -> listener.onClick(holder.itemView, position));
         }
     }
 
@@ -58,7 +58,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     }
 
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         private SimpleDraweeView imageView;
         private TextView title;

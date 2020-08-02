@@ -21,13 +21,16 @@ import com.kakacat.minitool.R;
 import com.kakacat.minitool.appInfo.adapter.ApiPercentAdapter;
 import com.kakacat.minitool.appInfo.adapter.AppInfoAdapter;
 import com.kakacat.minitool.appInfo.contract.AppInfoContract;
+import com.kakacat.minitool.appInfo.model.AppInfoModel;
 import com.kakacat.minitool.appInfo.presenter.AppInfoPresenter;
 import com.kakacat.minitool.common.base.FrescoInitActivity;
-import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
+import com.kakacat.minitool.common.util.UiUtil;
+
+import java.util.Objects;
 
 
-public class AppInfoActivity extends FrescoInitActivity implements AppInfoContract.View,View.OnClickListener {
+public class AppInfoActivity extends FrescoInitActivity implements AppInfoContract.View, View.OnClickListener {
 
     private AppInfoContract.Presenter presenter;
 
@@ -38,7 +41,6 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
 
     private ApiPercentAdapter apiPercentAdapter;
     private AppInfoAdapter appInfoAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,12 +59,11 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
 
     @Override
     public void initData() {
-        presenter.initData();
+        getPresenter().initData();
     }
 
     @Override
     public void initView() {
-        setPresenter(new AppInfoPresenter(this));
         initToolbar();
 
         nestedScrollView = findViewById(R.id.nested_scroll_view);
@@ -74,27 +75,18 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
     }
 
     @Override
-    public void onUpdateDataSet(){
+    public void onUpdateDataSet() {
         apiPercentAdapter.notifyDataSetChanged();
         appInfoAdapter.notifyDataSetChanged();
         linearLayout.setVisibility(View.VISIBLE);
         progressBar.setVisibility(View.INVISIBLE);
     }
 
-    @Override
-    public void onUpdateAppInfoDataSet(){
-        progressBar.setVisibility(View.VISIBLE);
-        linearLayout.setVisibility(View.INVISIBLE);
-        appInfoAdapter.notifyDataSetChanged();
-        progressBar.setVisibility(View.INVISIBLE);
-        linearLayout.setVisibility(View.VISIBLE);
-        sortDialog.dismiss();
-    }
-
     @SuppressLint("SetTextI18n")
     @Override
-    public void initToolbar(){
+    public void initToolbar() {
         super.initToolbar();
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
 
         TextView tvAndroidVersion = findViewById(R.id.tv_android_version);
         TextView tvSecurityPatchLevel = findViewById(R.id.tv_security_patch_level);
@@ -105,29 +97,30 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
         tvDeviceName.setText(Build.DEVICE);
     }
 
-    private void initApiPercentView(){
+    private void initApiPercentView() {
         RecyclerView rvApiPercent = findViewById(R.id.rv_api_percent);
-        apiPercentAdapter = new ApiPercentAdapter(presenter.getApiPercentList());
+        apiPercentAdapter = new ApiPercentAdapter(getPresenter().getApiPercentBeanList());
         rvApiPercent.setAdapter(apiPercentAdapter);
         rvApiPercent.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private void initAppInfoView(){
+    private void initAppInfoView() {
         RecyclerView rvAppInfo = findViewById(R.id.rv_app_info);
-        appInfoAdapter = new AppInfoAdapter(presenter.getAppInfoList());
+        appInfoAdapter = new AppInfoAdapter(getPresenter().getAppInfoBeanList());
         rvAppInfo.setAdapter(appInfoAdapter);
         rvAppInfo.setLayoutManager(new LinearLayoutManager(this));
 
-/*      TODO:这里序列化传输有问题，暂时屏蔽掉，以后再改
-        appInfoAdapter.setOnClickListener((v, position) -> {
+
+ /*       TODO:序列化有问题这里。。。
+            appInfoAdapter.setOnClickListener((v, position) -> {
             Intent intent = new Intent(AppInfoActivity.this,AppDetailActivity.class);
-            intent.putExtra("appInfo",presenter.getAppInfoList().get(position));
+            intent.putExtra("appInfo",presenter.getAppInfoBeanList().get(position));
             startActivity(intent);
         });*/
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem){
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() == android.R.id.home) {
             finish();
         }
@@ -136,8 +129,11 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
 
 
     @Override
-    public void setPresenter(AppInfoContract.Presenter presenter) {
-        this.presenter = presenter;
+    public AppInfoContract.Presenter getPresenter() {
+        if (presenter == null) {
+            presenter = new AppInfoPresenter(this);
+        }
+        return presenter;
     }
 
     @Override
@@ -147,48 +143,48 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.fab:{
+        switch (view.getId()) {
+            case R.id.fab: {
                 slideUpToTop();
                 break;
             }
-            case R.id.iv_sort:{
+            case R.id.iv_sort: {
                 showSortDialog();
                 break;
             }
-            case R.id.rb_sort_by_app_name:{
-                presenter.sortAppInfoList(AppInfoPresenter.SORT_BY_APP_NAME);
+            case R.id.rb_sort_by_app_name: {
+                getPresenter().sortAppInfoList(AppInfoModel.SORT_BY_APP_NAME);
                 break;
             }
-            case R.id.rb_sort_by_target_api:{
-                presenter.sortAppInfoList(AppInfoPresenter.SORT_BY_TARGET_API);
+            case R.id.rb_sort_by_target_api: {
+                getPresenter().sortAppInfoList(AppInfoModel.SORT_BY_TARGET_API);
                 break;
             }
-            case R.id.rb_sort_by_min_api:{
-                presenter.sortAppInfoList(AppInfoPresenter.SORT_BY_MIN_API);
+            case R.id.rb_sort_by_min_api: {
+                getPresenter().sortAppInfoList(AppInfoModel.SORT_BY_MIN_API);
                 break;
             }
-            case R.id.rb_sort_by_first_install_time:{
-                presenter.sortAppInfoList(AppInfoPresenter.SORT_BY_FIRST_INSTALL_TIME);
+            case R.id.rb_sort_by_first_install_time: {
+                getPresenter().sortAppInfoList(AppInfoModel.SORT_BY_FIRST_INSTALL_TIME);
                 break;
             }
-            case R.id.rb_sort_by_last_update_time:{
-                presenter.sortAppInfoList(AppInfoPresenter.SORT_BY_LAST_UPDATE_TIME);
+            case R.id.rb_sort_by_last_update_time: {
+                getPresenter().sortAppInfoList(AppInfoModel.SORT_BY_LAST_UPDATE_TIME);
                 break;
             }
         }
     }
 
     @Override
-    public void slideUpToTop(){
+    public void slideUpToTop() {
         UiUtil.slideUpToTop(nestedScrollView);
     }
 
     @Override
-    public void showSortDialog(){
-        if(sortDialog == null){
-            View contentView = LayoutInflater.from(this).inflate(R.layout.sort_dialog_layout,nestedScrollView,false);
-            sortDialog = new MyPopupWindow(this,contentView,ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+    public void showSortDialog() {
+        if (sortDialog == null) {
+            View contentView = LayoutInflater.from(this).inflate(R.layout.sort_dialog_layout, nestedScrollView, false);
+            sortDialog = new MyPopupWindow(this, contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         }
         sortDialog.showAtLocation(nestedScrollView, Gravity.CENTER, 0, 0);
     }

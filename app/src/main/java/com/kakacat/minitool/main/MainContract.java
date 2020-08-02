@@ -7,14 +7,17 @@ import com.kakacat.minitool.main.model.MainItem;
 import java.util.List;
 
 public interface MainContract {
-    interface Presenter extends IPresenter{
+    interface Presenter extends IPresenter {
         void initData();
+
         List<MainItem> getDailyList();
+
         List<MainItem> getGeekList();
     }
 
-    interface View extends IView<Presenter>{
+    interface View extends IView<Presenter> {
         void initData();
+
         void showChangeThemeDialog();
     }
 }

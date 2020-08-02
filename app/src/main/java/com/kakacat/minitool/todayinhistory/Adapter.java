@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.kakacat.minitool.R;
+import com.kakacat.minitool.todayinhistory.model.Article;
 
 import java.util.List;
 
@@ -32,14 +33,14 @@ public class Adapter extends ArrayAdapter<Article> {
         Article article = getItem(position);
         View view;
         ViewHolder viewHolder;
-        if(convertView == null){
-            view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
+        if (convertView == null) {
+            view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
             viewHolder = new ViewHolder();
             viewHolder.title = view.findViewById(R.id.title_article);
             viewHolder.time = view.findViewById(R.id.time_article);
             viewHolder.imageView = view.findViewById(R.id.image_view);
             view.setTag(viewHolder);
-        }else{
+        } else {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
@@ -53,7 +54,7 @@ public class Adapter extends ArrayAdapter<Article> {
     }
 
 
-    static class ViewHolder{
+    static class ViewHolder {
         TextView title;
         TextView time;
         SimpleDraweeView imageView;

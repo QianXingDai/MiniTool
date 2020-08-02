@@ -1,86 +1,63 @@
 package com.kakacat.minitool.appInfo.presenter;
 
-import android.graphics.Bitmap;
-
 import com.kakacat.minitool.appInfo.activity.AppDetailActivity;
 import com.kakacat.minitool.appInfo.contract.AppDetailContract;
-import com.kakacat.minitool.appInfo.model.AppInfo;
-import com.kakacat.minitool.common.util.UiUtil;
-import com.kakacat.minitool.common.util.SystemUtil;
+import com.kakacat.minitool.appInfo.model.AppDetailModel;
+import com.kakacat.minitool.appInfo.model.bean.AppInfoBean;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import bolts.Continuation;
+import bolts.Task;
 
 public class AppDetailPresenter implements AppDetailContract.Presenter {
 
     private AppDetailContract.View view;
+    private AppDetailModel model;
     private AppDetailActivity activity;
-
-    private AppInfo appInfo;
 
     public AppDetailPresenter(AppDetailContract.View view) {
         this.view = view;
+        this.model = AppDetailModel.getInstance();
         this.activity = view.getActivity();
     }
 
     @Override
-    public void initData(){
-        appInfo = activity.getIntent().getParcelableExtra("appInfo");
+    public void initData() {
+        model.getAppInfoBean(activity);
     }
 
     @Override
-    public void saveIcon(){
-        try{
-            String path = "/storage/emulated/0/MiniTool/" + appInfo.getAppName() + ".png";
-            File file = new File(path);
-            String result;
-            if(!file.exists()){
-                file.createNewFile();
-                FileOutputStream fos = new FileOutputStream(file);
-                Bitmap bitmap = UiUtil.drawableToBitmap(appInfo.getIcon());
-                bitmap.compress(Bitmap.CompressFormat.PNG,100,fos);
-                fos.flush();
-                fos.close();
-                result = "成功保存在目录 : " + path;
-            }
-            else{
-                result = "已经保存过该图片!";
-            }
-            view.onSaveIconResult(result);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void saveIcon() {
+        Task.callInBackground(() -> model.saveIcon()).onSuccess((Continuation<String, Void>) task -> {
+            view.onSaveIconResult(task.getResult());
+            return null;
+        }, Task.UI_THREAD_EXECUTOR);
     }
 
     @Override
     public void openMarket() {
-        SystemUtil.openMarket(activity);
+        model.openMarket(activity);
     }
 
     @Override
     public void saveApk() {
-        String srcPath = appInfo.getSourceDir();
-        String desPath = "/storage/emulated/0/MiniTool/";
-        String[] commands = new String[]{
-                "cp " + srcPath + " " + desPath + "\n",
-        };
-        SystemUtil.executeLinuxCommand(commands,false,false);
-        view.onSaveApkResult("提取成功 保存在" + desPath);
+        Task.callInBackground(() -> model.saveApk()).onSuccess((Continuation<String, Void>) task -> {
+            view.onSaveApkResult(task.getResult());
+            return null;
+        }, Task.UI_THREAD_EXECUTOR);
     }
 
     @Override
     public void openDetailInSetting() {
-        SystemUtil.openAppDetailInSetting(activity);
+        model.openDetailInSetting(activity);
     }
 
     @Override
     public void copyMd5() {
-        SystemUtil.copyToClipboard(activity,"md5",appInfo.getSignMd5());
-        view.onCopyMd5Result("复制成功");
+        view.onCopyMd5Result(model.copyMd5(activity));
     }
 
-    public AppInfo getAppInfo() {
-        return appInfo;
+    @Override
+    public AppInfoBean getAppInfoBean() {
+        return model.getAppInfoBean(activity);
     }
 }

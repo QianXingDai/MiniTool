@@ -24,32 +24,32 @@ public class TitleView extends LinearLayout {
     private int countColor;
 
     public TitleView(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public TitleView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public TitleView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr,0);
+        this(context, attrs, defStyleAttr, 0);
     }
 
     public TitleView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        init(context,attrs);
+        init(context, attrs);
     }
 
-    private void init(Context context,AttributeSet attrs){
+    private void init(Context context, AttributeSet attrs) {
         this.context = context;
 
-        TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.TitleView);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.TitleView);
         title = a.getString(R.styleable.TitleView_title);
-        count = a.getInteger(R.styleable.TitleView_count,-1);
-        countColor = a.getColor(R.styleable.TitleView_count_text_color,context.getColor(android.R.color.black));
+        count = a.getInteger(R.styleable.TitleView_count, -1);
+        countColor = a.getColor(R.styleable.TitleView_count_text_color, context.getColor(android.R.color.black));
         a.recycle();
 
-        View view = LayoutInflater.from(context).inflate(R.layout.title_view_layout,null);
+        View view = LayoutInflater.from(context).inflate(R.layout.title_view_layout, null);
         tvTitle = view.findViewById(R.id.tv_title);
         tvCount = view.findViewById(R.id.tv_count);
 
@@ -58,17 +58,17 @@ public class TitleView extends LinearLayout {
         setCountColor(countColor);
     }
 
-    public void setTitle(String title){
+    public void setTitle(String title) {
         this.title = title;
         tvTitle.setText(title);
     }
 
-    public void setCount(int count){
+    public void setCount(int count) {
         this.count = count;
         tvCount.setText(String.valueOf(count));
     }
 
-    public void setCountColor(int color){
+    public void setCountColor(int color) {
         this.countColor = color;
         tvCount.setTextColor(color);
     }

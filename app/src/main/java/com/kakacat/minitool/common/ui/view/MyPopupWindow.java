@@ -24,7 +24,7 @@ public class MyPopupWindow extends PopupWindow {
         setAnimationStyle(android.R.style.Animation_Dialog);
         window = activity.getWindow();
         layoutParams = window.getAttributes();
-        setOnDismissListener(()->{
+        setOnDismissListener(() -> {
             layoutParams.alpha = 1.0f;
             window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
             window.setAttributes(layoutParams);
@@ -40,7 +40,7 @@ public class MyPopupWindow extends PopupWindow {
     }
 
 
-    public void setAlpha(float alpha){
+    public void setAlpha(float alpha) {
         this.alpha = alpha;
     }
 }

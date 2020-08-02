@@ -27,6 +27,7 @@ public class MyFabBehavior extends FloatingActionButton.Behavior {
     private int width = 0;
     private int currentState = STATE_SCROLLED_START;
     private int additionalHiddenOffsetX = 0;
+
     @Nullable
     private ViewPropertyAnimator currentAnimator;
 
@@ -56,7 +57,7 @@ public class MyFabBehavior extends FloatingActionButton.Behavior {
         } else if (dyConsumed < 0) {
             slideUp(child);
         }
-        super.onNestedScroll(coordinatorLayout,child,target,dxConsumed,dyConsumed,dxUnconsumed,dyUnconsumed,type,consumed);
+        super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, type, consumed);
     }
 
     private void slideUp(@NonNull View child) {

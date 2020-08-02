@@ -17,29 +17,32 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="q">
+        <activity android:name=".expressinquiry.activity.DeliveryDetailActivity" />
+        <activity
+            android:name=".expressinquiry.activity.ExpressInquiryActivity"
+            android:theme="@style/MyMaterialNoActionBarStyle" />
         <activity android:name=".common.base.FrescoInitActivity" />
         <activity
             android:name=".bingpic.BingPicActivity"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
 
         <service
             android:name=".audiocapture.GetAudioService"
             android:exported="false" />
 
         <activity android:name=".translation.TranslationActivity" />
-
         <activity
             android:name=".epidemicinquiry.EpidemicInquiryActivity"
-            android:theme="@style/MyMaterialNoActionBarStyle"/>
+            android:theme="@style/MyMaterialNoActionBarStyle" />
         <activity
             android:name=".garbageclassify.GarbageClassificationActivity"
             android:theme="@style/MyMaterialNoActionBarStyle" />
         <activity
             android:name=".cleanfile.CleanFileActivity"
-            android:theme="@style/MyMaterialNoActionBarStyle"/>
+            android:theme="@style/MyMaterialNoActionBarStyle" />
         <activity
             android:name=".textencryption.TextEncryptionActivity"
-            android:theme="@style/MyMaterialNoActionBarStyle"/>
+            android:theme="@style/MyMaterialNoActionBarStyle" />
         <activity android:name=".appInfo.activity.AppDetailActivity" />
         <activity android:name=".appInfo.activity.AppInfoActivity" />
         <activity android:name=".wifipasswordview.WifiPwdActivity" />
@@ -52,10 +55,11 @@
             android:theme="@style/MyMaterialNoActionBarStyle" />
         <activity
             android:name=".inquireip.InquireIpActivity"
-            android:theme="@style/MyMaterialNoActionBarStyle"/>
+            android:theme="@style/MyMaterialNoActionBarStyle" />
         <activity
             android:name=".currencyconversion.MainActivity"
-            android:label="@string/title_currency_conversion" />
+            android:theme="@style/MyMaterialNoActionBarStyle"
+            />
         <activity
             android:name=".main.MainActivity"
             android:configChanges="orientation|screenSize">

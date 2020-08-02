@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.appInfo.model.AppInfo;
+import com.kakacat.minitool.appInfo.model.bean.AppInfoBean;
 import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
 
 import java.util.List;
@@ -19,47 +19,47 @@ public class AppInfoAdapter extends RecyclerView.Adapter<AppInfoAdapter.ViewHold
 
     private static final int HEADER_VIEW_TYPE = 1;
 
-    private List<AppInfo> appInfoList;
+    private List<AppInfoBean> appInfoBeanList;
     private LayoutInflater inflater;
     private RecycleViewItemOnClickListener clickListener;
 
-    public AppInfoAdapter(List<AppInfo> appInfoList) {
-        this.appInfoList = appInfoList;
+    public AppInfoAdapter(List<AppInfoBean> appInfoBeanList) {
+        this.appInfoBeanList = appInfoBeanList;
     }
 
-    public void setOnClickListener(RecycleViewItemOnClickListener itemClickListener){
+    public void setOnClickListener(RecycleViewItemOnClickListener itemClickListener) {
         this.clickListener = itemClickListener;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if(inflater == null){
+        if (inflater == null) {
             inflater = LayoutInflater.from(parent.getContext());
         }
         View view;
-        if(viewType == HEADER_VIEW_TYPE){
-            view = inflater.inflate(R.layout.header_app_info,parent,false);
-        }else{
-            view = inflater.inflate(R.layout.item_app_info,parent,false);
+        if (viewType == HEADER_VIEW_TYPE) {
+            view = inflater.inflate(R.layout.header_app_info, parent, false);
+        } else {
+            view = inflater.inflate(R.layout.item_app_info, parent, false);
         }
-        return new ViewHolder(view,viewType);
+        return new ViewHolder(view, viewType);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        if(position != 0){
-            AppInfo appInfo = appInfoList.get(position - 1);
+        if (position != 0) {
+            AppInfoBean appInfoBean = appInfoBeanList.get(position - 1);
 
-            holder.ivAppIcon.setImageDrawable(appInfo.getIcon());
-            holder.tvAppName.setText(appInfo.getAppName());
-            holder.tvPackageName.setText(appInfo.getPackageName());
-            holder.tvAppVersionCode.setText(appInfo.getVersionName());
-            holder.tvAppAndroidVersion.setText(appInfo.getAndroidVersionName());
-            holder.tvAppApiLevel.setText(String.valueOf(appInfo.getTargetSdkVersion()));
+            holder.ivAppIcon.setImageDrawable(appInfoBean.getIcon());
+            holder.tvAppName.setText(appInfoBean.getAppName());
+            holder.tvPackageName.setText(appInfoBean.getPackageName());
+            holder.tvAppVersionCode.setText(appInfoBean.getVersionName());
+            holder.tvAppAndroidVersion.setText(appInfoBean.getAndroidVersionName());
+            holder.tvAppApiLevel.setText(String.valueOf(appInfoBean.getTargetSdkVersion()));
 
-            if(clickListener != null){
-                holder.itemView.setOnClickListener(v-> clickListener.onClick(holder.itemView,position));
+            if (clickListener != null) {
+                holder.itemView.setOnClickListener(v -> clickListener.onClick(holder.itemView, position));
             }
         }
 
@@ -68,7 +68,7 @@ public class AppInfoAdapter extends RecyclerView.Adapter<AppInfoAdapter.ViewHold
     @Override
     public int getItemCount() {
         //因为有一个headerview
-        return appInfoList.size() + 1;
+        return appInfoBeanList.size() + 1;
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AppInfoAdapter extends RecyclerView.Adapter<AppInfoAdapter.ViewHold
         return position == 0 ? HEADER_VIEW_TYPE : super.getItemViewType(position);
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView ivAppIcon;
         private TextView tvAppName;
@@ -85,9 +85,9 @@ public class AppInfoAdapter extends RecyclerView.Adapter<AppInfoAdapter.ViewHold
         private TextView tvAppAndroidVersion;
         private TextView tvAppApiLevel;
 
-        public ViewHolder(@NonNull View itemView,int viewType) {
+        public ViewHolder(@NonNull View itemView, int viewType) {
             super(itemView);
-            if(viewType != HEADER_VIEW_TYPE){
+            if (viewType != HEADER_VIEW_TYPE) {
                 ivAppIcon = itemView.findViewById(R.id.iv_app_icon);
                 tvAppName = itemView.findViewById(R.id.tv_app_name);
                 tvPackageName = itemView.findViewById(R.id.tv_app_package_name);

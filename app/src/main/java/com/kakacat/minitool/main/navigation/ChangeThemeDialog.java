@@ -15,14 +15,14 @@ public class ChangeThemeDialog extends MyPopupWindow {
     private View contentView;
 
     private ChangeThemeDialog(Context context, View contentView, int width, int height) {
-        super(context, contentView,width, height);
+        super(context, contentView, width, height);
         this.contentView = contentView;
     }
 
 
-    public static ChangeThemeDialog getInstance(Context context, View contentView, int width, int height){
-        if(themeView == null){
-            themeView = new ChangeThemeDialog(context, contentView,width, height);
+    public static ChangeThemeDialog getInstance(Context context, View contentView, int width, int height) {
+        if (themeView == null) {
+            themeView = new ChangeThemeDialog(context, contentView, width, height);
             themeView.initView();
         }
 
@@ -30,19 +30,19 @@ public class ChangeThemeDialog extends MyPopupWindow {
     }
 
 
-    private void initView(){
+    private void initView() {
         RadioGroup radioGroup = contentView.findViewById(R.id.radio_group_theme);
         radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-            switch (checkedId){
-                case R.id.theme_blue:{
+            switch (checkedId) {
+                case R.id.theme_blue: {
                     //TODO:1
                     break;
                 }
-                case R.id.theme_purple:{
+                case R.id.theme_purple: {
                     //TODO:2
                     break;
                 }
-                case R.id.theme_pink:{
+                case R.id.theme_pink: {
                     //TODO:3
                     break;
                 }

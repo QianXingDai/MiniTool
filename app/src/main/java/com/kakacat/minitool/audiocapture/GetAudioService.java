@@ -10,8 +10,8 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 
-import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.common.util.SystemUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -36,14 +36,14 @@ public class GetAudioService extends IntentService {
         Context context = getBaseContext();
         String[] projections = {MediaStore.Video.Media.DATA};  //  列名
         assert uri != null;
-        Cursor cursor = context.getContentResolver().query(uri,projections, null, null, null);
+        Cursor cursor = context.getContentResolver().query(uri, projections, null, null, null);
         assert cursor != null;
         cursor.moveToFirst();
         String filePath = cursor.getString(0);
         cursor.close();
         String result = separateAudioFromVideo(filePath);
-        UiUtil.showToast(this,result);
-        SystemUtil.vibrate(context,200);
+        UiUtil.showToast(this, result);
+        SystemUtil.vibrate(context, 200);
     }
 
     private void addADTStoPacket(byte[] packet, int packetLen) {
@@ -65,27 +65,27 @@ public class GetAudioService extends IntentService {
         packet[6] = (byte) 0xFC;
     }
 
-    private String separateAudioFromVideo(String filePath){
-        try{
+    private String separateAudioFromVideo(String filePath) {
+        try {
             MediaExtractor mediaExtractor = new MediaExtractor();
             mediaExtractor.setDataSource(filePath);      //设置视频路径
             int audioIndex = 0;
             int trackCount = mediaExtractor.getTrackCount();
             MediaFormat audioFormat = null;
-            for(int i = 0; i < trackCount; i++){    //得到音轨
+            for (int i = 0; i < trackCount; i++) {    //得到音轨
                 MediaFormat mediaFormat = mediaExtractor.getTrackFormat(i);
                 String mime = mediaFormat.getString(MediaFormat.KEY_MIME);
-                if(mime.startsWith("audio")){
+                if (mime.startsWith("audio")) {
                     audioIndex = i;
                     audioFormat = mediaFormat;
                     break;
                 }
             }
 
-            File audioFile = new File(Environment.getExternalStorageDirectory() + "/MiniTool/" + filePath.substring(filePath.lastIndexOf('/') + 1,filePath.length() - 1) + "3");
-            if(audioFile.exists()){
+            File audioFile = new File(Environment.getExternalStorageDirectory() + "/MiniTool/" + filePath.substring(filePath.lastIndexOf('/') + 1, filePath.length() - 1) + "3");
+            if (audioFile.exists()) {
                 audioFile.delete();
-            }else{
+            } else {
                 File parentFile = audioFile.getParentFile();
                 parentFile.mkdirs();
                 audioFile.createNewFile();
@@ -96,12 +96,12 @@ public class GetAudioService extends IntentService {
             mediaExtractor.selectTrack(audioIndex);
             int len;
 
-            while((len = mediaExtractor.readSampleData(audioByteBuffer,0)) != -1){
+            while ((len = mediaExtractor.readSampleData(audioByteBuffer, 0)) != -1) {
                 byte[] bytes = new byte[len];
                 audioByteBuffer.get(bytes);
                 byte[] adtsData = new byte[len + 7];
                 addADTStoPacket(adtsData, len + 7);
-                System.arraycopy(bytes,0,adtsData,7,len);
+                System.arraycopy(bytes, 0, adtsData, 7, len);
                 fos.write(adtsData);
                 audioByteBuffer.clear();
                 mediaExtractor.advance();
@@ -110,7 +110,7 @@ public class GetAudioService extends IntentService {
             fos.close();
             mediaExtractor.release();
             return "提取完成,保存在目录" + audioFile.getAbsolutePath();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return "提取失败...";

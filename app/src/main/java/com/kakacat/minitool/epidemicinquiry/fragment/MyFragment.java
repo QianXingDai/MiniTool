@@ -21,13 +21,12 @@ import com.kakacat.minitool.epidemicinquiry.adapter.DomesticAdapter;
 
 public class MyFragment extends Fragment {
 
-    private static final String[] titles = {"现有确诊","现有疑似"};
-    private static final int[] countTextColors = {R.color.light4,R.color.light2};
-
+    private static final String[] titles = {"现有确诊", "现有疑似"};
+    private static final int[] countTextColors = {R.color.light4, R.color.light2};
+    ExpandableListView expandableListView;
     private Context context;
     private Contract.Presenter presenter;
     private DomesticAdapter adapter;
-    ExpandableListView expandableListView;
 
     public MyFragment(Contract.Presenter presenter) {
         this.presenter = presenter;
@@ -36,7 +35,7 @@ public class MyFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.myfragment_layout1,container,false);
+        View view = inflater.inflate(R.layout.myfragment_layout1, container, false);
         this.context = getContext();
 
         initTitleView(view);
@@ -45,9 +44,9 @@ public class MyFragment extends Fragment {
         return view;
     }
 
-    private void initTitleView(View contentView){
+    private void initTitleView(View contentView) {
         GridLayout titleViewContainer = contentView.findViewById(R.id.title_view_container);
-        for(int i = 0; i < titles.length; i++){
+        for (int i = 0; i < titles.length; i++) {
             TitleView titleView = new TitleView(context);
             titleView.setTitle(titles[i]);
             titleView.setCountColor(countTextColors[i]);
@@ -56,9 +55,9 @@ public class MyFragment extends Fragment {
         }
     }
 
-    private void initExpandableListView(View contentView){
+    private void initExpandableListView(View contentView) {
         expandableListView = contentView.findViewById(R.id.expand_list_view);
-        adapter = new DomesticAdapter(context,presenter.getGroupList());
+        adapter = new DomesticAdapter(context, presenter.getGroupList());
         expandableListView.setAdapter(adapter);
     }
 
@@ -80,7 +79,7 @@ public class MyFragment extends Fragment {
         listView.setLayoutParams(params);
     }
 
-    public void updateView(){
+    public void updateView() {
         adapter.notifyDataSetChanged();
         setListViewHeightBasedOnChildren(expandableListView);
     }

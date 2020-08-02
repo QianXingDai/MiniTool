@@ -20,7 +20,7 @@ public class DomesticAdapter extends BaseExpandableListAdapter {
     private List<GroupBean> groupBeanList;
     private LayoutInflater inflater;
 
-    public DomesticAdapter(Context context,List<GroupBean> groupBeanList) {
+    public DomesticAdapter(Context context, List<GroupBean> groupBeanList) {
         this.inflater = LayoutInflater.from(context);
         this.groupBeanList = groupBeanList;
     }
@@ -68,11 +68,11 @@ public class DomesticAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int i, boolean b, View view, ViewGroup viewGroup) {
         GroupViewHolder holder;
         GroupBean groupBean = groupBeanList.get(i);
-        if(view == null){
-            view = inflater.inflate(R.layout.group_layout,viewGroup,false);
+        if (view == null) {
+            view = inflater.inflate(R.layout.group_layout, viewGroup, false);
             holder = new GroupViewHolder(view);
             view.setTag(holder);
-        }else{
+        } else {
             holder = (GroupViewHolder) view.getTag();
         }
 
@@ -91,11 +91,11 @@ public class DomesticAdapter extends BaseExpandableListAdapter {
         ChildViewHolder holder;
         ChildBean childBean = groupBeanList.get(i).getChildBeanList().get(i1);
 
-        if(view == null){
-            view = inflater.inflate(R.layout.child_layout,viewGroup,false);
+        if (view == null) {
+            view = inflater.inflate(R.layout.child_layout, viewGroup, false);
             holder = new ChildViewHolder(view);
             view.setTag(holder);
-        }else{
+        } else {
             holder = (ChildViewHolder) view.getTag();
         }
 
@@ -114,7 +114,7 @@ public class DomesticAdapter extends BaseExpandableListAdapter {
         return true;
     }
 
-    static class GroupViewHolder{
+    static class GroupViewHolder {
 
         private MaterialButton btnLocation;
         private TextView tvCurrentConfirmCount;
@@ -133,7 +133,7 @@ public class DomesticAdapter extends BaseExpandableListAdapter {
         }
     }
 
-    static class ChildViewHolder{
+    static class ChildViewHolder {
 
         private TextView tvLocation;
         private TextView tvCurrentConfirmCount;

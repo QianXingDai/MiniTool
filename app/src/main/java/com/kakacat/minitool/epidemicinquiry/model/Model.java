@@ -1,11 +1,6 @@
 package com.kakacat.minitool.epidemicinquiry.model;
 
 import com.google.gson.Gson;
-import com.kakacat.minitool.common.constant.Result;
-import com.kakacat.minitool.common.myinterface.HttpCallback;
-import com.kakacat.minitool.common.util.HttpUtil;
-import com.kakacat.minitool.common.util.ThreadUtil;
-import com.kakacat.minitool.epidemicinquiry.Presenter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,45 +19,37 @@ public class Model {
     //疫情省市情况查询接口key
     private static final String KEY = "2675f5858d0ba338b6d8d4f93cfe17be";
     //疫情省市情况查询地址
-    private static final String ADDRESS = HOST + "?key=" + KEY;
+    public static final String ADDRESS = HOST + "?key=" + KEY;
 
+    private static Model model;
     private List<GroupBean> groupBeanList;
 
-    public void sendRequest(Presenter.OnRequestCallback callback){
-        HttpUtil.sendOkHttpRequest(ADDRESS, new HttpCallback() {
-            int result = Result.REQUEST_ERROR;
-            @Override
-            public void onSuccess(Response response) {
-                if(handleResponse(response)){
-                    result = Result.HANDLE_SUCCESS;
-                }else{
-                    result = Result.HANDLE_FAIL;
-                }
-                ThreadUtil.callInUiThread(() -> callback.onRequestSuccess(result));
-            }
+    private Model() {
 
-            @Override
-            public void onError() {
-                ThreadUtil.callInUiThread(callback::onRequestError);
-            }
-        });
+    }
+
+    public static Model getInstance() {
+        if (model == null) {
+            model = new Model();
+        }
+        return model;
     }
 
     public List<GroupBean> getGroupBeanList() {
-        if(groupBeanList == null){
+        if (groupBeanList == null) {
             groupBeanList = new ArrayList<>();
         }
         return groupBeanList;
     }
 
-    private boolean handleResponse(Response response){
-        try{
+    public boolean handleResponse(Response response) {
+        try {
             String s = Objects.requireNonNull(response.body()).string();
             JSONObject jsonObject = new JSONObject(s);
             JSONArray jsonArray = jsonObject.getJSONArray("newslist");
             Gson gson = new Gson();
 
-            for(int i = 0; i < jsonArray.length(); i++){
+            for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                 GroupBean groupBean = new GroupBean();
 
@@ -75,16 +62,14 @@ public class Model {
 
                 List<ChildBean> childBeanList = groupBean.getChildBeanList();
                 JSONArray jsonArray1 = jsonObject1.getJSONArray("cities");
-                for(int i1 = 0; i1 < jsonArray1.length(); i1++){
-                    ChildBean childBean = gson.fromJson(jsonArray1.getJSONObject(i1).toString(),ChildBean.class);
+                for (int i1 = 0; i1 < jsonArray1.length(); i1++) {
+                    ChildBean childBean = gson.fromJson(jsonArray1.getJSONObject(i1).toString(), ChildBean.class);
                     childBeanList.add(childBean);
-  //                  SystemUtil.log("add " + i1);
                 }
- //               groupBean.setChildBeanList(childBeanList);
                 getGroupBeanList().add(groupBean);
             }
             return true;
-        }catch (IOException | JSONException e){
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
 

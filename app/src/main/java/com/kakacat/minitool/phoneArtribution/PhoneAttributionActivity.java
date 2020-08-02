@@ -11,12 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.constant.Result;
 import com.kakacat.minitool.common.util.UiUtil;
+import com.kakacat.minitool.phoneartribution.model.PhoneNumber;
 
-import bolts.Task;
-
-public class PhoneAttributionActivity extends AppCompatActivity implements Contract.View{
+public class PhoneAttributionActivity extends AppCompatActivity implements Contract.View {
 
     private Contract.Presenter presenter;
 
@@ -37,8 +35,8 @@ public class PhoneAttributionActivity extends AppCompatActivity implements Contr
     }
 
     @Override
-    public void initData(){
-        setPresenter(new Presenter(this));
+    public void initData() {
+        getPresenter();
     }
 
     @Override
@@ -58,31 +56,30 @@ public class PhoneAttributionActivity extends AppCompatActivity implements Contr
     }
 
     @Override
-    public void onRequestDataCallBack(PhoneNumber phoneNumber, int resultFlag) {
-        Task.call(() -> {
-            if(resultFlag == Result.HANDLE_SUCCESS && phoneNumber != null){
-                tvProvince.setText(phoneNumber.getProvince());
-                tvCity.setText(phoneNumber.getCity());
-                tvAreaCode.setText(phoneNumber.getAreaCode());
-                tvZip.setText(phoneNumber.getZip());
-                tvCompany.setText(phoneNumber.getCompany());
-                tvNumber.setText(phoneNumber.getNumber());
-                UiUtil.showToast(this,"查询成功");
-            }else if(resultFlag == Result.REQUEST_ERROR){
-                UiUtil.showToast(this,"http请求错误");
-            }else if(resultFlag == Result.INPUT_ERROR){
-                UiUtil.showToast(this,"输入错误");
-            }else if(resultFlag == Result.HANDLE_FAIL){
-                UiUtil.showToast(this,"处理响应数据错误");
-            }
-            return null;
-        }, Task.UI_THREAD_EXECUTOR);
+    public Contract.Presenter getPresenter() {
+        if (presenter == null) {
+            presenter = new Presenter(this);
+        }
+        return presenter;
     }
 
-    private void initToolbar(){
+    @Override
+    public void onRequestDataCallBack(PhoneNumber phoneNumber, String result) {
+        if (phoneNumber != null) {
+            tvProvince.setText(phoneNumber.getProvince());
+            tvCity.setText(phoneNumber.getCity());
+            tvAreaCode.setText(phoneNumber.getAreaCode());
+            tvZip.setText(phoneNumber.getZip());
+            tvCompany.setText(phoneNumber.getCompany());
+            tvNumber.setText(phoneNumber.getNumber());
+        }
+        UiUtil.showToast(this, result);
+    }
+
+    private void initToolbar() {
         setSupportActionBar(findViewById(R.id.toolbar_phone_attribution));
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
             actionBar.setDisplayShowTitleEnabled(false);
@@ -90,15 +87,10 @@ public class PhoneAttributionActivity extends AppCompatActivity implements Contr
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem){
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() == android.R.id.home)
             finish();
         return true;
-    }
-
-    @Override
-    public void setPresenter(Contract.Presenter presenter) {
-        this.presenter = presenter;
     }
 
     @Override

@@ -275,6 +275,8 @@ attr cornerSizeBottomLeft
 attr cornerSizeBottomRight
 attr cornerSizeTopLeft
 attr cornerSizeTopRight
+attr count
+attr count_text_color
 attr counterEnabled
 attr counterMaxLength
 attr counterOverflowTextAppearance
@@ -1416,7 +1418,11 @@ drawable android_r
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_preload
+drawable bg_epidemic
+drawable bg_login
 drawable bg_place_holder
+drawable bg_time_line_dot
+drawable bg_wifi_head
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1425,6 +1431,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable circle_bg
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1436,6 +1443,7 @@ drawable exit
 drawable ic_action_back
 drawable ic_action_inquire
 drawable ic_action_slide
+drawable ic_all
 drawable ic_apk
 drawable ic_app_info
 drawable ic_arrow_right
@@ -1492,7 +1500,9 @@ drawable ic_no
 drawable ic_nz
 drawable ic_ph
 drawable ic_phone
+drawable ic_plus
 drawable ic_recycleable
+drawable ic_right
 drawable ic_ru
 drawable ic_se
 drawable ic_search
@@ -1503,6 +1513,7 @@ drawable ic_sort
 drawable ic_th
 drawable ic_today_in_history
 drawable ic_translate
+drawable ic_truck
 drawable ic_tw
 drawable ic_uk
 drawable ic_up_arrow
@@ -1514,6 +1525,7 @@ drawable ic_white_star
 drawable ic_wifi
 drawable ic_za
 drawable item_selector
+drawable material_1
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1643,6 +1655,8 @@ id bt_reset_battery
 id bt_save_icon
 id bt_select_all
 id btm_nav
+id btn
+id btn_location
 id buttonPanel
 id cancel_action
 id cancel_button
@@ -1659,7 +1673,6 @@ id checked
 id chip
 id chip_group
 id chronometer
-id circle_progress_view
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -1690,18 +1703,19 @@ id drawer_layout
 id dropdown_menu
 id edit_query
 id edit_text
-id edit_text1
 id empty_file
 id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
 id et
+id et_code
 id et_current_battery
 id et_input
 id et_input_ip
 id exitUntilCollapsed
 id expand_activities_button
+id expand_list_view
 id expanded_menu
 id fab
 id fab_delete
@@ -1727,6 +1741,7 @@ id ghost_view_holder
 id gone
 id group_divider
 id groups
+id head_tv
 id hideable
 id home
 id homeAsUp
@@ -1758,6 +1773,7 @@ id linear_layout
 id listMode
 id list_item
 id list_view
+id ll_update_time
 id masked
 id media_actions
 id message
@@ -1867,6 +1883,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id signed
 id skipCollapsed
 id slide
 id smallLabel
@@ -1926,8 +1943,11 @@ id title
 id titleDividerNoCustom
 id title_article
 id title_template
+id title_tv
+id title_view_container
 id toolbar
 id toolbar_inquire_ip
+id toolbar_layout
 id toolbar_phone_attribution
 id top
 id topPanel
@@ -1958,18 +1978,17 @@ id tv_app_version_code
 id tv_area_code
 id tv_city
 id tv_company
-id tv_confirmed_count
+id tv_company_tel
+id tv_content
+id tv_cost_time
+id tv_count
 id tv_country
-id tv_country_confirmed_count
-id tv_country_cured_count
-id tv_country_current_confirmed_count
-id tv_country_dead_count
-id tv_country_dead_count_rank
-id tv_country_dead_rate
 id tv_country_name
-id tv_current_confirmed_count
+id tv_cured_count
+id tv_current_confirm_count
 id tv_dead_count
 id tv_device_name
+id tv_dot
 id tv_encryption_method
 id tv_file_name
 id tv_file_path
@@ -1979,12 +1998,14 @@ id tv_garbage_type_content1
 id tv_garbage_type_content2
 id tv_garbage_type_title1
 id tv_garbage_type_title2
+id tv_head
 id tv_header
 id tv_header2
 id tv_header3
 id tv_ip
 id tv_isp
 id tv_last_update_time
+id tv_location
 id tv_md5_sign
 id tv_min_api
 id tv_money_unit
@@ -1996,14 +2017,15 @@ id tv_permission
 id tv_province
 id tv_save_image
 id tv_security_patch_level
-id tv_sub_title
-id tv_suspected_count
+id tv_suspect_count
 id tv_target_api
 id tv_tip
 id tv_title
 id tv_to
+id tv_total_confirm_count
 id tv_type
-id tv_update_time
+id tv_update_time1
+id tv_update_time2
 id tv_version_name
 id tv_wifi_name
 id tv_wifi_pwd
@@ -2011,7 +2033,9 @@ id tv_zip
 id unchecked
 id uniform
 id unlabeled
+id unsigned
 id up
+id update_time_tv
 id useLogo
 id video
 id view_offset_helper
@@ -2088,8 +2112,10 @@ layout activity_app_info
 layout activity_bing_pic
 layout activity_clean_file
 layout activity_currency_conversion
+layout activity_delivery_detail
+layout activity_epidemic_inquiry
+layout activity_express_inquiry
 layout activity_garbage_classification
-layout activity_global_outbreak
 layout activity_inquire_ip
 layout activity_main
 layout activity_phone_attribution
@@ -2100,12 +2126,15 @@ layout activity_wifi_pwd_view
 layout article_layout
 layout big_image_layout
 layout bing_pic_item_layout
-layout click_layout
+layout child_layout
 layout collection_item_layout
 layout collection_layout
 layout content_view
 layout country_view_layout
 layout custom_dialog
+layout delivery_detail_head
+layout delivery_detail_item
+layout delivery_item
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2126,15 +2155,16 @@ layout dialog_select_country
 layout drawer
 layout fake_battery_layout
 layout file_item_layout
+layout fragment
 layout fragment_layout
-layout fragment_layout2
 layout garbage_layout
+layout group_layout
 layout header_api_percent
 layout header_app_info
+layout input_code
 layout item_api_percent
 layout item_app_info
 layout item_country_layout
-layout item_detail
 layout item_layout
 layout language_item_layout
 layout loading_view
@@ -2169,6 +2199,7 @@ layout mtrl_picker_header_title_text
 layout mtrl_picker_header_toggle
 layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
+layout myfragment_layout1
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -2204,7 +2235,9 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout title_view_layout
 layout wifi_item_layout
+menu btm_nav
 menu menu
 menu menu_btm_nav
 menu nav_menu
@@ -3144,6 +3177,7 @@ styleable TabLayout tabBackground tabContentStart tabGravity tabIconTint tabIcon
 styleable TextAppearance android_textSize android_typeface android_textStyle android_textColor android_textColorHint android_textColorLink android_shadowColor android_shadowDx android_shadowDy android_shadowRadius android_fontFamily android_textFontWeight fontFamily fontVariationSettings textAllCaps textLocale
 styleable TextInputLayout android_textColorHint android_hint boxBackgroundColor boxBackgroundMode boxCollapsedPaddingTop boxCornerRadiusBottomEnd boxCornerRadiusBottomStart boxCornerRadiusTopEnd boxCornerRadiusTopStart boxStrokeColor boxStrokeWidth boxStrokeWidthFocused counterEnabled counterMaxLength counterOverflowTextAppearance counterOverflowTextColor counterTextAppearance counterTextColor endIconCheckable endIconContentDescription endIconDrawable endIconMode endIconTint endIconTintMode errorEnabled errorIconDrawable errorIconTint errorIconTintMode errorTextAppearance errorTextColor helperText helperTextEnabled helperTextTextAppearance helperTextTextColor hintAnimationEnabled hintEnabled hintTextAppearance hintTextColor passwordToggleContentDescription passwordToggleDrawable passwordToggleEnabled passwordToggleTint passwordToggleTintMode shapeAppearance shapeAppearanceOverlay startIconCheckable startIconContentDescription startIconDrawable startIconTint startIconTintMode
 styleable ThemeEnforcement android_textAppearance enforceMaterialTheme enforceTextAppearance
+styleable TitleView count count_text_color title
 styleable Toolbar android_gravity android_minHeight buttonGravity collapseContentDescription collapseIcon contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation logo logoDescription maxButtonHeight menu navigationContentDescription navigationIcon popupTheme subtitle subtitleTextAppearance subtitleTextColor title titleMargin titleMarginBottom titleMarginEnd titleMarginStart titleMarginTop titleMargins titleTextAppearance titleTextColor
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode

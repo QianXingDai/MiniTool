@@ -28,8 +28,8 @@ public class FakeBatteryView extends MyPopupWindow {
         this.contentView = contentView;
     }
 
-    public static FakeBatteryView getInstance(Activity activity, View parentView,View contentView,int width,int height){
-        if(fakeBatteryView == null){
+    public static FakeBatteryView getInstance(Activity activity, View parentView, View contentView, int width, int height) {
+        if (fakeBatteryView == null) {
             fakeBatteryView = new FakeBatteryView(activity, contentView, width, height);
             fakeBatteryView.parentView = parentView;
             fakeBatteryView.initView();
@@ -39,20 +39,24 @@ public class FakeBatteryView extends MyPopupWindow {
     }
 
 
-    private void initView(){
+    private void initView() {
         etBattery = contentView.findViewById(R.id.et_current_battery);
         seekBarBattery = contentView.findViewById(R.id.seek_bar_battery);
         Button btFakeBattery = contentView.findViewById(R.id.bt_fake_battery);
         Button btResetBattery = contentView.findViewById(R.id.bt_reset_battery);
-        seekBarBattery.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+        seekBarBattery.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 etBattery.setText(progress + "");
             }
+
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {}
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {}
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
         });
         btResetBattery.setOnClickListener(v -> {
             SystemUtil.resetBattery();
@@ -61,8 +65,8 @@ public class FakeBatteryView extends MyPopupWindow {
         });
         btFakeBattery.setOnClickListener(v -> {
             int val = Integer.parseInt(etBattery.getText().toString());
-            if(val < 0 || val > 100)
-                Snackbar.make(parentView,"你正常点好吗???",Snackbar.LENGTH_SHORT).show();
+            if (val < 0 || val > 100)
+                Snackbar.make(parentView, "你正常点好吗???", Snackbar.LENGTH_SHORT).show();
             else {
                 SystemUtil.setBatteryLevel(val + "");
                 seekBarBattery.setProgress(val);
