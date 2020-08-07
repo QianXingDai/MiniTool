@@ -6,6 +6,7 @@ import android.text.TextUtils;
 
 import com.kakacat.minitool.R;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -36,7 +37,7 @@ public class Model {
         return model;
     }
 
-    public void readRateFromLocal(Context context) {
+    public void readRateFromLocal(@NotNull Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("rate", Context.MODE_PRIVATE);
         Rate.us = sharedPreferences.getFloat("us", (float) Rate.us);
         Rate.eu = sharedPreferences.getFloat("eu", (float) Rate.eu);
@@ -69,7 +70,7 @@ public class Model {
         return countryBeanList;
     }
 
-    public boolean handleResponse(Response response) {
+    public boolean handleResponse(@NotNull Response response) {
         try {
             String s = Objects.requireNonNull(response.body()).string();
             if (!TextUtils.isEmpty(s)) {
@@ -127,6 +128,4 @@ public class Model {
         countryBeanList.add(new CountryBean(R.drawable.ic_za, R.string.name_za, R.string.unit_za, Rate.za));
         countryBeanList.add(new CountryBean(R.drawable.ic_cn, R.string.name_cn, R.string.unit_cn, Rate.cn));
     }
-
-
 }

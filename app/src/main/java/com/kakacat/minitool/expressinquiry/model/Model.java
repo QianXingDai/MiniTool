@@ -9,6 +9,7 @@ import com.kakacat.minitool.common.myinterface.HttpCallback;
 import com.kakacat.minitool.common.util.HttpUtil;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -71,7 +72,7 @@ public class Model {
         HttpUtil.sendOkHttpRequest(address, callback, requestBody);
     }
 
-    public boolean checkInput(String code) {
+    public boolean checkInput(@NotNull String code) {
         for (char ch : code.toCharArray()) {
             if (ch < '0' || ch > '9') {
                 return false;
@@ -121,6 +122,7 @@ public class Model {
         return true;
     }
 
+    @Nullable
     private Delivery handle(Response response, String code) {
         try {
             String s = Objects.requireNonNull(response.body()).string();

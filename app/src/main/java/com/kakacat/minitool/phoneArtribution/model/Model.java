@@ -2,6 +2,7 @@ package com.kakacat.minitool.phoneartribution.model;
 
 import android.text.TextUtils;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -28,7 +29,7 @@ public class Model {
         return model;
     }
 
-    public PhoneNumber response2PhoneNumber(Response response) {
+    public PhoneNumber response2PhoneNumber(@NotNull Response response) {
         try {
             String s = Objects.requireNonNull(response.body()).string();
             if (!TextUtils.isEmpty(s)) {

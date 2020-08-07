@@ -2,8 +2,11 @@ package com.kakacat.minitool.common.util;
 
 import android.icu.text.SimpleDateFormat;
 
+import org.jetbrains.annotations.NotNull;
+
 public class StringUtil {
 
+    @NotNull
     public static String byteToMegabyte(long bytes) {
         String result;
         if (bytes > 1024 * 1024 * 1024) {
@@ -21,7 +24,8 @@ public class StringUtil {
         return sdf.format(time);
     }
 
-    public static String byteToString(byte[] bytes, boolean addColon) {
+    @NotNull
+    public static String byteToString(@NotNull byte[] bytes, boolean addColon) {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < bytes.length; i++) {
@@ -35,6 +39,4 @@ public class StringUtil {
         }
         return sb.toString();
     }
-
-
 }

@@ -3,6 +3,9 @@ package com.kakacat.minitool.textencryption;
 import com.kakacat.minitool.common.util.EncryptionUtil;
 import com.kakacat.minitool.common.util.StringUtil;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
@@ -28,7 +31,7 @@ public class Model {
         return encryptionMethods;
     }
 
-    public String encryptText(String content, CharSequence method) {
+    public String encryptText(String content, @NotNull CharSequence method) {
         String result = null;
         if (method.equals(encryptionMethods[0])) {
             result = EncryptionUtil.encryptionMD5(content.getBytes(), false);
@@ -39,6 +42,7 @@ public class Model {
         return result;
     }
 
+    @Nullable
     private String encryptHmacSHA1(byte[] encryptText) {
         try {
             String encryptKey = EncryptionUtil.encryptBASE64(encryptText);

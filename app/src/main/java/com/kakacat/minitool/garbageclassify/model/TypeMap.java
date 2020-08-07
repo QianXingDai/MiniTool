@@ -2,6 +2,9 @@ package com.kakacat.minitool.garbageclassify.model;
 
 import com.kakacat.minitool.R;
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 public class TypeMap {
 
     public static int getIcon(int type) {
@@ -19,6 +22,8 @@ public class TypeMap {
     }
 
 
+    @NotNull
+    @Contract(pure = true)
     public static String getTypeName(int type) {
         switch (type) {
             case 0:

@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.kakacat.minitool.cleanfile.model.MyFragment;
+import com.kakacat.minitool.cleanfile.MyFragment;
 
 import java.util.List;
 

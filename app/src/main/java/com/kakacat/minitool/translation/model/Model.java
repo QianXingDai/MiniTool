@@ -3,10 +3,11 @@ package com.kakacat.minitool.translation.model;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.kakacat.minitool.common.constant.AppKey;
-import com.kakacat.minitool.common.constant.Host;
+import com.kakacat.minitool.common.myinterface.HttpCallback;
 import com.kakacat.minitool.common.util.EncryptionUtil;
+import com.kakacat.minitool.common.util.HttpUtil;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -21,6 +22,12 @@ import java.util.Objects;
 import okhttp3.Response;
 
 public class Model {
+
+    //百度提供的翻译查询接口appid
+    private static final String TRANSLATE_APP_ID = "20200420000425201";
+    private static final String TRANSLATE_SECRET_KEY = "qceN7y1RBpEp8x1g47_i";
+    //百度提供的翻译查询接口
+    public static final String TRANSLATE_HOST = "https://api.fanyi.baidu.com/api/trans/vip/translate?";
 
     private static Model model;
 
@@ -78,22 +85,28 @@ public class Model {
         editor.commit();
     }
 
-    public String getAddress(String input, CharSequence from, CharSequence to) {
+    public void sendRequest(String input, CharSequence from, CharSequence to, HttpCallback callback){
+        String address = getAddress(input,from,to);
+        HttpUtil.sendOkHttpRequest(address,callback);
+    }
+
+    @NotNull
+    private String getAddress(String input, CharSequence from, CharSequence to) {
         from = LanguageMap.getShortCode(from);
         to = LanguageMap.getShortCode(to);
         String random = String.valueOf((int) (Math.random() * 1000000));
-        String s = AppKey.TRANSLATE_APP_ID + input + random + AppKey.TRANSLATE_SECRET_KEY;
+        String s = TRANSLATE_APP_ID + input + random + TRANSLATE_SECRET_KEY;
         String sign = EncryptionUtil.encryptionMD5(s.getBytes(), false);
-        return Host.TRANSLATE_HOST +
+        return TRANSLATE_HOST +
                 "q=" + input +
                 "&from=" + from +
                 "&to=" + to +
-                "&appid=" + AppKey.TRANSLATE_APP_ID +
+                "&appid=" + TRANSLATE_APP_ID +
                 "&salt=" + random +
                 "&sign=" + sign;
     }
 
-    public String handleTranslationResponse(Response response) {
+    public String handleTranslationResponse(@NotNull Response response) {
         try {
             String s = Objects.requireNonNull(response.body()).string();
             JSONObject jsonObject = new JSONObject(s);

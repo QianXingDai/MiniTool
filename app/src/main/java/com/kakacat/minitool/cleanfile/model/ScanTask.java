@@ -1,10 +1,15 @@
 package com.kakacat.minitool.cleanfile.model;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.util.List;
 import java.util.concurrent.Callable;
 
 public class ScanTask implements Callable<Void> {
+
+    private static final String[] videoSuffixes = {".mp4", ".mkv", ".flv"};
+    private static final String[] audioSuffixes = {".mp3", ".flac", ".aac"};
 
     private List<File> targetScanFileList;
     private List<List<FileItem>> fileListList;
@@ -20,7 +25,7 @@ public class ScanTask implements Callable<Void> {
         return null;
     }
 
-    private void start(File file) {
+    private void start(@NotNull File file) {
         if (file.isFile()) {
             if (file.length() == 0) {
                 fileListList.get(1).add(new FileItem(file, false));
@@ -50,8 +55,6 @@ public class ScanTask implements Callable<Void> {
     }
 
     private boolean isVideo(String fileName) {
-        String[] videoSuffixes = {".mp4", ".mkv", ".flv"};
-
         for (String suffix : videoSuffixes) {
             if (fileName.endsWith(suffix)) {
                 return true;
@@ -62,8 +65,6 @@ public class ScanTask implements Callable<Void> {
     }
 
     private boolean isAudio(String fileName) {
-        String[] audioSuffixes = {".mp3", ".flac", ".aac"};
-
         for (String suffix : audioSuffixes) {
             if (fileName.endsWith(suffix)) {
                 return true;
@@ -72,6 +73,4 @@ public class ScanTask implements Callable<Void> {
 
         return false;
     }
-
-
 }

@@ -4,6 +4,7 @@ import android.text.TextUtils;
 
 import com.google.gson.Gson;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,7 +34,7 @@ public class Model {
         return model;
     }
 
-    public boolean handleResponse(Response response) {
+    public boolean handleResponse(@NotNull Response response) {
         try {
             String s = Objects.requireNonNull(response.body()).string();
             if (TextUtils.isEmpty(s)) {

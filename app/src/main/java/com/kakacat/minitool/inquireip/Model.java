@@ -2,6 +2,7 @@ package com.kakacat.minitool.inquireip;
 
 import android.text.TextUtils;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -32,7 +33,7 @@ public class Model {
         return QUERY_IP_HOST + input + "&key=" + QUERY_IP_KEY;
     }
 
-    public IpBean handleIpDataResponse(Response response) {
+    public IpBean handleIpDataResponse(@NotNull Response response) {
         try {
             String s = Objects.requireNonNull(response.body()).string();
             if (TextUtils.isEmpty(s)) {

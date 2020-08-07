@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 
 import com.kakacat.minitool.appInfo.model.bean.AppInfoBean;
 import com.kakacat.minitool.common.util.SystemUtil;
-import com.kakacat.minitool.common.util.UiUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -21,8 +20,8 @@ public class AppDetailModel {
 
     }
 
-    public static AppDetailModel getInstance() {
-        if (model == null) {
+    public static AppDetailModel getInstance(){
+        if(model == null){
             model = new AppDetailModel();
         }
         return model;
@@ -40,18 +39,13 @@ public class AppDetailModel {
         try {
             String path = "/storage/emulated/0/MiniTool/" + appInfoBean.getAppName() + ".png";
             File file = new File(path);
+            SystemUtil.createFile(file,false);
 
-            if (!file.exists()) {
-                file.createNewFile();
-                FileOutputStream fos = new FileOutputStream(file);
-                Bitmap bitmap = UiUtil.drawableToBitmap(appInfoBean.getIcon());
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
-                fos.flush();
-                fos.close();
-                result = "成功保存在目录 : " + path;
-            } else {
-                result = "已经保存过该图片!";
-            }
+            FileOutputStream fos = new FileOutputStream(file);
+            appInfoBean.getBitmap().compress(Bitmap.CompressFormat.PNG, 100, fos);
+            fos.flush();
+            fos.close();
+            result = "成功保存在目录 : " + path;
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,11 +59,12 @@ public class AppDetailModel {
 
     public String saveApk() {
         String srcPath = appInfoBean.getSourceDir();
-        String desPath = "/storage/emulated/0/MiniTool/";
+        String desPath = "/storage/emulated/0/MiniTool/" + appInfoBean.getAppName() + ".apk";
+        SystemUtil.createFile(new File(desPath),false);
         String[] commands = new String[]{
                 "cp " + srcPath + " " + desPath + "\n",
         };
-        SystemUtil.executeLinuxCommand(commands, false, false);
+        SystemUtil.executeLinuxCommand(commands, false, true);
         return "提取成功 保存在" + desPath;
     }
 
@@ -79,6 +74,6 @@ public class AppDetailModel {
     }
 
     public void openDetailInSetting(Activity activity) {
-        SystemUtil.openAppDetailInSetting(activity);
+        SystemUtil.openAppDetailInSetting(activity,appInfoBean.getPackageName());
     }
 }

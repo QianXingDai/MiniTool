@@ -3,7 +3,10 @@ package com.kakacat.minitool.bingpic;
 import android.graphics.Bitmap;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.kakacat.minitool.common.util.SystemUtil;
 import com.kakacat.minitool.common.util.UiUtil;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -47,19 +50,15 @@ public class Model {
         }
     }
 
-    public String saveImage(SimpleDraweeView imageView) {
+    public String saveImage(@NotNull SimpleDraweeView imageView) {
         String result;
         try {
-            String path = "/storage/emulated/0/Pictures/MiniTool/" + System.currentTimeMillis() + ".png";
+            String path = "/storage/emulated/0/Pictures/" + System.currentTimeMillis() + ".jpeg";
             File file = new File(path);
-            File parentFile = file.getParentFile();
-            assert parentFile != null;
-            if (!parentFile.exists())
-                parentFile.mkdirs();
-            file.createNewFile();
+            SystemUtil.createFile(file,false);
             FileOutputStream fos = new FileOutputStream(path);
-            Bitmap bitmap = UiUtil.drawableToBitmap(imageView.getDrawable());
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+            Bitmap bitmap = UiUtil.drawable2Bitmap(imageView.getDrawable());
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
 
             fos.flush();
             fos.close();
@@ -72,6 +71,7 @@ public class Model {
         return result;
     }
 
+    @NotNull
     private String getNextAddress() {
         return BING_PIC_HOST +
                 "?d=" + (index++) +

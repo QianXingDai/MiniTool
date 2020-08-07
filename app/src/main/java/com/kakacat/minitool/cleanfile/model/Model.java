@@ -11,7 +11,7 @@ import bolts.Task;
 
 public class Model {
 
-    private static final int THREAD_NUM = 3;
+    private static final int THREAD_NUM = 5;
 
     private static Model model;
 
@@ -64,7 +64,7 @@ public class Model {
                     long fileSize = file.length();
                     if (fileItem.getFile().delete()) {
                         results[0]++;
-                        results[0] += fileSize;
+                        results[1] += fileSize;
                     }
                     list.remove(i);
                 }

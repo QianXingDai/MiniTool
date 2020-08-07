@@ -7,21 +7,25 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.base.FrescoInitActivity;
 import com.kakacat.minitool.common.ui.DepthPageTransformer;
 import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.main.adapter.FragmentAdapter;
 import com.kakacat.minitool.main.navigation.AboutViewItemOn;
 import com.kakacat.minitool.main.navigation.ChangeThemeDialog;
 
-public class MainActivity extends FrescoInitActivity implements MainContract.View {
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
+public class MainActivity extends AppCompatActivity implements MainContract.View {
 
     private MainContract.Presenter presenter;
     private DrawerLayout drawerLayout;
@@ -31,6 +35,7 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fresco.initialize(getApplicationContext());
         setContentView(R.layout.activity_main);
 
         initData();
@@ -113,6 +118,8 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
         };
     }
 
+    @NotNull
+    @Contract(pure = true)
     private BottomNavigationView.OnNavigationItemSelectedListener getBottomOnNavigationItemSelectedListener() {
         return item -> {
             switch (item.getItemId()) {
@@ -129,6 +136,8 @@ public class MainActivity extends FrescoInitActivity implements MainContract.Vie
         };
     }
 
+    @NotNull
+    @Contract(pure = true)
     private NavigationView.OnNavigationItemSelectedListener getOnNavigationItemSelectedListener() {
         return item -> {
             //TODO:这里功能基本不完整

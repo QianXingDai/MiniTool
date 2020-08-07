@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.base.FrescoInitActivity;
 import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.epidemicinquiry.adapter.FragmentAdapter;
 import com.kakacat.minitool.epidemicinquiry.fragment.MyFragment;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class EpidemicInquiryActivity extends FrescoInitActivity implements Contract.View {
+public class EpidemicInquiryActivity extends AppCompatActivity implements Contract.View {
 
     private Contract.Presenter presenter;
 

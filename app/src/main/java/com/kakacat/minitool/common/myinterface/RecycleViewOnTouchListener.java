@@ -5,5 +5,5 @@ import android.view.View;
 
 public interface RecycleViewOnTouchListener {
 
-    boolean onTouch(View v, MotionEvent event);
+    void onTouch(View v, MotionEvent event);
 }

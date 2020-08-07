@@ -4,14 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
-
+        android:layout_height="wrap_content">
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="180dp"
@@ -20,19 +17,17 @@
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/material_1"
+                android:background="@drawable/material_2"
                 app:contentScrim="@color/colorPrimary"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
-                <com.google.android.material.appbar.MaterialToolbar
+                <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     app:title="MiniTool"
                     app:titleTextColor="@android:color/white"
-                    app:popupTheme="@style/AppTheme.PopupOverlay"
                     app:layout_collapseMode="pin"/>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
-
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager2.widget.ViewPager2

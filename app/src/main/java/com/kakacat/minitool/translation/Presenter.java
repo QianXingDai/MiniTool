@@ -4,7 +4,6 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import com.kakacat.minitool.common.myinterface.HttpCallback;
-import com.kakacat.minitool.common.util.HttpUtil;
 import com.kakacat.minitool.common.util.ThreadUtil;
 import com.kakacat.minitool.translation.model.Model;
 
@@ -59,10 +58,8 @@ public class Presenter implements Contract.Presenter {
         if (TextUtils.isEmpty(input)) {
             view.onRequestCallBack(null, "输入错误");
         } else {
-            String address = model.getAddress(input, from, to);
-            HttpUtil.sendOkHttpRequest(address, new HttpCallback() {
+            HttpCallback callback = new HttpCallback() {
                 String result = "请求错误";
-
                 @Override
                 public void onSuccess(Response response) {
                     String s = model.handleTranslationResponse(response);
@@ -78,7 +75,8 @@ public class Presenter implements Contract.Presenter {
                 public void onError() {
                     ThreadUtil.callInUiThread(() -> view.onRequestCallBack(null, result));
                 }
-            });
+            };
+            model.sendRequest(input,from,to,callback);
         }
     }
 }

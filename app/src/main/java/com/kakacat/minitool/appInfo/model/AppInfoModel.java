@@ -72,7 +72,7 @@ public class AppInfoModel {
             if (apiCount[i] != 0) {
                 String s = String.valueOf(apiCount[i] * 100.0 / packageInfoList.size());
                 s = s.substring(0, s.indexOf('.') + 2) + "%";
-                ApiPercentBean model = new ApiPercentBean(icons[i], versionName[i], "API " + i, apiCount[i], s);
+                ApiPercentBean model = new ApiPercentBean(icons[i], versionName[i], "API " + (i + 1), apiCount[i], s);
                 apiPercentBeanList.add(model);
             }
         }
@@ -97,7 +97,6 @@ public class AppInfoModel {
             appInfoBean.setSignature(packageInfo.signatures[0]);
             appInfoBean.setPermissions(packageInfo.requestedPermissions);
             appInfoBean.setSourceDir(packageInfo.applicationInfo.sourceDir);
-
             appInfoBeanList.add(appInfoBean);
         });
     }

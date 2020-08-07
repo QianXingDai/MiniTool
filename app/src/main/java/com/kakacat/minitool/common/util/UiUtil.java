@@ -20,13 +20,18 @@ import android.widget.Toast;
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.widget.NestedScrollView;
 
+import com.google.android.material.behavior.HideBottomViewOnScrollBehavior;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.io.ByteArrayOutputStream;
 
 public class UiUtil {
 
@@ -47,6 +52,17 @@ public class UiUtil {
     }
 
     public static void showSnackBar(View view, CharSequence hint) {
+        showSnackBar(view,hint,null);
+    }
+
+    public static void showSnackBar(View view, CharSequence hint, BottomNavigationView btmNav){
+        SystemUtil.log(String.valueOf(btmNav == null));
+        if(btmNav != null){
+            CoordinatorLayout.LayoutParams lp = (CoordinatorLayout.LayoutParams) btmNav.getLayoutParams();
+            HideBottomViewOnScrollBehavior<BottomNavigationView> behavior = (HideBottomViewOnScrollBehavior<BottomNavigationView>) lp.getBehavior();
+            assert behavior != null;
+            behavior.slideDown(btmNav);
+        }
         Snackbar.make(view, hint, Snackbar.LENGTH_SHORT).show();
     }
 
@@ -54,9 +70,10 @@ public class UiUtil {
         Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
     }
 
-    public static void showLoading(Context context,View parent){
+    public static void showLoading(@NotNull Context context, View parent){
+        SystemUtil.log("show loading");
         if(loadingPopupWindow == null){
-            View view = LayoutInflater.from(context).inflate(R.layout.loading_layout,null,false);
+            View view = LayoutInflater.from(context).inflate(R.layout.loading_layout,(ViewGroup) parent,false);
             loadingPopupWindow = new MyPopupWindow(context,view, ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
         }
         loadingPopupWindow.showAtLocation(parent, Gravity.CENTER,0,0);
@@ -65,10 +82,11 @@ public class UiUtil {
     public static void dismissLoadingWindow(){
         if(loadingPopupWindow != null && loadingPopupWindow.isShowing()){
             loadingPopupWindow.dismiss();
+            SystemUtil.log("dismiss");
         }
     }
 
-    public static Bitmap drawableToBitmap(@NotNull Drawable drawable) {
+    public static Bitmap drawable2Bitmap(@NotNull Drawable drawable) {
         int width = drawable.getIntrinsicWidth();
         int height = drawable.getIntrinsicHeight();
         Bitmap.Config config = drawable.getOpacity() != PixelFormat.OPAQUE
@@ -82,6 +100,13 @@ public class UiUtil {
         //把drawable内容画到画布中
         drawable.draw(canvas);
         return bitmap;
+    }
+
+    @NotNull
+    public static byte[] bitmap2Bytes(Bitmap bm){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        return baos.toByteArray();
     }
 
     public static void slideUpToTop(@NotNull NestedScrollView nestedScrollView) {
@@ -105,7 +130,6 @@ public class UiUtil {
             actionBar.setDisplayShowTitleEnabled(showTitle);
         }
     }
-
 
     //状态栏字体黑色
     public static void setTranslucentStatusBarBlack(@NotNull Activity activity) {

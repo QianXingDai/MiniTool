@@ -11,12 +11,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.common.ui.DepthPageTransformer;
@@ -34,7 +32,7 @@ public class ExpressInquiryActivity extends AppCompatActivity implements Contrac
 
     private Contract.Presenter presenter;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private ViewPager2 viewPager;
+    private ViewPager2 viewPager2;
     private BottomNavigationView btmNav;
     private MyPopupWindow ppwQuery;
     private List<MyFragment> myFragmentList;
@@ -63,23 +61,16 @@ public class ExpressInquiryActivity extends AppCompatActivity implements Contrac
 
     @Override
     public void initView() {
-        MaterialToolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setDisplayShowTitleEnabled(true);
-            actionBar.setTitle("快递查询");
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
-        }
+        UiUtil.setTranslucentStatusBarBlack(this);
+        UiUtil.initToolbar(this,true);
 
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
-        viewPager = findViewById(R.id.fragment_container);
+        viewPager2 = findViewById(R.id.fragment_container);
         btmNav = findViewById(R.id.btm_nav);
 
-        viewPager.setPageTransformer(new DepthPageTransformer());
-        viewPager.registerOnPageChangeCallback(getOnPageChangeCallback());
-        viewPager.setAdapter(new FragmentAdapter(this, getMyFragmentList()));
+        viewPager2.setPageTransformer(new DepthPageTransformer());
+        viewPager2.registerOnPageChangeCallback(getOnPageChangeCallback());
+        viewPager2.setAdapter(new FragmentAdapter(this, getMyFragmentList()));
         btmNav.setOnNavigationItemSelectedListener(getBottomOnNavigationItemSelectedListener());
         btmNav.setSelectedItemId(R.id.unsigned);
         swipeRefreshLayout.setOnRefreshListener(() -> presenter.refreshAll());
@@ -143,15 +134,15 @@ public class ExpressInquiryActivity extends AppCompatActivity implements Contrac
         return item -> {
             switch (item.getItemId()) {
                 case R.id.unsigned: {
-                    viewPager.setCurrentItem(0, true);
+                    viewPager2.setCurrentItem(0, true);
                     break;
                 }
                 case R.id.signed: {
-                    viewPager.setCurrentItem(1, true);
+                    viewPager2.setCurrentItem(1, true);
                     break;
                 }
                 case R.id.all: {
-                    viewPager.setCurrentItem(2, true);
+                    viewPager2.setCurrentItem(2, true);
                 }
             }
             return true;
@@ -188,6 +179,4 @@ public class ExpressInquiryActivity extends AppCompatActivity implements Contrac
         }
         return true;
     }
-
-
 }

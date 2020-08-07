@@ -22,10 +22,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.cleanfile.adapter.FragmentAdapter;
-import com.kakacat.minitool.cleanfile.model.MyFragment;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 import com.kakacat.minitool.common.util.SystemUtil;
 import com.kakacat.minitool.common.util.UiUtil;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +50,6 @@ public class CleanFileActivity extends AppCompatActivity implements Contract.Vie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //TODO:Snackbar弹出样式为透明...
         setContentView(R.layout.activity_clean_file);
 
         requestPermission();
@@ -108,6 +108,8 @@ public class CleanFileActivity extends AppCompatActivity implements Contract.Vie
         return presenter;
     }
 
+    @NotNull
+    @org.jetbrains.annotations.Contract(value = " -> new", pure = true)
     private ViewPager2.OnPageChangeCallback getPackChangeCallBack() {
         return new ViewPager2.OnPageChangeCallback() {
             @Override
@@ -167,6 +169,8 @@ public class CleanFileActivity extends AppCompatActivity implements Contract.Vie
         };
     }
 
+    @NotNull
+    @org.jetbrains.annotations.Contract(pure = true)
     private BottomNavigationView.OnNavigationItemSelectedListener getNavigationItemSelectedListener() {
         return item -> {
             switch (item.getItemId()) {
@@ -212,23 +216,25 @@ public class CleanFileActivity extends AppCompatActivity implements Contract.Vie
             for (int result : grantResults) {
                 if (result != PackageManager.PERMISSION_GRANTED) {
                     count++;
-                    UiUtil.showToast(this, "获取存储权限失败,请手动打开存储权限哟");
-                    SystemUtil.openAppDetailInSetting(this);
+                    break;
                 }
             }
             if (count == 0) {
                 initData();
+            }else{
+                UiUtil.showToast(this, "获取存储权限失败,请手动打开存储权限哟");
+                SystemUtil.openAppDetailInSetting(this);
             }
         }
     }
 
-    public void onClick(View v) {
+    public void onClick(@NotNull View v) {
         switch (v.getId()) {
             case R.id.bt_select_all: {
                 selectAll();
                 break;
             }
-            case R.id.fab_delete: {
+            case R.id.fab: {
                 showDialogWindow();
                 break;
             }
@@ -248,7 +254,7 @@ public class CleanFileActivity extends AppCompatActivity implements Contract.Vie
     public void selectAll() {
         MyFragment myFragment = myFragmentList.get(currentPagePosition);
         myFragment.setSelectedAll(!myFragment.isSelectedAll(), btSelectAll);
-        presenter.selectAll(currentPagePosition, myFragmentList.get(currentPagePosition).isSelectedAll());
+        presenter.selectAll(currentPagePosition, myFragment.isSelectedAll());
     }
 
     @Override
@@ -259,8 +265,7 @@ public class CleanFileActivity extends AppCompatActivity implements Contract.Vie
     @Override
     public void onFileDeletedCallBack(String result) {
         myFragmentList.forEach(myFragment -> myFragment.getAdapter().notifyDataSetChanged());
-        //TODO:透明的,不知道为啥。。。
-        UiUtil.showSnackBar(coordinatorLayout, result);
+        UiUtil.showSnackBar(coordinatorLayout, result,btmNav);
     }
 
     @Override
@@ -273,7 +278,7 @@ public class CleanFileActivity extends AppCompatActivity implements Contract.Vie
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
+    public boolean onOptionsItemSelected(@NotNull MenuItem menuItem) {
         if (menuItem.getItemId() == android.R.id.home) {
             finish();
         }

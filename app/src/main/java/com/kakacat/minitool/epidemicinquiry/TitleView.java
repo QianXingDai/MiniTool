@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -49,9 +48,9 @@ public class TitleView extends LinearLayout {
         countColor = a.getColor(R.styleable.TitleView_count_text_color, context.getColor(android.R.color.black));
         a.recycle();
 
-        View view = LayoutInflater.from(context).inflate(R.layout.title_view_layout, null);
-        tvTitle = view.findViewById(R.id.tv_title);
-        tvCount = view.findViewById(R.id.tv_count);
+        LayoutInflater.from(context).inflate(R.layout.title_view_layout, this);
+        tvTitle = findViewById(R.id.tv_title);
+        tvCount = findViewById(R.id.tv_count);
 
         setTitle(title);
         setCount(count);

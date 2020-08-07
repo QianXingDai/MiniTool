@@ -11,9 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
 import com.kakacat.minitool.R;
@@ -54,42 +52,20 @@ public class AppDetailActivity extends AppCompatActivity implements AppDetailCon
     @SuppressLint("SetTextI18n")
     @Override
     public void initView() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_action_back);
-            actionBar.setDisplayShowTitleEnabled(false);
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-
-        TextView tvAppName = findViewById(R.id.tv_app_name);
-        TextView tvPackageName = findViewById(R.id.tv_package_name);
-        TextView tvVersionName = findViewById(R.id.tv_version_name);
-        TextView tvFirstInstallTime = findViewById(R.id.tv_first_install_time);
-        TextView tvLastUpdateTime = findViewById(R.id.tv_last_update_time);
-        TextView tvTargetApi = findViewById(R.id.tv_target_api);
-        TextView tvMinApi = findViewById(R.id.tv_min_api);
-        TextView tvMd5Signature = findViewById(R.id.tv_md5_sign);
-        TextView tvPermission = findViewById(R.id.tv_permission);
-        TextView tvHeader3 = findViewById(R.id.tv_header3);
-
-        ImageView ivAppIcon = findViewById(R.id.iv_app_icon);
+        UiUtil.initToolbar(this,true);
 
         AppInfoBean appInfoBean = getPresenter().getAppInfoBean();
-
-        tvAppName.setText(appInfoBean.getAppName());
-        tvPackageName.setText(appInfoBean.getPackageName());
-        tvVersionName.setText(appInfoBean.getVersionName());
-        tvFirstInstallTime.setText(appInfoBean.getFirstInstallTime2());
-        tvLastUpdateTime.setText(appInfoBean.getLastUpdateTime2());
-        tvTargetApi.setText(String.valueOf(appInfoBean.getTargetSdkVersion()));
-        tvMinApi.setText(String.valueOf(appInfoBean.getMinSdkVersion()));
-        tvMd5Signature.setText(appInfoBean.getSignMd5());
-        tvHeader3.setText("权限声明" + "(" + appInfoBean.getPermissionCount() + "个)");
-        tvPermission.setText(appInfoBean.getPermission());
-
-        ivAppIcon.setImageDrawable(appInfoBean.getIcon());
+        ((TextView)findViewById(R.id.tv_app_name)).setText(appInfoBean.getAppName());
+        ((TextView)findViewById(R.id.tv_package_name)).setText(appInfoBean.getPackageName());
+        ((TextView)findViewById(R.id.tv_version_name)).setText(appInfoBean.getVersionName());
+        ((TextView)findViewById(R.id.tv_first_install_time)).setText(appInfoBean.getFirstInstallTime2());
+        ((TextView)findViewById(R.id.tv_last_update_time)).setText(appInfoBean.getLastUpdateTime2());
+        ((TextView)findViewById(R.id.tv_target_api)).setText(String.valueOf(appInfoBean.getTargetSdkVersion()));
+        ((TextView)findViewById(R.id.tv_min_api)).setText(String.valueOf(appInfoBean.getMinSdkVersion()));
+        ((TextView)findViewById(R.id.tv_md5_sign)).setText(appInfoBean.getSignMd5());
+        ((TextView)findViewById(R.id.tv_permission)).setText(appInfoBean.getPermission());
+        ((TextView)findViewById(R.id.tv_header3)).setText("权限声明" + "(" + appInfoBean.getPermissionCount() + "个)");
+        ((ImageView)findViewById(R.id.iv_app_icon)).setImageBitmap(appInfoBean.getBitmap());
     }
 
     @Override

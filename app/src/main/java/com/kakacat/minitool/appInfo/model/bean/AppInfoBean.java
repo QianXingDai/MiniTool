@@ -1,15 +1,18 @@
 package com.kakacat.minitool.appInfo.model.bean;
 
 import android.content.pm.Signature;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.text.TextUtils;
 
 import com.kakacat.minitool.common.util.EncryptionUtil;
 import com.kakacat.minitool.common.util.StringUtil;
+import com.kakacat.minitool.common.util.UiUtil;
 
-import java.io.Serializable;
-
-public class AppInfoBean implements Serializable {
+public class AppInfoBean implements Parcelable {
 
     private Drawable icon;
     private String appName;
@@ -29,6 +32,8 @@ public class AppInfoBean implements Serializable {
     private String permission;
     private String signMd5;
     private String sourceDir;
+
+    private Bitmap bitmap;
 
     public AppInfoBean() {
     }
@@ -98,7 +103,7 @@ public class AppInfoBean implements Serializable {
     }
 
     public String getFirstInstallTime2() {
-        if (!TextUtils.isEmpty(firstInstallTime2)) {
+        if (TextUtils.isEmpty(firstInstallTime2)) {
             firstInstallTime2 = StringUtil.getDate(firstInstallTime);
         }
         return firstInstallTime2;
@@ -156,4 +161,71 @@ public class AppInfoBean implements Serializable {
     public void setSourceDir(String sourceDir) {
         this.sourceDir = sourceDir;
     }
+
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        Bitmap bitmap = UiUtil.drawable2Bitmap(icon);
+        byte[] imageBytes = UiUtil.bitmap2Bytes(bitmap);
+
+        dest.writeInt(imageBytes.length);
+        dest.writeByteArray(imageBytes);
+        dest.writeString(this.appName);
+        dest.writeString(this.packageName);
+        dest.writeString(this.versionName);
+        dest.writeString(this.androidVersionName);
+        dest.writeInt(this.targetSdkVersion);
+        dest.writeInt(this.minSdkVersion);
+        dest.writeLong(this.firstInstallTime);
+        dest.writeLong(this.lastUpdateTime);
+        dest.writeParcelable(this.signature, flags);
+        if(this.permissions != null && permissions.length > 0) {
+            dest.writeStringArray(this.permissions);
+        }else{
+            dest.writeStringArray(new String[0]);
+        }
+        dest.writeString(this.permission);
+        dest.writeString(this.signMd5);
+        dest.writeString(this.sourceDir);
+    }
+
+    protected AppInfoBean(Parcel in) {
+        byte[] bytes = new byte[in.readInt()];
+        in.readByteArray(bytes);
+        this.bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+        this.appName = in.readString();
+        this.packageName = in.readString();
+        this.versionName = in.readString();
+        this.androidVersionName = in.readString();
+        this.targetSdkVersion = in.readInt();
+        this.minSdkVersion = in.readInt();
+        this.firstInstallTime = in.readLong();
+        this.lastUpdateTime = in.readLong();
+        this.signature = in.readParcelable(Signature.class.getClassLoader());
+        this.permissions = in.createStringArray();
+        this.permission = in.readString();
+        this.signMd5 = in.readString();
+        this.sourceDir = in.readString();
+    }
+
+    public static final Parcelable.Creator<AppInfoBean> CREATOR = new Parcelable.Creator<AppInfoBean>() {
+        @Override
+        public AppInfoBean createFromParcel(Parcel source) {
+            return new AppInfoBean(source);
+        }
+
+        @Override
+        public AppInfoBean[] newArray(int size) {
+            return new AppInfoBean[size];
+        }
+    };
+
 }

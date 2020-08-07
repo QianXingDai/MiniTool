@@ -2,6 +2,7 @@ package com.kakacat.minitool.appInfo.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -13,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,12 +25,11 @@ import com.kakacat.minitool.appInfo.adapter.AppInfoAdapter;
 import com.kakacat.minitool.appInfo.contract.AppInfoContract;
 import com.kakacat.minitool.appInfo.model.AppInfoModel;
 import com.kakacat.minitool.appInfo.presenter.AppInfoPresenter;
-import com.kakacat.minitool.common.base.FrescoInitActivity;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 import com.kakacat.minitool.common.util.UiUtil;
 
 
-public class AppInfoActivity extends FrescoInitActivity implements AppInfoContract.View, View.OnClickListener {
+public class AppInfoActivity extends AppCompatActivity implements AppInfoContract.View, View.OnClickListener {
 
     private AppInfoContract.Presenter presenter;
 
@@ -63,7 +64,7 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
     @Override
     public void initView() {
         UiUtil.setTranslucentStatusBarWhite(this);
-        UiUtil.initToolbar(this,false);
+        initToolbar();
 
         nestedScrollView = findViewById(R.id.nested_scroll_view);
         linearLayout = findViewById(R.id.linear_layout);
@@ -83,7 +84,7 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
     }
 
     @SuppressLint("SetTextI18n")
-    public void initToolbar() {
+    private void initToolbar() {
         UiUtil.initToolbar(this,false);
 
         TextView tvAndroidVersion = findViewById(R.id.tv_android_version);
@@ -107,14 +108,11 @@ public class AppInfoActivity extends FrescoInitActivity implements AppInfoContra
         appInfoAdapter = new AppInfoAdapter(getPresenter().getAppInfoBeanList());
         rvAppInfo.setAdapter(appInfoAdapter);
         rvAppInfo.setLayoutManager(new LinearLayoutManager(this));
-
-
- /*       TODO:序列化有问题这里。。。
             appInfoAdapter.setOnClickListener((v, position) -> {
             Intent intent = new Intent(AppInfoActivity.this,AppDetailActivity.class);
-            intent.putExtra("appInfo",presenter.getAppInfoBeanList().get(position));
+            intent.putExtra("appInfo", presenter.getAppInfoBeanList().get(position - 1));
             startActivity(intent);
-        });*/
+        });
     }
 
     @Override

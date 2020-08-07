@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import com.kakacat.minitool.common.myinterface.HttpCallback;
 import com.kakacat.minitool.common.util.HttpUtil;
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -50,7 +52,7 @@ public class Model {
         HttpUtil.sendOkHttpRequest(getAddress(), callback);
     }
 
-    public boolean handleHistoryResponse(Response response) {
+    public boolean handleHistoryResponse(@NotNull Response response) {
         try {
             String s = Objects.requireNonNull(response.body()).string();
             JSONObject jsonObject = new JSONObject(s);
@@ -77,6 +79,8 @@ public class Model {
         return articleList;
     }
 
+    @NotNull
+    @Contract(pure = true)
     private String getAddress() {
         return HOST + KEY + "&v=1.0&month=" + month + "&day=" + day;
     }

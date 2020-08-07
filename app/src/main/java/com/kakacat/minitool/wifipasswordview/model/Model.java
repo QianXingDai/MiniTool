@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.kakacat.minitool.common.util.SystemUtil;
 
+import org.jetbrains.annotations.NotNull;
 import org.xml.sax.SAXException;
 
 import java.io.File;
@@ -33,7 +34,7 @@ public class Model {
         return model;
     }
 
-    public boolean handleWifiConfig(Context context) {
+    public boolean handleWifiConfig(@NotNull Context context) {
         String filePath = Objects.requireNonNull(context.getExternalCacheDir()).getAbsolutePath() + "/WifiConfigStore.xml";
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();

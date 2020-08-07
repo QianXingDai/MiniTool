@@ -5,15 +5,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.base.FrescoInitActivity;
 import com.kakacat.minitool.common.util.UiUtil;
 
 
-public class MainActivity extends FrescoInitActivity implements Contract.View {
+public class MainActivity extends AppCompatActivity implements Contract.View {
 
     private Contract.Presenter presenter;
     private SwipeRefreshLayout swipeRefreshLayout;
