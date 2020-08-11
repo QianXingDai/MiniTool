@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:cardElevation="5dp"
-    app:cardCornerRadius="5dp">
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="30dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
+        android:padding="20dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:background="@color/white"
@@ -38,17 +37,17 @@
             android:layout_height="match_parent"
             android:layout_marginStart="15dp"
             android:background="@drawable/edit_text_background_with_black_border"
-            android:gravity="center|right"
+            android:gravity="center|end"
             android:hint="0"
             android:inputType="numberDecimal"
             tools:ignore="RtlHardcoded" />
         <TextView
             android:id="@+id/tv_money_unit"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:text="@string/unit_us"
             android:gravity="center" />
         </LinearLayout>
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
 

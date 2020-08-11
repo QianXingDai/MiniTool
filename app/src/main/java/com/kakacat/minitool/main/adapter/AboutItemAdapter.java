@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.ui.RecycleViewListener;
 import com.kakacat.minitool.main.model.AboutItem;
 
 import java.util.List;
@@ -18,14 +18,14 @@ import java.util.List;
 public class AboutItemAdapter extends RecyclerView.Adapter<AboutItemAdapter.ViewHolder> {
 
     private List<AboutItem> list;
-    private RecycleViewItemOnClickListener clickListener;
+    private RecycleViewListener.OnItemClick clickListener;
     private LayoutInflater layoutInflater;
 
     public AboutItemAdapter(List<AboutItem> list) {
         this.list = list;
     }
 
-    public void setOnClickListener(RecycleViewItemOnClickListener listener) {
+    public void setOnClickListener(RecycleViewListener.OnItemClick listener) {
         this.clickListener = listener;
     }
 

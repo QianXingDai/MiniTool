@@ -1,11 +1,9 @@
 package com.kakacat.minitool.translation;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -13,11 +11,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
+import com.kakacat.minitool.common.base.BaseActivity;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 import com.kakacat.minitool.common.util.SystemUtil;
 import com.kakacat.minitool.common.util.UiUtil;
@@ -25,7 +23,7 @@ import com.kakacat.minitool.translation.adapter.CollectionAdapter;
 import com.kakacat.minitool.translation.adapter.LanguageAdapter;
 
 
-public class TranslationActivity extends AppCompatActivity implements Contract.View {
+public class TranslationActivity extends BaseActivity implements Contract.View {
 
     private Contract.Presenter presenter;
 
@@ -53,7 +51,8 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
     @Override
     public void initData() {
         inflater = LayoutInflater.from(this);
-        getPresenter().initData();
+        presenter = new Presenter(this);
+        presenter.initData();
     }
 
     @Override
@@ -71,14 +70,6 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
         tvOutput = findViewById(R.id.tv_output);
         tvFrom = findViewById(R.id.tv_from);
         tvTo = findViewById(R.id.tv_to);
-    }
-
-    @Override
-    public Contract.Presenter getPresenter() {
-        if (presenter == null) {
-            presenter = new Presenter(this);
-        }
-        return presenter;
     }
 
     @Override
@@ -138,19 +129,6 @@ public class TranslationActivity extends AppCompatActivity implements Contract.V
             tvOutput.setText(result);
         }
         UiUtil.showToast(this, warn);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
-        if (menuItem.getItemId() == android.R.id.home) {
-            finish();
-        }
-        return true;
-    }
-
-    @Override
-    public Context getContext() {
-        return this;
     }
 
     public void onClick(View v) {

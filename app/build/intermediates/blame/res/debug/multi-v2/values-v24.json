@@ -4,17 +4,7 @@
             "outputFile": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\ede75110134ec020150a20a27e56b3d9\\appcompat-1.1.0\\res\\values-v24\\values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\076580632bf3ca5f07370e070a692c6c\\media-1.0.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\51244fe7e2498ba054e5b8b01fc0756f\\media-1.0.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -28,6 +18,16 @@
                         "startOffsets": "347,413,474,540",
                         "endColumns": "65,60,65,66",
                         "endOffsets": "408,469,535,602"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\9e25b22bcaa8e27cefe44334f6132044\\appcompat-1.1.0\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
                     }
                 }
             ]

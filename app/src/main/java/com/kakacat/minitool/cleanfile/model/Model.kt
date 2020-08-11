@@ -1,0 +1,60 @@
+package com.kakacat.minitool.cleanfile.model
+
+import android.os.Environment.getExternalStorageDirectory
+import bolts.Task
+import java.io.File
+import java.util.concurrent.CopyOnWriteArrayList
+import java.util.function.Consumer
+
+class Model {
+
+    private val fileListList: MutableList<MutableList<FileItem>> by lazy { ArrayList<MutableList<FileItem>>() }
+    val taskList: List<Task<Void>> by lazy {
+        val taskList: MutableList<Task<Void>> = ArrayList()
+        val files = getExternalStorageDirectory().listFiles()!!
+        var startIndex = files.size - 1
+        var endIndex: Int
+        for (i in 0 until THREAD_NUM) {
+            endIndex = if (i != THREAD_NUM - 1) startIndex - files.size / THREAD_NUM else 0
+            val fileList: MutableList<File> = ArrayList(startIndex - endIndex + 1)
+            for (index in startIndex downTo endIndex) {
+                fileList.add(files[index])
+            }
+            taskList.add(Task.call(ScanTask(fileList, fileListList)))
+            startIndex = endIndex
+        }
+        taskList
+    }
+
+    fun initData() {
+        for (i in 0 until 5) {
+            fileListList.add(CopyOnWriteArrayList())
+        }
+    }
+
+    fun deleteSelectedFile(): LongArray {
+        val results = longArrayOf(0, 0)
+
+        fileListList.forEach { list ->
+            list.filter { fileItem ->
+                if(fileItem.checked){
+                    val fileSize = fileItem.file.length()
+                    if (fileItem.file.delete()) {
+                        results[0]++
+                        results[1] += fileSize
+                    }
+                }
+                !fileItem.checked
+            }
+        }
+        return results
+    }
+
+    fun selectAll(currentPagePosition: Int, isSelectedAll: Boolean) {
+        fileListList[currentPagePosition].forEach(Consumer { item: FileItem -> item.checked = isSelectedAll })
+    }
+
+    companion object {
+        private const val THREAD_NUM = 5
+    }
+}

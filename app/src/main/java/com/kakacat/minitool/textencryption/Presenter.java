@@ -9,7 +9,7 @@ public class Presenter implements Contract.Presenter {
 
     public Presenter(Contract.View view) {
         this.view = view;
-        this.model = Model.getInstance();
+        this.model = new Model();
     }
 
     @Override

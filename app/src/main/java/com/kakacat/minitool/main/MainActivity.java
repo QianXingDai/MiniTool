@@ -1,13 +1,11 @@
 package com.kakacat.minitool.main;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.widget.ViewPager2;
@@ -16,6 +14,7 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.kakacat.minitool.R;
+import com.kakacat.minitool.common.base.BaseActivity;
 import com.kakacat.minitool.common.ui.DepthPageTransformer;
 import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.main.adapter.FragmentAdapter;
@@ -25,7 +24,7 @@ import com.kakacat.minitool.main.navigation.ChangeThemeDialog;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
-public class MainActivity extends AppCompatActivity implements MainContract.View {
+public class MainActivity extends BaseActivity implements MainContract.View {
 
     private MainContract.Presenter presenter;
     private DrawerLayout drawerLayout;
@@ -50,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void initData() {
-        getPresenter().initData();
+        presenter = new Presenter();
+        presenter.initData();
     }
 
     @Override
@@ -74,21 +74,13 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
     @Override
-    public MainContract.Presenter getPresenter() {
-        if (presenter == null) {
-            presenter = new Presenter(this);
-        }
-        return presenter;
-    }
-
-    @Override
     public void showChangeThemeDialog() {
         ChangeThemeDialog changeThemeDialog = ChangeThemeDialog.getInstance(this, View.inflate(this, R.layout.select_theme, null), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         changeThemeDialog.showAtLocation(drawerLayout, Gravity.CENTER, 0, 0);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
+    public boolean onOptionsItemSelected(@NotNull MenuItem menuItem) {
         if (menuItem.getItemId() == android.R.id.home) {
             if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                 drawerLayout.closeDrawer(GravityCompat.START);
@@ -97,11 +89,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             }
         }
         return true;
-    }
-
-    @Override
-    public Context getContext() {
-        return this;
     }
 
     private ViewPager2.OnPageChangeCallback getOnPageChangeCallback() {

@@ -1,24 +1,24 @@
 package com.kakacat.minitool.textencryption;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.kakacat.minitool.R;
+import com.kakacat.minitool.common.base.BaseActivity;
 import com.kakacat.minitool.common.util.SystemUtil;
 import com.kakacat.minitool.common.util.UiUtil;
 
-public class TextEncryptionActivity extends AppCompatActivity implements Contract.View {
+import org.jetbrains.annotations.NotNull;
+
+public class TextEncryptionActivity extends BaseActivity implements Contract.View {
 
     private Contract.Presenter presenter;
 
@@ -37,7 +37,8 @@ public class TextEncryptionActivity extends AppCompatActivity implements Contrac
 
     @Override
     public void initData() {
-        getPresenter().initData();
+        presenter = new Presenter(this);
+        presenter.initData();
     }
 
     @Override
@@ -78,23 +79,7 @@ public class TextEncryptionActivity extends AppCompatActivity implements Contrac
         });
     }
 
-    @Override
-    public Contract.Presenter getPresenter() {
-        if (presenter == null) {
-            presenter = new Presenter(this);
-        }
-        return presenter;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
-        if (menuItem.getItemId() == android.R.id.home) {
-            finish();
-        }
-        return true;
-    }
-
-    public void onClick(View v) {
+    public void onClick(@NotNull View v) {
         switch (v.getId()) {
             case R.id.bt_code: {
                 presenter.encryptText(editText.getText().toString(), toolbar.getSubtitle());
@@ -125,11 +110,6 @@ public class TextEncryptionActivity extends AppCompatActivity implements Contrac
         } else {
             UiUtil.showToast(getContext(), "加密失败");
         }
-    }
-
-    @Override
-    public Context getContext() {
-        return this;
     }
 
 }

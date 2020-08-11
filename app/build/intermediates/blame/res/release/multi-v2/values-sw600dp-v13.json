@@ -4,7 +4,7 @@
             "outputFile": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\3146d83652a83f9c9eb81675ffab445f\\material-1.1.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\a27517b1dd955971bb897c169a28bda5\\material-1.2.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\ede75110134ec020150a20a27e56b3d9\\appcompat-1.1.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\9e25b22bcaa8e27cefe44334f6132044\\appcompat-1.1.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

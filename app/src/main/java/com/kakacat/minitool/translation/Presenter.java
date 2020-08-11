@@ -3,7 +3,7 @@ package com.kakacat.minitool.translation;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.kakacat.minitool.common.myinterface.HttpCallback;
+import com.kakacat.minitool.common.util.HttpUtil;
 import com.kakacat.minitool.common.util.ThreadUtil;
 import com.kakacat.minitool.translation.model.Model;
 
@@ -19,7 +19,7 @@ public class Presenter implements Contract.Presenter {
 
     public Presenter(Contract.View view) {
         this.view = view;
-        this.model = Model.getInstance();
+        this.model = new Model();
         this.context = view.getContext();
     }
 
@@ -58,7 +58,7 @@ public class Presenter implements Contract.Presenter {
         if (TextUtils.isEmpty(input)) {
             view.onRequestCallBack(null, "输入错误");
         } else {
-            HttpCallback callback = new HttpCallback() {
+            HttpUtil.Callback callback = new HttpUtil.Callback() {
                 String result = "请求错误";
                 @Override
                 public void onSuccess(Response response) {

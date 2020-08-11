@@ -9,14 +9,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.ui.RecycleViewListener;
 
 import java.util.List;
 
 public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHolder> {
 
     private List<String> languageList;
-    private RecycleViewItemOnClickListener listener;
+    private RecycleViewListener.OnItemClick listener;
 
     public LanguageAdapter(List<String> languageList) {
         this.languageList = languageList;
@@ -43,7 +43,7 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
         return languageList.size();
     }
 
-    public void setOnClickListener(RecycleViewItemOnClickListener listener) {
+    public void setOnClickListener(RecycleViewListener.OnItemClick listener) {
         this.listener = listener;
     }
 

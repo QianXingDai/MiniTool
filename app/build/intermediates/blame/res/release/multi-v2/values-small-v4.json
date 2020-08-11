@@ -4,7 +4,7 @@
             "outputFile": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\3146d83652a83f9c9eb81675ffab445f\\material-1.1.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\a27517b1dd955971bb897c169a28bda5\\material-1.2.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

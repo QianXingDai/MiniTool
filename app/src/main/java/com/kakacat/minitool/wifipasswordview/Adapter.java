@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.myinterface.RecycleViewItemOnLongClickListener;
+import com.kakacat.minitool.common.ui.RecycleViewListener;
 import com.kakacat.minitool.wifipasswordview.model.Wifi;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     private LayoutInflater inflater;
     private List<Wifi> wifiList;
-    private RecycleViewItemOnLongClickListener longClickListener;
+    private RecycleViewListener.OnItemLongClick longClickListener;
 
     public Adapter(List<Wifi> wifiList) {
         this.wifiList = wifiList;
@@ -53,7 +53,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         return wifiList.size();
     }
 
-    public void setLongClickListener(RecycleViewItemOnLongClickListener longClickListener) {
+    public void setLongClickListener(RecycleViewListener.OnItemLongClick longClickListener) {
         this.longClickListener = longClickListener;
     }
 

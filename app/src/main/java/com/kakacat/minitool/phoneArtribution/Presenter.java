@@ -1,8 +1,6 @@
 package com.kakacat.minitool.phoneartribution;
 
 import android.text.TextUtils;
-
-import com.kakacat.minitool.common.myinterface.HttpCallback;
 import com.kakacat.minitool.common.util.HttpUtil;
 import com.kakacat.minitool.common.util.ThreadUtil;
 import com.kakacat.minitool.phoneartribution.model.Model;
@@ -17,7 +15,7 @@ public class Presenter implements Contract.Presenter {
 
     public Presenter(Contract.View view) {
         this.view = view;
-        this.model = Model.getInstance();
+        this.model = new Model();
     }
 
     @Override
@@ -26,7 +24,7 @@ public class Presenter implements Contract.Presenter {
             view.onRequestDataCallBack(null, "输入错误");
         } else {
             String address = model.getAddress(number);
-            HttpUtil.sendOkHttpRequest(address, new HttpCallback() {
+            HttpUtil.sendOkHttpRequest(address, new HttpUtil.Callback() {
                 String result = "请求错误";
 
                 @Override

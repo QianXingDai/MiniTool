@@ -5,37 +5,39 @@
     android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        android:layout_height="180dp"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/material_2"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways">
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:text="@string/title_clean_file"/>
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/bt_select_all"
-                android:background="@drawable/ic_select_all"
-                android:layout_gravity="end"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="20dp"
-                android:onClick="onClick"/>
-        </androidx.appcompat.widget.Toolbar>
-
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:titleTextColor="@android:color/white"
+                app:title="@string/title_clean_file"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/bt_select_all"
+                    android:background="@drawable/ic_select_all"
+                    app:backgroundTint="@android:color/white"
+                    android:layout_gravity="end"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:onClick="onClick"/>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <ProgressBar
@@ -45,7 +47,7 @@
         android:layout_gravity="center"/>
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager"
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="invisible"
@@ -61,13 +63,14 @@
         app:menu="@menu/menu" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_delete"
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="65dp"
         android:layout_marginEnd="10dp"
-        android:src="@drawable/ic_burn"
         android:onClick="onClick"
+        app:backgroundTint="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_burn"
         app:layout_behavior=".cleanfile.MyFabBehavior"
         app:layout_anchor="@id/btm_nav"
         app:layout_anchorGravity="top|end" />

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.ui.RecycleViewListener;
 import com.kakacat.minitool.main.model.MainItem;
 
 import java.util.List;
@@ -19,13 +19,13 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     private List<MainItem> itemList;
     private LayoutInflater inflater;
-    private RecycleViewItemOnClickListener listener;
+    private RecycleViewListener.OnItemClick listener;
 
     public MainAdapter(List<MainItem> itemList) {
         this.itemList = itemList;
     }
 
-    public void setOnClickListener(RecycleViewItemOnClickListener listener) {
+    public void setOnClickListener(RecycleViewListener.OnItemClick listener) {
         this.listener = listener;
     }
 

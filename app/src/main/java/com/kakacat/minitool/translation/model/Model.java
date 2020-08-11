@@ -3,7 +3,6 @@ package com.kakacat.minitool.translation.model;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.kakacat.minitool.common.myinterface.HttpCallback;
 import com.kakacat.minitool.common.util.EncryptionUtil;
 import com.kakacat.minitool.common.util.HttpUtil;
 
@@ -29,24 +28,12 @@ public class Model {
     //百度提供的翻译查询接口
     public static final String TRANSLATE_HOST = "https://api.fanyi.baidu.com/api/trans/vip/translate?";
 
-    private static Model model;
-
     private List<String> languageList1;
     private List<String> languageList2;
     private List<String> collectionList;
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor editor;
-
-    private Model() {
-    }
-
-    public static Model getInstance() {
-        if (model == null) {
-            model = new Model();
-        }
-        return model;
-    }
 
     public void initData() {
         languageList1 = getLanguageList1();
@@ -85,7 +72,7 @@ public class Model {
         editor.commit();
     }
 
-    public void sendRequest(String input, CharSequence from, CharSequence to, HttpCallback callback){
+    public void sendRequest(String input, CharSequence from, CharSequence to, HttpUtil.Callback callback){
         String address = getAddress(input,from,to);
         HttpUtil.sendOkHttpRequest(address,callback);
     }

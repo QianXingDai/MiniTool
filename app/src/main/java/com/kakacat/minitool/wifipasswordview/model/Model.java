@@ -19,20 +19,7 @@ import javax.xml.parsers.SAXParserFactory;
 
 public class Model {
 
-    private static Model model;
-
     private List<Wifi> wifiList;
-
-    private Model() {
-
-    }
-
-    public static Model getInstance() {
-        if (model == null) {
-            model = new Model();
-        }
-        return model;
-    }
 
     public boolean handleWifiConfig(@NotNull Context context) {
         String filePath = Objects.requireNonNull(context.getExternalCacheDir()).getAbsolutePath() + "/WifiConfigStore.xml";

@@ -11,14 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:fitsSystemWindows="true"
-        android:background="@color/colorPrimary">
+        android:theme="@style/AppTheme.AppBarOverlay">
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bg_login"
             android:fitsSystemWindows="true"
-            app:statusBarScrim="@color/colorPrimary"
             app:contentScrim="@color/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
             <androidx.appcompat.widget.Toolbar

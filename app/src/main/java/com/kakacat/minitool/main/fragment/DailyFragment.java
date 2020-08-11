@@ -6,7 +6,7 @@ import android.view.View;
 import com.kakacat.minitool.appInfo.activity.AppInfoActivity;
 import com.kakacat.minitool.bingpic.BingPicActivity;
 import com.kakacat.minitool.cleanfile.CleanFileActivity;
-import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.ui.RecycleViewListener;
 import com.kakacat.minitool.currencyconversion.MainActivity;
 import com.kakacat.minitool.epidemicinquiry.EpidemicInquiryActivity;
 import com.kakacat.minitool.expressinquiry.activity.ExpressInquiryActivity;
@@ -17,13 +17,15 @@ import com.kakacat.minitool.todayinhistory.TodayInHistoryActivity;
 import com.kakacat.minitool.translation.TranslationActivity;
 import com.kakacat.minitool.wifipasswordview.WifiPwdActivity;
 
-public class DailyFragment extends MyFragment implements RecycleViewItemOnClickListener {
+import org.jetbrains.annotations.NotNull;
+
+public class DailyFragment extends MyFragment implements RecycleViewListener.OnItemClick {
 
     public DailyFragment() {
 
     }
 
-    public DailyFragment(MainContract.Presenter presenter) {
+    public DailyFragment(@NotNull MainContract.Presenter presenter) {
         super(presenter.getDailyList());
         super.setOnClickListener(this);
     }

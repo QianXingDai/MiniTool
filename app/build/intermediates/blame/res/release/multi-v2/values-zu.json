@@ -4,7 +4,7 @@
             "outputFile": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-zu\\values-zu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\ede75110134ec020150a20a27e56b3d9\\appcompat-1.1.0\\res\\values-zu\\values-zu.xml",
+                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\9e25b22bcaa8e27cefe44334f6132044\\appcompat-1.1.0\\res\\values-zu\\values-zu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\6f0d7a79d2a3f9c072724c7552a5bbc2\\core-1.1.0\\res\\values-zu\\values-zu.xml",
+                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\7d5656c2ef557c428f441561cb01fa74\\core-1.2.0\\res\\values-zu\\values-zu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -16,32 +16,13 @@ public class Model {
     private static final String HOST = "http://apis.juhe.cn/mobile/get?phone=";
     private static final String KEY = "a61898e25da1484f93ccf01e2ebe6ff7";
 
-    private static Model model;
-
-    private Model() {
-
-    }
-
-    public static Model getInstance() {
-        if (model == null) {
-            model = new Model();
-        }
-        return model;
-    }
-
     public PhoneNumber response2PhoneNumber(@NotNull Response response) {
         try {
             String s = Objects.requireNonNull(response.body()).string();
             if (!TextUtils.isEmpty(s)) {
                 JSONObject jsonObject = new JSONObject(s);
                 JSONObject result = jsonObject.getJSONObject("result");
-                PhoneNumber phoneNumber = new PhoneNumber();
-                phoneNumber.setProvince(result.getString("province"));
-                phoneNumber.setCity(result.getString("city"));
-                phoneNumber.setAreaCode(result.getString("areacode"));
-                phoneNumber.setZip(result.getString("zip"));
-                phoneNumber.setCompany(result.getString("company"));
-                return phoneNumber;
+                return new PhoneNumber(null,result.getString("province"),result.getString("city"),result.getString("areacode"),result.getString("zip"),result.getString("company"));
             }
         } catch (IOException | JSONException e) {
             e.printStackTrace();

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
+import com.kakacat.minitool.common.ui.RecycleViewListener;
 import com.kakacat.minitool.common.ui.view.MyPopupWindow;
 import com.kakacat.minitool.common.util.SystemUtil;
 import com.kakacat.minitool.main.adapter.AboutItemAdapter;
@@ -18,7 +18,7 @@ import com.kakacat.minitool.main.model.AboutItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AboutViewItemOn extends MyPopupWindow implements RecycleViewItemOnClickListener {
+public class AboutViewItemOn extends MyPopupWindow implements RecycleViewListener.OnItemClick {
 
     @SuppressLint("StaticFieldLeak")
     private static AboutViewItemOn aboutView;
@@ -60,6 +60,5 @@ public class AboutViewItemOn extends MyPopupWindow implements RecycleViewItemOnC
             SystemUtil.openMarket(context);
         }
     }
-
 
 }

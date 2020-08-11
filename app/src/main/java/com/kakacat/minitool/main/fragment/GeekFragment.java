@@ -16,8 +16,7 @@ import androidx.core.app.ActivityCompat;
 
 import com.kakacat.minitool.R;
 import com.kakacat.minitool.audiocapture.GetAudioService;
-import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
-import com.kakacat.minitool.fakebattery.FakeBatteryView;
+import com.kakacat.minitool.common.ui.RecycleViewListener;
 import com.kakacat.minitool.inquireip.InquireIpActivity;
 import com.kakacat.minitool.main.MainContract;
 import com.kakacat.minitool.modifydpi.ModifyDpiView;
@@ -25,7 +24,7 @@ import com.kakacat.minitool.textencryption.TextEncryptionActivity;
 
 import static android.app.Activity.RESULT_OK;
 
-public class GeekFragment extends MyFragment implements RecycleViewItemOnClickListener {
+public class GeekFragment extends MyFragment implements RecycleViewListener.OnItemClick {
 
     private Activity activity;
     private View parentView;
@@ -61,8 +60,8 @@ public class GeekFragment extends MyFragment implements RecycleViewItemOnClickLi
                 break;
             }
             case 2: {
-                FakeBatteryView fakeBatteryView = FakeBatteryView.getInstance(activity, parentView, View.inflate(getContext(), R.layout.fake_battery_layout, null), ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                fakeBatteryView.showAtLocation(parentView, Gravity.CENTER, 0, 0);
+        /*        FakeBatteryView fakeBatteryView = FakeBatteryView.getInstance(activity, parentView, View.inflate(getContext(), R.layout.fake_battery_layout, null), ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                fakeBatteryView.showAtLocation(parentView, Gravity.CENTER, 0, 0);*/
                 break;
             }
             case 3: {

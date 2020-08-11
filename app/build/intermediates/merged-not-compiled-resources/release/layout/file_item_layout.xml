@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:clickable="true"
-    android:foreground = "?attr/selectableItemBackground"
+    android:foreground="?attr/selectableItemBackground"
     android:focusable="true">
 
     <LinearLayout
@@ -26,19 +24,17 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.kakacat.minitool.common.ui.view.CircleProgressView
+            <TextView
                 android:id="@+id/tv_head"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center_vertical"
-                app:circle_color="@color/colorPrimary"
-                app:circle_width="7"
-                app:progress="100"
-                app:text_color="@color/black"
-                app:text_size="11" />
+                android:gravity="center"
+                android:background="@drawable/bg_wifi_head"
+                android:textColor="@android:color/white" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="8"
                 android:layout_marginStart="15dp"
@@ -78,6 +74,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
+            android:clickable="false"
+            android:focusable="false"
             android:text="文件详情"
             android:textSize="12sp" />
 

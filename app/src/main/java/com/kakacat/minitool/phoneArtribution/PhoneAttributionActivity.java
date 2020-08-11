@@ -1,19 +1,16 @@
 package com.kakacat.minitool.phoneartribution;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.textfield.TextInputLayout;
 import com.kakacat.minitool.R;
+import com.kakacat.minitool.common.base.BaseActivity;
 import com.kakacat.minitool.common.util.UiUtil;
 import com.kakacat.minitool.phoneartribution.model.PhoneNumber;
 
-public class PhoneAttributionActivity extends AppCompatActivity implements Contract.View {
+public class PhoneAttributionActivity extends BaseActivity implements Contract.View {
 
     private Contract.Presenter presenter;
 
@@ -35,7 +32,7 @@ public class PhoneAttributionActivity extends AppCompatActivity implements Contr
 
     @Override
     public void initData() {
-        getPresenter();
+        presenter = new Presenter(this);
     }
 
     @Override
@@ -56,14 +53,6 @@ public class PhoneAttributionActivity extends AppCompatActivity implements Contr
     }
 
     @Override
-    public Contract.Presenter getPresenter() {
-        if (presenter == null) {
-            presenter = new Presenter(this);
-        }
-        return presenter;
-    }
-
-    @Override
     public void onRequestDataCallBack(PhoneNumber phoneNumber, String result) {
         if (phoneNumber != null) {
             tvProvince.setText(phoneNumber.getProvince());
@@ -75,17 +64,4 @@ public class PhoneAttributionActivity extends AppCompatActivity implements Contr
         }
         UiUtil.showToast(this, result);
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
-        if (menuItem.getItemId() == android.R.id.home)
-            finish();
-        return true;
-    }
-
-    @Override
-    public Context getContext() {
-        return this;
-    }
-
 }

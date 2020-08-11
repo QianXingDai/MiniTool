@@ -14,19 +14,6 @@ public class Model {
 
     private static final String[] encryptionMethods = {"BASE64", "MD5", "HmacSHA1"};
 
-    private static Model model;
-
-    private Model() {
-
-    }
-
-    public static Model getInstance() {
-        if (model == null) {
-            model = new Model();
-        }
-        return model;
-    }
-
     public String[] getEncryptionMethods() {
         return encryptionMethods;
     }

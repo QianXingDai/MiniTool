@@ -1,18 +1,14 @@
 package com.kakacat.minitool.todayinhistory;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.os.Bundle;
-import android.view.MenuItem;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.kakacat.minitool.R;
+import com.kakacat.minitool.common.base.BaseActivity;
 import com.kakacat.minitool.common.util.UiUtil;
 
-public class TodayInHistoryActivity extends AppCompatActivity implements Contract.View {
+public class TodayInHistoryActivity extends BaseActivity implements Contract.View {
 
     private Contract.Presenter presenter;
     private DatePickerDialog datePickerDialog;
@@ -35,7 +31,8 @@ public class TodayInHistoryActivity extends AppCompatActivity implements Contrac
 
     @Override
     public void initData() {
-        getPresenter().initData();
+        presenter = new Presenter(this);
+        presenter.initData();
     }
 
     @Override
@@ -49,19 +46,6 @@ public class TodayInHistoryActivity extends AppCompatActivity implements Contrac
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> showCalendarDialog());
-    }
-
-    @Override
-    public Contract.Presenter getPresenter() {
-        if (presenter == null) {
-            presenter = new Presenter(this);
-        }
-        return presenter;
-    }
-
-    @Override
-    public Context getContext() {
-        return this;
     }
 
     @Override
@@ -82,13 +66,5 @@ public class TodayInHistoryActivity extends AppCompatActivity implements Contrac
             }, presenter.getYear(), presenter.getMonth() - 1, presenter.getDay());
         }
         datePickerDialog.show();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == android.R.id.home){
-            finish();
-        }
-        return true;
     }
 }

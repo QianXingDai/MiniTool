@@ -7,21 +7,10 @@ import java.util.List;
 
 public class Model {
 
-    private static Model model;
+
 
     private List<MainItem> dailyList;
     private List<MainItem> geekList;
-
-    private Model() {
-
-    }
-
-    public static Model getInstance() {
-        if (model == null) {
-            model = new Model();
-        }
-        return model;
-    }
 
     public void initData() {
         dailyList = getDailyList();

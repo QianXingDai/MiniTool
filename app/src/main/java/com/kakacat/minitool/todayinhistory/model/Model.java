@@ -1,7 +1,6 @@
 package com.kakacat.minitool.todayinhistory.model;
 
 import com.google.gson.Gson;
-import com.kakacat.minitool.common.myinterface.HttpCallback;
 import com.kakacat.minitool.common.util.HttpUtil;
 
 import org.jetbrains.annotations.Contract;
@@ -22,23 +21,10 @@ public class Model {
     private static final String HOST = "http://api.juheapi.com/japi/toh?key=";
     private static final String KEY = "9aac7a73878303c4559180d1272e4a8e";
 
-    private static Model model;
-
     private List<Article> articleList;
     private int year;
     private int month;
     private int day;
-
-    private Model() {
-
-    }
-
-    public static Model getInstance() {
-        if (model == null) {
-            model = new Model();
-        }
-        return model;
-    }
 
     public void initData() {
         articleList = getArticleList();
@@ -48,7 +34,7 @@ public class Model {
         day = c.get(Calendar.DATE);
     }
 
-    public void sendRequest(HttpCallback callback){
+    public void sendRequest(HttpUtil.Callback callback){
         HttpUtil.sendOkHttpRequest(getAddress(), callback);
     }
 

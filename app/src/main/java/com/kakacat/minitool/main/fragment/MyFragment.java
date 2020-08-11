@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kakacat.minitool.R;
-import com.kakacat.minitool.common.myinterface.RecycleViewItemOnClickListener;
 import com.kakacat.minitool.common.ui.ItemDecoration;
+import com.kakacat.minitool.common.ui.RecycleViewListener;
 import com.kakacat.minitool.main.adapter.MainAdapter;
 import com.kakacat.minitool.main.model.MainItem;
 
@@ -48,7 +48,7 @@ public class MyFragment extends Fragment {
         return view;
     }
 
-    public void setOnClickListener(RecycleViewItemOnClickListener clickListener) {
+    public void setOnClickListener(RecycleViewListener.OnItemClick clickListener) {
         adapter.setOnClickListener(clickListener);
     }
 }

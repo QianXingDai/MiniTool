@@ -7,12 +7,10 @@ import java.util.List;
 
 public class Presenter implements MainContract.Presenter {
 
-    private MainContract.View mainView;
     private Model model;
 
-    public Presenter(MainContract.View mainView) {
-        this.mainView = mainView;
-        this.model = Model.getInstance();
+    public Presenter() {
+        this.model = new Model();
     }
 
     @Override

@@ -1,11 +1,8 @@
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
 -keep class androidx.lifecycle.ProcessLifecycleOwnerInitializer { <init>(); }
--keep class com.kakacat.minitool.appInfo.activity.AppDetailActivity { <init>(); }
 -keep class com.kakacat.minitool.appInfo.activity.AppInfoActivity { <init>(); }
 -keep class com.kakacat.minitool.audiocapture.GetAudioService { <init>(); }
--keep class com.kakacat.minitool.bingpic.BingPicActivity { <init>(); }
 -keep class com.kakacat.minitool.cleanfile.CleanFileActivity { <init>(); }
--keep class com.kakacat.minitool.common.base.FrescoInitActivity { <init>(); }
 -keep class com.kakacat.minitool.currencyconversion.MainActivity { <init>(); }
 -keep class com.kakacat.minitool.epidemicinquiry.EpidemicInquiryActivity { <init>(); }
 -keep class com.kakacat.minitool.expressinquiry.activity.DeliveryDetailActivity { <init>(); }
@@ -39,8 +36,6 @@
 -keep class androidx.appcompat.widget.ActivityChooserView$InnerLayout { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class androidx.appcompat.widget.AlertDialogLayout { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class androidx.appcompat.widget.AppCompatImageView { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class androidx.appcompat.widget.ButtonBarLayout { <init>(android.content.Context, android.util.AttributeSet); }
 
@@ -118,11 +113,7 @@
 
 -keep class com.google.android.material.textview.MaterialTextView { <init>(android.content.Context, android.util.AttributeSet); }
 
--keep class com.kakacat.minitool.common.ui.view.CircleProgressView { <init>(android.content.Context, android.util.AttributeSet); }
-
 -keep class com.kakacat.minitool.todayinhistory.MyListView { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class de.hdodenhof.circleimageview.CircleImageView { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keepclassmembers class * { *** onClick(android.view.View); }
 

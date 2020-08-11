@@ -1,6 +1,6 @@
 package com.kakacat.minitool.todayinhistory;
 
-import com.kakacat.minitool.common.myinterface.HttpCallback;
+import com.kakacat.minitool.common.util.HttpUtil;
 import com.kakacat.minitool.common.util.ThreadUtil;
 import com.kakacat.minitool.todayinhistory.model.Article;
 import com.kakacat.minitool.todayinhistory.model.Model;
@@ -16,7 +16,7 @@ public class Presenter implements Contract.Presenter {
 
     public Presenter(Contract.View view) {
         this.view = view;
-        this.model = Model.getInstance();
+        this.model = new Model();
     }
 
     @Override
@@ -26,7 +26,7 @@ public class Presenter implements Contract.Presenter {
 
     @Override
     public void refreshData() {
-        model.sendRequest(new HttpCallback() {
+        model.sendRequest(new HttpUtil.Callback() {
             String result = "请求错误";
             boolean needRefresh = false;
 

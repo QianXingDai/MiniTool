@@ -9,7 +9,6 @@ import java.util.List;
 public interface Contract {
 
     interface Presenter extends IPresenter {
-        void initData();
 
         void refreshData();
 
