@@ -41,5 +41,5 @@ class Presenter(private val view: Contract.View) : Contract.Presenter {
     }
 
     override val fileListList: List<List<FileItem>>
-        get() = model.getFileListList()
+        get() = model.fileListList
 }

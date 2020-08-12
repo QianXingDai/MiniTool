@@ -5,9 +5,7 @@ import android.text.TextUtils
 import com.kakacat.minitool.R
 import com.kakacat.minitool.common.util.HttpUtil
 import okhttp3.Response
-import org.json.JSONException
 import org.json.JSONObject
-import java.io.IOException
 
 class Model {
 
@@ -64,9 +62,7 @@ class Model {
                 }
                 true
             }
-        } catch (e: IOException) {
-            e.printStackTrace()
-        } catch (e: JSONException) {
+        } catch (e: Exception) {
             e.printStackTrace()
         }
         return false

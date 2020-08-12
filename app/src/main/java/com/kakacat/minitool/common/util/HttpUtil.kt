@@ -16,8 +16,7 @@ object HttpUtil {
         ThreadUtil.callInBackground(Runnable {
             val builder = builder.url(address)
             val response: Response?
-            val request: Request
-            request = if (requestBody != null) {
+            val request = if (requestBody != null) {
                 builder.post(requestBody).build()
             } else {
                 builder.get().build()

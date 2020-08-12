@@ -8,7 +8,7 @@ import java.util.function.Consumer
 
 class Model {
 
-    private val fileListList: MutableList<MutableList<FileItem>> by lazy { ArrayList<MutableList<FileItem>>() }
+    val fileListList: MutableList<MutableList<FileItem>> by lazy { ArrayList<MutableList<FileItem>>() }
     val taskList: List<Task<Void>> by lazy {
         val taskList: MutableList<Task<Void>> = ArrayList()
         val files = getExternalStorageDirectory().listFiles()!!
@@ -36,15 +36,17 @@ class Model {
         val results = longArrayOf(0, 0)
 
         fileListList.forEach { list ->
-            list.filter { fileItem ->
-                if(fileItem.checked){
-                    val fileSize = fileItem.file.length()
-                    if (fileItem.file.delete()) {
+            for (index in list.size - 1 downTo 0){
+                val fileItem = list[index]
+                if(fileItem.checked && fileItem.file != null && fileItem.file!!.exists()){
+                    val fileSize = fileItem.file!!.length()
+                    if (fileItem.file!!.delete()) {
                         results[0]++
                         results[1] += fileSize
                     }
+                    list.removeAt(index)
                 }
-                !fileItem.checked
+
             }
         }
         return results
@@ -55,6 +57,6 @@ class Model {
     }
 
     companion object {
-        private const val THREAD_NUM = 5
+        private const val THREAD_NUM = 3
     }
 }

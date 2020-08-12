@@ -27,19 +27,22 @@ class FileAdapter(private val fileList: List<FileItem>) : RecyclerView.Adapter<F
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val fileItem = fileList[position]
-        val result = StringUtil.byteToMegabyte(fileItem.file.length())
-        holder.tvFileSize.text = result
-        holder.tvFileName.text = fileItem.file.name
-        holder.tvFilePath.text = fileItem.file.absolutePath
-        holder.checkBox.isChecked = fileItem.checked
-        holder.btFileDetail.setOnClickListener { /*
+        if(fileItem.file != null && fileItem.file!!.exists()){
+            val result = StringUtil.byteToMegabyte(fileItem.file!!.length())
+            holder.tvFileSize.text = result
+            holder.tvFileName.text = fileItem.file!!.name
+            holder.tvFilePath.text = fileItem.file!!.absolutePath
+            holder.checkBox.isChecked = fileItem.checked
+            holder.btFileDetail.setOnClickListener { /*
                  * 这次懒得写..下次再写这里...
                  *
                  * */
+            }
+            if (onClickListener != null) {
+                holder.itemView.setOnClickListener { onClickListener!!.onClick(holder.itemView, position) }
+            }
         }
-        if (onClickListener != null) {
-            holder.itemView.setOnClickListener { onClickListener!!.onClick(holder.itemView, position) }
-        }
+
     }
 
     override fun getItemCount() = fileList.size

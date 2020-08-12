@@ -23,9 +23,15 @@ class Model {
 
     fun initData(context: Context) {
         loadDataFromLocal(context)
-        unSignedList = ArrayList()
-        signedList = ArrayList()
-        allList = ArrayList()
+        if (!this::unSignedList.isInitialized){
+            unSignedList = ArrayList()
+        }
+        if(!this::signedList.isInitialized){
+            signedList = ArrayList()
+        }
+        if(!this::allList.isInitialized){
+            allList = ArrayList()
+        }
     }
 
     fun sendRequest(code: String, callback: HttpUtil.Callback) {
@@ -120,17 +126,21 @@ class Model {
     }
 
     private fun loadDataFromLocal(context: Context) {
-        val ois1 = ObjectInputStream(context.openFileInput("delivery_unsigned"))
-        val ois2 = ObjectInputStream(context.openFileInput("delivery_signed"))
-        val ois3 = ObjectInputStream(context.openFileInput("delivery_all"))
+        try {
+            val ois1 = ObjectInputStream(context.openFileInput("delivery_unsigned"))
+            val ois2 = ObjectInputStream(context.openFileInput("delivery_signed"))
+            val ois3 = ObjectInputStream(context.openFileInput("delivery_all"))
 
-        unSignedList = ois1.readObject() as MutableList<Delivery>
-        signedList = ois2.readObject() as MutableList<Delivery>
-        allList = ois3.readObject() as MutableList<Delivery>
+            unSignedList = ois1.readObject() as MutableList<Delivery>
+            signedList = ois2.readObject() as MutableList<Delivery>
+            allList = ois3.readObject() as MutableList<Delivery>
 
-        ois1.close()
-        ois2.close()
-        ois3.close()
+            ois1.close()
+            ois2.close()
+            ois3.close()
+        }catch (e: Exception){
+            e.printStackTrace()
+        }
     }
 
     fun getList(@IntRange(from = 0, to = 2) position: Int): MutableList<Delivery>? {
