@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.*
 import android.widget.ImageView
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.facebook.drawee.view.SimpleDraweeView
 import com.kakacat.minitool.R
 import com.kakacat.minitool.common.base.BaseActivity
@@ -18,17 +16,46 @@ import com.kakacat.minitool.common.ui.view.MyPopupWindow
 import com.kakacat.minitool.common.util.SystemUtil
 import com.kakacat.minitool.common.util.UiUtil
 import com.kakacat.minitool.common.util.UiUtil.showToast
-import kotlinx.android.synthetic.main.activity_app_info.*
+import kotlinx.android.synthetic.main.activity_app_info.coordinator_layout
+import kotlinx.android.synthetic.main.activity_bing_pic.*
 
 
 class BingPicActivity : BaseActivity() , Contract.View{
 
-    private var presenter: Contract.Presenter? = Presenter(this)
+    private var presenter: Contract.Presenter? = null
 
-    private var coordinatorLayout: CoordinatorLayout? = null
-    private var adapter: ImageAdapter? = null
-    private var bigImageDialog: MyPopupWindow? = null
-    private var optionDialog: MyPopupWindow? = null
+    private val adapter by lazy {
+        val adapter = ImageAdapter(presenter!!.addressList!!)
+        adapter.setOnClickListener(object : RecycleViewListener.OnItemClick{
+            override fun onClick(v: View?, position: Int) {
+                showBigImage(v)
+            }
+        })
+        adapter.setOnLongClickListener(object : RecycleViewListener.OnItemLongClick{
+            override fun onLongClick(v: View?, position: Int) {
+                showOptionDialog(v)
+            }
+        })
+        adapter.setOnTouchListener(object : RecycleViewListener.OnTouch {
+            override fun onTouch(v: View?, event: MotionEvent?) {
+                currentX = event!!.rawX.toInt()
+                currentY = event.rawY.toInt()
+            }
+        })
+        adapter
+    }
+    private val bigImageDialog by lazy {
+        val contentView = LayoutInflater.from(this)!!.inflate(R.layout.big_image_layout,coordinator_layout,false)
+        val bigImageDialog = MyPopupWindow(this,contentView,ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        bigImageView = contentView.findViewById(R.id.image_view)
+        bigImageDialog
+    }
+    private val optionDialog by lazy {
+        val contentView = LayoutInflater.from(this)!!.inflate(R.layout.option_layout, coordinator_layout, false)
+        val optionDialog = MyPopupWindow(this,contentView,ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT)
+        optionDialog.setAlpha(1.0f)
+        optionDialog
+    }
     private var bigImageView: ImageView? = null
     private var currentImageView: SimpleDraweeView? = null
 
@@ -50,15 +77,11 @@ class BingPicActivity : BaseActivity() , Contract.View{
 
     override fun showOptionDialog(view: View?) {
         currentImageView = view!!.findViewById(R.id.image_view)
-        if(optionDialog != null){
-            val contentView = LayoutInflater.from(this)!!.inflate(R.layout.option_layout, coordinatorLayout, false)
-            optionDialog = MyPopupWindow(this,contentView,ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT)
-            optionDialog!!.setAlpha(1.0f)
-        }
-        optionDialog!!.showAtLocation(coordinatorLayout!!,Gravity.NO_GRAVITY,0,0)
+        optionDialog.showAtLocation(coordinator_layout,Gravity.NO_GRAVITY,0,0)
     }
 
     override fun initData() {
+        presenter = Presenter(this)
         presenter!!.initData()
     }
 
@@ -72,7 +95,7 @@ class BingPicActivity : BaseActivity() , Contract.View{
     }
 
     override fun onSaveImageCallBack(result: String?) {
-        optionDialog!!.dismiss()
+        optionDialog.dismiss()
         showToast(this,result)
         SystemUtil.vibrate(this,50)
     }
@@ -81,47 +104,21 @@ class BingPicActivity : BaseActivity() , Contract.View{
         UiUtil.setTranslucentStatusBarWhite(this)
         UiUtil.initToolbar(this,true)
 
-        coordinatorLayout= findViewById(R.id.coordinator_layout)
-        val recycleView = findViewById<RecyclerView>(R.id.recycler_view)
-        adapter = ImageAdapter(presenter!!.addressList!!)
-        recycleView.adapter = adapter
-        recycleView.layoutManager = GridLayoutManager(this,2)
-        recycleView.addOnScrollListener(RecycleViewScrollListener(object : OnSwipeUpRefresh  { override fun loadMore() { presenter!!.loadMore() }}))
-        adapter!!.setOnClickListener(object : RecycleViewListener.OnItemClick{
-            override fun onClick(v: View?, position: Int) {
-                showBigImage(v)
-            }
-        })
-        adapter!!.setOnLongClickListener(object : RecycleViewListener.OnItemLongClick{
-            override fun onLongClick(v: View?, position: Int) {
-                showOptionDialog(v)
-            }
-        })
-        adapter!!.setOnTouchListener(object : RecycleViewListener.OnTouch {
-            override fun onTouch(v: View?, event: MotionEvent?) {
-                currentX = event!!.rawX.toInt()
-                currentY = event.rawY.toInt()
-            }
-        })
+        recycler_view.adapter = adapter
+        recycler_view.layoutManager = GridLayoutManager(this,2)
+        recycler_view.addOnScrollListener(RecycleViewScrollListener(object : OnSwipeUpRefresh  { override fun loadMore() { presenter!!.loadMore() }}))
     }
 
     override fun onUpdateImagesCallBack() {
-        if (adapter != null){
-            adapter!!.notifyDataSetChanged()
-            UiUtil.dismissLoadingWindow()
-        }
+        adapter.notifyDataSetChanged()
+        UiUtil.dismissLoadingWindow()
     }
 
     override fun showBigImage(view: View?) {
         currentImageView = view!!.findViewById(R.id.image_view)
         val contentDrawable = currentImageView!!.drawable
-        if(bigImageDialog == null){
-            val contentView = LayoutInflater.from(this)!!.inflate(R.layout.big_image_layout,coordinator_layout,false)
-            bigImageDialog = MyPopupWindow(this,contentView,ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-            bigImageView = contentView.findViewById(R.id.image_view)
-        }
         bigImageView!!.setImageDrawable(contentDrawable)
-        bigImageDialog!!.showAtLocation(coordinator_layout,Gravity.CENTER,0,0)
+        bigImageDialog.showAtLocation(coordinator_layout,Gravity.CENTER,0,0)
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String?>, grantResults: IntArray) {
@@ -145,5 +142,4 @@ class BingPicActivity : BaseActivity() , Contract.View{
     companion object{
         private const val REQUEST_PERMISSION_CODE = 2
     }
-
 }

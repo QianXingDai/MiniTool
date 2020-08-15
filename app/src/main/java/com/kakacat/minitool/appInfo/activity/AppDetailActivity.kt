@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.item_app_info.tv_app_name
 
 class AppDetailActivity : BaseActivity(), AppDetailContract.View, View.OnClickListener {
 
-    private var presenter: AppDetailContract.Presenter? = AppDetailPresenter(this)
+    private var presenter: AppDetailContract.Presenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +33,7 @@ class AppDetailActivity : BaseActivity(), AppDetailContract.View, View.OnClickLi
     }
 
     override fun initData() {
+        presenter = AppDetailPresenter(this)
         presenter!!.initData()
     }
 

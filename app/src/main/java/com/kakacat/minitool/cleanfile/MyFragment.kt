@@ -14,17 +14,15 @@ import com.kakacat.minitool.cleanfile.adapter.FileAdapter
 import com.kakacat.minitool.cleanfile.model.FileItem
 import com.kakacat.minitool.common.ui.RecycleViewListener
 
-class MyFragment(private val fileItemList: List<FileItem>) : Fragment() {
+class MyFragment(private val fileItemList: MutableList<FileItem>) : Fragment() {
 
-    lateinit var adapter: FileAdapter
-        private set
+    val adapter by lazy { FileAdapter(fileItemList) }
     var isSelectedAll = false
         private set
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_layout, container, false)
         val rv: RecyclerView = view.findViewById(R.id.rv_file)
-        adapter = FileAdapter(fileItemList)
         adapter.setOnClickListener(object : RecycleViewListener.OnItemClick {
              override fun onClick(v: View?, position: Int) {
                  val fileItem = fileItemList[position]

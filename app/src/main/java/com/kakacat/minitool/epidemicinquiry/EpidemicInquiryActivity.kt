@@ -12,6 +12,9 @@ import com.kakacat.minitool.common.util.UiUtil.setTranslucentStatusBarBlack
 import com.kakacat.minitool.common.util.UiUtil.showToast
 import com.kakacat.minitool.epidemicinquiry.adapter.FragmentAdapter
 import com.kakacat.minitool.epidemicinquiry.fragment.MyFragment
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class EpidemicInquiryActivity : BaseActivity(), Contract.View {
 
@@ -66,7 +69,9 @@ class EpidemicInquiryActivity : BaseActivity(), Contract.View {
     }
 
     override fun onUpdateViewSuccessful() {
-        myFragmentList[0].updateView()
+        GlobalScope.launch(Dispatchers.Main){
+            myFragmentList[0].updateView()
+        }
     }
 
     override fun onUpdateViewError(error: String) {

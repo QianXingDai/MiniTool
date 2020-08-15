@@ -12,7 +12,7 @@ interface Contract {
     }
 
     interface View : IView<Presenter?> {
-        fun onRefreshExchangeRate(result: String?)
+         fun onRefreshExchangeRateAsync(result: String?)
         fun onTextChanged(s: CharSequence, flag: Int)
     }
 }

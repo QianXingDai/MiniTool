@@ -10,7 +10,7 @@ object HttpUtil {
     private val okHttpClient by lazy { OkHttpClient() }
     private val builder: Request.Builder by lazy { Request.Builder() }
 
-    @JvmStatic
+/*    @JvmStatic
     @JvmOverloads
     fun sendOkHttpRequest(address: String, callback: Callback, requestBody: RequestBody? = null) {
         ThreadUtil.callInBackground(Runnable {
@@ -29,6 +29,17 @@ object HttpUtil {
                 callback.onError()
             }
         })
+    }*/
+
+    //同步请求数据
+    fun sendRequest(address: String, requestBody: RequestBody? = null): Response?{
+        val builder = builder.url(address)
+        val request = if (requestBody != null) {
+            builder.post(requestBody).build()
+        } else {
+            builder.get().build()
+        }
+        return okHttpClient.newCall(request).execute()
     }
 
     interface Callback {

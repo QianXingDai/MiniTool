@@ -1,10 +1,11 @@
 package com.kakacat.minitool.wifipasswordview
 
 import com.kakacat.minitool.common.util.SystemUtil.copyToClipboard
-import com.kakacat.minitool.common.util.ThreadUtil.callInBackground
-import com.kakacat.minitool.common.util.ThreadUtil.callInUiThread
 import com.kakacat.minitool.wifipasswordview.model.Model
 import com.kakacat.minitool.wifipasswordview.model.Wifi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class Presenter(private val view: Contract.View) : Contract.Presenter {
 
@@ -12,7 +13,7 @@ class Presenter(private val view: Contract.View) : Contract.Presenter {
     private val context by lazy { view.context }
 
     override fun initData() {
-        callInBackground(Runnable {
+        GlobalScope.launch(Dispatchers.Default) {
             var result = "获取wifi配置信息失败,请检查是否有ROOT权限"
             if (model.copyWifiConfigToCache(context)) {
                 result = if (model.handleWifiConfig(context)) {
@@ -22,8 +23,8 @@ class Presenter(private val view: Contract.View) : Contract.Presenter {
                 }
             }
             val finalResult = result
-            callInUiThread(Runnable { view.onGetWifiDataCallBack(finalResult) })
-        })
+            view.onGetWifiDataCallBack(finalResult)
+        }
     }
 
     override fun copyToClipboard(position: Int) {
@@ -35,5 +36,4 @@ class Presenter(private val view: Contract.View) : Contract.Presenter {
     override fun getWifiList(): List<Wifi>{
         return model.wifiList
     }
-
 }

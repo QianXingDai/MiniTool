@@ -43,29 +43,27 @@ class Model {
         Rate.za = sharedPreferences.getFloat("za", Rate.za.toFloat()).toDouble()
     }
 
-    fun sendRequest(callback: HttpUtil.Callback){
-        HttpUtil.sendOkHttpRequest(REQUEST_ADDRESS,callback)
+    fun sendRequest(): Response? {
+        return HttpUtil.sendRequest(REQUEST_ADDRESS)
     }
 
-    fun handleResponse(response: Response): Boolean {
-        try {
-            val s = response.body!!.string()
-            return if (!TextUtils.isEmpty(s)) {
-                false
-            } else {
-                val jsonObject = JSONObject(s)
-                val result = jsonObject.getJSONArray("result").getJSONObject(0)
-                for (i in 1 until countryBeanList.size) {
-                    val data = result.getJSONObject("data$i")
-                    val rate = data.getString("bankConversionPri").toDouble() / 100
-                    Rate.setRate(rate, i)
-                }
-                true
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
+    fun handleResponse(response: Response?): Boolean {
+        if(!response!!.isSuccessful){
+            return false
         }
-        return false
+        val s = response.body!!.string()
+        return if (TextUtils.isEmpty(s)) {
+            false
+        } else {
+            val jsonObject = JSONObject(s)
+            val result = jsonObject.getJSONArray("result").getJSONObject(0)
+            for (i in 1 until countryBeanList.size) {
+                val data = result.getJSONObject("data$i")
+                val rate = data.getString("bankConversionPri").toDouble() / 100
+                Rate.setRate(rate, i)
+            }
+            true
+        }
     }
 
     fun getResult(`val`: CharSequence, rate1: Double, rate2: Double): String {

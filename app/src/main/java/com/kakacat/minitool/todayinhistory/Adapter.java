@@ -19,12 +19,10 @@ import java.util.List;
 public class Adapter extends ArrayAdapter<Article> {
 
     private int resourceId;
-    private Context context;
 
-    public Adapter(@NonNull Context context, int resource, @NonNull List objects) {
+    public Adapter(@NonNull Context context, int resource, @NonNull List<Article> objects) {
         super(context, resource, objects);
         this.resourceId = resource;
-        this.context = context;
     }
 
     @NonNull

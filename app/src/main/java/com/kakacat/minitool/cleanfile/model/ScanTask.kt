@@ -4,7 +4,7 @@ import java.io.File
 import java.util.concurrent.Callable
 import java.util.function.Consumer
 
-class ScanTask(private val targetScanFileList: MutableList<File>, private val fileListList: List<MutableList<FileItem>>) : Callable<Void> {
+class ScanTask(private val targetScanFileList: MutableList<File>, private val fileListList: MutableList<MutableList<FileItem>>) : Callable<Void> {
 
     override fun call(): Void? {
         targetScanFileList.forEach(Consumer { file: File -> start(file) })

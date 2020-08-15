@@ -10,6 +10,9 @@ import com.kakacat.minitool.common.ui.RecycleViewListener.OnItemLongClick
 import com.kakacat.minitool.common.util.UiUtil.initToolbar
 import com.kakacat.minitool.common.util.UiUtil.setTranslucentStatusBarWhite
 import com.kakacat.minitool.common.util.UiUtil.showToast
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class WifiPwdActivity : BaseActivity(), Contract.View {
 
@@ -52,7 +55,9 @@ class WifiPwdActivity : BaseActivity(), Contract.View {
     }
 
     override fun onGetWifiDataCallBack(result: String?) {
-        showToast(this, result)
-        adapter.notifyDataSetChanged()
+        GlobalScope.launch(Dispatchers.Main) {
+            showToast(context, result)
+            adapter.notifyDataSetChanged()
+        }
     }
 }

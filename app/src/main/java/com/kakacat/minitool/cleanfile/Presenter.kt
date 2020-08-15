@@ -7,21 +7,32 @@ import com.kakacat.minitool.cleanfile.model.Model
 import com.kakacat.minitool.common.util.StringUtil
 import com.kakacat.minitool.common.util.ThreadUtil.callInBackground
 import com.kakacat.minitool.common.util.ThreadUtil.callInUiThread
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class Presenter(private val view: Contract.View) : Contract.Presenter {
 
-    private val model: Model = Model()
+    private val model by lazy { Model() }
 
     override fun initData() {
-        Task.callInBackground {
+        GlobalScope.launch(Dispatchers.Default) {
             model.initData()
             val taskList = model.taskList
-            Task.whenAll(taskList).continueWith(Continuation<Void?, Any?> {
+            runBlocking {
+                Task.whenAll(taskList)
+            }
+            view.onUpdateDataCallBack()
+        }
+ /*       Task.callInBackground {
+
+            .continueWith(Continuation<Void?, Any?> {
                 view.onUpdateDataCallBack()
                 null
             }, Task.UI_THREAD_EXECUTOR)
             null
-        }
+        }*/
     }
 
     override fun selectAll(currentPagePosition: Int, isSelectedAll: Boolean) {
@@ -40,6 +51,6 @@ class Presenter(private val view: Contract.View) : Contract.Presenter {
         }, Task.UI_THREAD_EXECUTOR)
     }
 
-    override val fileListList: List<List<FileItem>>
+    override val fileListList: MutableList<MutableList<FileItem>>
         get() = model.fileListList
 }

@@ -20,7 +20,7 @@ import java.net.SocketException
 object SystemUtil {
 
     @JvmStatic
-    fun log(log: String = "") {
+    fun log(log: String = "hello world") {
         Log.d("hhh", log)
     }
 

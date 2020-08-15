@@ -22,6 +22,8 @@
             android:name=".expressinquiry.activity.ExpressInquiryActivity"
             android:theme="@style/MyMaterialNoActionBarStyle" />
 
+        <activity android:name=".bingpic.BingPicActivity"/>
+
         <service
             android:name=".audiocapture.GetAudioService"
             android:exported="false" />

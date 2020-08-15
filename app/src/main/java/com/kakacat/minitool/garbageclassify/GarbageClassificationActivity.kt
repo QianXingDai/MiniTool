@@ -19,6 +19,9 @@ import com.kakacat.minitool.common.ui.view.MyPopupWindow
 import com.kakacat.minitool.common.util.UiUtil
 import com.kakacat.minitool.common.util.UiUtil.showToast
 import com.kakacat.minitool.garbageclassify.model.TypeMap.getTypeName
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class GarbageClassificationActivity : BaseActivity(), Contract.View {
 
@@ -68,9 +71,11 @@ class GarbageClassificationActivity : BaseActivity(), Contract.View {
     }
 
     override fun onRequestCallBack(result: String?) {
-        loadingDialog.dismiss()
-        adapter.notifyDataSetChanged()
-        showToast(this, result)
+        GlobalScope.launch(Dispatchers.Main) {
+            loadingDialog.dismiss()
+            adapter.notifyDataSetChanged()
+            showToast(context, result)
+        }
     }
 
     @SuppressLint("SetTextI18n")

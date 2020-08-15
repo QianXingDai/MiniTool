@@ -7,14 +7,17 @@ import com.kakacat.minitool.common.base.BaseActivity
 import com.kakacat.minitool.common.util.UiUtil.initToolbar
 import com.kakacat.minitool.common.util.UiUtil.setTranslucentStatusBarWhite
 import com.kakacat.minitool.common.util.UiUtil.showSnackBar
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : BaseActivity(), Contract.View {
 
     private var presenter: Contract.Presenter? = null
 
-    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
-    private lateinit var countryFragment1: CountryFragment
-    private lateinit var countryFragment2: CountryFragment
+    private val swipeRefreshLayout by lazy { findViewById<SwipeRefreshLayout>(R.id.swipe_refresh_layout) }
+    private val countryFragment1 by lazy { CountryFragment(this, presenter!!.countryList, 1) }
+    private val countryFragment2 by lazy { CountryFragment(this, presenter!!.countryList, 2) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,14 +41,11 @@ class MainActivity : BaseActivity(), Contract.View {
         setTranslucentStatusBarWhite(this)
         initToolbar(this, true)
 
-        swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout)
         swipeRefreshLayout.setOnRefreshListener {
             swipeRefreshLayout.isRefreshing = true
             presenter!!.refreshExchangeRate()
         }
         val transaction = supportFragmentManager.beginTransaction()
-        countryFragment1 = CountryFragment(this, presenter!!.countryList, 1)
-        countryFragment2 = CountryFragment(this, presenter!!.countryList, 2)
         transaction.add(R.id.fragment_container, countryFragment1)
         transaction.add(R.id.fragment_container, countryFragment2)
         transaction.commit()
@@ -61,8 +61,10 @@ class MainActivity : BaseActivity(), Contract.View {
         }
     }
 
-    override fun onRefreshExchangeRate(result: String?) {
-        swipeRefreshLayout.isRefreshing = false
-        showSnackBar(swipeRefreshLayout, result)
+    override fun onRefreshExchangeRateAsync(result: String?) {
+        GlobalScope.launch(Dispatchers.Main) {
+            swipeRefreshLayout.isRefreshing = false
+            showSnackBar(swipeRefreshLayout, result)
+        }
     }
 }

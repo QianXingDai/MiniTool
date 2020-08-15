@@ -8,10 +8,10 @@ interface Contract {
     interface Presenter : IPresenter {
         fun deleteSelectedFile()
         fun selectAll(currentPagePosition: Int, isSelectedAll: Boolean)
-        val fileListList: List<List<FileItem>>
+        val fileListList: MutableList<MutableList<FileItem>>
     }
 
-    interface View : IView<Presenter?> {
+    interface View : IView<Presenter> {
         fun requestPermission()
         fun onUpdateDataCallBack()
         fun onSelectedAllCallBack()

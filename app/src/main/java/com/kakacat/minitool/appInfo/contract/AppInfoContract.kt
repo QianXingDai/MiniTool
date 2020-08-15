@@ -12,7 +12,7 @@ interface AppInfoContract {
         val appInfoBeanList: List<AppInfoBean>?
     }
 
-    interface View : IView<Presenter?> {
+    interface View : IView<Presenter> {
         fun onUpdateDataSet()
         fun sort(sortFlag: Int)
         fun showSortDialog()

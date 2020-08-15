@@ -38,8 +38,8 @@ class Model {
         return false
     }
 
-    fun sendRequest(input: String,callback: HttpUtil.Callback){
-        HttpUtil.sendOkHttpRequest(getAddress(input),callback)
+    fun sendRequest(input: String): Response?{
+        return HttpUtil.sendRequest(getAddress(input))
     }
 
     fun validate(input: String?) : Boolean{

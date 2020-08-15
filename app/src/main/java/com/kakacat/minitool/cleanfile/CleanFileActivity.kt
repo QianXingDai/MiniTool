@@ -4,8 +4,6 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.*
-import android.widget.ProgressBar
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
@@ -22,17 +20,18 @@ import com.kakacat.minitool.common.util.UiUtil.initToolbar
 import com.kakacat.minitool.common.util.UiUtil.setTranslucentStatusBarWhite
 import com.kakacat.minitool.common.util.UiUtil.showSnackBar
 import com.kakacat.minitool.common.util.UiUtil.showToast
+import kotlinx.android.synthetic.main.activity_clean_file.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.function.Consumer
-import kotlin.collections.ArrayList
 
 class CleanFileActivity : BaseActivity(), Contract.View {
 
     private var presenter: Contract.Presenter? = null
 
-    private val coordinatorLayout by lazy { findViewById<CoordinatorLayout>(R.id.coordinator_layout) }
     private val viewPager2 by lazy { findViewById<ViewPager2>(R.id.fragment_container) }
     private val btmNav by lazy { findViewById<BottomNavigationView>(R.id.btm_nav) }
-    private val progressBar by lazy { findViewById<ProgressBar>(R.id.progress_bar) }
     private val btSelectAll by lazy { findViewById<MaterialButton>(R.id.bt_select_all) }
     private val popupWindow by lazy {
         val view = LayoutInflater.from(this).inflate(R.layout.dialog, viewPager2, false)
@@ -46,6 +45,8 @@ class CleanFileActivity : BaseActivity(), Contract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_clean_file)
+
+        presenter = Presenter(this)
         requestPermission()
         initView()
     }
@@ -56,7 +57,6 @@ class CleanFileActivity : BaseActivity(), Contract.View {
     }
 
     override fun initData() {
-        presenter = Presenter(this)
         presenter!!.initData()
     }
 
@@ -79,7 +79,7 @@ class CleanFileActivity : BaseActivity(), Contract.View {
         setTranslucentStatusBarWhite(this)
         initToolbar(this, true)
 
-        presenter!!.fileListList.forEach(Consumer { list: List<FileItem> -> myFragmentList.add(MyFragment(list)) })
+        presenter!!.fileListList.forEach(Consumer { list: MutableList<FileItem> -> myFragmentList.add(MyFragment(list)) })
         btmNav.setOnNavigationItemSelectedListener(navigationItemSelectedListener)
         viewPager2.adapter = FragmentAdapter(this, myFragmentList)
         viewPager2.registerOnPageChangeCallback(packChangeCallBack)
@@ -142,9 +142,11 @@ class CleanFileActivity : BaseActivity(), Contract.View {
         }
 
     override fun onUpdateDataCallBack() {
-        progressBar.visibility = View.INVISIBLE
-        viewPager2.visibility = View.VISIBLE
-        myFragmentList.forEach(Consumer { myFragment: MyFragment -> myFragment.adapter.notifyDataSetChanged() })
+        GlobalScope.launch(Dispatchers.Main) {
+            progress_bar.visibility = View.INVISIBLE
+            viewPager2.visibility = View.VISIBLE
+            myFragmentList.forEach(Consumer { myFragment: MyFragment -> myFragment.adapter.notifyDataSetChanged() })
+        }
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
@@ -190,7 +192,7 @@ class CleanFileActivity : BaseActivity(), Contract.View {
 
     override fun onFileDeletedCallBack(result: String) {
         myFragmentList.forEach(Consumer { myFragment: MyFragment -> myFragment.adapter.notifyDataSetChanged() })
-        showSnackBar(coordinatorLayout, result, btmNav)
+        showSnackBar(coordinator_layout, result, btmNav)
     }
 
     override fun showDialogWindow() {

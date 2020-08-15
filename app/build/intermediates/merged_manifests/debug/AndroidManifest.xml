@@ -29,6 +29,7 @@
         <activity
             android:name="com.kakacat.minitool.expressinquiry.activity.ExpressInquiryActivity"
             android:theme="@style/MyMaterialNoActionBarStyle" />
+        <activity android:name="com.kakacat.minitool.bingpic.BingPicActivity" />
 
         <service
             android:name="com.kakacat.minitool.audiocapture.GetAudioService"

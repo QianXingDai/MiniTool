@@ -17,8 +17,8 @@ class Model {
         }
         private set
 
-    fun sendRequest(callback : HttpUtil.Callback){
-        HttpUtil.sendOkHttpRequest(ADDRESS,callback)
+    fun sendRequest(): Response?{
+        return HttpUtil.sendRequest(ADDRESS)
     }
 
     fun handleResponse(response: Response): Boolean {

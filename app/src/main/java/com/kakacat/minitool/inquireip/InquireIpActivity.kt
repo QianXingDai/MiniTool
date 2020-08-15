@@ -8,6 +8,9 @@ import com.kakacat.minitool.R
 import com.kakacat.minitool.common.base.BaseActivity
 import com.kakacat.minitool.common.util.UiUtil.initToolbar
 import com.kakacat.minitool.common.util.UiUtil.showToast
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class InquireIpActivity : BaseActivity(), Contract.View {
 
@@ -43,13 +46,15 @@ class InquireIpActivity : BaseActivity(), Contract.View {
     }
 
     override fun onUpdateDataCallBack(ipBean: IpBean?, result: String?) {
-        showToast(this, result)
-        if (ipBean != null) {
-            tvCountry.text = ipBean.country
-            tvProvince.text = ipBean.province
-            tvCity.text = ipBean.city
-            tvIsp.text = ipBean.isp
-            tvIp.text = ipBean.ipAddress
+        GlobalScope.launch(Dispatchers.Main) {
+            showToast(context, result)
+            if (ipBean != null) {
+                tvCountry.text = ipBean.country
+                tvProvince.text = ipBean.province
+                tvCity.text = ipBean.city
+                tvIsp.text = ipBean.isp
+                tvIp.text = ipBean.ipAddress
+            }
         }
     }
 }

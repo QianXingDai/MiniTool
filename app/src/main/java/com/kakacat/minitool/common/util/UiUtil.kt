@@ -17,13 +17,14 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.widget.NestedScrollView
 import com.google.android.material.behavior.HideBottomViewOnScrollBehavior
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import com.kakacat.minitool.R
 import com.kakacat.minitool.common.ui.view.MyPopupWindow
 import java.io.ByteArrayOutputStream
 
 object UiUtil {
-    private var loadingPopupWindow: MyPopupWindow? = null
+    private var loadingPopupWindow: MyPopupWindow?= null
 
     @JvmStatic
     fun showKeyboard(context: Context, v: View?) {
@@ -40,13 +41,18 @@ object UiUtil {
     @JvmStatic
     @JvmOverloads
     fun showSnackBar(view: View?, hint: CharSequence?, btmNav: BottomNavigationView? = null) {
-        SystemUtil.log((btmNav == null).toString())
+        val snackBar = Snackbar.make(view!!, hint!!, Snackbar.LENGTH_SHORT)
         if (btmNav != null) {
             val lp = btmNav.layoutParams as CoordinatorLayout.LayoutParams
             val behavior = (lp.behavior as HideBottomViewOnScrollBehavior<BottomNavigationView>?)!!
             behavior.slideDown(btmNav)
+            snackBar.addCallback(object : BaseTransientBottomBar.BaseCallback<Snackbar>(){
+                override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
+                    behavior.slideUp(btmNav)
+                }
+            })
         }
-        Snackbar.make(view!!, hint!!, Snackbar.LENGTH_SHORT).show()
+        snackBar.show()
     }
 
     @JvmStatic
@@ -56,7 +62,6 @@ object UiUtil {
 
     @JvmStatic
     fun showLoading(context: Context, parent: View?) {
-        SystemUtil.log("show loading")
         if (loadingPopupWindow == null) {
             val view = LayoutInflater.from(context).inflate(R.layout.loading_layout, parent as ViewGroup?, false)
             loadingPopupWindow = MyPopupWindow(context, view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
@@ -100,12 +105,7 @@ object UiUtil {
     }
 
     @JvmStatic
-    fun initToolbar(activity: AppCompatActivity, showTitle: Boolean) {
-        initToolbar(activity, showTitle, -1)
-    }
-
-    @JvmStatic
-    fun initToolbar(activity: AppCompatActivity, showTitle: Boolean, @DrawableRes iconId: Int) {
+    fun initToolbar(activity: AppCompatActivity, showTitle: Boolean = false, @DrawableRes iconId: Int = -1) {
         activity.setSupportActionBar(activity.findViewById(R.id.toolbar))
         val actionBar = activity.supportActionBar
         if (actionBar != null) {

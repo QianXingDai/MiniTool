@@ -1,5 +1,6 @@
 package com.kakacat.minitool.expressinquiry.activity
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
 import android.widget.Button
@@ -19,9 +20,13 @@ import com.kakacat.minitool.expressinquiry.Contract
 import com.kakacat.minitool.expressinquiry.MyFragment
 import com.kakacat.minitool.expressinquiry.Presenter
 import com.kakacat.minitool.expressinquiry.adapter.FragmentAdapter
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.function.Consumer
 
 
+@SuppressLint("SetTextI18n")
 class ExpressInquiryActivity : BaseActivity(), Contract.View {
 
     private var presenter : Contract.Presenter? = null
@@ -103,15 +108,17 @@ class ExpressInquiryActivity : BaseActivity(), Contract.View {
     }
 
     override fun onRequestCallback(result: String?, needRefresh: Boolean) {
-        showToast(this, result)
-        if (needRefresh) {
-            myFragmentList.forEach(Consumer { myFragment: MyFragment -> myFragment.adapter.notifyDataSetChanged() })
-        }
-        if (swipeRefreshLayout.isRefreshing) {
-            swipeRefreshLayout.isRefreshing = false
-        }
-        if (ppwQuery.isShowing) {
-            ppwQuery.dismiss()
+        GlobalScope.launch(Dispatchers.Main) {
+            showToast(context, result)
+            if (needRefresh) {
+                myFragmentList.forEach(Consumer { myFragment: MyFragment -> myFragment.adapter.notifyDataSetChanged() })
+            }
+            if (swipeRefreshLayout.isRefreshing) {
+                swipeRefreshLayout.isRefreshing = false
+            }
+            if (ppwQuery.isShowing) {
+                ppwQuery.dismiss()
+            }
         }
     }
 

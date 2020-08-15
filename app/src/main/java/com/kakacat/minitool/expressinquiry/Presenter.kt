@@ -1,11 +1,12 @@
 package com.kakacat.minitool.expressinquiry
 
-import com.kakacat.minitool.common.util.HttpUtil
 import com.kakacat.minitool.common.util.SystemUtil.getDataFormClipBoard
 import com.kakacat.minitool.common.util.ThreadUtil.callInUiThread
 import com.kakacat.minitool.expressinquiry.model.Delivery
 import com.kakacat.minitool.expressinquiry.model.Model
-import okhttp3.Response
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.function.Consumer
 
 class Presenter(private val view: Contract.View) : Contract.Presenter {
@@ -22,25 +23,21 @@ class Presenter(private val view: Contract.View) : Contract.Presenter {
     }
 
     override fun requestData(code: String?) {
-        if (!model.validateInput(code!!)) {
-            view.onRequestCallback("输入错误,请检查输入")
-        } else {
-            if (model.isInSignedList(code)) {
-                view.onRequestCallback("已经在签收列表哟")
+        GlobalScope.launch(Dispatchers.Default) {
+            if (!model.validateInput(code!!)) {
+                view.onRequestCallback("输入错误,请检查输入")
             } else {
-                model.sendRequest(code, object : HttpUtil.Callback {
-                    override fun onSuccess(response: Response?) {
-                        if (model.handleResponse(response!!, code)) {
-                            callInUiThread(Runnable { view.onRequestCallback("查询成功", true) })
-                        } else {
-                            callInUiThread(Runnable { view.onRequestCallback("处理错误") })
-                        }
+                if (model.isInSignedList(code)) {
+                    view.onRequestCallback("已经在签收列表哟")
+                } else {
+                    val response = model.sendRequest(code)
+                    val handleResult = model.handleResponse(response!!,code)
+                    if(handleResult){
+                        view.onRequestCallback("查询成功", true)
+                    }else{
+                        view.onRequestCallback("错误")
                     }
-
-                    override fun onError() {
-                        callInUiThread(Runnable { view.onRequestCallback("请求错误") })
-                    }
-                })
+                }
             }
         }
     }

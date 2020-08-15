@@ -46,7 +46,6 @@ class Model {
                     }
                     list.removeAt(index)
                 }
-
             }
         }
         return results

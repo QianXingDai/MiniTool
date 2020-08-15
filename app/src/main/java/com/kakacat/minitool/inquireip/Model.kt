@@ -4,10 +4,7 @@ import android.text.TextUtils
 import com.kakacat.minitool.common.util.HttpUtil
 import com.kakacat.minitool.common.util.SystemUtil
 import okhttp3.Response
-import org.json.JSONException
 import org.json.JSONObject
-import java.io.IOException
-import java.util.*
 import java.util.regex.Pattern
 
 class Model {
@@ -16,8 +13,8 @@ class Model {
         return "$QUERY_IP_HOST$input&key=$QUERY_IP_KEY"
     }
 
-    fun sendRequest(input: String,callback : HttpUtil.Callback){
-        HttpUtil.sendOkHttpRequest(getAddress(input),callback)
+    fun sendRequest(input: String): Response?{
+        return HttpUtil.sendRequest(getAddress(input))
     }
 
     fun handleIpDataResponse(response: Response): IpBean? {

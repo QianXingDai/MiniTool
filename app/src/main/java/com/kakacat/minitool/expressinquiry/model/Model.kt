@@ -5,7 +5,6 @@ import android.text.TextUtils
 import androidx.annotation.IntRange
 import com.google.gson.Gson
 import com.kakacat.minitool.common.util.HttpUtil
-import com.kakacat.minitool.common.util.HttpUtil.sendOkHttpRequest
 import okhttp3.FormBody
 import okhttp3.RequestBody
 import okhttp3.Response
@@ -34,7 +33,7 @@ class Model {
         }
     }
 
-    fun sendRequest(code: String, callback: HttpUtil.Callback) {
+    fun sendRequest(code: String): Response? {
         val address = HOST +
                 "?key=" + KEY +
                 "&number=" + code
@@ -42,7 +41,7 @@ class Model {
                 .add("key", KEY)
                 .add("code", code)
                 .build()
-        sendOkHttpRequest(address, callback, requestBody)
+        return HttpUtil.sendRequest(address,requestBody)
     }
 
     fun validateInput(code: String): Boolean {
