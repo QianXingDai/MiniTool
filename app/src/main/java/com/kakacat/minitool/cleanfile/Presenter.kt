@@ -1,54 +1,41 @@
 package com.kakacat.minitool.cleanfile
 
-import bolts.Continuation
-import bolts.Task
 import com.kakacat.minitool.cleanfile.model.FileItem
 import com.kakacat.minitool.cleanfile.model.Model
 import com.kakacat.minitool.common.util.StringUtil
-import com.kakacat.minitool.common.util.ThreadUtil.callInBackground
-import com.kakacat.minitool.common.util.ThreadUtil.callInUiThread
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import com.kakacat.minitool.common.util.SystemUtil
+import kotlinx.coroutines.*
+
 
 class Presenter(private val view: Contract.View) : Contract.Presenter {
 
     private val model by lazy { Model() }
 
     override fun initData() {
-        GlobalScope.launch(Dispatchers.Default) {
+        GlobalScope.launch {
             model.initData()
             val taskList = model.taskList
-            runBlocking {
-                Task.whenAll(taskList)
-            }
+            val job1 = async(Dispatchers.IO) { taskList[0].start() }
+            val job2 = async(Dispatchers.Default) { taskList[1].start() }
+            job1.await()
+            job2.await()
             view.onUpdateDataCallBack()
         }
- /*       Task.callInBackground {
-
-            .continueWith(Continuation<Void?, Any?> {
-                view.onUpdateDataCallBack()
-                null
-            }, Task.UI_THREAD_EXECUTOR)
-            null
-        }*/
     }
 
     override fun selectAll(currentPagePosition: Int, isSelectedAll: Boolean) {
-        callInBackground(Runnable {
+        GlobalScope.launch {
             model.selectAll(currentPagePosition, isSelectedAll)
-            callInUiThread(Runnable { view.onSelectedAllCallBack() })
-        })
+            view.onSelectedAllCallBack()
+        }
     }
 
     override fun deleteSelectedFile() {
-        Task.callInBackground { model.deleteSelectedFile() }.continueWith(Continuation<LongArray, Void?> { task: Task<LongArray> ->
-            val results = task.result
+        GlobalScope.launch {
+            val results = model.deleteSelectedFile()
             val s = "一共清理了" + results[0] + "个文件,释放空间" + StringUtil.byteToMegabyte(results[1])
             view.onFileDeletedCallBack(s)
-            null
-        }, Task.UI_THREAD_EXECUTOR)
+        }
     }
 
     override val fileListList: MutableList<MutableList<FileItem>>

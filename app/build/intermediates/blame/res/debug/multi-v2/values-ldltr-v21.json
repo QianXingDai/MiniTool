@@ -4,7 +4,7 @@
             "outputFile": "E:\\Android Projects\\MiniTool\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\kakacat\\.gradle\\caches\\transforms-2\\files-2.1\\9e25b22bcaa8e27cefe44334f6132044\\appcompat-1.1.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "D:\\android studio\\.gradle\\caches\\transforms-2\\files-2.1\\e191728ecc2b5cd36f42c4a63cefa8ea\\appcompat-1.2.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

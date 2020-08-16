@@ -187,12 +187,16 @@ class CleanFileActivity : BaseActivity(), Contract.View {
     }
 
     override fun onSelectedAllCallBack() {
-        myFragmentList[currentPagePosition].adapter.notifyDataSetChanged()
+        GlobalScope.launch(Dispatchers.Main) {
+            myFragmentList[currentPagePosition].adapter.notifyDataSetChanged()
+        }
     }
 
     override fun onFileDeletedCallBack(result: String) {
-        myFragmentList.forEach(Consumer { myFragment: MyFragment -> myFragment.adapter.notifyDataSetChanged() })
-        showSnackBar(coordinator_layout, result, btmNav)
+        GlobalScope.launch(Dispatchers.Main) {
+            myFragmentList.forEach(Consumer { myFragment: MyFragment -> myFragment.adapter.notifyDataSetChanged() })
+            showSnackBar(coordinator_layout, result, btmNav)
+        }
     }
 
     override fun showDialogWindow() {

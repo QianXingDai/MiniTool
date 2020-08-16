@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:fitsSystemWindows="true"
-        android:background="@drawable/material_2"
         android:theme="@style/AppTheme.AppBarOverlay">
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
+            android:background="@drawable/material_2"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
             <androidx.appcompat.widget.Toolbar

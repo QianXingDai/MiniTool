@@ -16,7 +16,7 @@ class Presenter(private val view: Contract.View) : Contract.Presenter {
             } else {
                 val response = model.sendRequest(input!!)
                 val handleResult = model.handleResponse(response)
-                var result = "请求错误"
+                val result: String
                 if(handleResult != null){
                     result = "请求成功"
                     handleResult.number = input

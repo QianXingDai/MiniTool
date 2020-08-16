@@ -120,8 +120,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>
 
+
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/nested_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
@@ -144,6 +144,8 @@
                 android:scrollbars="vertical"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

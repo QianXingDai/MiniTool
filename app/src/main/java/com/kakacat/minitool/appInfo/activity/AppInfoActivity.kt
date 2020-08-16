@@ -29,7 +29,7 @@ class AppInfoActivity : BaseActivity(), AppInfoContract.View, View.OnClickListen
 
     private var presenter: AppInfoContract.Presenter? = AppInfoPresenter(this)
     private val sortDialog by lazy {
-        val contentView = LayoutInflater.from(this).inflate(R.layout.sort_dialog_layout, nested_scroll_view, false)
+        val contentView = LayoutInflater.from(this).inflate(R.layout.sort_dialog_layout, linear_layout, false)
         MyPopupWindow(this, contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
     }
     private val apiPercentAdapter by lazy { ApiPercentAdapter(presenter!!.apiPercentBeanList!!) }
@@ -90,7 +90,7 @@ class AppInfoActivity : BaseActivity(), AppInfoContract.View, View.OnClickListen
 
     override fun onClick(view: View) {
         when (view.id) {
-            R.id.fab -> UiUtil.slideUpToTop(nested_scroll_view)
+            R.id.fab -> UiUtil.slideUpToTop(linear_layout)
             R.id.iv_sort -> showSortDialog()
             R.id.rb_sort_by_app_name -> sort(AppInfoModel.SORT_BY_APP_NAME)
             R.id.rb_sort_by_target_api -> sort(AppInfoModel.SORT_BY_TARGET_API)
@@ -102,11 +102,11 @@ class AppInfoActivity : BaseActivity(), AppInfoContract.View, View.OnClickListen
 
     override fun sort(sortFlag: Int) {
         sortDialog.dismiss()
-        UiUtil.showLoading(this, nested_scroll_view)
+        UiUtil.showLoading(this, linear_layout)
         presenter!!.sortAppInfoList(sortFlag)
     }
 
     override fun showSortDialog() {
-        sortDialog.showAtLocation(nested_scroll_view, Gravity.CENTER, 0, 0)
+        sortDialog.showAtLocation(linear_layout, Gravity.CENTER, 0, 0)
     }
 }

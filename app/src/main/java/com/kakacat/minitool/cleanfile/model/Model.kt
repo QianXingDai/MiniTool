@@ -1,16 +1,15 @@
 package com.kakacat.minitool.cleanfile.model
 
 import android.os.Environment.getExternalStorageDirectory
-import bolts.Task
 import java.io.File
 import java.util.concurrent.CopyOnWriteArrayList
 import java.util.function.Consumer
 
 class Model {
 
-    val fileListList: MutableList<MutableList<FileItem>> by lazy { ArrayList<MutableList<FileItem>>() }
-    val taskList: List<Task<Void>> by lazy {
-        val taskList: MutableList<Task<Void>> = ArrayList()
+    val fileListList: MutableList<MutableList<FileItem>> by lazy { ArrayList() }
+    val taskList: List<ScanTask> by lazy {
+        val taskList: MutableList<ScanTask> = ArrayList()
         val files = getExternalStorageDirectory().listFiles()!!
         var startIndex = files.size - 1
         var endIndex: Int
@@ -20,7 +19,7 @@ class Model {
             for (index in startIndex downTo endIndex) {
                 fileList.add(files[index])
             }
-            taskList.add(Task.call(ScanTask(fileList, fileListList)))
+            taskList.add(ScanTask(fileList, fileListList))
             startIndex = endIndex
         }
         taskList
@@ -56,6 +55,6 @@ class Model {
     }
 
     companion object {
-        private const val THREAD_NUM = 3
+        private const val THREAD_NUM = 2
     }
 }

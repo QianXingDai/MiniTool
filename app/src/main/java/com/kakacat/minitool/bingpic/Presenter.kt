@@ -1,8 +1,9 @@
 package com.kakacat.minitool.bingpic
 
-import bolts.Continuation
-import bolts.Task
 import com.facebook.drawee.view.SimpleDraweeView
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class Presenter(private val view: Contract.View) : Contract.Presenter {
 
@@ -18,10 +19,12 @@ class Presenter(private val view: Contract.View) : Contract.Presenter {
     }
 
     override fun saveImage(imageView: SimpleDraweeView?) {
-        Task.callInBackground { model.saveImage(imageView!!) }.onSuccess(Continuation<String, Void?> { task: Task<String> ->
-            view.onSaveImageCallBack(task.result)
-            null
-        }, Task.UI_THREAD_EXECUTOR)
+        GlobalScope.launch {
+            val result = model.saveImage(imageView!!)
+            GlobalScope.launch(Dispatchers.Main) {
+                view.onSaveImageCallBack(result)
+            }
+        }
     }
 
     override val addressList: List<String>

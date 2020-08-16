@@ -5,6 +5,10 @@ import android.content.pm.PackageManager
 import com.kakacat.minitool.R
 import com.kakacat.minitool.appInfo.model.bean.ApiPercentBean
 import com.kakacat.minitool.appInfo.model.bean.AppInfoBean
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import java.util.*
 import java.util.function.Consumer
 
@@ -14,7 +18,7 @@ class AppInfoModel {
     private var packageInfoList: List<PackageInfo>? = null
     private var appInfoBeanList: MutableList<AppInfoBean>? = null
 
-    fun initData(pm: PackageManager?) {
+    suspend fun initData(pm: PackageManager?) {
         fun initApiPercentData(){
             apiPercentBeanList = getApiPercentBeanList()
             packageInfoList = getPackageInfoList(pm!!)
@@ -49,8 +53,11 @@ class AppInfoModel {
                 appInfoBeanList!!.add(appInfoBean)
             })
         }
-        initApiPercentData()
-        initAppInfoData()
+
+        val job1 = GlobalScope.async(Dispatchers.Default){ initApiPercentData() }
+        val job2 = GlobalScope.async(Dispatchers.IO){ initAppInfoData() }
+        job1.await()
+        job2.await()
     }
 
     fun getApiPercentBeanList(): MutableList<ApiPercentBean> {

@@ -1,17 +1,15 @@
 package com.kakacat.minitool.cleanfile.model
 
 import java.io.File
-import java.util.concurrent.Callable
 import java.util.function.Consumer
 
-class ScanTask(private val targetScanFileList: MutableList<File>, private val fileListList: MutableList<MutableList<FileItem>>) : Callable<Void> {
+class ScanTask(private val targetScanFileList: MutableList<File>, private val fileListList: MutableList<MutableList<FileItem>>){
 
-    override fun call(): Void? {
-        targetScanFileList.forEach(Consumer { file: File -> start(file) })
-        return null
+    fun start() {
+        targetScanFileList.forEach(Consumer { file: File -> scan(file) })
     }
 
-    private fun start(file: File) {
+    private fun scan(file: File) {
         if (file.isFile) {
             if (file.length() == 0L) {
                 fileListList[1].add(FileItem(file, false))
@@ -38,7 +36,7 @@ class ScanTask(private val targetScanFileList: MutableList<File>, private val fi
                 fileListList[1].add(FileItem(file, false))
             } else {
                 for (file1 in files) {
-                    start(file1)
+                    scan(file1)
                 }
             }
         }

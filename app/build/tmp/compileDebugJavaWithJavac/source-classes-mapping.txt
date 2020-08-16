@@ -4,8 +4,9 @@ com/kakacat/minitool/main/MainContract.java
  com.kakacat.minitool.main.MainContract
  com.kakacat.minitool.main.MainContract$Presenter
  com.kakacat.minitool.main.MainContract$View
-com/kakacat/minitool/main/navigation/AboutViewItemOn.java
- com.kakacat.minitool.main.navigation.AboutViewItemOn
+com/kakacat/minitool/appInfo/model/bean/AppInfoBean.java
+ com.kakacat.minitool.appInfo.model.bean.AppInfoBean
+ com.kakacat.minitool.appInfo.model.bean.AppInfoBean$1
 com/kakacat/minitool/BuildConfig.java
  com.kakacat.minitool.BuildConfig
 com/kakacat/minitool/common/ui/MyFabBehavior.java
@@ -14,9 +15,8 @@ com/kakacat/minitool/common/ui/MyFabBehavior.java
 com/kakacat/minitool/todayinhistory/Adapter.java
  com.kakacat.minitool.todayinhistory.Adapter
  com.kakacat.minitool.todayinhistory.Adapter$ViewHolder
-com/kakacat/minitool/main/adapter/MainAdapter.java
- com.kakacat.minitool.main.adapter.MainAdapter
- com.kakacat.minitool.main.adapter.MainAdapter$ViewHolder
+com/kakacat/minitool/main/fragment/GeekFragment.java
+ com.kakacat.minitool.main.fragment.GeekFragment
 com/kakacat/minitool/modifydpi/ModifyDpiView.java
  com.kakacat.minitool.modifydpi.ModifyDpiView
 com/kakacat/minitool/common/ui/view/CircleProgressView.java
@@ -27,13 +27,13 @@ com/kakacat/minitool/main/navigation/ChangeThemeDialog.java
  com.kakacat.minitool.main.navigation.ChangeThemeDialog
 com/kakacat/minitool/main/Presenter.java
  com.kakacat.minitool.main.Presenter
-com/kakacat/minitool/appInfo/model/bean/AppInfoBean.java
- com.kakacat.minitool.appInfo.model.bean.AppInfoBean
- com.kakacat.minitool.appInfo.model.bean.AppInfoBean$1
+com/kakacat/minitool/main/adapter/MainAdapter.java
+ com.kakacat.minitool.main.adapter.MainAdapter
+ com.kakacat.minitool.main.adapter.MainAdapter$ViewHolder
+com/kakacat/minitool/main/navigation/AboutViewItemOn.java
+ com.kakacat.minitool.main.navigation.AboutViewItemOn
 com/kakacat/minitool/main/MainActivity.java
  com.kakacat.minitool.main.MainActivity
  com.kakacat.minitool.main.MainActivity$1
-com/kakacat/minitool/main/fragment/GeekFragment.java
- com.kakacat.minitool.main.fragment.GeekFragment
 com/kakacat/minitool/main/fragment/DailyFragment.java
  com.kakacat.minitool.main.fragment.DailyFragment

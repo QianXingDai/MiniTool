@@ -100,8 +100,10 @@ object UiUtil {
     }
 
     @JvmStatic
-    fun slideUpToTop(nestedScrollView: NestedScrollView) {
-        nestedScrollView.fullScroll(View.FOCUS_UP)
+    fun slideUpToTop(view: View?) {
+        if(view is NestedScrollView){
+            view.fullScroll(View.FOCUS_UP)
+        }
     }
 
     @JvmStatic

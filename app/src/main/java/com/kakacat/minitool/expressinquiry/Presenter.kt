@@ -1,10 +1,8 @@
 package com.kakacat.minitool.expressinquiry
 
 import com.kakacat.minitool.common.util.SystemUtil.getDataFormClipBoard
-import com.kakacat.minitool.common.util.ThreadUtil.callInUiThread
 import com.kakacat.minitool.expressinquiry.model.Delivery
 import com.kakacat.minitool.expressinquiry.model.Model
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.util.function.Consumer
@@ -23,7 +21,7 @@ class Presenter(private val view: Contract.View) : Contract.Presenter {
     }
 
     override fun requestData(code: String?) {
-        GlobalScope.launch(Dispatchers.Default) {
+        GlobalScope.launch {
             if (!model.validateInput(code!!)) {
                 view.onRequestCallback("输入错误,请检查输入")
             } else {
@@ -45,7 +43,7 @@ class Presenter(private val view: Contract.View) : Contract.Presenter {
     override fun refreshAll() {
         val list = getDeliveryList(0)
         if (list!!.isEmpty()) {
-            callInUiThread(Runnable { view.onRequestCallback("全部签收了哟") })
+            view.onRequestCallback("全部签收了哟")
         } else {
             list.forEach(Consumer { delivery: Delivery? -> requestData(delivery!!.code) })
         }

@@ -2,6 +2,7 @@
 -keep class androidx.lifecycle.ProcessLifecycleOwnerInitializer { <init>(); }
 -keep class com.kakacat.minitool.appInfo.activity.AppInfoActivity { <init>(); }
 -keep class com.kakacat.minitool.audiocapture.GetAudioService { <init>(); }
+-keep class com.kakacat.minitool.bingpic.BingPicActivity { <init>(); }
 -keep class com.kakacat.minitool.cleanfile.CleanFileActivity { <init>(); }
 -keep class com.kakacat.minitool.currencyconversion.MainActivity { <init>(); }
 -keep class com.kakacat.minitool.epidemicinquiry.EpidemicInquiryActivity { <init>(); }

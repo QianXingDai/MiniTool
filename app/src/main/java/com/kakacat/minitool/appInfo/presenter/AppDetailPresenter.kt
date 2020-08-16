@@ -1,11 +1,12 @@
 package com.kakacat.minitool.appInfo.presenter
 
-import bolts.Continuation
-import bolts.Task
 import com.kakacat.minitool.appInfo.activity.AppDetailActivity
 import com.kakacat.minitool.appInfo.contract.AppDetailContract
 import com.kakacat.minitool.appInfo.model.AppDetailModel
 import com.kakacat.minitool.appInfo.model.bean.AppInfoBean
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class AppDetailPresenter(private val view: AppDetailContract.View) : AppDetailContract.Presenter {
 
@@ -17,10 +18,12 @@ class AppDetailPresenter(private val view: AppDetailContract.View) : AppDetailCo
     }
 
     override fun saveIcon() {
-        Task.callInBackground { model.saveIcon() }.onSuccess(Continuation<String, Void?> { task: Task<String> ->
-            view.onSaveIconResult(task.result)
-            null
-        }, Task.UI_THREAD_EXECUTOR)
+        GlobalScope.launch {
+            val result = model.saveIcon()
+            GlobalScope.launch(Dispatchers.Main) {
+                view.onSaveIconResult(result)
+            }
+        }
     }
 
     override fun openMarket() {
@@ -28,10 +31,12 @@ class AppDetailPresenter(private val view: AppDetailContract.View) : AppDetailCo
     }
 
     override fun saveApk() {
-        Task.callInBackground { model.saveApk() }.onSuccess(Continuation<String, Void?> { task: Task<String> ->
-            view.onSaveApkResult(task.result)
-            null
-        }, Task.UI_THREAD_EXECUTOR)
+        GlobalScope.launch {
+            val result = model.saveApk()
+            GlobalScope.launch(Dispatchers.Main) {
+                view.onSaveApkResult(result)
+            }
+        }
     }
 
     override fun openDetailInSetting() {
